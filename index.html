@@ -7,7 +7,8 @@
 
 		 <title>Itsreallyrob</title>
 		 <link href="./css/style.css" rel="stylesheet">
-		 <script type="text/javascript" src="./js/navbar.js" ></script>  
+		 <script type="text/javascript" src="./js/navbar.js" ></script>
+		 <script type="text/javascript" src="./js/header.js" ></script>    
 		 
 	</head>
 	<body>
@@ -16,21 +17,13 @@
 		</div>		
 
 		<div class="header">	
-			<div class="menu" >	
-				<img src="./img/CalamariWhite2.png" class="menubutt" alt="IRR" height="80" width="80" onclick="goHome()"> 
-			</div>			
-			<div class="title">
-				<img src="./img/Logo.png" class="menubutt" alt="IRR" height="80" width="240" onclick="goHome()"> 
-			</div>
-			<div class="menu">
-				<img src="./img/hambmenu2.png" class="menubutt" alt="Menu" height="70" width="40"  onclick="openNav()"> 
-			</div>	
+			
 		</div>
 
 		<div class="content" id="contentdiv" onclick="closeNav()">
-			<div class="quickblog">		
+			<!--<div class="quickblog">		
 				<div>Hello</div>	
-			</div>
+			</div>-->
 
 
 		<div>
@@ -42,6 +35,7 @@
 
 <script type="text/javascript">
 	loadNav();
+	determineSize();
 
-
+document.getElementById('contentdiv').innerHTML=viewportWidth;
 </script>
