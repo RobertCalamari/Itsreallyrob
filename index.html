@@ -16,15 +16,15 @@
 		<div id="mysidenav" class="sidenav">			
 		</div>		
 
-		<div class="header">	
-			
+		<div id="header" class="header">	
+			Header
 		</div>
 
 		<div class="content" id="contentdiv" onclick="closeNav()">
 			<!--<div class="quickblog">		
 				<div>Hello</div>	
 			</div>-->
-
+			Content
 
 		<div>
 
@@ -36,6 +36,12 @@
 <script type="text/javascript">
 	loadNav();
 	determineSize();
+	window.onresize = resize;
 
-document.getElementById('contentdiv').innerHTML=viewportWidth;
+	function resize()
+	{
+	 	determineSize();
+	}
+
+
 </script>

@@ -1,5 +1,5 @@
 body {
-	background: rgba(26,26,26,.75);
+	
 	margin-left: 0px;
 	margin-right: 0px;
 	margin-top: 0px;
@@ -28,32 +28,30 @@ body {
 	color:white;
 }
 
-.bottomheader {
-	width: 100%;
-	padding-top:18px;
-	padding-bottom:18px;
-	text-align: center;
-	background-color: black; 
-	color:white;
+.header a {
+	padding: 0px 15px 0px 0px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffff;
 }
 
-
-.title {
-	width:70%;
-	display: inline-block;
+.header a:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .5;
 }
-
-
-.menu {
-	display: inline-block;
-	width:11%;
-
-}
-
-
-
 a, a:hover, a:active, a:visited, a:focus {
     text-decoration:none;
+}
+
+.menubutt {
+	vertical-align: middle;
+}
+
+.menubutt:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .5;
 }
 
 .quickblog {
@@ -111,6 +109,8 @@ a, a:hover, a:active, a:visited, a:focus {
 
 }
 
+
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
@@ -146,12 +146,6 @@ a, a:hover, a:active, a:visited, a:focus {
     opacity: .9;
 }
 
-.menubutt:hover {
-    cursor: hand;
-    cursor: pointer;
-    opacity: .5;
-
-}
 
 
 .button2 {
