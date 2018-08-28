@@ -1,6 +1,7 @@
 //When there is a change in the size of the indow or screen it will update the content to fit it
-function determineSize(){
+function determineHomeSize(){
 	const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
+
 	if(vpWidth >= 800){
 		//Header
 		document.getElementById('header').innerHTML=
@@ -37,12 +38,27 @@ function determineSize(){
 			</div>
 			<div class='middlepanel'>	
 				<div style='text-align:left; padding:10px 0 0 25px '>
-					BLOG:<br>
 					
+					<div id='blogcontent'>
+						` + printFiveBlog() + `
+						<a href='#'>Click For More Posts</a>
+					</div>
 				</div>
 			</div>
 			<div class='rightpanel'>	
-				<div>Right</div>
+
+			</div>`;
+
+		//Contact
+		document.getElementById('footer').innerHTML=
+			`<div>
+				Robert Calamari 2018
+			</div>`;		
+
+		//Footer
+		document.getElementById('footer').innerHTML=
+			`<div class='information' id='information'>
+				Robert Calamari 2018
 			</div>`;
 
 	}
@@ -64,6 +80,12 @@ function determineSize(){
 			`<div class='smallcontent'>		
 				<div>Small Content</div>	
 			</div>`;
+		
+		//Footer
+		document.getElementById('footer').innerHTML=
+			`<div class='information' id='information'>
+				Robert Calamari 2018
+			</div>`;
 
 	}
 	else{
@@ -83,6 +105,12 @@ function determineSize(){
 		document.getElementById('contentdiv').innerHTML=
 			`<div class='smallcontent'>		
 				<div>Small Content</div>	
+			</div>`;
+
+		//Footer
+		document.getElementById('footer').innerHTML=
+			`<div class='information' id='information'>
+				Robert Calamari 2018
 			</div>`;
 
 	}

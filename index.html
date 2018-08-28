@@ -9,7 +9,8 @@
 		 <link href="./css/style.css" rel="stylesheet">
 		 <script type="text/javascript" src="./js/navbar.js" ></script>
 		 <script type="text/javascript" src="./js/update.js" ></script>    
-		 <script type="text/javascript" src="./js/paintings.js" ></script>    
+		 <script type="text/javascript" src="./js/paintings.js" ></script>   
+		 <script type="text/javascript" src="./js/blog.js" ></script> 
 		 
 	</head>
 	<body>
@@ -21,7 +22,14 @@
 		</div>
 
 		<div class="content" id="contentdiv" onclick="closeNav()">
-		<div>
+		</div>
+
+		<div class="contacthome" id="contacthome" onclick="closeNav()">
+		</div>
+
+		<div id="footer" class="footer" onclick="closeNav()">
+			
+		</div>
 
 	</body>
 
@@ -29,12 +37,12 @@
 
 <script type="text/javascript">
 	loadNav();
-	determineSize();
+	determineHomeSize();
 	window.onresize = resize;
 
 	function resize()
 	{
-	 	determineSize();
+	 	determineHomeSize();
 	}
 
 
