@@ -2,7 +2,21 @@
 function determineHomeSize(){
 	const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
 
-	if(vpWidth >= 800){
+	const footerdata = 
+		`<div class='information' id='information'>
+			Robert Calamari 2018
+		</div>`;
+
+	const contactdata = 
+		`<div display='inline-block'>
+			Contact Me:<br/>
+			<img src='./img/mail.png' class='contactpics'  alt='Email' height='53' width='53'>
+			<img src='./img/instagram.png' class='contactpics'  alt='Instagram' height='50' width='50'>
+			<img src='./img/github.svg' class='contactpics'  alt='Github' height='50' width='50'>
+			
+		</div>`;
+
+	if(vpWidth >= 1030){
 		//Header
 		document.getElementById('header').innerHTML=
 			`<div>
@@ -20,24 +34,28 @@ function determineHomeSize(){
 		let featuredPaintings=[];
 		findFeaturedPainting(featuredPaintings,3);
 		document.getElementById('contentdiv').innerHTML=
-			`<div class='leftpanel'>		
-				<div style='padding:10px 30px 0 0 '>
-					LATEST PAINTING:<br>
+			`<div class='leftpanel'>
+		<div style='float:right'>		
+				<div class='lefthomecontainer'>
+					<div style='padding:0 0 0 30px '>LATEST:<br>
+					</div>
 					<img src='./img/paintings/` + getLatestPainting().img + `' class='homepics' style='padding-left: 50px;padding-top: 15px;' alt='PIC' height='160' width='160' onclick='goHome()'>
 				</div>
-				<div style='padding:10px 30px 0 0 '>
-					FEATURED PAITINGS:<br>
+				<div class='lefthomecontainer'>
+					<div style='padding:0 0 0 30px '>FEATURED:<br>
+					</div>
 					<img src='./img/paintings/` + featuredPaintings[0].img + `' class='homepics' style='padding-left: 50px;padding-top: 15px;' alt='PIC' height='160' width='160' onclick='goHome()'>
 				</div>	
-				<div style='padding:10px 30px 0 0 '>
+				<div class='lefthomecontainer'>
 					<img src='./img/paintings/` + featuredPaintings[1].img + `' class='homepics' style='padding-left: 50px;padding-top: 15px;' alt='PIC' height='160' width='160' onclick='goHome()'>
 				</div>		
-				<div style='padding:10px 30px 0 0 '>
+				<div class='lefthomecontainer'>
 					<img src='./img/paintings/` + featuredPaintings[2].img + `' class='homepics' style='padding-left: 50px;padding-top: 15px;' alt='PIC' height='160' width='160' onclick='goHome()'>
-				</div>			
+				</div>	
+		</div>		
 			</div>
 			<div class='middlepanel'>	
-				<div style='text-align:left; padding:10px 0 0 25px '>
+				<div style='text-align:left; padding:10px 0 0 20px '>
 					
 					<div id='blogcontent'>
 						` + printFiveBlog() + `
@@ -50,19 +68,13 @@ function determineHomeSize(){
 			</div>`;
 
 		//Contact
-		document.getElementById('footer').innerHTML=
-			`<div>
-				Robert Calamari 2018
-			</div>`;		
-
+		document.getElementById('contacthome').innerHTML= contactdata;
+		
 		//Footer
-		document.getElementById('footer').innerHTML=
-			`<div class='information' id='information'>
-				Robert Calamari 2018
-			</div>`;
+		document.getElementById('footer').innerHTML= footerdata;
 
 	}
-	else if(vpWidth >=350 && vpWidth <=799){
+	else if(vpWidth >=350 && vpWidth <=1029){
 		//Header
 		document.getElementById('header').innerHTML=
 			`<div style='width:100%;display:inline-block;'>
@@ -81,11 +93,11 @@ function determineHomeSize(){
 				<div>Small Content</div>	
 			</div>`;
 		
+		//Contact
+		document.getElementById('contacthome').innerHTML= contactdata;
+		
 		//Footer
-		document.getElementById('footer').innerHTML=
-			`<div class='information' id='information'>
-				Robert Calamari 2018
-			</div>`;
+		document.getElementById('footer').innerHTML= footerdata;
 
 	}
 	else{
@@ -107,11 +119,12 @@ function determineHomeSize(){
 				<div>Small Content</div>	
 			</div>`;
 
+		//Contact
+		document.getElementById('contacthome').innerHTML= contactdata;
+		
 		//Footer
-		document.getElementById('footer').innerHTML=
-			`<div class='information' id='information'>
-				Robert Calamari 2018
-			</div>`;
+		document.getElementById('footer').innerHTML= footerdata;
+
 
 	}
 }
