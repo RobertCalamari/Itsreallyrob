@@ -10,9 +10,9 @@ function determineHomeSize(){
 	const contactdata = 
 		`<div display='inline-block'>
 			Contact Me:<br/>
-			<img src='./img/mail.png' class='contactpics'  alt='Email' height='53' width='53'>
-			<img src='./img/instagram.png' class='contactpics'  alt='Instagram' height='50' width='50'>
-			<img src='./img/github.svg' class='contactpics'  alt='Github' height='50' width='50'>
+			<a href='#'><img src='./img/mail.png' class='contactpics'  alt='Email' height='53' width='53'></a>
+			<a href='https://instragram.com/itsreallyrob'><img src='./img/instagram.png' class='contactpics'  alt='Instagram' height='50' width='50'></a>
+			<a href='https://github.com/itsreallyrob'><img src='./img/github.svg' class='contactpics'  alt='Github' height='50' width='50'></a>
 			
 		</div>`;
 
@@ -30,6 +30,14 @@ function determineHomeSize(){
 				<a class='header' href='#'>Contact </a>
 			</div>`;
 			
+		//Infobox
+		document.getElementById('infobox').innerHTML=
+			`
+				<img src='./img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
+				<div class='infoboxcontentwords'>HELLO, IM ROBERT CALAMARI</div> 				
+				<input type='button' class='infoboxcontentbutton' value='Dive in to learn more!'>
+			`;
+
 		//Content
 		let featuredPaintings=[];
 		findFeaturedPainting(featuredPaintings,3);
@@ -37,6 +45,8 @@ function determineHomeSize(){
 			`<div class='leftpanel'>
 		<div style='float:right'>		
 				<div class='lefthomecontainer'>
+					<div style='padding:0 0 0 80px '>PAINTINGS
+					</div>
 					<div style='padding:0 0 0 30px '>LATEST:<br>
 					</div>
 					<img src='./img/paintings/` + getLatestPainting().img + `' class='homepics' style='padding-left: 50px;padding-top: 15px;' alt='PIC' height='160' width='160' onclick='goHome()'>
@@ -58,13 +68,19 @@ function determineHomeSize(){
 				<div style='text-align:left; padding:10px 0 0 20px '>
 					
 					<div id='blogcontent'>
-						` + printFiveBlog() + `
+						` + printSomeBlog(7) + `
 						<a href='#'>Click For More Posts</a>
 					</div>
 				</div>
 			</div>
 			<div class='rightpanel'>	
-
+				<div>
+					<img src='./img/person.png' class='infopic' alt='PIC' height=160 width=160>
+					ROBERT CALAMARI <br/><br/>				
+				</div>
+				<div style='text-align:left'>
+					BLAH BLAH BLAH THIS IS ALL STUFF ABOUT ME OOH YESSSS. BLAH BLAH BLAH THIS IS ALL STUFF ABOUT ME OOH YESSSS. BLAH BLAH BLAH THIS IS ALL STUFF ABOUT ME OOH YESSSS.BLAH BLAH BLAH THIS IS ALL STUFF ABOUT ME OOH YESSSS. BLAH BLAH BLAH THIS IS ALL STUFF ABOUT ME OOH YESSSS. BLAH BLAH BLAH THIS IS ALL STUFF ABOUT ME OOH YESSSS.
+				</div>
 			</div>`;
 
 		//Contact

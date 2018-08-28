@@ -44,10 +44,48 @@ body {
     opacity: .5;
 }
 
+.infobox {
+	width: 100%;
+	text-align: center;
+	color:white;
+	position:relative;
+}
+
+.infoboxcontentwords {
+	width:100%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+	font-size:50px;
+    transform: translate(-50%, -50%);
+}
+
+.infoboxcontentbutton {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000; 
+    border: none;
+    color: white;
+    padding: 20px 20px;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	border-radius: 5px;
+}
+
+.infoboxcontentbutton:hover {
+    background-color: #95c3de; 
+    cursor: hand;
+    cursor: pointer;
+}
+
 .information {
 	padding: 20px 0 0 10px;
 }
-
 
 .leftpanel {
 	height: 100%; 
@@ -55,26 +93,28 @@ body {
 	float: left;
 	text-align: left;
 	padding: 0 10px 0 0;
-	border-left: 1px solid black;
 }
 
 .middlepanel {
 	height: 100%; 
-	width:60%;
+	width:50%;
 	float: left;
 	overflow-wrap: normal;
 	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding:0 10px 0 0;
 }
 
 .rightpanel {
 	height: 100%; 
     width: 20%;
-    background-color: #467832; 
 	float: left;
+	padding: 0 0 0 10px;
+	text-align: center;
 }
 
 .posttitle {
-	font-size:18px;
+	font-size:20px;
 	font-weight:bold;
 }
 

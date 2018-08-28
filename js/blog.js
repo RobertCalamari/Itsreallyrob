@@ -60,9 +60,9 @@ function printAllBlog(){
 	return content;
 }
 
-function printFiveBlog(){
+function printSomeBlog(num){
 	let content = "";
-	for(let i=0;i<5;i++){
+	for(let i=0;i<num;i++){
 		content+='<div class="posttitle">' + posts[i].title + '</div><div class="postdate">' + posts[i].date + '</div>' + posts[i].content + '<br /><br />';
 	}
 	return content;
