@@ -39,8 +39,8 @@
 <html>
 
 <script type="text/javascript">
-	loadNav();
-	determineHomeSize();
+	loadNav(".");
+	determineHomeSize(".");
 
 	const currentWidth  = document.documentElement.clientWidth;
 	window.onresize = resize;
@@ -49,7 +49,7 @@
 	{
 		const newWidth  = document.documentElement.clientWidth;
 		if(currentWidth != newWidth){
-			determineHomeSize();
+			determineHomeSize(".");
 		}
 	 	
 	}

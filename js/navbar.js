@@ -1,17 +1,17 @@
 let menuopen=false; //Menu is the state of the naviagtion bar
 
 //This is the content that will be in the navigation bar
-function loadNav() {
+function loadNav(sourcefile) {
 
 	document.getElementById("mysidenav").innerHTML=
 				`<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>
                 <label class='sidenavlabel'>Menu</label>
-				<a href='../index.html'>Home</a>
-				<a href='../pages/blog/blog.html'>Blog</a>
-				<a href='#'>Painting</a> 
-				<a href='#'>Games</a>
-				<a href='#'>About Me</a>
-				<a href='#'>Contact</a>`;
+				<a href='` + sourcefile + `/index.html'>Home</a>
+				<a href='` + sourcefile + `/pages/blog/blog.html'>Blog</a>
+				<a href='` + sourcefile + `/pages/painting/painting.html'>Painting</a> 
+				<a href='` + sourcefile + `/pages/games/games.html'>Games</a>
+				<a href='` + sourcefile + `/pages/aboutme.html'>About Me</a>
+				<a href='` + sourcefile + `/pages/contact.html'>Contact</a>`;
 
 }
 
@@ -37,6 +37,6 @@ function closeNav() {
 } 
 
 //Go back to the home page
-function goHome() {
-	window.location.href = 'index.html';
+function goHome(sourcefile) {
+	window.location.href = sourcefile + '/index.html';
 }
