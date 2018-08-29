@@ -41,11 +41,17 @@
 <script type="text/javascript">
 	loadNav();
 	determineHomeSize();
-	window.onresize = resize;
 
+	const currentWidth  = document.documentElement.clientWidth;
+	window.onresize = resize;
+	
 	function resize()
 	{
-	 	determineHomeSize();
+		const newWidth  = document.documentElement.clientWidth;
+		if(currentWidth != newWidth){
+			determineHomeSize();
+		}
+	 	
 	}
 
 

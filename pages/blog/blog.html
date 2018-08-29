@@ -6,11 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
 
 		 <title>Itsreallyrob</title>
-		 <link href="./css/style.css" rel="stylesheet">
-		 <script type="text/javascript" src="./js/navbar.js" ></script>
-		 <script type="text/javascript" src="./js/update.js" ></script>    
-		 <script type="text/javascript" src="./js/paintings.js" ></script>   
-		 <script type="text/javascript" src="./js/blog.js" ></script> 
+		 <link href="../../css/style.css" rel="stylesheet">
+		 <script type="text/javascript" src="../../js/navbar.js" ></script>
+		 <script type="text/javascript" src="../../js/update.js" ></script>    
+		 <script type="text/javascript" src="../../js/paintings.js" ></script>   
+		 <script type="text/javascript" src="../../js/blog.js" ></script> 
 		 
 	</head>
 	<body>
@@ -40,12 +40,18 @@
 
 <script type="text/javascript">
 	loadNav();
-	determineBlogSize();
-	window.onresize = resize;
+	determineHomeSize();
 
+	const currentWidth  = document.documentElement.clientWidth;
+	window.onresize = resize;
+	
 	function resize()
 	{
-	 	determineBlogSize();
+		const newWidth  = document.documentElement.clientWidth;
+		if(currentWidth != newWidth){
+			determineHomeSize();
+		}
+	 	
 	}
 
 

@@ -16,8 +16,8 @@ const contactdata =
 const headerdata = [
 	{
 		content:`<div>
-			<a class='header' href='#'>Home</a>
-			<a class='header' href='#'>Blog</a>
+			<a class='header' href='index.html'>Home</a>
+			<a class='header' href='./pages/blog/blog.html'>Blog</a>
 			<a class='header' href='#'>Paintings</a>
 			<img src='./img/CalamariWhite2.png' class='menubutt' alt='IRR' height='80' width='80' onclick='goHome()'>
 			<img src='./img/Logo.png' class='menubutt' alt='IRR' height='80' width='240' onclick='goHome()'> 
@@ -50,7 +50,7 @@ const headerdata = [
 	}
 ];
 
-const infoboxdata = [
+const infoboxdata = [ //Make this a function that takes a number(if its small med or big) and the source file
 	{
 		content:`
 			<img src='./img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
