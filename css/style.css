@@ -100,8 +100,8 @@ body {
 	width:50%;
 	float: left;
 	overflow-wrap: normal;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	border-left: 1px solid #b8b8b8;
+	border-right: 1px solid #b8b8b8;
 	padding:0 10px 0 0;
 }
 
@@ -114,12 +114,16 @@ body {
 }
 
 .posttitle {
-	font-size:20px;
-	font-weight:bold;
+	font-size:18px;
 }
 
 .postdate {
 	font-size:11px;
+}
+
+.postcontent {
+	color:#5b5858;
+	font-size:15px;
 }
 
 .smallcontent {
@@ -140,6 +144,12 @@ body {
 
 a, a:hover, a:active, a:visited, a:focus {
     text-decoration:none;
+}
+
+.myheading1 {
+	font-weight:bold;
+	color:#3d3c3c;
+	font-size:19px;
 }
 
 /* All pictures are located here/////////////////////////////////////////////////////////*/

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+
+		 <title>Itsreallyrob</title>
+		 <link href="./css/style.css" rel="stylesheet">
+		 <script type="text/javascript" src="./js/navbar.js" ></script>
+		 <script type="text/javascript" src="./js/update.js" ></script>    
+		 <script type="text/javascript" src="./js/paintings.js" ></script>   
+		 <script type="text/javascript" src="./js/blog.js" ></script> 
+		 
+	</head>
+	<body>
+	  
+		<div id="mysidenav" class="sidenav">			
+		</div>		
+
+		<div id="header" class="header">	
+		</div>
+		<div onclick="closeNav()">
+			<div id="infobox" class="infobox">
+			</div>		
+	
+			<div class="content" id="contentdiv" >
+			</div>
+
+			<div class="contacthome" id="contacthome">
+			</div>
+
+			<div id="footer" class="footer">
+			
+			</div>
+		</div>
+	</body>
+
+<html>
+
+<script type="text/javascript">
+	loadNav();
+	determineBlogSize();
+	window.onresize = resize;
+
+	function resize()
+	{
+	 	determineBlogSize();
+	}
+
+
+</script>

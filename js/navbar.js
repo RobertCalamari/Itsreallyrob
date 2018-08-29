@@ -7,7 +7,7 @@ function loadNav() {
 				`<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>
                 <label class='sidenavlabel'>Menu</label>
 				<a href='index.html'>Home</a>
-				<a href='#'>Blog</a>
+				<a href='./pages/blog/blog.html'>Blog</a>
 				<a href='#'>Painting</a> 
 				<a href='#'>Games</a>
 				<a href='#'>About Me</a>

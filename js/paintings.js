@@ -27,9 +27,17 @@ const paintings = [
 	  name:'Nat',
 	  img:'nat.jpg',
 	  price:15,
-	  sold:true,
+	  sold:false,
 	  material:'digital',
 	  size:'10x10'  
+	},
+	{
+	  name:'Spacesuit',
+	  img:'spacesuit.jpeg',
+	  price:1000,
+	  sold:false,
+	  material:'sculpture',
+	  size:'70x70'  
 	}
 ];
 
