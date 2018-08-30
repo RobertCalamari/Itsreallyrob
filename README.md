@@ -4,3 +4,5 @@ This is a website that is about me. It is a portfolio where anyone can view ever
 Live site: <a href='https://robertcalamari.github.io/itsreallyrob'>robertcalamari.github.io/itsreallyrob</a>
 
 This is a dynamic site built only using HTML, CSS, and Javascript. 
+
+This site is still in early alpha, so the appearence will be temporary.
