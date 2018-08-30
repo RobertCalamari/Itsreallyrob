@@ -8,7 +8,8 @@ const footerdata =
 	</div>
 `;
 
-const aboutmeinfo = "My name is Robert and I majored in Information Technology and minored in Computer Science. I always enjoyed challanges, so in my spare time I was either playing videogames or coding. After some jobs in IT I decided that coding is what I wanted to do, but did not know where to start. So I decided to make this website to showcase my progress as I advance in my knowledge of coding. Come along with me as I post daily about what I did that day.	<br/><br/> I have also been painting since 2016. Only still a beginner, I paint in my free time still discovering new techniques. Every painting is available for sale if it has not been sold yet. I also do custom painting orders Email me at itsreallyrobert@aol.com to discuss more.";									
+//This is the code to edit the about me section on the front page
+const aboutmeinfo = "Hi, my name is Robert. I majored in Information Technology and minored in Computer Science (from the New Jersey Institute of Technology). I have always enjoyed challenges, so in my spare time I was either playing videogames or coding. While working in IT, I found that coding was what I wanted to do, but I did not know where to start. I decided to make this website to showcase my progress as I advance in my knowledge of coding. Come along with me as I post details about my progress and what I did that day. <br/><br/> I have also had an interest in painting since 2016. Only still a beginner, I paint in my free time, still discovering and attempting new techniques. Every original painting is available for sale if it has not already been sold yet. If interested, I also do custom painting orders. Email me directly at itsreallyrobert@aol.com to discuss more.";									
 
 //This is the code to print out the contact ribbon
 function contactData(sourcefile){
@@ -21,6 +22,7 @@ function contactData(sourcefile){
 	</div>`;
 }
 
+//This is the code that will show or hide the email when the email icon is clicked
 function emailBox(){
 	const thediv = document.getElementById('emailbox');
 	if(thediv.style.display=='none'){
@@ -36,7 +38,7 @@ function headerData(screen, sourcefile){
 	if(screen===0){
 		return `<div>
 			<a class='header' href='` + sourcefile + `/index.html'>Home</a>
-			<a class='header' href='` + sourcefile + `/pages/blog/blog.html'>Blog</a>
+			<a class='header' href='` + sourcefile + `/pages/blog/page1.html'>Blog</a>
 			<a class='header' href='` + sourcefile + `/pages/painting/painting.html'>Paintings</a>
 			<img src='` + sourcefile + `/img/CalamariWhite2.png' class='menubutt' alt='IRR' height='80' width='80' onclick='goHome("` + sourcefile + `")'>
 			<img src='` + sourcefile + `/img/Logo.png' class='menubutt' alt='IRR' height='80' width='240' onclick='goHome("` + sourcefile + `")'> 
@@ -69,6 +71,7 @@ function headerData(screen, sourcefile){
 	}	
 }
 
+//This is the code that outputs the big image ribbon on the front page
 function infoBoxData(screen,sourcefile){ 
 	if(screen===0){
 		return `
@@ -94,6 +97,7 @@ function infoBoxData(screen,sourcefile){
 
 }
 
+//This is the code that will output what appears on the home screen
 function homeContentData(screen, amnt, sourcefile){
 	const featpaintings=[];
 	findFeaturedPainting(featpaintings,amnt, sourcefile);
@@ -124,11 +128,11 @@ function homeContentData(screen, amnt, sourcefile){
 				</div>		
 			</div>
 			<div class='middlepanel'>	
-				<div style='text-align:left; padding:10px 0 0 20px '>
+				<div style='text-align:left; padding:10px 0 0 0px '>
 					<div class='myheading1'>The Latest:</br></br>
 					</div>
 					<div id='blogcontent'>
-						` + printSomeBlog(5) + `
+						` + printSomeBlog(4) + `
 						<input type='button' class='button2' style='font-size:12px;' value='Read More' onclick='goBlog("` + sourcefile + `")'>
 					</div>
 				</div>
@@ -160,7 +164,7 @@ function homeContentData(screen, amnt, sourcefile){
 					<div style='text-align:left; padding:10px 0 0 0 '>
 					
 						<div id='blogcontent'>
-							` + printSomeBlog(4) + `
+							` + printSomeBlog(3) + `
 						<input type='button' class='button2' style='font-size:12px;' value='Read More' onclick='goBlog("` + sourcefile + `")'>
 						</div>
 					</div>
@@ -200,7 +204,7 @@ function homeContentData(screen, amnt, sourcefile){
 					<div style='text-align:left; padding:10px 0 0 0 '>
 					
 						<div id='blogcontent'>
-							` + printSomeBlog(4) + `
+							` + printSomeBlog(3) + `
 						<input type='button' class='button2' style='font-size:12px;' value='Read More' onclick='goBlog("` + sourcefile + `")'>
 						</div>
 					</div>
@@ -227,19 +231,125 @@ function homeContentData(screen, amnt, sourcefile){
 	}
 }
 
+//This is the code that appears on the blog page
+function blogContentData(screen, sourcefile, page){
+	//0,1,2 are the first page, while 3,4,5 are the other pages
+	if(screen===0){
+
+		if(page==1){
+			return `
+				<div style='float:left; width:20%;color:white'>
+					Shhh. I am not here!
+				</div>
+					<div class='middlepanel' >	
+						<div style='text-align:left; padding:10px 0 0 0px '>
+							<div class='myheading1'>Current Articles</br></br>
+							</div>
+							<div id='blogcontent'>
+								` + printBlogPage(page) + `
+							</div>
+						</div>
+						<input type='button' class='button2' style='font-size:12px;float:right' value='Next Page' onclick='nextBlog("` + page + `")'>
+					</div>
+			`;
+		}
+		else{
+			return `
+				<div style='float:left; width:20%;color:white'>
+					Shhh. I am not here!
+				</div>
+					<div class='middlepanel' >	
+						<div style='text-align:left; padding:10px 0 0 0px '>
+							<div class='myheading1'>Current Articles</br></br>
+							</div>
+							<div id='blogcontent'>
+								` + printBlogPage(page) + `
+							</div>
+						</div>
+						<input type='button' class='button2' style='font-size:12px;float:right' value='Next Page' onclick='nextBlog("` + page + `")'>
+						<input type='button' class='button2' style='font-size:12px;float:left' value='Prev Page' onclick='prevBlog("` + page + `")'>					
+					</div>
+			`;
+		}
+	}else if(screen===1){
+		if(page==1){
+			return `
+				<div style='border-bottom: 1px solid #b8b8b8; padding: 5px 8px 5px 8px'>	<!--This is the blog section.-->
+					<b>The Latest</b></br>					
+					<div style='text-align:left; padding:10px 0 0 0 '>
+				
+						<div id='blogcontent'>
+							` + printBlogPage(page) + `
+						</div>
+					</div>
+					<input type='button' class='button2' style='font-size:12px;float:right' value='Next Page' onclick='nextBlog("` + page + `")'>
+				</div>	
+			`;
+		}
+		else{
+			return `
+				<div style='border-bottom: 1px solid #b8b8b8; padding: 5px 8px 5px 8px'>	<!--This is the blog section.-->
+					<b>The Latest</b></br>					
+					<div style='text-align:left; padding:10px 0 0 0 '>
+				
+						<div id='blogcontent'>
+							` + printBlogPage(page) + `
+						</div>
+					</div>
+					<input type='button' class='button2' style='font-size:12px;float:right' value='Next Page' onclick='nextBlog("` + page + `")'>
+					<input type='button' class='button2' style='font-size:12px;float:left' value='Prev Page' onclick='prevBlog("` + page + `")'>									
+				</div>	
+			`;
+		}
+		
+	}else if(screen===2){
+		if(page==1){
+			return `
+				<div style='padding: 5px 12px 5px 12px'>	<!--This is the blog section.-->
+					<b>The Latest</b></br>					
+					<div style='text-align:left; padding:10px 0 0 0 '>
+			
+						<div id='blogcontent'>
+							` + printBlogPage(page) + `
+						</div>
+					</div>
+					<input type='button' class='button2' style='font-size:12px;float:right' value='Next Page' onclick='nextBlog("` + page + `")'>
+				</div>	
+			`;
+		}
+		else{
+			return `
+				<div style='padding: 5px 12px 5px 12px'>	<!--This is the blog section.-->
+					<b>The Latest</b></br>					
+					<div style='text-align:left; padding:10px 0 0 0 '>
+			
+						<div id='blogcontent'>
+							` + printBlogPage(page) + `
+						</div>
+					</div>
+					<input type='button' class='button2' style='font-size:12px;float:right' value='Next Page' onclick='nextBlog("` + page + `")'>
+						<input type='button' class='button2' style='font-size:12px;float:left' value='Prev Page' onclick='prevBlog("` + page + `")'>					
+				</div>	
+			`;
+		}
+	}
+}
 
 
 
 //When there is a change in the size of the indow or screen it will update the content to fit it
+//0 represents a computer screen, 1 is a tablet, and 2 is a phone
+//the first number will always represent the screen it is on
+//ext is the location the file is in relative to index
 function determineHomeSize(ext){
 	const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
-
+	
 	if(vpWidth >= 1030){
 		//Header
 		document.getElementById('header').innerHTML=headerData(0,ext);
 		//Infobox
 		document.getElementById('infobox').innerHTML=infoBoxData(0,ext);
-		//Content
+		//Content - the second number represnts how many pictures you want displayed
 		document.getElementById('contentdiv').innerHTML=homeContentData(0,3,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
@@ -252,7 +362,7 @@ function determineHomeSize(ext){
 		//Infobox
 		document.getElementById('infobox').innerHTML=infoBoxData(1,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML = homeContentData(1,4);
+		document.getElementById('contentdiv').innerHTML = homeContentData(1,4,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -264,7 +374,7 @@ function determineHomeSize(ext){
 		//Infobox
 		document.getElementById('infobox').innerHTML=infoBoxData(2,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML = homeContentData(2,4);
+		document.getElementById('contentdiv').innerHTML = homeContentData(2,4,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -273,14 +383,19 @@ function determineHomeSize(ext){
 }
 
 //When there is a change in the size of the indow or screen it will update the content to fit it
-function determineBlogSize(ext){
+//0 represents a computer screen, 1 is a tablet, and 2 is a phone
+//0,1,2 are the first page, while 3,4,5 are the other pages
+//the first number will always represent the screen it is on
+//ext is the location the file is in relative to index
+function determineBlogSize(ext,page){
 	const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
+		
 
 	if(vpWidth >= 1030){
 		//Header
 		document.getElementById('header').innerHTML=headerData(0,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML+='Content';
+		document.getElementById('contentdiv').innerHTML=blogContentData(0,ext,page);
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -290,7 +405,7 @@ function determineBlogSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(1,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML+='Content';
+		document.getElementById('contentdiv').innerHTML=blogContentData(1,ext,page);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -300,12 +415,13 @@ function determineBlogSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(2,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML+='Content';
+		document.getElementById('contentdiv').innerHTML=blogContentData(2,ext,page);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
 		document.getElementById('footer').innerHTML = footerdata;
 	}
+	
 }
 
 

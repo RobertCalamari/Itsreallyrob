@@ -98,12 +98,12 @@ body {
 
 .middlepanel {
 	height: 100%; 
-	width:50%;
+	width:55%;
 	float: left;
 	overflow-wrap: normal;
 	border-left: 1px solid #b8b8b8;
 	border-right: 1px solid #b8b8b8;
-	padding:0 10px 0 0;
+	padding:0 10px 0 10px;
 }
 
 .rightpanel {

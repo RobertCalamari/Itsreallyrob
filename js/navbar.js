@@ -7,7 +7,7 @@ function loadNav(sourcefile) {
 				`<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>
                 <label class='sidenavlabel'>Menu</label>
 				<a href='` + sourcefile + `/index.html'>Home</a>
-				<a href='` + sourcefile + `/pages/blog/blog.html'>Blog</a>
+				<a href='` + sourcefile + `/pages/blog/page1.html'>Blog</a>
 				<a href='` + sourcefile + `/pages/painting/painting.html'>Painting</a> 
 				<a href='` + sourcefile + `/pages/games/games.html'>Games</a>
 				<a href='` + sourcefile + `/pages/aboutme.html'>About Me</a>
@@ -48,5 +48,5 @@ function goAbout(sourcefile) {
 	window.location.href = sourcefile + '/pages/aboutme.html';
 }
 function goBlog(sourcefile) {
-	window.location.href = sourcefile + '/pages/blog/blog.html';
+	window.location.href = sourcefile + '/pages/blog/page1.html';
 }
