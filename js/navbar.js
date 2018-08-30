@@ -11,7 +11,7 @@ function loadNav(sourcefile) {
 				<a href='` + sourcefile + `/pages/painting/painting.html'>Painting</a> 
 				<a href='` + sourcefile + `/pages/games/games.html'>Games</a>
 				<a href='` + sourcefile + `/pages/aboutme.html'>About Me</a>
-				<a href='` + sourcefile + `/pages/contact.html'>Contact</a>`;
+				<a href='` + sourcefile + `/pages/store.html'>Store</a>`;
 
 }
 
@@ -39,4 +39,14 @@ function closeNav() {
 //Go back to the home page
 function goHome(sourcefile) {
 	window.location.href = sourcefile + '/index.html';
+}
+
+function goPainting(sourcefile) {
+	window.location.href = sourcefile + '/pages/painting/painting.html';
+}
+function goAbout(sourcefile) {
+	window.location.href = sourcefile + '/pages/aboutme.html';
+}
+function goBlog(sourcefile) {
+	window.location.href = sourcefile + '/pages/blog/blog.html';
 }
