@@ -2,12 +2,13 @@ const tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp";
 const posts = [
 	{
 	  date:'08/30/2018',
-	  title:'[Day 5] - Moving onto the rest of the site',
+	  title:'[Day 5] - Cracking Down On The Blog',
 	  writer:'Robert Calamari',
 	  pinned: '',
 	  summary:'',
 	  tags:'coding100, javascript, html, css',
-	  content: tab + 'Today I really sat down and got a lot done. First I made some minor changes to some things that were bugging me; these included changes of how things were placed, coloring, etc. I added the blog section the same way I handled the painting section. Each blog post is an object in an array, having properties including: date, title, writer, pinned, summary, tags, and content. I then proceeded make the site responsive and that took a good amount of time. It was not too hard, but just took a while and a lot of rewriting things because I did not plan on this from the beginning. Basically there are three states the site can be in: phone, tablet, and computer. Each of these are indicated with their screen width and the site checks the width of the document screen and looks to see if it has changed. If it has it will change corresponding to the code I set it to. So the phone screen looks quite different with the computer one. It works rather well and you can test it now if you are on your computer by making the window of your browser smaller. I also found out firefox has this great web developer tool that imitates screens of other devices. If you go to "Settings - Web Developer - Responsive Design Mode", you can see that your screen changes and you can choose a device. <br/><br/>' + tab + ' Now that the website is really coming along, I thought it looked too boring. I looked around and thought a greeting section would be nice. So I made a banner that would be a picture of something for the background, while having text and a button to lead you to learn more about me and the site. This came out beautifully and really brought the site together. <i>Trust me I know, the site needs a lot of visual work, but it still is not trash!</i> I also added about me section on the homepage and created a link for each of the sections. These links need a reference to go to so I added the other pages finally. I also noticed when testing on the phone, whenever you would scroll it would change the paintings, so I am guessing it technically changes the screen size as you scroll. This was an easy fix by just only checking if the width changes on the page and not the height.'
+	  content: tab + 'It was finally time to stop messing around with the homepage and move on to the rest of the site. But believe me, I am going to get back and make it look nice as soon as I have some content in the other pages. I did do some tweaking to the site, like giving the links that I had and made them into a button for a better appearence. I also added in some more test paintings for when I get down to making that. I also rewrote some code that I saw was not needed or just really repetitive. <br /><br/>' + tab + 
+					'To start off with the blog content, I finally added all the data objects to the blog array so that I could have something to test with. I never made a blog before so I was not sure how to go about doing this. After some thinking I decided to make a few blog page htmls, this way people can go back to the page if they wanted to. After that I started to make some functions that would print out a certain number of posts per page, as of right now I have it set to 4. This was a bit challanging but I almost have it finished due to not having enough time today to finish it. I will leave it for tomorrow and start working on the painting section once I am finished.'
 	},
 	{
 	  date:'08/29/2018',
@@ -55,12 +56,22 @@ const posts = [
 
 function repeatPrint(start, num){
 	let content = "";
-	for(let i=start;i<num;i++){
+	for(let i=0;i<num;i++){
 		if(i==(num-1)){
-			content+='<div><div class="posttitle">' + posts[i].title + '</div><div class="postdate">' + posts[i].pinned + posts[i].date + ' - ' + posts[i].writer + '</div><div class="postcontent">' + posts[i].content + '</div><br /></div><br />';
+			content+=
+			`<div class='blogpost'>
+				<div class="posttitle">
+					` + posts[i+start].title + `
+				</div>
+				<div class="postdate">
+					` + posts[i+start].pinned + posts[i+start].date + ` - ` + posts[i+start].writer + `
+				</div><div class="postcontent">
+					` + posts[i+start].content + `
+				</div>
+			</div><br />`;
 		}
 		else{
-			content+='<div style="border-bottom: 1px solid #b8b8b8;"><div class="posttitle">' + posts[i].title + '</div><div class="postdate">' + posts[i].pinned + posts[i].date + ' - ' + posts[i].writer + '</div><div class="postcontent">' + posts[i].content + '</div><br /></div><br />';		
+			content+='<div style="border-bottom: 1px solid #b8b8b8;"><div class="posttitle">' + posts[i+start].title + '</div><div class="postdate">' + posts[i+start].pinned + posts[i+start].date + ' - ' + posts[i+start].writer + '</div><div class="postcontent">' + posts[i+start].content + '</div><br /></div><br />';		
 		}
 	}
 	return content;
@@ -73,7 +84,7 @@ function printAllBlog(){
 function printSomeBlog(num){
 	let content = "";
 	content=repeatPrint(0,num);
-	content='<div><div class="posttitle">' + posts[posts.length-1].title + '</div><div class="postdate">' + posts[posts.length-1].pinned + posts[posts.length-1].date + ' - ' + posts[posts.length-1].writer + '</div><div class="postcontent">' + posts[posts.length-1].content + '</div><br /></div><br />' + content;	
+	content='<div style="border-bottom: 1px solid #b8b8b8;"><div class="posttitle">' + posts[posts.length-1].title + '</div><div class="postdate">' + posts[posts.length-1].pinned + posts[posts.length-1].date + ' - ' + posts[posts.length-1].writer + '</div><div class="postcontent">' + posts[posts.length-1].content + '</div><br /></div><br />' + content;	
 	return content;
 }
 
@@ -81,8 +92,12 @@ const perpage = 4;
 function printBlogPage(page){
 	let donetotal = (page*perpage)-perpage;
 	let lefttotal = posts.length-donetotal;
-	//MAKE A IF STATEMENT TO CHECK IF LEFT = 0
-	return repeatPrint(donetotal,perpage);
+	if(lefttotal>=4){
+		return repeatPrint(donetotal,perpage);
+	}else{
+		return repeatPrint(donetotal,lefttotal);
+	}
+	
 }
 
 function nextBlog(page){

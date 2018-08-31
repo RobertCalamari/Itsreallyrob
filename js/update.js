@@ -13,13 +13,18 @@ const aboutmeinfo = "Hi, my name is Robert. I majored in Information Technology 
 
 //This is the code to print out the contact ribbon
 function contactData(sourcefile){
-	return `<div display='inline-block'>
-		Contact Me:<br/>
-		<div style='display:inline; position:relative;'><div id='emailbox' class='emailbox' style='display:none'>Email:<br/> itsreallyrobert@aol.com</div></div>		
+	return `
+	<div display='inline-block' >
+		<div style='display:inline; position:relative;'>
+			<div id='emailbox' class='emailbox' style='display:none'>
+				Email:<br/> itsreallyrobert@aol.com
+			</div>
+		</div>		
 		<a href='javascript:emailBox();'><img src='` + sourcefile + `/img/mail.png' class='contactpics'  alt='Email' height='53' width='53'></a>
 		<a href='https://instragram.com/itsreallyrob'><img src='` + sourcefile + `/img/instagram.png' class='contactpics'  alt='Instagram' height='50' width='50'></a>
 		<a href='https://github.com/robertcalamari'><img src='` + sourcefile + `/img/github.svg' class='contactpics'  alt='Github' height='50' width='50'></a>		
 	</div>`;
+	
 }
 
 //This is the code that will show or hide the email when the email icon is clicked
@@ -98,135 +103,114 @@ function infoBoxData(screen,sourcefile){
 }
 
 //This is the code that will output what appears on the home screen
-function homeContentData(screen, amnt, sourcefile){
-	const featpaintings=[];
-	findFeaturedPainting(featpaintings,amnt, sourcefile);
+function homeContentData(screen, sourcefile){
 	if(screen===0){
-		return `<div class='leftpanel'>
-				<div style='float:right'>		
-					<div class='lefthomecontainer'>
-						<div class='myheading1' style='padding:0 0 0 70px'>Paintings <br /><br />
-						</div>
-						<div style='padding:0 0 0 30px '>LATEST:<br>
-						</div>
-						<img src='./img/paintings/` + getLatestPainting().img + `' class='homepics' style='padding-left: 50px;padding-top: 8px;' alt='PIC' height='160' width='160' onclick='goHome()'>
-					</div>
-					<div class='lefthomecontainer'>
-						<div style='padding:0 0 0 30px '>FEATURED:<br>
-						</div>
-						<img src='./img/paintings/` + featpaintings[0].img + `' class='homepics' style='padding-left: 50px;padding-top: 8px;' alt='PIC' height='160' width='160' onclick='goHome()'>
-					</div>	
-					<div class='lefthomecontainer'>
-						<img src='./img/paintings/` + featpaintings[1].img + `' class='homepics' style='padding-left: 50px;padding-top: 8px;' alt='PIC' height='160' width='160' onclick='goHome()'>
-					</div>		
-					<div class='lefthomecontainer'>
-						<img src='./img/paintings/` + featpaintings[2].img + `' class='homepics' style='padding-left: 50px;padding-top: 8px;' alt='PIC' height='160' width='160' onclick='goHome()'><br/>
-						<div style='padding:8px 0 0 35px;'><input type='button' class='button2' style='font-size:12px;' value='View All Paintings' onclick='goPainting("` + sourcefile + `")'>	
-						</div>			
-					</div>	
-
-				</div>		
-			</div>
-			<div class='middlepanel'>	
-				<div style='text-align:left; padding:10px 0 0 0px '>
-					<div class='myheading1'>The Latest:</br></br>
-					</div>
-					<div id='blogcontent'>
-						` + printSomeBlog(4) + `
-						<input type='button' class='button2' style='font-size:12px;' value='Read More' onclick='goBlog("` + sourcefile + `")'>
+		return `
+			<div class='aboutmepanel' style='padding:100px 0 40px 0;'>
+				<div class='middlepanel'>
+					<div class='myheading2' style='font-size:20px'> 
+						<img src='./img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
+						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
+					</div><br/>
+					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
+						` + aboutmeinfo + `
+						<div style='padding: 30px 0 0 0; text-align:right;'>
+							<input type='button' class='button2' style='font-size:12px;' value='Learn More' onclick='goAbout("` + sourcefile + `")'>				
+						</div>				
 					</div>
 				</div>
 			</div>
-			<div class='rightpanel'>	
-				<div style='font-weight:bold;font-size:18px'>
-					<img src='./img/person.png' class='infopic' alt='PIC' height=160 width=160><br />
-					ROBERT CALAMARI <br/><br/>				
+			<div class='blogpanel' style='padding:100px 0 60px 0; background-color:#0505051a;'>
+				<div class='middlepanel'>
+					<div class='myheading2' style='font-size:30px'>
+						Articles
+					</div></br>			
+					<div id='blogcontent' class='blogcontent'>
+						` + printSomeBlog(3) + `
+						<div style='padding: 0 0 0 0; text-align:right;'>
+							<input type='button' class='button2' style='font-size:12px;' value='Read More' onclick='goBlog("` + sourcefile + `")'>
+						</div>
+					</div>
 				</div>
-				<div style='text-align:left; font-size: 13px'>
-					` + aboutmeinfo + `
-					<div style='padding: 8px 0 8px 0'><input type='button' class='button2' style='font-size:12px;' value='Learn More' onclick='goAbout("` + sourcefile + `")'>				
-				</div>
-			</div>`;
+			</div>
+			<div class='paintingpanel' style='padding:70px 0 40px 0;'>
+				<div class='myheading2' style='font-size:30px'>
+						Paintings
+				</div></br>		
+				` + printHomeSlideshow(sourcefile, 500)   +`
+			</div>
+		`;
 	}else if(screen===1){
 		return `
-			<div style='padding: 0 15px 0 15px '>
-				<div style='text-align:center; font-weight:bold; font-size: 20px'>   <!--This is the about me section-->
-					<img src='./img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
-					ROBERT CALAMARI <br/><br/>				
+			<div class='aboutmepanel' style='padding:70px 0 40px 0;'>
+				<div class='middlepanel'  style='width:90%'>
+					<div class='myheading2' style='font-size:20px'> 
+						<img src='./img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
+						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
+					</div><br/>
+					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
+						` + aboutmeinfo + `
+						<div style='padding: 30px 0 0 0; text-align:right;'>
+							<input type='button' class='button2' style='font-size:12px;' value='Learn More' onclick='goAbout("` + sourcefile + `")'>				
+						</div>				
+					</div>
 				</div>
-				<div style='text-align:left;border-bottom: 1px solid #b8b8b8; font-size:15px'>
-					` + aboutmeinfo + `
-					<div style='padding: 8px 0 8px 0'><input type='button' class='button2' style='font-size:12px;' value='Learn More' onclick='goAbout("` + sourcefile + `")'>				
-					</div>				
-				</div>
-				<div style='border-bottom: 1px solid #b8b8b8; padding: 5px 0 5px 0'>	<!--This is the blog section.-->
-					<b>The Latest</b></br>					
-					<div style='text-align:left; padding:10px 0 0 0 '>
-					
-						<div id='blogcontent'>
-							` + printSomeBlog(3) + `
-						<input type='button' class='button2' style='font-size:12px;' value='Read More' onclick='goBlog("` + sourcefile + `")'>
+			</div>
+			<div class='blogpanel' style='padding:70px 0 40px 0; background-color:#0505051a;'>
+				<div class='middlepanel' style='width:90%'>
+					<div class='myheading2' style='font-size:30px'>
+						Articles
+					</div></br>			
+					<div id='blogcontent' class='blogcontent'>
+						` + printSomeBlog(3) + `
+						<div style='padding: 0 0 0 0; text-align:right;'>
+							<input type='button' class='button2' style='font-size:12px;' value='Read More' onclick='goBlog("` + sourcefile + `")'>
 						</div>
 					</div>
-				</div>	<!--This is the painting section-->	
-				<div style='padding: 5px 0 5px 0'>
-					<div class='myheading1' style='padding: 5px 0 5px 0'>Paintings<br/>
-					</div>
-					<div style=''>LATEST:<br>
-					</div>
-					<img src='./img/paintings/` + getLatestPainting().img + `' class='homepics' style='' alt='PIC' height='160' width='160' onclick='goHome()'>
 				</div>
-				<div >
-					<div style=''>FEATURED:<br>
-					</div>
-					<img src='./img/paintings/` + featpaintings[0].img + `' class='homepics' style='' alt='PIC' height='160' width='160' onclick='goHome()'>
-					<img src='./img/paintings/` + featpaintings[1].img + `' class='homepics' style='' alt='PIC' height='160' width='160' onclick='goHome()'>						
-					<img src='./img/paintings/` + featpaintings[2].img + `' class='homepics' style='' alt='PIC' height='160' width='160' onclick='goHome()'>
-					<img src='./img/paintings/` + featpaintings[3].img + `' class='homepics' style='' alt='PIC' height='160' width='160' onclick='goHome()'>						
-				</div>	
-					<div style='padding:8px 0 0 0;'><input type='button' class='button2' style='font-size:12px;' value='View All Paintings' onclick='goPainting("` + sourcefile + `")'>	
-				</div>	
+			</div>
+			<div class='paintingpanel' style='padding:100px 0 40px 0;'>
+				<div class='myheading2' style='font-size:30px'>
+						Paintings
+				</div></br>					
+				` + printHomeSlideshow(sourcefile, 450)   +`
+			</div>
 		`;
 	}else if(screen===2){
 		return `
-			<div style='padding: 0 15px 0 15px '>
-				<div style='text-align:center; font-weight:bold; font-size: 20px'>   <!--This is the about me section-->
-					<img src='./img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
-					ROBERT CALAMARI <br/><br/>				
+			<div class='aboutmepanel' style='padding:70px 0 40px 0;'>
+				<div class='middlepanel' style='width:90%'>
+					<div class='myheading2' style='font-size:20px'> 
+						<img src='./img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
+						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
+					</div><br/>
+					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
+						` + aboutmeinfo + `
+						<div style='padding: 30px 0 0 0; text-align:right;'>
+							<input type='button' class='button2' style='font-size:12px;' value='Learn More' onclick='goAbout("` + sourcefile + `")'>				
+						</div>				
+					</div>
 				</div>
-				<div style='text-align:left;border-bottom: 1px solid #b8b8b8; font-size:15px'>
-					` + aboutmeinfo + `
-					<div style='padding: 8px 0 8px 0'><input type='button' class='button2' style='font-size:12px;' value='Learn More' onclick='goAbout("` + sourcefile + `")'>				
-					</div>				
-				</div>
-				<div style='border-bottom: 1px solid #b8b8b8; padding: 5px 0 5px 0'>	<!--This is the blog section.-->
-					<b>The Latest</b></br>					
-					<div style='text-align:left; padding:10px 0 0 0 '>
-					
-						<div id='blogcontent'>
-							` + printSomeBlog(3) + `
-						<input type='button' class='button2' style='font-size:12px;' value='Read More' onclick='goBlog("` + sourcefile + `")'>
+			</div>
+			<div class='blogpanel' style='padding:70px 0 60px 0; background-color:#0505051a;'>
+				<div class='middlepanel' style='width:90%'>
+					<div class='myheading2' style='font-size:30px'>
+						Articles
+					</div></br>			
+					<div id='blogcontent' class='blogcontent'>
+						` + printSomeBlog(3) + `
+						<div style='padding: 0 0 0 0; text-align:right;'>
+							<input type='button' class='button2' style='font-size:12px;' value='Read More' onclick='goBlog("` + sourcefile + `")'>
 						</div>
 					</div>
-				</div>	<!--This is the painting section-->	
-				<div style='padding: 5px 0 5px 0'>
-					<div class='myheading1' style='padding: 5px 0 5px 0'>Paintings<br/>
-					</div>
-					<div style=''>LATEST:<br>
-					</div>
-					<img src='./img/paintings/` + getLatestPainting().img + `' class='homepics' style='' alt='PIC' height='160' width='160' onclick='goHome()'>
 				</div>
-				<div >
-					<div style=''>FEATURED:<br>
-					</div>
-					<img src='./img/paintings/` + featpaintings[0].img + `' class='homepics' style='' alt='PIC' height='120' width='120' onclick='goHome()'>
-					<img src='./img/paintings/` + featpaintings[1].img + `' class='homepics' style='' alt='PIC' height='120' width='120' onclick='goHome()'>						
-					<img src='./img/paintings/` + featpaintings[2].img + `' class='homepics' style='' alt='PIC' height='120' width='120' onclick='goHome()'>
-					<img src='./img/paintings/` + featpaintings[3].img + `' class='homepics' style='' alt='PIC' height='120' width='120' onclick='goHome()'>						
-				</div>	
-					<div style='padding:8px 0 0 0;'><input type='button' class='button2' style='font-size:12px;' value='View All Paintings' onclick='goPainting("` + sourcefile + `")'>	
-				</div>
-
+			</div>
+			<div class='paintingpanel' style='padding:100px 0 60px 0;'>
+				<div class='myheading2' style='font-size:30px'>
+						Paintings
+				</div></br>	
+				` + printHomeSlideshow(sourcefile, 350)   +`
+			</div>
 		`;
 	}
 }
@@ -335,6 +319,43 @@ function blogContentData(screen, sourcefile, page){
 	}
 }
 
+//This is the code that appears on the painting page
+function paintingContentData(screen, sourcefile){
+	//0,1,2 are the first page, while 3,4,5 are the other pages
+	if(screen===0){
+		return `
+			<div style='float:left; width:20%;color:white'>
+				Shhh. I am not here!
+			</div>
+				<div class='middlepanel' >	
+					<div style='text-align:left; padding:10px 0 0 0px '>
+						<div class='myheading1'>Rob\'s Paintings</br></br>
+						</div>
+							` + printAllPaintings(sourcefile) + `
+					</div>
+				</div>
+		`;
+	}else if(screen===1){
+		return `
+			<div style='border-bottom: 1px solid #b8b8b8; padding: 5px 8px 5px 8px'>	<!--This is the blog section.-->
+				<b>The Latest</b></br>					
+				<div style='text-align:left; padding:10px 0 0 0 '>
+						` + printAllPaintings(sourcefile) + `
+				</div>
+			</div>	
+		`;
+	}else if(screen===2){
+		return `
+			<div style='padding: 5px 12px 5px 12px'>	<!--This is the blog section.-->
+				<b>The Latest</b></br>					
+				<div style='text-align:left; padding:10px 0 0 0 '>
+						` + printAllPaintings(sourcefile) + `
+				</div>
+			</div>	
+		`;
+	}
+}
+
 
 
 //When there is a change in the size of the indow or screen it will update the content to fit it
@@ -350,7 +371,8 @@ function determineHomeSize(ext){
 		//Infobox
 		document.getElementById('infobox').innerHTML=infoBoxData(0,ext);
 		//Content - the second number represnts how many pictures you want displayed
-		document.getElementById('contentdiv').innerHTML=homeContentData(0,3,ext);
+		document.getElementById('contentdiv').innerHTML=homeContentData(0,ext);
+		showSlides(1);
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -362,7 +384,8 @@ function determineHomeSize(ext){
 		//Infobox
 		document.getElementById('infobox').innerHTML=infoBoxData(1,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML = homeContentData(1,4,ext);
+		document.getElementById('contentdiv').innerHTML=homeContentData(1,ext);
+		showSlides(1);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -374,7 +397,8 @@ function determineHomeSize(ext){
 		//Infobox
 		document.getElementById('infobox').innerHTML=infoBoxData(2,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML = homeContentData(2,4,ext);
+		document.getElementById('contentdiv').innerHTML=homeContentData(2,ext);
+		showSlides(1);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -421,9 +445,125 @@ function determineBlogSize(ext,page){
 		//Footer
 		document.getElementById('footer').innerHTML = footerdata;
 	}
-	
 }
 
+//When there is a change in the size of the indow or screen it will update the content to fit it
+//0 represents a computer screen, 1 is a tablet, and 2 is a phone
+//the first number will always represent the screen it is on
+//ext is the location the file is in relative to index
+function determinePaintingSize(ext){
+	const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
+		
 
+	if(vpWidth >= 1030){
+		//Header
+		document.getElementById('header').innerHTML=headerData(0,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML=paintingContentData(0,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML= contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML= footerdata;
+	}
+	else if(vpWidth >=430 && vpWidth <=1029){
+		//Header
+		document.getElementById('header').innerHTML=headerData(1,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML=paintingContentData(1,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerdata;
+	}
+	else{
+		//Header
+		document.getElementById('header').innerHTML=headerData(2,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML=paintingContentData(2,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerdata;
+	}
+}
 
+//When there is a change in the size of the indow or screen it will update the content to fit it
+//0 represents a computer screen, 1 is a tablet, and 2 is a phone
+//the first number will always represent the screen it is on
+//ext is the location the file is in relative to index
+function determineGameSize(ext){
+	const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
+		
+
+	if(vpWidth >= 1030){
+		//Header
+		document.getElementById('header').innerHTML=headerData(0,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML+="";
+		//Contact
+		document.getElementById('contacthome').innerHTML= contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML= footerdata;
+	}
+	else if(vpWidth >=430 && vpWidth <=1029){
+		//Header
+		document.getElementById('header').innerHTML=headerData(1,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML+="";
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerdata;
+	}
+	else{
+		//Header
+		document.getElementById('header').innerHTML=headerData(2,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML+="";
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerdata;
+	}
+}
+
+//When there is a change in the size of the indow or screen it will update the content to fit it
+//0 represents a computer screen, 1 is a tablet, and 2 is a phone
+//the first number will always represent the screen it is on
+//ext is the location the file is in relative to index
+function determineStoreSize(ext){
+	const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
+		
+
+	if(vpWidth >= 1030){
+		//Header
+		document.getElementById('header').innerHTML=headerData(0,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML+="";
+		//Contact
+		document.getElementById('contacthome').innerHTML= contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML= footerdata;
+	}
+	else if(vpWidth >=430 && vpWidth <=1029){
+		//Header
+		document.getElementById('header').innerHTML=headerData(1,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML+="";
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerdata;
+	}
+	else{
+		//Header
+		document.getElementById('header').innerHTML=headerData(2,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML+="";
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerdata;
+	}
+}
 

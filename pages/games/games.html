@@ -23,7 +23,7 @@
 		<div onclick="closeNav()">
 
 			<div class="content" id="contentdiv" >
-				This page is under construction! But look at all this content!
+				This page is under construction! Coming Soon!!
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 			</div>
@@ -44,7 +44,7 @@
 	//ext is the reference to where this file is to index.html
 	const ext = "../..";
 	loadNav(ext);
-	determineBlogSize(ext);
+	determineGameSize(ext);
 
 	const currentWidth  = document.documentElement.clientWidth;
 	window.onresize = resize;
@@ -53,7 +53,7 @@
 	{
 		const newWidth  = document.documentElement.clientWidth;
 		if(currentWidth != newWidth){
-			determineBlogSize(ext);
+			determineGameSize(ext);
 		}
 	 	
 	}

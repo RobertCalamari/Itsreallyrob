@@ -44,7 +44,7 @@
 	//ext is the reference to where this file is to index.html
 	const ext = "../..";
 	loadNav(ext);
-	determineBlogSize(ext);
+	determinePaintingSize(ext);
 
 	const currentWidth  = document.documentElement.clientWidth;
 	window.onresize = resize;
@@ -53,7 +53,7 @@
 	{
 		const newWidth  = document.documentElement.clientWidth;
 		if(currentWidth != newWidth){
-			determineBlogSize(ext);
+			determinePaintingSize(ext);
 		}
 	 	
 	}
