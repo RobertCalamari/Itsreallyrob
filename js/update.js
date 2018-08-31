@@ -126,7 +126,7 @@ function homeContentData(screen, sourcefile){
 						Articles
 					</div></br>			
 					<div id='blogcontent' class='blogcontent'>
-						` + printSomeBlog(3) + `
+						` + printSomeBlog(6) + `
 						<div style='padding: 0 0 0 0; text-align:right;'>
 							<input type='button' class='button2' style='font-size:12px;' value='Read More' onclick='goBlog("` + sourcefile + `")'>
 						</div>
