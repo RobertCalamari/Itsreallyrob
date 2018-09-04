@@ -6,7 +6,8 @@ const paintings = [
 	  price:80,
 	  sold:true,
 	  material:'oil on canvas',
-	  size:'20x20'  
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
 	  name:'Orange Flower',
@@ -14,7 +15,8 @@ const paintings = [
 	  price:50,
 	  sold:false,
 	  material:'oil on canvas',
-	  size:'15x20'  
+	  size:'15x20',
+	  description: 'This is the description. You can write about the painting here!'    
 	},
 	{
 	  name:'Austin',
@@ -22,7 +24,8 @@ const paintings = [
 	  price:20,
 	  sold:true,
 	  material:'digital',
-	  size:'10x10'  
+	  size:'10x10',  
+	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
 	  name:'Nat',
@@ -30,7 +33,8 @@ const paintings = [
 	  price:15,
 	  sold:true,
 	  material:'digital',
-	  size:'10x10'  
+	  size:'10x10',  
+	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
 	  name:'Spacesuit',
@@ -38,7 +42,8 @@ const paintings = [
 	  price:1000,
 	  sold:true,
 	  material:'sculpture',
-	  size:'70x70'  
+	  size:'70x70',  
+	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
 	  name:'Cat',
@@ -46,7 +51,8 @@ const paintings = [
 	  price:100,
 	  sold:true,
 	  material:'oil on canvas',
-	  size:'30x30'  
+	  size:'30x30',  
+	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
 	  name:'Dog',
@@ -54,7 +60,8 @@ const paintings = [
 	  price:500,
 	  sold:false,
 	  material:'oil on canvas',
-	  size:'30x30'  
+	  size:'30x30',  
+	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
 	  name:'Einstein',
@@ -62,7 +69,8 @@ const paintings = [
 	  price:314,
 	  sold:false,
 	  material:'oil on canvas',
-	  size:'30x30'  
+	  size:'30x30',  
+	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
 	  name:'Love Boat',
@@ -70,7 +78,8 @@ const paintings = [
 	  price:600,
 	  sold:false,
 	  material:'oil on canvas',
-	  size:'30x30'  
+	  size:'30x30',  
+	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
 	  name:'Fruits of My Labor',
@@ -78,7 +87,8 @@ const paintings = [
 	  price:1005,
 	  sold:false,
 	  material:'oil on canvas',
-	  size:'30x30'  
+	  size:'30x30',  
+	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
 	  name:'Sunflowers',
@@ -86,7 +96,8 @@ const paintings = [
 	  price:120,
 	  sold:false,
 	  material:'oil on canvas',
-	  size:'30x30'  
+	  size:'30x30',  
+	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
 	  name:'The Van Goes',
@@ -94,7 +105,8 @@ const paintings = [
 	  price:1001,
 	  sold:false,
 	  material:'oil on canvas',
-	  size:'30x30'  
+	  size:'30x30',  
+	  description: 'This is the description. You can write about the painting here!'  
 	}
 ];
 
@@ -126,12 +138,34 @@ function findFeaturedPainting(arr, total){
 function printAllPaintings(ext){
 	let content = "";
 	for(let i=0;i<paintings.length;i++){
-		content+='<img src="' + ext + '/img/paintings/' + paintings[i].img + '" class="homepics" style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">';
+		content+=`
+			<a href="` + ext + `/pages/painting/paintingpage.html?name=` + paintings[i].name + `">
+				<img src="` + ext + `/img/paintings/` + paintings[i].img + `" class="homepics" style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
+			</a>`;
 	}
 	return content;
 }
 
-
+function printOnePainting(ext,postname){
+	for(let i=0;i<posts.length;i++){
+		if(postname==paintings[i].name){
+			return `
+				<div class='paintingbox'>
+					<div class='paintingimage'>
+						<img src='` + ext + `/img/paintings/` + paintings[i].img + `' class="homepics" style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
+					</div>
+					<div class='paintingtitle'>
+						
+					</div>
+					<div class='postcontent'>
+						
+					</div>
+				</div><br />
+			`;
+		}
+	}
+	return "That painting does not exist!";
+}
 
 
 

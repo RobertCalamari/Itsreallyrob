@@ -105,6 +105,15 @@ body {
 	padding:30px 0 5px 0;
 }
 
+.posttitle a{
+	text-decoration:none;
+	color: inherit;
+}
+
+.posttitle a:hover{
+	opacity: .5;
+}
+
 .postdate {
 	color:#5b5858;
 	font-size:11px;
@@ -150,7 +159,7 @@ a, a:hover, a:active, a:visited, a:focus {
 .myheading1 {
 	font-weight:bold;
 	color:#3d3c3c;
-	font-size:19px;
+	font-size:21px;
 }
 
 .myheading2 {

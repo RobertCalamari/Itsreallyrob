@@ -6,11 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
 
 		 <title>Itsreallyrob</title>
-		 <link href="../css/style.css" rel="stylesheet">
-		 <script type="text/javascript" src="../js/navbar.js" ></script>
-		 <script type="text/javascript" src="../js/update.js" ></script>    
-		 <script type="text/javascript" src="../js/paintings.js" ></script>   
-		 <script type="text/javascript" src="../js/blog.js" ></script> 
+		 <link href="../../css/style.css" rel="stylesheet">
+		 <script type="text/javascript" src="../../js/navbar.js" ></script>
+		 <script type="text/javascript" src="../../js/update.js" ></script>    
+		 <script type="text/javascript" src="../../js/paintings.js" ></script>   
+		 <script type="text/javascript" src="../../js/blog.js" ></script> 
 		 
 	</head>
 	<body>
@@ -23,6 +23,9 @@
 		<div onclick="closeNav()">
 
 			<div class="content" id="contentdiv" >
+				This page is under construction! Coming Soon!!
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 			</div>
 
 			<div class="contacthome" id="contacthome">
@@ -39,18 +42,18 @@
 <script type="text/javascript">
 	//This bit of code loads the navigation bar and loads the entire pages content
 	//ext is the reference to where this file is to index.html
-	const ext = "..";
+	const ext = "../..";
 	loadNav(ext);
-	determineAboutSize(ext);
+	determineGameSize(ext);
 
 	const currentWidth  = document.documentElement.clientWidth;
 	window.onresize = resize;
-		//Checks if the width of the screen has changed
+	//Checks if the width of the screen has changed
 	function resize()
 	{
 		const newWidth  = document.documentElement.clientWidth;
 		if(currentWidth != newWidth){
-			determineAboutSize(ext);
+			determineGameSize(ext);
 		}
 	 	
 	}
