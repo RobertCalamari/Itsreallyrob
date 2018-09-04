@@ -81,7 +81,7 @@ function infoBoxData(screen,sourcefile){
 	if(screen===0){
 		return `
 			<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-			<div class='infoboxcontentwords'>HELLO, IM ROBERT CALAMARI</div> 				
+			<div class='infoboxcontentwords'>Welcome!</div> 				
 			<input type='button' class='infoboxcontentbutton' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 		`;
 	}	
@@ -109,7 +109,7 @@ function homeContentData(screen, sourcefile){
 			<div class='aboutmepanel' style='padding:75px 0 40px 0;'>
 				<div class='middlepanel'>
 					<div class='myheading2' style='font-size:20px'> 
-						<img src='./img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
+						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
 					</div><br/>
 					<div style='text-align:center; font-size:13px; padding:0 0 0 0'>
@@ -145,7 +145,7 @@ function homeContentData(screen, sourcefile){
 			<div class='aboutmepanel' style='padding:70px 0 40px 0;'>
 				<div class='middlepanel'  style='width:90%'>
 					<div class='myheading2' style='font-size:20px'> 
-						<img src='./img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
+						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
 					</div><br/>
 					<div style='text-align:center; font-size:13px; padding:0 0 0 0'>
@@ -181,7 +181,7 @@ function homeContentData(screen, sourcefile){
 			<div class='aboutmepanel' style='padding:70px 0 40px 0;'>
 				<div class='middlepanel' style='width:90%'>
 					<div class='myheading2' style='font-size:20px'> 
-						<img src='./img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
+						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
 					</div><br/>
 					<div style='text-align:center; font-size:13px; padding:0 0 0 0'>
@@ -373,7 +373,7 @@ function aboutData(screen, sourcefile){
 		return `
 				<div class='middlepanel' style='padding:35px 0 0 0;' >	
 					<div class='myheading2' style='font-size:20px;'> 
-						<img src='../img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
+						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
 					</div><br/>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
@@ -385,7 +385,7 @@ function aboutData(screen, sourcefile){
 		return `
 			<div style='padding: 35px 8px 5px 8px'>	
 				<div class='myheading2' style='font-size:20px;'> 
-						<img src='../img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
+						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
 					</div><br/>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
@@ -397,7 +397,7 @@ function aboutData(screen, sourcefile){
 		return `
 			<div style='padding: 35px 12px 5px 12px'>	
 				<div class='myheading2' style='font-size:20px;'> 
-						<img src='../img/person.png' class='infopic' alt='PIC' height=120 width=120><br/>
+						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
 					</div><br/>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
