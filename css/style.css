@@ -148,13 +148,13 @@ body {
 }
 
 .paintingprice {
-	padding: 0 0 15px 0;
-	float:left;
+	display: inline-block;
 }
 
 .paintingsize {
-	float:right;
-	text-align:right;
+	text-align: right;
+	display: inline-block;
+	float: right;
 }
 
 .biggerpic {
