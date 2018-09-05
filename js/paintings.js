@@ -670,9 +670,15 @@ function printAllPaintings(ext){
 	let content = "";
 	for(let i=paintings.length;i>0;i--){
 		let real = i-1;
+		let issold = "";
+		if(paintings[real].sold == true){
+			issold = "Sold";
+		}
 		content+=`
 			<a href="` + ext + `/pages/painting/paintingpage.html?name=` + paintings[real].name + `">
 				<img src="` + ext + `/img/paintings/` + paintings[real].img + `" class="homepics" style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
+				<div style='color:red'>` + issold + `	
+				</div>		
 			</a>`;
 	}
 	return content;
