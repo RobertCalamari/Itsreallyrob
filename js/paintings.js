@@ -3,7 +3,7 @@ const paintings = [
 	{
 	  name:'A Lone Barn',
 	  img:'1 ALoneBarn.jpg',
-	  price:80,
+	  price:20,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
@@ -729,23 +729,23 @@ function printHomeSlideshow(ext,wid){
 
   		<div class="mySlides fade">
    	 		<div class="numbertext">1 / 4</div>
-    			<img src="` + ext + `/img/paintings/` + paintings[paintings.length-1].img + `" style="width:` + wid + `px; height:` + wid + `px">
+    			<img src="` + ext + `/img/paintings/` + paintings[paintings.length-1].img + `" id="` + paintings[paintings.length-1].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Newest</div>
   		</div>
   		<div class="mySlides fade">
     		<div class="numbertext">2 / 4</div>
-    			<img src="` + ext + `/img/paintings/` + featpaintings[1].img + `" style="width:` + wid + `px; height:` + wid + `px">
+    			<img src="` + ext + `/img/paintings/` + featpaintings[1].img + `" id="` + featpaintings[1].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Featured</div>
   		</div>
 
   		<div class="mySlides fade">
     		<div class="numbertext">3 / 4</div>
-    			<img src="` + ext + `/img/paintings/` + featpaintings[2].img + `" style="width:` + wid + `px; height:` + wid + `px">
+    			<img src="` + ext + `/img/paintings/` + featpaintings[2].img + `" id="` + featpaintings[2].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Featured</div>
   		</div>
   		<div class="mySlides fade">
     		<div class="numbertext">4 / 4</div>
-    			<img src="` + ext + `/img/paintings/` + featpaintings[3].img + `" style="width:` + wid + `px; height:` + wid + `px">
+    			<img src="` + ext + `/img/paintings/` + featpaintings[3].img + `" id="` + featpaintings[3].name + `" style="width:` + wid + `px; height:` + wid + `px">
     		<div class="text">Featured</div>
   		</div>
 
@@ -794,7 +794,9 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 } 
 
-
+function goToPainting(name) {
+	window.location.href = '/pages/painting/paintingpage.html?name=' + name;
+}
 
 
 
