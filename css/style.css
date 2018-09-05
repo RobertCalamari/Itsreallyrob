@@ -154,6 +154,7 @@ body {
 
 .paintingsize {
 	float:right;
+	text-align:right;
 }
 
 .biggerpic {
