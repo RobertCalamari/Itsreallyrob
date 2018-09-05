@@ -683,7 +683,7 @@ function printOnePainting(ext,postname){
 		if(postname==paintings[i].name){
 			let avail="Available";
 			if(paintings[i].sold == true){
-				avail="Not Available";
+				avail="Sold";
 			}
 			return `
 				<div class='paintingbox'>
@@ -699,10 +699,12 @@ function printOnePainting(ext,postname){
 						</div>
 						<div class='paintingavail'>
 							` + avail + `
-						</div><br /> 
+						</div><br /> <br />
 						<div class='paintingdescription'>
 							` + paintings[i].description + `
 						</div>
+						<br /> <br />
+						*The site is still being made, so if you would like to purchase this painting please email rjcalamari@gmail.com.
 					</div>
 				</div><br />
 			`;
