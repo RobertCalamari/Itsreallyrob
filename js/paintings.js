@@ -695,10 +695,12 @@ function printOnePainting(ext,postname){
 					</div>
 					<div class='paintinginfo'>
 						<div class='paintingprice'>
-							$` + paintings[i].price + `
-						</div>
-						<div class='paintingavail'>
+							$` + paintings[i].price + ` <br />
 							` + avail + `
+						</div>
+						<div class='paintingsize'>
+							` + paintings[i].size + ` <br />
+							` + paintings[i].material + `
 						</div><br /> <br />
 						<div class='paintingdescription'>
 							` + paintings[i].description + `
