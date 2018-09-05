@@ -129,6 +129,13 @@ body {
 	height:100px;
 	border: 1px solid black; 
 	text-align:left;
+	padding: 20px 0 0 0;
+}
+
+.paintingtitle {
+	padding: 20px 0 20px 0;
+	font-weight:bold;
+	font-size:21px;
 }
 
 .paintinginfo {
