@@ -127,6 +127,7 @@ body {
 .paintinginfo {
 	width:300px;
 	text-align:left;
+	margin:auto;
 }
 
 .biggerpic {
