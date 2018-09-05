@@ -21,7 +21,7 @@ function contactData(sourcefile){
 			</div>
 		</div>		
 		<a href='javascript:emailBox();'><img src='` + sourcefile + `/img/mail.png' class='contactpics'  alt='Email' height='53' width='53'></a>
-		<a href='https://instragram.com/itsreallyrob'><img src='` + sourcefile + `/img/instagram.png' class='contactpics'  alt='Instagram' height='50' width='50'></a>
+		<a href='https://instragram.com/itsreallyrobert'><img src='` + sourcefile + `/img/instagram.png' class='contactpics'  alt='Instagram' height='50' width='50'></a>
 		<a href='https://github.com/robertcalamari'><img src='` + sourcefile + `/img/github.svg' class='contactpics'  alt='Github' height='50' width='50'></a>		
 	</div>`;
 	
@@ -67,7 +67,7 @@ function headerData(screen, sourcefile){
 		return `<div style='width:100%;display:inline-block;'>
 			<div style='float:left;padding-left:0px;'>
 				<img src='` + sourcefile + `/img/CalamariWhite2.png' class='menubutt' alt='IRR' height='80' width='80' onclick='goHome("` + sourcefile + `")'>
-				<img src='` + sourcefile + `/img/Logo.png' class='menubutt' alt='IRR' height='40' width='120' onclick='goHome("` + sourcefile + `")'> 
+				<img src='` + sourcefile + `/img/Logo.png' class='menubutt' alt='IRR' height='50' width='140' onclick='goHome("` + sourcefile + `")'> 
 			</div>
 			<div style='float:right;padding:8px 22px 0 0 ;'>
 				<img src='` + sourcefile + `/img/hambmenu2.png' class='menubutt' alt='Menu' height='70' width='40' style='align=right' onclick='openNav("` + sourcefile + `")'> 
@@ -81,21 +81,21 @@ function infoBoxData(screen,sourcefile){
 	if(screen===0){
 		return `
 			<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-			<div class='infoboxcontentwords'>Welcome!</div> 				
+			<div class='infoboxcontentwords'></div> 				
 			<input type='button' class='infoboxcontentbutton' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 		`;
 	}	
 	else if(screen===1){
 		return `
 				<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-				<div class='infoboxcontentwords' style='font-size:25px'>HELLO, IM ROBERT CALAMARI</div> 				
+				<div class='infoboxcontentwords' style='font-size:25px'></div> 				
 				<input type='button' class='infoboxcontentbutton' style='font-size:12px; width:140px;padding:12px 12px;' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 			`;
 	}
 	else if(screen===2){
 		return `
 			<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-			<div class='infoboxcontentwords' style='font-size:15px'>HELLO, IM ROBERT CALAMARI</div> 				
+			<div class='infoboxcontentwords' style='font-size:15px'>Welco</div> 				
 			<input type='button' class='infoboxcontentbutton' style='font-size:8px; width:90px;padding:8px 8px;' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 		`;
 	}
@@ -110,10 +110,10 @@ function homeContentData(screen, sourcefile){
 				<div class='middlepanel'>
 					<div class='myheading2' style='font-size:20px'> 
 						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
-						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
+						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
 					</div><br/>
 					<div style='text-align:center; font-size:13px; padding:0 0 0 0'>
-						Coder - Painter - Creator
+						Developer - Designer - Painter
 						<div style='padding: 30px 0 0 0; text-align:center;'>
 							<input type='button' class='button2' style='font-size:12px;' value='Learn More' onclick='goAbout("` + sourcefile + `")'>				
 						</div>				
@@ -146,10 +146,10 @@ function homeContentData(screen, sourcefile){
 				<div class='middlepanel'  style='width:90%'>
 					<div class='myheading2' style='font-size:20px'> 
 						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
-						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
+						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
 					</div><br/>
 					<div style='text-align:center; font-size:13px; padding:0 0 0 0'>
-						Coder - Painter - Creator
+						Developer - Designer - Painter
 						<div style='padding: 30px 0 0 0; text-align:center;'>
 							<input type='button' class='button2' style='font-size:12px;' value='Learn More' onclick='goAbout("` + sourcefile + `")'>				
 						</div>				
@@ -182,10 +182,10 @@ function homeContentData(screen, sourcefile){
 				<div class='middlepanel' style='width:90%'>
 					<div class='myheading2' style='font-size:20px'> 
 						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
-						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
+						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
 					</div><br/>
 					<div style='text-align:center; font-size:13px; padding:0 0 0 0'>
-						Coder - Painter - Creator
+						Developer - Designer - Painter
 						<div style='padding: 30px 0 0 0; text-align:center;'>
 							<input type='button' class='button2' style='font-size:12px;' value='Learn More' onclick='goAbout("` + sourcefile + `")'>				
 						</div>				
@@ -373,8 +373,8 @@ function aboutData(screen, sourcefile){
 		return `
 				<div class='middlepanel' style='padding:35px 0 0 0;' >	
 					<div class='myheading2' style='font-size:20px;'> 
-						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
-						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
+						<img src='../img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
+						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
 					</div><br/>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			
@@ -385,8 +385,8 @@ function aboutData(screen, sourcefile){
 		return `
 			<div style='padding: 35px 8px 5px 8px'>	
 				<div class='myheading2' style='font-size:20px;'> 
-						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
-						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
+						<img src='../img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
+						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
 					</div><br/>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			
@@ -397,8 +397,8 @@ function aboutData(screen, sourcefile){
 		return `
 			<div style='padding: 35px 12px 5px 12px'>	
 				<div class='myheading2' style='font-size:20px;'> 
-						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
-						<div style='padding:30px 0 0 0'>ROBERT CALAMARI</div> 				
+						<img src='../img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
+						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
 					</div><br/>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			

@@ -120,6 +120,18 @@ body {
 	padding:0 0 25px 0;
 }
 
+.paintingbox {
+	text-align: center;
+}
+
+.biggerpic {
+
+}
+
+.biggerpic:hover{
+	opacity: .5;
+}
+
 .postcontent {
 	color:#5b5858;
 	font-size:15px;

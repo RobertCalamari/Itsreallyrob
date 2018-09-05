@@ -1,8 +1,80 @@
 //Paintings go in order by newest on bottom. So paintings[0] should be the oldest
 const paintings = [
 	{
-	  name:'Sailboat',
-	  img:'sailboat.jpg',
+	  name:'A Lone Barn',
+	  img:'1 ALoneBarn.jpg',
+	  price:80,
+	  sold:false,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Cliff Side',
+	  img:'2 CliffSide.jpg',
+	  price:80,
+	  sold:false,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'A Journey Left By The Adventurer',
+	  img:'3 AJourneyLeftByTheAdventurer.jpg',
+	  price:80,
+	  sold:false,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Saavy Tsunami',
+	  img:'4 SavvyTsunami.jpg',
+	  price:80,
+	  sold:false,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Woman Alone',
+	  img:'5 WomanAlone.jpg',
+	  price:80,
+	  sold:false,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Awaiting Death',
+	  img:'6 AwaitingDeath.jpg',
+	  price:80,
+	  sold:false,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Skater Boi',
+	  img:'7 SkaterBoi.jpg',
+	  price:80,
+	  sold:false,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'The Lone Tree Weeps During Sunset',
+	  img:'8 TheLoneTreeWeepsDuringSunset.jpg',
+	  price:80,
+	  sold:false,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'When Death Arises',
+	  img:'9 WhenDeathArises.jpg',
 	  price:80,
 	  sold:true,
 	  material:'oil on canvas',
@@ -10,102 +82,561 @@ const paintings = [
 	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
-	  name:'Orange Flower',
-	  img:'flower.jpg',
-	  price:50,
-	  sold:false,
-	  material:'oil on canvas',
-	  size:'15x20',
-	  description: 'This is the description. You can write about the painting here!'    
-	},
-	{
-	  name:'Austin',
-	  img:'austin.jpg',
-	  price:20,
-	  sold:true,
-	  material:'digital',
-	  size:'10x10',  
-	  description: 'This is the description. You can write about the painting here!'  
-	},
-	{
-	  name:'Nat',
-	  img:'nat.jpg',
-	  price:15,
-	  sold:true,
-	  material:'digital',
-	  size:'10x10',  
-	  description: 'This is the description. You can write about the painting here!'  
-	},
-	{
-	  name:'Spacesuit',
-	  img:'spacesuit.jpeg',
-	  price:1000,
-	  sold:true,
-	  material:'sculpture',
-	  size:'70x70',  
-	  description: 'This is the description. You can write about the painting here!'  
-	},
-	{
-	  name:'Cat',
-	  img:'cat.jpg',
-	  price:100,
+	  name:'Floating Island',
+	  img:'10 FloatingIsland.jpg',
+	  price:80,
 	  sold:true,
 	  material:'oil on canvas',
-	  size:'30x30',  
+	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
-	  name:'Dog',
-	  img:'dog.jpg',
-	  price:500,
-	  sold:false,
+	  name:'Alone',
+	  img:'11 Alone.jpg',
+	  price:80,
+	  sold:true,
 	  material:'oil on canvas',
-	  size:'30x30',  
+	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
-	  name:'Einstein',
-	  img:'einstein.jpeg',
-	  price:314,
-	  sold:false,
+	  name:'Fall Time By The Lake',
+	  img:'12 FallTimeByTheLake.jpg',
+	  price:80,
+	  sold:true,
 	  material:'oil on canvas',
-	  size:'30x30',  
+	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
-	  name:'Love Boat',
-	  img:'love.jpg',
-	  price:600,
-	  sold:false,
+	  name:'Cowboy At Dusk Time',
+	  img:'13 CowboyAtDuskTime.jpg',
+	  price:80,
+	  sold:true,
 	  material:'oil on canvas',
-	  size:'30x30',  
+	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
-	  name:'Fruits of My Labor',
-	  img:'stillart.jpeg',
-	  price:1005,
-	  sold:false,
+	  name:'Nighttime Lake',
+	  img:'13 NighttimeLake.jpg',
+	  price:80,
+	  sold:true,
 	  material:'oil on canvas',
-	  size:'30x30',  
+	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
-	  name:'Sunflowers',
-	  img:'sunflowers.jpg',
-	  price:120,
-	  sold:false,
+	  name:'Chasing',
+	  img:'14 Chasing.jpg',
+	  price:80,
+	  sold:true,
 	  material:'oil on canvas',
-	  size:'30x30',  
+	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
 	{
-	  name:'The Van Goes',
-	  img:'vango.jpeg',
-	  price:1001,
-	  sold:false,
+	  name:'I Hate Painting Trees',
+	  img:'15 IHatePaintingTrees.jpg',
+	  price:80,
+	  sold:true,
 	  material:'oil on canvas',
-	  size:'30x30',  
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Fox',
+	  img:'16 Fox.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Water Lillies',
+	  img:'16 WaterLillies.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'The Far Beyond',
+	  img:'17 TheFarBeyond.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'L.A. Sunset',
+	  img:'18 LASunset.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'White Flowers Flourish In Spring',
+	  img:'19 WhiteFlowersFlourishInSpring.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'The Morning Aftermath',
+	  img:'20 TheMorningAftermath.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'The Infinite Garden',
+	  img:'21 TheInfiniteGarden.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Balancing Good And Even',
+	  img:'22 BalancingGoodAndEven.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Bird Bath Break',
+	  img:'23 BirdBathBreak.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Theres Always More To Explore',
+	  img:'24 TheresAlwaysMoreToExplore.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Peeping Tom',
+	  img:'25 PeepingTom.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Dark Daisy',
+	  img:'26 DarkDaisy.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Super Mario 64',
+	  img:'27 SuperMario64.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Love Comes In All Shapes And Sizes',
+	  img:'28 LoveComesInAllShapesAndSizes.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'I Call This One Bold And Brash',
+	  img:'29 ICallThisOneBoldAndBrash.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Mysterious Night',
+	  img:'30 MysteriousNight.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Beach Bum Days',
+	  img:'31 BeachBumDays.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'City Of Love',
+	  img:'32 CityOfLove.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Origins',
+	  img:'33 Origins.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Red Hot Chili Peppers',
+	  img:'34 RedHotChiliPeppers.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'The Crap Nebula',
+	  img:'35 TheCrapNebula.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Red Delicious Apple',
+	  img:'36 RedDeliciousApple.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'My Dad',
+	  img:'37 MyDad.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Dreary Trees',
+	  img:'38 DrearyTrees.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Pumpkin',
+	  img:'39 Pumpkin.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Surfer Girl',
+	  img:'40 SurferGirl.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Walking For Miles',
+	  img:'41 WalkingForMiles.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Observing',
+	  img:'42 Observing.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Tweeting',
+	  img:'43 Tweeting.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Hawaii Beach',
+	  img:'44 HawaiiBeach.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Blue Daisy',
+	  img:'45 BlueDaisy.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Red Rose',
+	  img:'46 RedRose.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Family Photo',
+	  img:'47 FamilyPhoto.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Looking Up',
+	  img:'48 LookingUp.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Western Sky',
+	  img:'49 WesternSky.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Midnight Bay',
+	  img:'50 MidnightBay.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Fishing',
+	  img:'51 Fishing.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Sunflower',
+	  img:'52 Sunflower.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'New Jersey Beach',
+	  img:'53 NewJerseyBeach.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Waterfall Amongst The Night',
+	  img:'54 WaterfallAmongstTheNight.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Water Lilies',
+	  img:'55 WaterLilies.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Purple Flower',
+	  img:'56 PurpleFlower.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Two Deers',
+	  img:'57 TwoDeers.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Space Tree',
+	  img:'58 SpaceTree.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Flying Away',
+	  img:'59 FlyingAway.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Borderline Good',
+	  img:'60 BorderlineGood.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Conquering The Wall',
+	  img:'61 ConqueringTheWall.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'The World Above',
+	  img:'62 TheWorldAbove.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Harry Potter Emblem',
+	  img:'63 HarryPotterEmblem.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'The Last EC',
+	  img:'64 TheLastEC.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Colorize',
+	  img:'65 Colorize.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'More Treasures Than Pockets',
+	  img:'66 MoreTreasuresThanPockets.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Bluejay',
+	  img:'67 Bluejay.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'Crap Nebula Over Calm Lake',
+	  img:'68 CrapNebulaOverCalmLake.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
+	  description: 'This is the description. You can write about the painting here!'  
+	},
+	{
+	  name:'900 Nautical Miles Away',
+	  img:'69 900NauticalMilesAway.jpg',
+	  price:80,
+	  sold:true,
+	  material:'oil on canvas',
+	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	}
 ];
@@ -137,22 +668,23 @@ function findFeaturedPainting(arr, total){
 //This prints all paintings out
 function printAllPaintings(ext){
 	let content = "";
-	for(let i=0;i<paintings.length;i++){
+	for(let i=paintings.length;i>0;i--){
+		let real = i-1;
 		content+=`
-			<a href="` + ext + `/pages/painting/paintingpage.html?name=` + paintings[i].name + `">
-				<img src="` + ext + `/img/paintings/` + paintings[i].img + `" class="homepics" style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
+			<a href="` + ext + `/pages/painting/paintingpage.html?name=` + paintings[real].name + `">
+				<img src="` + ext + `/img/paintings/` + paintings[real].img + `" class="homepics" style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
 			</a>`;
 	}
 	return content;
 }
 
 function printOnePainting(ext,postname){
-	for(let i=0;i<posts.length;i++){
+	for(let i=0;i<paintings.length;i++){
 		if(postname==paintings[i].name){
 			return `
 				<div class='paintingbox'>
 					<div class='paintingimage'>
-						<img src='` + ext + `/img/paintings/` + paintings[i].img + `' class="homepics" style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
+						<img src='` + ext + `/img/paintings/` + paintings[i].img + `' id='../../img/paintings/` + paintings[i].img + `' class="biggerpic" style="padding: 0px 2px 2px 2px;" alt="PIC" height=auto width="320" onclick="picBig(this.id)">
 					</div>
 					<div class='paintingtitle'>
 						
