@@ -694,14 +694,16 @@ function printOnePainting(ext,postname){
 						<img src='` + ext + `/img/paintings/` + paintings[i].img + `' id='../../img/paintings/` + paintings[i].img + `' class="biggerpic" style="padding: 0px 2px 2px 2px;" alt="PIC" height=auto width=100% onclick="picBig(this.id)">
 					</div>
 					<div class='paintinginfo'>
-						<div class='paintingprice'>
-							$` + paintings[i].price + ` <br />
-							` + avail + `
+						<div style='padding: 0 0 15px 0;'>
+							<div class='paintingprice'>
+								$` + paintings[i].price + ` <br />
+								` + avail + `
+							</div>
+							<div class='paintingsize'>
+								Size: ` + paintings[i].size + ` <br />
+								` + paintings[i].material + `
+							</div>
 						</div>
-						<div class='paintingsize'>
-							Size: ` + paintings[i].size + ` <br />
-							` + paintings[i].material + `
-						</div><br /> <br />
 						<div class='paintingdescription'>
 							` + paintings[i].description + `
 						</div>
