@@ -676,9 +676,9 @@ function printAllPaintings(ext){
 		}
 		content+=`
 			<a href="` + ext + `/pages/painting/paintingpage.html?name=` + paintings[real].name + `">
-				<img src="` + ext + `/img/paintings/` + paintings[real].img + `" class="homepics" style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
-				<div style='color:red'>` + issold + `	
-				</div>		
+								
+					<img src="` + ext + `/img/paintings/` + paintings[real].img + `" class="homepics" style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
+					
 			</a>`;
 	}
 	return content;
