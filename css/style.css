@@ -148,12 +148,12 @@ body {
 }
 
 .paintingprice {
-	float: left;
 	padding: 0 0 15px 0;
+	float:left;
 }
 
 .paintingavail {
-	float: right;
+	float:right;
 }
 
 .biggerpic {
