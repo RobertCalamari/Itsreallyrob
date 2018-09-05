@@ -708,7 +708,7 @@ function printOnePainting(ext,postname){
 							` + paintings[i].description + `
 						</div>
 						<br /> <br />
-						*The site is still being made, so if you would like to purchase this painting please email rjcalamari@gmail.com.
+						*The site is still being made, so if you would like to purchase this painting please email me at rjcalamari@gmail.com. All prices negotiable.
 					</div>
 				</div><br />
 			`;
