@@ -114,6 +114,19 @@ body {
 	opacity: .5;
 }
 
+.slideshowtitle {
+	color:black;
+}
+
+.slideshowtitle a{
+	text-decoration:none;
+	color: inherit;
+}
+
+.slideshowtitle:hover{
+	opacity: .5;
+}
+
 .postdate {
 	color:#5b5858;
 	font-size:11px;
