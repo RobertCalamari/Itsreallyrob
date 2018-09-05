@@ -272,7 +272,7 @@ const paintings = [
 	},
 	{
 	  name:'I Call This One Bold And Brash',
-	  img:'29 ICallThisOneBoldAndBrash.jpg',
+	  img:'29 ICallThisOneBoldAndBrash.JPG',
 	  price:80,
 	  sold:true,
 	  material:'oil on canvas',
@@ -371,7 +371,7 @@ const paintings = [
 	},
 	{
 	  name:'Surfer Girl',
-	  img:'40 SurferGirl.jpg',
+	  img:'40 SurferGirl.JPG',
 	  price:80,
 	  sold:true,
 	  material:'oil on canvas',
