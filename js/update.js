@@ -17,7 +17,7 @@ function contactData(sourcefile){
 	<div display='inline-block' >
 		<div style='display:inline; position:relative;'>
 			<div id='emailbox' class='emailbox' style='display:none'>
-				Email:<br/> itsreallyrobert@aol.com
+				Email:<br/> rjcalamari@gmail.com
 			</div>
 		</div>		
 		<a href='javascript:emailBox();'><img src='` + sourcefile + `/img/mail.png' class='contactpics'  alt='Email' height='53' width='53'></a>
