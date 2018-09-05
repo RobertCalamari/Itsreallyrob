@@ -124,12 +124,19 @@ body {
 	text-align: center;
 }
 
+.paintinginfo {
+	width:300px;
+	text-align:left;
+}
+
 .biggerpic {
 
 }
 
 .biggerpic:hover{
 	opacity: .5;
+	cursor: hand;
+    cursor: pointer;
 }
 
 .postcontent {
