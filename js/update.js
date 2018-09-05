@@ -135,7 +135,7 @@ function homeContentData(screen, sourcefile){
 			</div>
 			<div class='paintingpanel' style='padding:70px 0 40px 0;'>
 				<div class='myheading2' style='font-size:30px'>
-						Paintings
+						<a href='./pages/painting/painting.html' class='slideshowtitle'>Paintings</a>
 				</div></br>		
 				` + printHomeSlideshow(sourcefile, 500)   +`
 			</div>
@@ -171,7 +171,7 @@ function homeContentData(screen, sourcefile){
 			</div>
 			<div class='paintingpanel' style='padding:100px 0 40px 0;'>
 				<div class='myheading2' style='font-size:30px'>
-						Paintings
+						<a href='./pages/painting/painting.html' class='slideshowtitle'>Paintings</a>
 				</div></br>					
 				` + printHomeSlideshow(sourcefile, 450)   +`
 			</div>
@@ -207,7 +207,7 @@ function homeContentData(screen, sourcefile){
 			</div>
 			<div class='paintingpanel' style='padding:100px 0 60px 0;'>
 				<div class='myheading2' style='font-size:30px'>
-						Paintings
+						<a href='./pages/painting/painting.html' class='slideshowtitle'>Paintings</a>
 				</div></br>	
 				` + printHomeSlideshow(sourcefile, 350)   +`
 			</div>
