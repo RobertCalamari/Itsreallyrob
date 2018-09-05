@@ -5,7 +5,7 @@ const paintings = [
 	  img:'1 ALoneBarn.jpg',
 	  price:80,
 	  sold:false,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -14,7 +14,7 @@ const paintings = [
 	  img:'2 CliffSide.jpg',
 	  price:80,
 	  sold:false,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -23,7 +23,7 @@ const paintings = [
 	  img:'3 AJourneyLeftByTheAdventurer.jpg',
 	  price:80,
 	  sold:false,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -32,7 +32,7 @@ const paintings = [
 	  img:'4 SavvyTsunami.jpg',
 	  price:80,
 	  sold:false,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -41,7 +41,7 @@ const paintings = [
 	  img:'5 WomanAlone.jpg',
 	  price:80,
 	  sold:false,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -50,7 +50,7 @@ const paintings = [
 	  img:'6 AwaitingDeath.jpg',
 	  price:80,
 	  sold:false,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -59,7 +59,7 @@ const paintings = [
 	  img:'7 SkaterBoi.jpg',
 	  price:80,
 	  sold:false,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -68,7 +68,7 @@ const paintings = [
 	  img:'8 TheLoneTreeWeepsDuringSunset.jpg',
 	  price:80,
 	  sold:false,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -77,7 +77,7 @@ const paintings = [
 	  img:'9 WhenDeathArises.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -86,7 +86,7 @@ const paintings = [
 	  img:'10 FloatingIsland.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -95,7 +95,7 @@ const paintings = [
 	  img:'11 Alone.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -104,7 +104,7 @@ const paintings = [
 	  img:'12 FallTimeByTheLake.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -113,7 +113,7 @@ const paintings = [
 	  img:'13 CowboyAtDuskTime.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -122,7 +122,7 @@ const paintings = [
 	  img:'13 NighttimeLake.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -131,7 +131,7 @@ const paintings = [
 	  img:'14 Chasing.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -140,7 +140,7 @@ const paintings = [
 	  img:'15 IHatePaintingTrees.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -149,7 +149,7 @@ const paintings = [
 	  img:'16 Fox.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -158,7 +158,7 @@ const paintings = [
 	  img:'16 WaterLillies.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -167,7 +167,7 @@ const paintings = [
 	  img:'17 TheFarBeyond.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -176,7 +176,7 @@ const paintings = [
 	  img:'18 LASunset.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -185,7 +185,7 @@ const paintings = [
 	  img:'19 WhiteFlowersFlourishInSpring.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -194,7 +194,7 @@ const paintings = [
 	  img:'20 TheMorningAftermath.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -203,7 +203,7 @@ const paintings = [
 	  img:'21 TheInfiniteGarden.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -212,7 +212,7 @@ const paintings = [
 	  img:'22 BalancingGoodAndEven.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -221,7 +221,7 @@ const paintings = [
 	  img:'23 BirdBathBreak.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -230,7 +230,7 @@ const paintings = [
 	  img:'24 TheresAlwaysMoreToExplore.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -239,7 +239,7 @@ const paintings = [
 	  img:'25 PeepingTom.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -248,7 +248,7 @@ const paintings = [
 	  img:'26 DarkDaisy.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -257,7 +257,7 @@ const paintings = [
 	  img:'27 SuperMario64.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -266,7 +266,7 @@ const paintings = [
 	  img:'28 LoveComesInAllShapesAndSizes.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -275,7 +275,7 @@ const paintings = [
 	  img:'29 ICallThisOneBoldAndBrash.JPG',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -284,7 +284,7 @@ const paintings = [
 	  img:'30 MysteriousNight.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -293,7 +293,7 @@ const paintings = [
 	  img:'31 BeachBumDays.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -302,7 +302,7 @@ const paintings = [
 	  img:'32 CityOfLove.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -311,7 +311,7 @@ const paintings = [
 	  img:'33 Origins.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -320,7 +320,7 @@ const paintings = [
 	  img:'34 RedHotChiliPeppers.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -329,7 +329,7 @@ const paintings = [
 	  img:'35 TheCrapNebula.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -338,7 +338,7 @@ const paintings = [
 	  img:'36 RedDeliciousApple.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -347,7 +347,7 @@ const paintings = [
 	  img:'37 MyDad.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -356,7 +356,7 @@ const paintings = [
 	  img:'38 DrearyTrees.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -365,7 +365,7 @@ const paintings = [
 	  img:'39 Pumpkin.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -374,7 +374,7 @@ const paintings = [
 	  img:'40 SurferGirl.JPG',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -383,7 +383,7 @@ const paintings = [
 	  img:'41 WalkingForMiles.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -392,7 +392,7 @@ const paintings = [
 	  img:'42 Observing.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -401,7 +401,7 @@ const paintings = [
 	  img:'43 Tweeting.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -410,7 +410,7 @@ const paintings = [
 	  img:'44 HawaiiBeach.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -419,7 +419,7 @@ const paintings = [
 	  img:'45 BlueDaisy.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -428,7 +428,7 @@ const paintings = [
 	  img:'46 RedRose.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -437,7 +437,7 @@ const paintings = [
 	  img:'47 FamilyPhoto.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -446,7 +446,7 @@ const paintings = [
 	  img:'48 LookingUp.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -455,7 +455,7 @@ const paintings = [
 	  img:'49 WesternSky.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -464,7 +464,7 @@ const paintings = [
 	  img:'50 MidnightBay.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -473,7 +473,7 @@ const paintings = [
 	  img:'51 Fishing.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -482,7 +482,7 @@ const paintings = [
 	  img:'52 Sunflower.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -491,7 +491,7 @@ const paintings = [
 	  img:'53 NewJerseyBeach.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -500,7 +500,7 @@ const paintings = [
 	  img:'54 WaterfallAmongstTheNight.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -509,7 +509,7 @@ const paintings = [
 	  img:'55 WaterLilies.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -518,7 +518,7 @@ const paintings = [
 	  img:'56 PurpleFlower.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -527,7 +527,7 @@ const paintings = [
 	  img:'57 TwoDeers.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -536,7 +536,7 @@ const paintings = [
 	  img:'58 SpaceTree.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -545,7 +545,7 @@ const paintings = [
 	  img:'59 FlyingAway.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -554,7 +554,7 @@ const paintings = [
 	  img:'60 BorderlineGood.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -563,7 +563,7 @@ const paintings = [
 	  img:'61 ConqueringTheWall.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -572,7 +572,7 @@ const paintings = [
 	  img:'62 TheWorldAbove.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -581,7 +581,7 @@ const paintings = [
 	  img:'63 HarryPotterEmblem.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -590,7 +590,7 @@ const paintings = [
 	  img:'64 TheLastEC.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -599,7 +599,7 @@ const paintings = [
 	  img:'65 Colorize.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -608,7 +608,7 @@ const paintings = [
 	  img:'66 MoreTreasuresThanPockets.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -617,7 +617,7 @@ const paintings = [
 	  img:'67 Bluejay.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -626,7 +626,7 @@ const paintings = [
 	  img:'68 CrapNebulaOverCalmLake.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	},
@@ -635,7 +635,7 @@ const paintings = [
 	  img:'69 900NauticalMilesAway.jpg',
 	  price:80,
 	  sold:true,
-	  material:'oil on canvas',
+	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'This is the description. You can write about the painting here!'  
 	}
@@ -699,7 +699,7 @@ function printOnePainting(ext,postname){
 							` + avail + `
 						</div>
 						<div class='paintingsize'>
-							` + paintings[i].size + ` <br />
+							Size: ` + paintings[i].size + ` <br />
 							` + paintings[i].material + `
 						</div><br /> <br />
 						<div class='paintingdescription'>
