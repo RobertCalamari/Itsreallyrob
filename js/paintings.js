@@ -687,11 +687,11 @@ function printOnePainting(ext,postname){
 			}
 			return `
 				<div class='paintingbox'>
-					<div class='paintingimage'>
-						<img src='` + ext + `/img/paintings/` + paintings[i].img + `' id='../../img/paintings/` + paintings[i].img + `' class="biggerpic" style="padding: 0px 2px 2px 2px;" alt="PIC" height=auto width="320" onclick="picBig(this.id)">
-					</div>
 					<div class='paintingtitle'>
 						` + paintings[i].name + `
+					</div>
+					<div class='paintingimage'>
+						<img src='` + ext + `/img/paintings/` + paintings[i].img + `' id='../../img/paintings/` + paintings[i].img + `' class="biggerpic" style="padding: 0px 2px 2px 2px;" alt="PIC" height=auto width="320" onclick="picBig(this.id)">
 					</div>
 					<div class='paintinginfo'>
 						<div class='paintingprice'>
