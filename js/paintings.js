@@ -745,7 +745,7 @@ function printHomeSlideshow(ext,wid){
   		</div>
   		<div class="mySlides fade">
     		<div class="numbertext">4 / 4</div>
-    			<img src="` + ext + `/img/paintings/` + featpaintings[3].img + `" class="slideshowpaintings" id="` + featpaintings[3].name + `" style="width:` + wid + `px; height:` + wid + `px">
+    			<img src="` + ext + `/img/paintings/` + featpaintings[3].img + `" class="slideshowpaintings" id="` + featpaintings[3].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Featured</div>
   		</div>
 
