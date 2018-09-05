@@ -127,6 +127,12 @@ body {
 	opacity: .5;
 }
 
+.slideshowpaintings:hover {
+	opacity: .9;
+	cursor: hand;
+    cursor: pointer;
+}
+
 .postdate {
 	color:#5b5858;
 	font-size:11px;
