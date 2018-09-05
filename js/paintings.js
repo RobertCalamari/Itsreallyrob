@@ -3,164 +3,164 @@ const paintings = [
 	{
 	  name:'A Lone Barn',
 	  img:'1 ALoneBarn.jpg',
-	  price:20,
+	  price:5,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Cliff Side',
 	  img:'2 CliffSide.jpg',
-	  price:80,
+	  price:5,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'A Journey Left By The Adventurer',
 	  img:'3 AJourneyLeftByTheAdventurer.jpg',
-	  price:80,
+	  price:5,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Saavy Tsunami',
 	  img:'4 SavvyTsunami.jpg',
-	  price:80,
+	  price:10,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Woman Alone',
 	  img:'5 WomanAlone.jpg',
 	  price:80,
-	  sold:false,
+	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Awaiting Death',
 	  img:'6 AwaitingDeath.jpg',
-	  price:80,
+	  price:10,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Skater Boi',
 	  img:'7 SkaterBoi.jpg',
-	  price:80,
-	  sold:false,
+	  price:15,
+	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'The Lone Tree Weeps During Sunset',
 	  img:'8 TheLoneTreeWeepsDuringSunset.jpg',
-	  price:80,
+	  price:20,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'When Death Arises',
 	  img:'9 WhenDeathArises.jpg',
-	  price:80,
-	  sold:true,
+	  price:10,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Floating Island',
 	  img:'10 FloatingIsland.jpg',
-	  price:80,
-	  sold:true,
+	  price:15,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Alone',
 	  img:'11 Alone.jpg',
-	  price:80,
-	  sold:true,
+	  price:20,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Fall Time By The Lake',
 	  img:'12 FallTimeByTheLake.jpg',
-	  price:80,
-	  sold:true,
+	  price:25,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Cowboy At Dusk Time',
 	  img:'13 CowboyAtDuskTime.jpg',
-	  price:80,
+	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Nighttime Lake',
 	  img:'13 NighttimeLake.jpg',
-	  price:80,
-	  sold:true,
+	  price:25,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Chasing',
 	  img:'14 Chasing.jpg',
-	  price:80,
-	  sold:true,
+	  price:15,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'I Hate Painting Trees',
 	  img:'15 IHatePaintingTrees.jpg',
-	  price:80,
+	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Fox',
 	  img:'16 Fox.jpg',
-	  price:80,
+	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Water Lillies',
 	  img:'16 WaterLillies.jpg',
-	  price:80,
-	  sold:true,
+	  price:25,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'The Far Beyond',
@@ -169,124 +169,124 @@ const paintings = [
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'L.A. Sunset',
 	  img:'18 LASunset.jpg',
-	  price:80,
+	  price:40,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'White Flowers Flourish In Spring',
 	  img:'19 WhiteFlowersFlourishInSpring.jpg',
-	  price:80,
+	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'The Morning Aftermath',
 	  img:'20 TheMorningAftermath.jpg',
-	  price:80,
-	  sold:true,
+	  price:40,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'The Infinite Garden',
 	  img:'21 TheInfiniteGarden.jpg',
-	  price:80,
-	  sold:true,
+	  price:50,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Balancing Good And Even',
 	  img:'22 BalancingGoodAndEven.jpg',
-	  price:80,
-	  sold:true,
+	  price:40,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Bird Bath Break',
 	  img:'23 BirdBathBreak.jpg',
-	  price:80,
-	  sold:true,
+	  price:50,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Theres Always More To Explore',
 	  img:'24 TheresAlwaysMoreToExplore.jpg',
-	  price:80,
-	  sold:true,
+	  price:50,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Peeping Tom',
 	  img:'25 PeepingTom.jpg',
-	  price:80,
+	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Dark Daisy',
 	  img:'26 DarkDaisy.jpg',
-	  price:80,
-	  sold:true,
+	  price:50,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Super Mario 64',
 	  img:'27 SuperMario64.jpg',
-	  price:80,
-	  sold:true,
+	  price:75,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Love Comes In All Shapes And Sizes',
 	  img:'28 LoveComesInAllShapesAndSizes.jpg',
-	  price:80,
+	  price:40,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'I Call This One Bold And Brash',
 	  img:'29 ICallThisOneBoldAndBrash.JPG',
-	  price:80,
-	  sold:true,
+	  price:40,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Mysterious Night',
 	  img:'30 MysteriousNight.jpg',
-	  price:80,
-	  sold:true,
+	  price:200,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Beach Bum Days',
@@ -295,34 +295,34 @@ const paintings = [
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'City Of Love',
 	  img:'32 CityOfLove.jpg',
-	  price:80,
+	  price:40,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Origins',
 	  img:'33 Origins.jpg',
-	  price:80,
+	  price:75,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Red Hot Chili Peppers',
 	  img:'34 RedHotChiliPeppers.jpg',
-	  price:80,
+	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'The Crap Nebula',
@@ -331,133 +331,133 @@ const paintings = [
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Red Delicious Apple',
 	  img:'36 RedDeliciousApple.jpg',
-	  price:80,
+	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'My Dad',
 	  img:'37 MyDad.jpg',
-	  price:80,
+	  price:'Priceless',
 	  sold:true,
-	  material:'Oil on Canvas',
+	  material:'Acrylic on Tile',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Dreary Trees',
 	  img:'38 DrearyTrees.jpg',
 	  price:80,
-	  sold:true,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Pumpkin',
 	  img:'39 Pumpkin.jpg',
-	  price:80,
+	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Surfer Girl',
 	  img:'40 SurferGirl.JPG',
-	  price:80,
-	  sold:true,
+	  price:50,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Walking For Miles',
 	  img:'41 WalkingForMiles.jpg',
-	  price:80,
+	  price:75,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Observing',
 	  img:'42 Observing.jpg',
-	  price:80,
+	  price:75,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Tweeting',
 	  img:'43 Tweeting.jpg',
-	  price:80,
-	  sold:true,
+	  price:60,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Hawaii Beach',
 	  img:'44 HawaiiBeach.jpg',
-	  price:80,
+	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Blue Daisy',
 	  img:'45 BlueDaisy.jpg',
-	  price:80,
+	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Red Rose',
 	  img:'46 RedRose.jpg',
-	  price:80,
+	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Family Photo',
 	  img:'47 FamilyPhoto.jpg',
-	  price:80,
+	  price:'Priceless',
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Looking Up',
 	  img:'48 LookingUp.jpg',
-	  price:80,
+	  price:75,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Western Sky',
 	  img:'49 WesternSky.jpg',
-	  price:80,
-	  sold:true,
+	  price:200,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Midnight Bay',
@@ -466,115 +466,115 @@ const paintings = [
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Fishing',
 	  img:'51 Fishing.jpg',
-	  price:80,
+	  price:70,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Sunflower',
 	  img:'52 Sunflower.jpg',
-	  price:80,
+	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'New Jersey Beach',
 	  img:'53 NewJerseyBeach.jpg',
-	  price:80,
+	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Waterfall Amongst The Night',
 	  img:'54 WaterfallAmongstTheNight.jpg',
-	  price:80,
+	  price:40,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
-	  name:'Water Lilies',
+	  name:'Water Lilies 2',
 	  img:'55 WaterLilies.jpg',
 	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Purple Flower',
 	  img:'56 PurpleFlower.jpg',
-	  price:80,
+	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Two Deers',
 	  img:'57 TwoDeers.jpg',
-	  price:80,
-	  sold:true,
+	  price:100,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Space Tree',
 	  img:'58 SpaceTree.jpg',
-	  price:80,
+	  price:25,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Flying Away',
 	  img:'59 FlyingAway.jpg',
-	  price:80,
+	  price:40,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Borderline Good',
 	  img:'60 BorderlineGood.jpg',
-	  price:80,
-	  sold:true,
+	  price:50,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Conquering The Wall',
 	  img:'61 ConqueringTheWall.jpg',
-	  price:80,
-	  sold:true,
+	  price:40,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'The World Above',
 	  img:'62 TheWorldAbove.jpg',
-	  price:80,
+	  price:100,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Harry Potter Emblem',
@@ -583,25 +583,25 @@ const paintings = [
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'The Last EC',
 	  img:'64 TheLastEC.jpg',
-	  price:80,
+	  price:1,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Colorize',
 	  img:'65 Colorize.jpg',
-	  price:80,
-	  sold:true,
+	  price:60,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'More Treasures Than Pockets',
@@ -610,34 +610,34 @@ const paintings = [
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Bluejay',
 	  img:'67 Bluejay.jpg',
-	  price:80,
-	  sold:true,
+	  price:60,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'Crap Nebula Over Calm Lake',
 	  img:'68 CrapNebulaOverCalmLake.jpg',
-	  price:80,
-	  sold:true,
+	  price:50,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	},
 	{
 	  name:'900 Nautical Miles Away',
 	  img:'69 900NauticalMilesAway.jpg',
-	  price:80,
-	  sold:true,
+	  price:150,
+	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'20x20',
-	  description: 'This is the description. You can write about the painting here!'  
+	  description: 'An Original Calamari'  
 	}
 ];
 
