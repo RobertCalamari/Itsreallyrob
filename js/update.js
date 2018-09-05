@@ -301,7 +301,7 @@ function individualPaintingPage(screen,ext,postname){
 			return `
 				<div class='middlepanel' >	
 					<div style='text-align:left; padding:10px 0 0 0px '>
-						<div style='width:500px;text-align: center;'>
+						<div style='width:500px;text-align: center;margin:auto'>
 							` + printOnePainting(ext,postname) + `
 						</div>
 					</div>
@@ -311,7 +311,7 @@ function individualPaintingPage(screen,ext,postname){
 		return `		
 			<div style='padding: 5px 8px 5px 8px'>
 				<div style='text-align:left; padding:10px 0 0 0 '>
-					<div style='width:400px;text-align: center;'>
+					<div style='width:400px;text-align: center;margin:auto'>
 						` + printOnePainting(ext,postname) + `
 					</div>
 				</div>
@@ -321,7 +321,7 @@ function individualPaintingPage(screen,ext,postname){
 		return `			
 			<div style='padding: 5px 12px 5px 12px'>	
 				<div style='text-align:left; padding:10px 0 0 0 '>
-					<div style='width:300px;text-align: center;'>
+					<div style='width:300px;text-align: center;margin:auto'>
 						` + printOnePainting(ext,postname) + `
 					</div>
 				</div>
