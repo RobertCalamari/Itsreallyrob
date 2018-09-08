@@ -672,17 +672,17 @@ function printAllPaintings(ext){
 		let real = i-1;
 		let issold = "";
 		if(paintings[real].sold == true){
-			issold = "Sold";
+			issold = '<img src="' + ext + '/img/sold.png"  alt="PIC" height="130" width="130">';
 		}
 		content+=`
-			<a href="` + ext + `/pages/painting/paintingpage.html?name=` + paintings[real].name + `">
+			<div class="homepics" style="display: inline-block;"><a href="` + ext + `/pages/painting/paintingpage.html?name=` + paintings[real].name + `" >
 				<div style='position:relative; display: inline-block;'>				
-					<img src="` + ext + `/img/paintings/` + paintings[real].img + `" class="homepics" style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
-					<div style='color:red; position: absolute; top:7px; left:7px;'>
-						` + issold + `	
+					<img src="` + ext + `/img/paintings/` + paintings[real].img + `"  style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
+					<div style='color:red; position: absolute; top:-2px; left:0px;'>
+						` + issold + `
 					</div>	
 				</div>	
-			</a>`;
+			</a></div>`;
 	}
 	return content;
 }
