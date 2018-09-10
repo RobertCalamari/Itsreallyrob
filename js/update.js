@@ -493,7 +493,7 @@ function projectData(screen, sourcefile){
 						</div>
 					</div>
 					<div style='text-align:center; padding:10px 0 0 0px '>
-						` + printAllPaintings(sourcefile) + `
+						` + printAllProjects(sourcefile) + `
 					</div>
 				</div>
 		`;
@@ -502,7 +502,7 @@ function projectData(screen, sourcefile){
 			<div style='padding: 5px 12px 5px 12px'>	
 				<div class='myheading1'>Projects</br></br>					
 				<div style='padding:10px 0 0 0 '>
-						` + printAllPaintings(sourcefile) + `
+						` + printAllProjects(sourcefile) + `
 				</div>
 			</div>	
 		`;
@@ -511,7 +511,7 @@ function projectData(screen, sourcefile){
 			<div style='padding: 5px 12px 5px 12px'>	
 				<div class='myheading1'>Projects</br></br>					
 				<div style='padding:10px 0 0 0 '>
-						` + printAllPaintings(sourcefile) + `
+						` + printAllProjects(sourcefile) + `
 				</div>
 			</div>	
 		`;

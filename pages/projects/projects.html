@@ -11,6 +11,7 @@
 		 <script type="text/javascript" src="../../js/update.js" ></script>    
 		 <script type="text/javascript" src="../../js/paintings.js" ></script>   
 		 <script type="text/javascript" src="../../js/blog.js" ></script> 
+		 <script type="text/javascript" src="../../js/projects.js" ></script> 
 		 
 	</head>
 	<body>
@@ -44,7 +45,7 @@
 	//ext is the reference to where this file is to index.html
 	const ext = "../..";
 	loadNav(ext);
-	determineGameSize(ext);
+	determineProjectsSize(ext);
 
 	const currentWidth  = document.documentElement.clientWidth;
 	window.onresize = resize;
@@ -53,7 +54,7 @@
 	{
 		const newWidth  = document.documentElement.clientWidth;
 		if(currentWidth != newWidth){
-			determineGameSize(ext);
+			determineProjectsSize(ext);
 		}
 	 	
 	}
