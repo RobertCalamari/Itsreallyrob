@@ -4,7 +4,7 @@ body {
 	margin-right: 0px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	font-family: 'Proxima Nova Soft', 'Helvetica Neue', sans-serif;
+	font-family: Faune-Regular, sans-serif;
 }
 
 .content {
@@ -76,6 +76,7 @@ body {
     display: inline-block;
     font-size: 16px;
 	border-radius: 5px;
+	font-family: Faune-Regular, sans-serif;
 }
 
 .infoboxcontentbutton:hover {
@@ -293,6 +294,7 @@ a, a:hover, a:active, a:visited, a:focus {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-family: Faune-Regular, sans-serif;
 }
 
 .button1:hover {
@@ -314,6 +316,7 @@ a, a:hover, a:active, a:visited, a:focus {
     display: inline-block;
     font-size: 16px;
 	border-radius: 2px;
+	font-family: Faune-Regular, sans-serif;
 }
 
 .button2:hover {
@@ -321,6 +324,13 @@ a, a:hover, a:active, a:visited, a:focus {
     cursor: hand;
     cursor: pointer;
     opacity: .9;
+}
+
+ /* Fonts /////////////////////////////////////////////////////////////*/
+
+@font-face {
+font-family: Faune-Regular;
+src: url(../fonts/Faune-TextRegular.otf);
 }
 
  /* The slide show css /////////////////////////////////////////////////////////////*/

@@ -1,12 +1,13 @@
 //This is the code to print out the footer ribbon
-const footerdata = 
-	`<div class='information' id='information'>
-		<div style='float:left'>Robert Calamari 2018 
-		</div>
+function footerData(sourcefile){
+	return `<div class='information' id='information'>
 		<div style='float:right'>
+			Robert Calamari 2018
 		</div>
+
 	</div>
 `;
+}
 
 //This is the code to edit the about me section on the front page
 const aboutmeinfo = "Hello, my name is Robert. I majored in Information Technology and minored in Computer Science at the New Jersey Institute of Technology. I have always enjoyed challenges, so in my spare time I was either playing videogames or coding. While working in IT, I determined that coding was what I wanted to do, but I did not know where to start. I decided to design and create this website to showcase my progress as I advance in my knowledge of coding. Come along with me as I post details about my progress and efforts. <br/><br/> I have also had an interest in painting for many years. I paint in my free time, consistently discovering and implementing new techniques. Every painting I have made is available for sale if not already sold. If interested, I also do custom painting orders. <br/><br/> I am currently working in IT as well as doing freelancing work. If you need or want a website, I can make it exactly how you'd like. For prices and details, please email me at <b>rjcalamari@gmail.com</b>. ";	
@@ -219,7 +220,7 @@ function homeContentData(screen, sourcefile){
 function blogContentData(screen, sourcefile, page){
 	if(screen===0){
 			return `
-				<div class='middlepanel' >	
+				<div class='middlepanel' style='padding:0 0 0 0'>	
 					<div style='text-align:left; padding:10px 0 0 0px '>
 						<div class='myheading1'>Current Articles</br></br>
 						</div>
@@ -228,7 +229,7 @@ function blogContentData(screen, sourcefile, page){
 						</div>
 					</div>
 				` + checkIfMoreLeft(page) + `
-			</div>
+				</div>
 			`;
 	}else if(screen===1){
 		return `
@@ -537,7 +538,7 @@ function determineHomeSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML= footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else if(vpWidth >=430 && vpWidth <=1029){
 		//Header
@@ -550,7 +551,7 @@ function determineHomeSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else{
 		//Header
@@ -563,7 +564,7 @@ function determineHomeSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 }
 
@@ -584,7 +585,7 @@ function determineBlogSize(ext,page){
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML= footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else if(vpWidth >=430 && vpWidth <=1029){
 		//Header
@@ -594,7 +595,7 @@ function determineBlogSize(ext,page){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else{
 		//Header
@@ -604,7 +605,7 @@ function determineBlogSize(ext,page){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 }
 
@@ -624,7 +625,7 @@ function determinePaintingSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML= footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else if(vpWidth >=430 && vpWidth <=1029){
 		//Header
@@ -634,7 +635,7 @@ function determinePaintingSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else{
 		//Header
@@ -644,7 +645,7 @@ function determinePaintingSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 }
 
@@ -664,7 +665,7 @@ function determineGameSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML= footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else if(vpWidth >=430 && vpWidth <=1029){
 		//Header
@@ -674,7 +675,7 @@ function determineGameSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else{
 		//Header
@@ -684,7 +685,7 @@ function determineGameSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 }
 
@@ -704,7 +705,7 @@ function determineAboutSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML= footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else if(vpWidth >=430 && vpWidth <=1029){
 		//Header
@@ -714,7 +715,7 @@ function determineAboutSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else{
 		//Header
@@ -724,7 +725,7 @@ function determineAboutSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 }
 
@@ -744,7 +745,7 @@ function determineStoreSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML= footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else if(vpWidth >=430 && vpWidth <=1029){
 		//Header
@@ -754,7 +755,7 @@ function determineStoreSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else{
 		//Header
@@ -764,7 +765,7 @@ function determineStoreSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 }
 
@@ -780,7 +781,7 @@ function printArticlePage(ext,postname){
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML= footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else if(vpWidth >=430 && vpWidth <=1029){
 		//Header
@@ -790,7 +791,7 @@ function printArticlePage(ext,postname){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else{
 		//Header
@@ -800,7 +801,7 @@ function printArticlePage(ext,postname){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 }
 
@@ -816,7 +817,7 @@ function printPaintingPage(ext,postname){
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML= footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else if(vpWidth >=430 && vpWidth <=1029){
 		//Header
@@ -826,7 +827,7 @@ function printPaintingPage(ext,postname){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else{
 		//Header
@@ -836,7 +837,7 @@ function printPaintingPage(ext,postname){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 }
 
@@ -852,7 +853,7 @@ function determineProjectsSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML= projectData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML= footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else if(vpWidth >=430 && vpWidth <=1029){
 		//Header
@@ -862,7 +863,7 @@ function determineProjectsSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 	else{
 		//Header
@@ -872,7 +873,7 @@ function determineProjectsSize(ext){
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
-		document.getElementById('footer').innerHTML = footerdata;
+		document.getElementById('footer').innerHTML = footerData(ext);
 	}
 }
 
