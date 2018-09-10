@@ -217,6 +217,20 @@ body {
 	color:white;
 }
 
+.storecontent {
+	display:inline-block;
+	width:30%;
+	height:250px;
+	/*background-color:#737373;*/
+	border: 3px solid #726f6fcc;
+	position:relative;	
+	padding:0px 0 20px 0;
+}
+
+.storebutton {
+	padding:10px 0 10px 0;
+}
+
 a, a:hover, a:active, a:visited, a:focus {
     text-decoration:none;
 }
@@ -273,8 +287,8 @@ a, a:hover, a:active, a:visited, a:focus {
     background-color: #000000; 
     border: none;
     color: white;
-    padding: 10px 20px;
-    width: 150px;
+    padding: 15px 20px 15px 20px;
+    width: 170px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
 
-		 <title>Itsreallyrob</title>
+		 <title>Robert Calamari</title>
 		 <link href="../../css/style.css" rel="stylesheet">
 		 <script type="text/javascript" src="../../js/navbar.js" ></script>
 		 <script type="text/javascript" src="../../js/update.js" ></script>    
@@ -46,7 +46,7 @@
 	var postname = getJsonFromUrl(url)["name"];
 	//The second input is referring what painting to print
 	printPaintingPage(ext,postname);
-
+	document.title = printPaintingTitle(ext,postname);
 	const currentWidth  = document.documentElement.clientWidth;
 	window.onresize = resize;
 	//Checks if the width of the screen has changed

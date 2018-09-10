@@ -717,7 +717,7 @@ function printOnePainting(ext,postname){
 							` + paintings[i].description + `
 						</div>
 						<br /> <br />
-						*The site is still being made, so if you would like to purchase this painting please email me at rjcalamari@gmail.com. All prices negotiable.
+						*The site is still being made, so if you would like to purchase this painting please email me at rjcalamari@gmail.com.
 					</div>
 				</div><br />
 			`;
@@ -726,35 +726,48 @@ function printOnePainting(ext,postname){
 	return "That painting does not exist!";
 }
 
-
+function printPaintingTitle(ext,postname){
+	for(let i=0;i<paintings.length;i++){
+		if(postname==paintings[i].name){
+			return paintings[i].name + " | Robert Calamari";
+		}
+	}
+	return "";
+}
 
 //This is all of the code for the slide show://////////////////////////////////////
 function printHomeSlideshow(ext,wid){
 	//This creates an array for the featured paintings. the second input is how many paintings you want to display
 	const featpaintings=[];
-	findFeaturedPainting(featpaintings,4, ext);
+	findFeaturedPainting(featpaintings,5, ext);
+
 	return `
 	<div class="slideshow-container">
 
   		<div class="mySlides fade">
-   	 		<div class="numbertext">1 / 4</div>
+   	 		<div class="numbertext">1 / 5</div>
     			<img src="` + ext + `/img/paintings/` + paintings[paintings.length-1].img + `" class="slideshowpaintings" id="` + paintings[paintings.length-1].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Newest</div>
   		</div>
   		<div class="mySlides fade">
-    		<div class="numbertext">2 / 4</div>
+    		<div class="numbertext">2 / 5</div>
     			<img src="` + ext + `/img/paintings/` + featpaintings[1].img + `" class="slideshowpaintings" id="` + featpaintings[1].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Featured</div>
   		</div>
 
   		<div class="mySlides fade">
-    		<div class="numbertext">3 / 4</div>
+    		<div class="numbertext">3 / 5</div>
     			<img src="` + ext + `/img/paintings/` + featpaintings[2].img + `" class="slideshowpaintings" id="` + featpaintings[2].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Featured</div>
   		</div>
   		<div class="mySlides fade">
-    		<div class="numbertext">4 / 4</div>
+    		<div class="numbertext">4 / 5</div>
     			<img src="` + ext + `/img/paintings/` + featpaintings[3].img + `" class="slideshowpaintings" id="` + featpaintings[3].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
+    		<div class="text">Featured</div>
+  		</div>
+		<div class="mySlides fade">
+    		<div class="numbertext">5 / 5</div>
+    			<img src="` + ext + `/img/paintings/` + featpaintings[4].img + `" class="slideshowpaintings" id="` + featpaintings[4].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Featured</div>
   		</div>
 
@@ -770,6 +783,7 @@ function printHomeSlideshow(ext,wid){
   		<span class="dot" onclick="currentSlide(2)"></span>
  		<span class="dot" onclick="currentSlide(3)"></span>
  		<span class="dot" onclick="currentSlide(4)"></span>
+ 		<span class="dot" onclick="currentSlide(5)"></span>
 	</div> `;
 
 }
@@ -804,7 +818,7 @@ function showSlides(n) {
 } 
 
 function goToPainting(name) {
-	window.location.href = '/pages/painting/paintingpage.html?name=' + name;
+	window.location.href = './pages/painting/paintingpage.html?name=' + name;
 }
 
 

@@ -9,7 +9,7 @@ const footerdata =
 `;
 
 //This is the code to edit the about me section on the front page
-const aboutmeinfo = "Hello, my name is Robert. I majored in Information Technology and minored in Computer Science from the New Jersey Institute of Technology. I have always enjoyed challenges, so in my spare time I was either playing videogames or coding. While working in IT, I found that coding was what I wanted to do, but I did not know where to start. I decided to make this website to showcase my progress as I advance in my knowledge of coding. Come along with me as I post details about my progress and what I did that day. <br/><br/> I have also had an interest in painting since 2016. Only still a beginner, I paint in my free time, still discovering and attempting new techniques. Every painting I have made is available for sale if it has not already been sold yet. If interested, I also do custom painting orders. Email me directly at rjcalamari@gmail.com to discuss more.";	
+const aboutmeinfo = "Hello, my name is Robert. I majored in Information Technology and minored in Computer Science at the New Jersey Institute of Technology. I have always enjoyed challenges, so in my spare time I was either playing videogames or coding. While working in IT, I determined that coding was what I wanted to do, but I did not know where to start. I decided to design and create this website to showcase my progress as I advance in my knowledge of coding. Come along with me as I post details about my progress and efforts. <br/><br/> I have also had an interest in painting for many years. I paint in my free time, consistently discovering and implementing new techniques. Every painting I have made is available for sale if not already sold. If interested, I also do custom painting orders. <br/><br/> I am currently working in IT as well as doing freelancing work. If you need or want a website, I can make it exactly how you'd like. For prices and details, please email me at <b>rjcalamari@gmail.com</b>. ";	
 
 //This is the code to print out the contact ribbon
 function contactData(sourcefile){
@@ -20,7 +20,7 @@ function contactData(sourcefile){
 				Email:<br/> rjcalamari@gmail.com
 			</div>
 		</div>		
-		<a href='javascript:emailBox();'><img src='` + sourcefile + `/img/mail.png' class='contactpics'  alt='Email' height='53' width='53'></a>
+		<a href='mailto:rjcalamari@gmail.com'><img src='` + sourcefile + `/img/mail.png' class='contactpics'  alt='Email' height='53' width='53'></a>
 		<a href='https://instragram.com/itsreallyrobert'><img src='` + sourcefile + `/img/instagram.png' class='contactpics'  alt='Instagram' height='50' width='50'></a>
 		<a href='https://github.com/robertcalamari'><img src='` + sourcefile + `/img/github.svg' class='contactpics'  alt='Github' height='50' width='50'></a>		
 	</div>`;
@@ -217,7 +217,6 @@ function homeContentData(screen, sourcefile){
 
 //This is the code that appears on the blog page
 function blogContentData(screen, sourcefile, page){
-	//0,1,2 are the first page, while 3,4,5 are the other pages
 	if(screen===0){
 			return `
 				<div class='middlepanel' >	
@@ -233,8 +232,8 @@ function blogContentData(screen, sourcefile, page){
 			`;
 	}else if(screen===1){
 		return `
-			<div style='border-bottom: 1px solid #b8b8b8; padding: 5px 8px 5px 8px'>	<!--This is the blog section.-->
-				<b>The Latest</b></br>					
+			<div style='padding: 5px 25px 5px 25px'>	<!--This is the blog section.-->
+				<div class='myheading1'>Current Articles</br></br>					
 				<div style='text-align:left; padding:10px 0 0 0 '>
 			
 					<div id='blogcontent'>
@@ -246,8 +245,8 @@ function blogContentData(screen, sourcefile, page){
 		`;
 	}else if(screen===2){
 		return `
-			<div style='padding: 5px 12px 5px 12px'>	<!--This is the blog section.-->
-				<b>The Latest</b></br>					
+			<div style='padding: 5px 12px 5px 12px'>	
+				<div class='myheading1'>Current Articles</br></br>					
 				<div style='text-align:left; padding:10px 0 0 0 '>
 		
 					<div id='blogcontent'>
@@ -274,7 +273,7 @@ function blogArticlePage(screen,ext,postname){
 			`;
 	}else if(screen===1){
 		return `		
-			<div style='padding: 5px 8px 5px 8px'>
+			<div style='padding: 5px 25px 5px 25px'>
 				<div style='text-align:left; padding:10px 0 0 0 '>
 					<div id='blogcontent'>
 						` + printArticle(ext,postname) + `
@@ -309,7 +308,7 @@ function individualPaintingPage(screen,ext,postname){
 			`;
 	}else if(screen===1){
 		return `		
-			<div style='padding: 5px 8px 5px 8px'>
+			<div style='padding: 5px 25px 5px 25px'>
 				<div style='text-align:left; padding:10px 0 0 0 '>
 					<div style='width:400px;text-align: center;margin:auto'>
 						` + printOnePainting(ext,postname) + `
@@ -332,7 +331,6 @@ function individualPaintingPage(screen,ext,postname){
 
 //This is the code that appears on the painting page
 function paintingContentData(screen, sourcefile){
-	//0,1,2 are the first page, while 3,4,5 are the other pages
 	if(screen===0){
 		return `
 				<div class='middlepanel' >	
@@ -347,8 +345,8 @@ function paintingContentData(screen, sourcefile){
 		`;
 	}else if(screen===1){
 		return `
-			<div style='border-bottom: 1px solid #b8b8b8; padding: 5px 8px 5px 8px'>	
-				<b>The Latest</b></br>					
+			<div style='padding: 5px 12px 5px 12px'>	
+				<div class='myheading1'>Rob\'s Paintings</br></br>					
 				<div style='padding:10px 0 0 0 '>
 						` + printAllPaintings(sourcefile) + `
 				</div>
@@ -357,7 +355,7 @@ function paintingContentData(screen, sourcefile){
 	}else if(screen===2){
 		return `
 			<div style='padding: 5px 12px 5px 12px'>	
-				<b>The Latest</b></br>					
+				<div class='myheading1'>Rob\'s Paintings</br></br>					
 				<div style='padding:10px 0 0 0 '>
 						` + printAllPaintings(sourcefile) + `
 				</div>
@@ -366,12 +364,89 @@ function paintingContentData(screen, sourcefile){
 	}
 }
 
-//This is the code that appears on the painting page
-function aboutData(screen, sourcefile){
-	//0,1,2 are the first page, while 3,4,5 are the other pages
+//This is the code that appears on the store page
+function storeData(screen, sourcefile){
 	if(screen===0){
 		return `
-				<div class='middlepanel' style='padding:35px 0 0 0;' >	
+				<div class='middlepanel' >	
+					
+					<div id='storecontent' style='text-align:center; padding:15px 0 35px 0px '>
+						<div style='text-align:center; padding:0 0 5px 0px '>
+							<div class='myheading1'>Store</br>
+							</div>
+						</div>	
+						
+						<div id='storepaintings' class='storebutton'>
+							
+							<input type='button' class='button1' value='Paintings' onclick='goPainting("` + sourcefile + `")'>
+						</div>
+						<div id='storeshirts' class='storebutton'>
+							
+							<input type='button' class='button1' value='Shirts' onclick='storeShirts("` + sourcefile + `")'>
+						</div>
+						<div id='storewebsites' class='storebutton'>
+							
+							<input type='button' class='button1' value='Freelancing' onclick='storeWebsites("` + sourcefile + `")'>
+						</div>
+					</div>
+				</div>
+		`;
+	}else if(screen===1){
+		return `
+			<div style='padding: 5px 25px 5px 25px'>	
+				<div id='storecontent' style='text-align:center; padding:15px 0 35px 0px '>
+						<div style='text-align:center; padding:0 0 5px 0px '>
+							<div class='myheading1'>Store</br>
+							</div>
+						</div>	
+						
+						<div id='storepaintings' class='storebutton'>
+							
+							<input type='button' class='button1' value='Paintings' onclick='goPainting("` + sourcefile + `")'>
+						</div>
+						<div id='storeshirts' class='storebutton'>
+							
+							<input type='button' class='button1' value='Shirts' onclick='storeShirts("` + sourcefile + `")'>
+						</div>
+						<div id='storewebsites' class='storebutton'>
+							
+							<input type='button' class='button1' value='Freelancing' onclick='storeWebsites("` + sourcefile + `")'>
+						</div>
+					</div>
+			</div>	
+		`;
+	}else if(screen===2){
+		return `
+			<div style='padding: 5px 12px 5px 12px'>	
+				<div id='storecontent' style='text-align:center; padding:15px 0 35px 0px '>
+						<div style='text-align:center; padding:0 0 5px 0px '>
+							<div class='myheading1'>Store</br>
+							</div>
+						</div>	
+						
+						<div id='storepaintings' class='storebutton'>
+							
+							<input type='button' class='button1' value='Paintings' onclick='goPainting("` + sourcefile + `")'>
+						</div>
+						<div id='storeshirts' class='storebutton'>
+							
+							<input type='button' class='button1' value='Shirts' onclick='storeShirts("` + sourcefile + `")'>
+						</div>
+						<div id='storewebsites' class='storebutton'>
+							
+							<input type='button' class='button1' value='Freelancing' onclick='storeWebsites("` + sourcefile + `")'>
+						</div>
+					</div>
+			</div>	
+		`;
+	}
+}
+
+//This is the code that appears on the about page
+function aboutData(screen, sourcefile){
+	if(screen===0){
+		return `
+				<div class='middlepanel' style='padding:35px 0 35px 0;' >	
 					<div class='myheading2' style='font-size:20px;'> 
 						<img src='../img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
@@ -383,7 +458,7 @@ function aboutData(screen, sourcefile){
 		`;
 	}else if(screen===1){
 		return `
-			<div style='padding: 35px 8px 5px 8px'>	
+			<div style='padding: 35px 8px 35px 8px'>	
 				<div class='myheading2' style='font-size:20px;'> 
 						<img src='../img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
@@ -395,7 +470,7 @@ function aboutData(screen, sourcefile){
 		`;
 	}else if(screen===2){
 		return `
-			<div style='padding: 35px 12px 5px 12px'>	
+			<div style='padding: 35px 12px 35px 12px'>	
 				<div class='myheading2' style='font-size:20px;'> 
 						<img src='../img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
@@ -408,6 +483,40 @@ function aboutData(screen, sourcefile){
 	}
 }
 
+//This is the code that appears on the painting page
+function projectData(screen, sourcefile){
+	if(screen===0){
+		return `
+				<div class='middlepanel' >	
+					<div style='text-align:left; padding:10px 0 0 0px '>
+						<div class='myheading1'>Projects</br>
+						</div>
+					</div>
+					<div style='text-align:center; padding:10px 0 0 0px '>
+						` + printAllPaintings(sourcefile) + `
+					</div>
+				</div>
+		`;
+	}else if(screen===1){
+		return `
+			<div style='padding: 5px 12px 5px 12px'>	
+				<div class='myheading1'>Projects</br></br>					
+				<div style='padding:10px 0 0 0 '>
+						` + printAllPaintings(sourcefile) + `
+				</div>
+			</div>	
+		`;
+	}else if(screen===2){
+		return `
+			<div style='padding: 5px 12px 5px 12px'>	
+				<div class='myheading1'>Projects</br></br>					
+				<div style='padding:10px 0 0 0 '>
+						` + printAllPaintings(sourcefile) + `
+				</div>
+			</div>	
+		`;
+	}
+}
 
 
 //When there is a change in the size of the indow or screen it will update the content to fit it
@@ -631,7 +740,7 @@ function determineStoreSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(0,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML+="";
+		document.getElementById('contentdiv').innerHTML=storeData(0,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -641,7 +750,7 @@ function determineStoreSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(1,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML+="";
+		document.getElementById('contentdiv').innerHTML=storeData(1,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -651,7 +760,7 @@ function determineStoreSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(2,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML+="";
+		document.getElementById('contentdiv').innerHTML=storeData(2,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -724,6 +833,42 @@ function printPaintingPage(ext,postname){
 		document.getElementById('header').innerHTML=headerData(2,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=individualPaintingPage(2,ext,postname);
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerdata;
+	}
+}
+
+function determineProjectsSize(ext){
+	const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
+		
+
+	if(vpWidth >= 1030){
+		//Header
+		document.getElementById('header').innerHTML=headerData(0,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML=projectData(0,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML= projectData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML= footerdata;
+	}
+	else if(vpWidth >=430 && vpWidth <=1029){
+		//Header
+		document.getElementById('header').innerHTML=headerData(1,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML=projectData(1,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerdata;
+	}
+	else{
+		//Header
+		document.getElementById('header').innerHTML=headerData(2,ext);
+		//Content
+		document.getElementById('contentdiv').innerHTML=projectData(2,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
