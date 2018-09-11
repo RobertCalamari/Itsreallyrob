@@ -82,21 +82,21 @@ function infoBoxData(screen,sourcefile){
 	if(screen===0){
 		return `
 			<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-			<div class='infoboxcontentwords'></div> 				
+			<div class='infoboxcontentwords'>Creating more than just what's needed</div> 				
 			<input type='button' class='infoboxcontentbutton' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 		`;
 	}	
 	else if(screen===1){
 		return `
 				<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-				<div class='infoboxcontentwords' style='font-size:25px'></div> 				
+				<div class='infoboxcontentwords' style='font-size:35px'>Creating more than just what's needed</div> 				
 				<input type='button' class='infoboxcontentbutton' style='font-size:12px; width:140px;padding:12px 12px;' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 			`;
 	}
 	else if(screen===2){
 		return `
 			<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-			<div class='infoboxcontentwords' style='font-size:15px'>Welco</div> 				
+			<div class='infoboxcontentwords' style='font-size:15px'>Creating more than just what's needed</div> 				
 			<input type='button' class='infoboxcontentbutton' style='font-size:8px; width:90px;padding:8px 8px;' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 		`;
 	}
