@@ -1,13 +1,13 @@
 const projects = [
 	{
 	  title:"Robert Calamari",
-	  url:"robertcalamari.com",
+	  url:"https://robertcalamari.com",
 	  info:"HTML, CSS, Javascript",
 	  img:"/img/CalamariBlack.png"
 	},
 	{
 	  title:"Beachbox",
-	  url:"robertcalamari.com",
+	  url:"https://beachboxnow.com",
 	  info:"Wordpress",
 	  img:"/img/beachboxlogoblack.png"
 	}
