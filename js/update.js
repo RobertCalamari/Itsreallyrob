@@ -82,21 +82,24 @@ function infoBoxData(screen,sourcefile){
 	if(screen===0){
 		return `
 			<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-			<div class='infoboxcontentwords'></div> 				
+			<div class='infoboxcontentwords'>I\'m Rob</div> 	
+			<div class='infoboxcontentwords2'>A Web Developer</div> 			
 			<input type='button' class='infoboxcontentbutton' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 		`;
 	}	
 	else if(screen===1){
 		return `
 				<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-				<div class='infoboxcontentwords' style='font-size:35px'></div> 				
+				<div class='infoboxcontentwords' style='font-size:50px'>I\'m Rob</div> 	
+				<div class='infoboxcontentwords2' style='font-size:15px'>A Web Developer</div> 			
 				<input type='button' class='infoboxcontentbutton' style='font-size:12px; width:140px;padding:12px 12px;' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 			`;
 	}
 	else if(screen===2){
 		return `
 			<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-			<div class='infoboxcontentwords' style='font-size:15px'></div> 				
+			<div class='infoboxcontentwords' style='font-size:35px'>I\'m Rob</div> 	
+			<div class='infoboxcontentwords2' style='font-size:10px'>A Web Developer</div> 			
 			<input type='button' class='infoboxcontentbutton' style='font-size:8px; width:90px;padding:8px 8px;' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 		`;
 	}
@@ -107,13 +110,35 @@ function infoBoxData(screen,sourcefile){
 function homeContentData(screen, sourcefile){
 	if(screen===0){
 		return `
-			<div class='aboutmepanel' style='padding:75px 0 40px 0;'>
+			<div class='freelancingpanel' style='padding:60px 0 40px 0;'>
+				<div class='middlepanel'>
+					<div style='text-align:left; font-size:20px; padding:0 0 130px 0'>
+						<div style='padding:20px 0 70px 0'>
+							<div style='width:300px; font-family: Faune-Bold, sans-serif;padding:0 0 10px 0; color:#519ac5;font-size:25px;'>
+								Design
+							</div>						
+							<div style='width:300px; color:#5b5858'>
+								I can design the perfect product that you want. I always keep it clean and straight to the point.   
+							</div>
+						</div>
+						<div style='float:right; padding:0 0 0px 0'>
+							<div style='width:300px; font-family: Faune-Bold, sans-serif;padding:0 0 10px 0; color:#519ac5;font-size:25px;'>
+								Development
+							</div>						
+							<div style='width:300px; color:#5b5858'>
+								I always keep up to date with current technology to ensure a fast and working product.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='aboutmepanel' style='padding:30px 0 100px 0;'>
 				<div class='middlepanel'>
 					<div class='myheading2' style='font-size:20px'> 
 						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
 					</div><br/>
-					<div style='text-align:center; font-size:13px; padding:0 0 0 0'>
+					<div style='text-align:center; font-size:13px; color:#5b5858; padding:0 0 0 0'>
 						Developer - Designer - Painter
 						<div style='padding: 30px 0 0 0; text-align:center;'>
 							<input type='button' class='button2' style='font-size:12px;' value='Learn More' onclick='goAbout("` + sourcefile + `")'>				
@@ -123,7 +148,7 @@ function homeContentData(screen, sourcefile){
 			</div>
 			<div class='blogpanel' style='padding:100px 0 60px 0; background-color:#0505051a;'>
 				<div class='middlepanel'>
-					<div class='myheading2' style='font-size:30px'>
+					<div class='myheading2' style='font-size:35px'>
 						Articles
 					</div></br>			
 					<div id='blogcontent' class='blogcontent'>
@@ -134,8 +159,8 @@ function homeContentData(screen, sourcefile){
 					</div>
 				</div>
 			</div>
-			<div class='paintingpanel' style='padding:70px 0 40px 0;'>
-				<div class='myheading2' style='font-size:30px'>
+			<div class='paintingpanel' style='padding:70px 0 70px 0;'>
+				<div class='myheading2' style='font-size:35px'>
 						<a href='./pages/painting/painting.html' class='slideshowtitle'>Paintings</a>
 				</div></br>		
 				` + printHomeSlideshow(sourcefile, 500)   +`
@@ -143,7 +168,27 @@ function homeContentData(screen, sourcefile){
 		`;
 	}else if(screen===1){
 		return `
-			<div class='aboutmepanel' style='padding:70px 0 40px 0;'>
+			<div class='freelancingpanel' style='padding:60px 50px 40px 50px;'>
+				<div style='text-align:left; font-size:20px; padding:0 0 130px 0'>
+					<div style='padding:20px 0 70px 0'>
+						<div style='width:300px; font-family: Faune-Bold, sans-serif;padding:0 0 10px 0; color:#519ac5;font-size:25px;'>
+							Design
+						</div>						
+						<div style='width:300px; color:#5b5858'>
+							I can design the perfect product that you want. I always keep it clean and straight to the point.   
+						</div>
+					</div>
+					<div style='float:right; padding:0 0 0px 0'>
+						<div style='width:300px; font-family: Faune-Bold, sans-serif;padding:0 0 10px 0; color:#519ac5;font-size:25px;'>
+							Development
+						</div>						
+						<div style='width:300px; color:#5b5858'>
+							I always keep up to date with current technology to ensure a fast and working product.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='aboutmepanel' style='padding:30px 0 100px 0;'>
 				<div class='middlepanel'  style='width:90%'>
 					<div class='myheading2' style='font-size:20px'> 
 						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
@@ -170,7 +215,7 @@ function homeContentData(screen, sourcefile){
 					</div>
 				</div>
 			</div>
-			<div class='paintingpanel' style='padding:100px 0 40px 0;'>
+			<div class='paintingpanel' style='padding:60px 0 40px 0;'>
 				<div class='myheading2' style='font-size:30px'>
 						<a href='./pages/painting/painting.html' class='slideshowtitle'>Paintings</a>
 				</div></br>					
@@ -179,7 +224,27 @@ function homeContentData(screen, sourcefile){
 		`;
 	}else if(screen===2){
 		return `
-			<div class='aboutmepanel' style='padding:70px 0 40px 0;'>
+			<div class='freelancingpanel' style='padding:60px 10px 40px 10px;'>
+				<div style='text-align:left; font-size:20px; padding:0 0 130px 0'>
+					<div style='padding:20px 0 70px 0'>
+						<div style='width:300px; font-family: Faune-Bold, sans-serif;padding:0 0 10px 0; color:#519ac5;font-size:25px;'>
+							Design
+						</div>						
+						<div style='width:300px; color:#5b5858'>
+							I can design the perfect product that you want. I always keep it clean and straight to the point.   
+						</div>
+					</div>
+					<div style='float:right; padding:0 0 0px 0'>
+						<div style='width:300px; font-family: Faune-Bold, sans-serif;padding:0 0 10px 0; color:#519ac5;font-size:25px;'>
+							Development
+						</div>						
+						<div style='width:300px; color:#5b5858'>
+								I always keep up to date with current technology to ensure a fast and working product.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='aboutmepanel' style='padding:30px 0 100px 0;'>
 				<div class='middlepanel' style='width:90%'>
 					<div class='myheading2' style='font-size:20px'> 
 						<img src='./img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
@@ -206,7 +271,7 @@ function homeContentData(screen, sourcefile){
 					</div>
 				</div>
 			</div>
-			<div class='paintingpanel' style='padding:100px 0 60px 0;'>
+			<div class='paintingpanel' style='padding:60px 0 60px 0;'>
 				<div class='myheading2' style='font-size:30px'>
 						<a href='./pages/painting/painting.html' class='slideshowtitle'>Paintings</a>
 				</div></br>	
@@ -336,7 +401,7 @@ function paintingContentData(screen, sourcefile){
 		return `
 				<div class='middlepanel' >	
 					<div style='text-align:left; padding:10px 0 0 0px '>
-						<div class='myheading1'>Rob\'s Paintings</br>
+						<div class='myheading1'>Paintings</br>
 						</div>
 					</div>
 					<div style='text-align:center; padding:10px 0 0 0px '>
@@ -347,7 +412,7 @@ function paintingContentData(screen, sourcefile){
 	}else if(screen===1){
 		return `
 			<div style='padding: 5px 12px 5px 12px'>	
-				<div class='myheading1'>Rob\'s Paintings</br></br>					
+				<div class='myheading1'>Paintings</br></br>					
 				<div style='padding:10px 0 0 0 '>
 						` + printAllPaintings(sourcefile) + `
 				</div>
@@ -356,7 +421,7 @@ function paintingContentData(screen, sourcefile){
 	}else if(screen===2){
 		return `
 			<div style='padding: 5px 12px 5px 12px'>	
-				<div class='myheading1'>Rob\'s Paintings</br></br>					
+				<div class='myheading1'>Paintings</br></br>					
 				<div style='padding:10px 0 0 0 '>
 						` + printAllPaintings(sourcefile) + `
 				</div>
