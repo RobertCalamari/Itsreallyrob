@@ -434,76 +434,63 @@ function paintingContentData(screen, sourcefile){
 function storeData(screen, sourcefile){
 	if(screen===0){
 		return `
-				<div class='middlepanel' >	
-					
-					<div id='storecontent' style='text-align:center; padding:15px 0 35px 0px '>
-						<div style='text-align:center; padding:0 0 5px 0px '>
-							<div class='myheading1'>Store</br>
-							</div>
-						</div>	
-						
-						<div id='storepaintings' class='storebutton'>
-							
-							<input type='button' class='button1' value='Paintings' onclick='goPainting("` + sourcefile + `")'>
-						</div>
-						<div id='storeshirts' class='storebutton'>
-							
-							<input type='button' class='button1' value='Shirts' onclick='storeShirts("` + sourcefile + `")'>
-						</div>
-						<div id='storewebsites' class='storebutton'>
-							
-							<input type='button' class='button1' value='Freelancing' onclick='storeWebsites("` + sourcefile + `")'>
-						</div>
+			<div id='storecontent'>
+				<div id='storewebsites' class='storesection' style='background-color:#7cb6e8;'>
+					<div class='storebutton' style='width:70%; padding: 0 0 0 15%'>
+						` + storeWebsites(sourcefile) + `
 					</div>
 				</div>
+				<div id='storeshirts' class='storesection' >
+					<div class='storebutton' style='width:70%;  padding: 0 0 0 15%'>
+						` + storeShirts(sourcefile) + `
+					</div>
+				</div>
+				<div id='storepaintings' class='storesection' style='background-color:#7cb6e8;'>
+					<div class='storebutton' style='width:70%;  padding: 0 0 0 15%'>
+						` + storePaintings(sourcefile) + `
+					</div>
+				</div>
+			</div>
 		`;
 	}else if(screen===1){
 		return `
-			<div style='padding: 5px 25px 5px 25px'>	
-				<div id='storecontent' style='text-align:center; padding:15px 0 35px 0px '>
-						<div style='text-align:center; padding:0 0 5px 0px '>
-							<div class='myheading1'>Store</br>
-							</div>
-						</div>	
-						
-						<div id='storepaintings' class='storebutton'>
-							
-							<input type='button' class='button1' value='Paintings' onclick='goPainting("` + sourcefile + `")'>
-						</div>
-						<div id='storeshirts' class='storebutton'>
-							
-							<input type='button' class='button1' value='Shirts' onclick='storeShirts("` + sourcefile + `")'>
-						</div>
-						<div id='storewebsites' class='storebutton'>
-							
-							<input type='button' class='button1' value='Freelancing' onclick='storeWebsites("` + sourcefile + `")'>
-						</div>
+			<div id='storecontent'>
+				<div id='storewebsites' class='storesection' style='background-color:#7cb6e8;'>
+					<div class='storebutton' style='width:90%; padding: 0 0 0 5%'>
+						` + storeWebsites(sourcefile) + `
 					</div>
-			</div>	
+				</div>
+				<div id='storeshirts' class='storesection' >
+					<div class='storebutton' style='width:90%;  padding: 0 0 0 5%'>
+						` + storeShirts(sourcefile) + `
+					</div>
+				</div>
+				<div id='storepaintings' class='storesection' style='background-color:#7cb6e8;'>
+					<div class='storebutton' style='width:90%;  padding: 0 0 0 5%'>
+						` + storePaintings(sourcefile) + `
+					</div>
+				</div>
+			</div>
 		`;
 	}else if(screen===2){
 		return `
-			<div style='padding: 5px 12px 5px 12px'>	
-				<div id='storecontent' style='text-align:center; padding:15px 0 35px 0px '>
-						<div style='text-align:center; padding:0 0 5px 0px '>
-							<div class='myheading1'>Store</br>
-							</div>
-						</div>	
-						
-						<div id='storepaintings' class='storebutton'>
-							
-							<input type='button' class='button1' value='Paintings' onclick='goPainting("` + sourcefile + `")'>
-						</div>
-						<div id='storeshirts' class='storebutton'>
-							
-							<input type='button' class='button1' value='Shirts' onclick='storeShirts("` + sourcefile + `")'>
-						</div>
-						<div id='storewebsites' class='storebutton'>
-							
-							<input type='button' class='button1' value='Freelancing' onclick='storeWebsites("` + sourcefile + `")'>
-						</div>
+			<div id='storecontent'>
+				<div id='storewebsites' class='storesection' style='background-color:#7cb6e8;'>
+					<div class='storebutton' style='width:90%; padding: 0 0 0 5%'>
+						` + storeWebsites(sourcefile) + `
 					</div>
-			</div>	
+				</div>
+				<div id='storeshirts' class='storesection' >
+					<div class='storebutton' style='width:90%;  padding: 0 0 0 5%'>
+						` + storeShirts(sourcefile) + `
+					</div>
+				</div>
+				<div id='storepaintings' class='storesection' style='background-color:#7cb6e8;'>
+					<div class='storebutton' style='width:90%;  padding: 0 0 0 5%'>
+						` + storePaintings(sourcefile) + `
+					</div>
+				</div>
+			</div>
 		`;
 	}
 }

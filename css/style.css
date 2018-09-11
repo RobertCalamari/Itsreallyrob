@@ -229,17 +229,23 @@ body {
 }
 
 .storecontent {
-	display:inline-block;
 	width:30%;
 	height:250px;
 	/*background-color:#737373;*/
 	border: 3px solid #726f6fcc;
-	position:relative;	
-	padding:0px 0 20px 0;
+	
+	text-align:center; 
+	padding:15px 0 0px 0px ;
+}	
+
+.storesection {
+	padding:75px 0 75px 0;
+	width:100%;
+	text-align:center; 
 }
 
 .storebutton {
-	padding:10px 0 10px 0;
+	padding:0px 0 0px 0;
 }
 
 a, a:hover, a:active, a:visited, a:focus {
