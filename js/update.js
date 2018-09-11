@@ -10,7 +10,9 @@ function footerData(sourcefile){
 }
 
 //This is the code to edit the about me section on the front page
-const aboutmeinfo = "Hello, my name is Robert. I majored in Information Technology and minored in Computer Science at the New Jersey Institute of Technology. I have always enjoyed challenges, so in my spare time I was either playing videogames or coding. While working in IT, I determined that coding was what I wanted to do, but I did not know where to start. I decided to design and create this website to showcase my progress as I advance in my knowledge of coding. Come along with me as I post details about my progress and efforts. <br/><br/> I have also had an interest in painting for many years. I paint in my free time, consistently discovering and implementing new techniques. Every painting I have made is available for sale if not already sold. If interested, I also do custom painting orders. <br/><br/> I am currently working in IT as well as doing freelancing work. If you need or want a website, I can make it exactly how you'd like. For prices and details, please email me at <b>rjcalamari@gmail.com</b>. ";	
+const aboutmeinfo = "Hello, my name is Robert. I majored in Information Technology and minored in Computer Science at the New Jersey Institute of Technology. I have always enjoyed challenges, so in my spare time I was either playing videogames or coding. While working in IT, I determined that coding was what I wanted to do, but I did not know where to start. I decided to design and create this website to showcase my progress as I advance in my knowledge of coding. I want to become a full stack developer, but currently I am more of a front end one. I do have some knowledge in back end development, and am still currently learning it. I am self taught, with a great thanks to freecodecamp.com and many other websites. I currently know the following: <b>Javascript, HTML5, CSS3, Node.JS, Socket.IO, MongodDB, SQL, and React.</b> I am always learning and expanding my knowledge each day as you can see in my posts. So feel free to read along and learn with me. <br/><br/>" + 
+"I have also had an interest in painting for many years. I paint in my free time, consistently discovering and implementing new techniques. Every painting I have made is available for sale if not already sold, and if interested, I also do custom painting orders. It may seem odd that I am combining coding content with painting content, but I am all about creating things. From coding, painting, and even video editing I love doing it all, not just for me but for everyone. Even if it turns out bad, someone, somewhere, will enjoy it in their own way.<br/><br/>" + 
+"I am currently doing freelancing work for businesses or anyone who wants a website. If you are looking for someone to make you a website, please feel free to email me at <b>rjcalamari@gmail.com</b>. ";	
 
 //This is the code to print out the contact ribbon
 function contactData(sourcefile){
@@ -82,7 +84,7 @@ function infoBoxData(screen,sourcefile){
 	if(screen===0){
 		return `
 			<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-			<div class='infoboxcontentwords'>I\'m Rob</div> 	
+			<div class='infoboxcontentwords'>I\'m Robert</div> 	
 			<div class='infoboxcontentwords2'>A Web Developer</div> 			
 			<input type='button' class='infoboxcontentbutton' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 		`;
@@ -90,7 +92,7 @@ function infoBoxData(screen,sourcefile){
 	else if(screen===1){
 		return `
 				<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-				<div class='infoboxcontentwords' style='font-size:50px'>I\'m Rob</div> 	
+				<div class='infoboxcontentwords' style='font-size:50px'>I\'m Robert</div> 	
 				<div class='infoboxcontentwords2' style='font-size:15px'>A Web Developer</div> 			
 				<input type='button' class='infoboxcontentbutton' style='font-size:12px; width:140px;padding:12px 12px;' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 			`;
@@ -98,7 +100,7 @@ function infoBoxData(screen,sourcefile){
 	else if(screen===2){
 		return `
 			<img src='` + sourcefile + `/img/underwater.jpg' class='infopic' alt='PIC' style='background-color:black; z-index:-1;' height=auto width=100%>
-			<div class='infoboxcontentwords' style='font-size:35px'>I\'m Rob</div> 	
+			<div class='infoboxcontentwords' style='font-size:35px'>I\'m Robert</div> 	
 			<div class='infoboxcontentwords2' style='font-size:10px'>A Web Developer</div> 			
 			<input type='button' class='infoboxcontentbutton' style='font-size:8px; width:90px;padding:8px 8px;' value='Dive in to learn more!' onclick='goAbout("` + sourcefile + `")'>
 		`;

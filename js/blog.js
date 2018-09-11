@@ -110,11 +110,22 @@ const posts = [
 	  title:'Day 10 - Added The Store and Marketing',
 	  writer:'Robert Calamari',
 	  pinned: '',
-	  summary:"So I decided to take a good look at this website, and decided that I think it's at a good point. I am going to start showing people and promoting it. For those that would be viewing it for the first time I will explain what this is real quick. My name is Robert Calamari and I am persuing web developement. To start out I decided that I was going to see what I could do in under 100 days of coding. My plan is to make as many projects as I can within those 100 days, minus a few missed...",
+	  summary:"Now that all my vacations are over there should not be too many more days that I will be skipping. However, today is the day that I will be launching this site officially. I am not sure exactly how I am going to do that, but I will be researching it later. I did one final check on all of the pages and everything is looking good. There was a few bugs that I missed on one or two pages but it is all fixed now. All I have to do left is the projects page, but I will get to that...",
 	  images:'',
 	  tags:'coding100, javascript, html, css',
 	  content: tab + "Now that all my vacations are over there should not be too many more days that I will be skipping. However, today is the day that I will be launching this site officially. I am not sure exactly how I am going to do that, but I will be researching it later. I did one final check on all of the pages and everything is looking good. There was a few bugs that I missed on one or two pages but it is all fixed now. All I have to do left is the projects page, but I will get to that when I actually start creating more projects to show. Or if I have time later today I might do that, too. <br/><br/>" + tab +
 	  				 "As for the coding that I did today, I completely added the store page, minus the options to purchase anything in the site. I will eventually get to that, but it is something that I have never done before and will have to research. So all I have now is that you can email me if you are interested in anything. Within the store page I added three options: paintings, shirts, and freelance work. The paintings just lead right to the paintings page, while the shirts and freelance work change the page you are on. This was simple to implement and ver basic. It will change once I decide if I will be selling anything else. The shirts page just has one shirt in it available for purchase, and I mention that you can also get custom shirts done too. But since it is a pain to do I didn't advertise it too well. The freelance section was something I didn't even think about up until now, but I think it is a good idea since i believe I can make better sites than this now. Since by making this site I feel I learned enough to make up to date, professional websites that will allow buisnesses to make more of a profit."
+
+	},
+	{
+	  date:'09/11/2018',
+	  title:'Day 11 - Giving The Store A Skeleton',
+	  writer:'Robert Calamari',
+	  pinned: '',
+	  summary:"I went back to the store and realised how bad it looked. I decided that instead of buttons, I will just have everything on the one page. I still have to add graphics and some more formatting to it, but at least all the content is pretty much there. I felt the freelancing should be first, to showcase to people who want to hire me, then the shirts are next. I left paintings at the bottoms, because they are already featured on every other part of the site. I also added a new...",
+	  images:'',
+	  tags:'coding100, javascript, html, css',
+	  content: tab + "I went back to the store and realised how bad it looked. I decided that instead of buttons, I will just have everything on the one page. I still have to add graphics and some more formatting to it, but at least all the content is pretty much there. I felt the freelancing should be first, to showcase to people who want to hire me, then the shirts are next. I left paintings at the bottoms, because they are already featured on every other part of the site. I also added a new section to the front page to showcase what I can do: development and design. This is just to add a little something more so it doesn't feel so bland. I also added some words in the info box that brings you to my info. This still needs to change, but I just can't find the right words for it. I also just fixed up a few minor things, like the links to the project sites not working and some formatting issues I saw." 
 
 	}
 ];
