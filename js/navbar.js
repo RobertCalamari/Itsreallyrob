@@ -42,7 +42,7 @@ function loadAd(sourcefile) {
 				 <label class='sidenavlabel'>Are you looking to own a website? Then click <a href='` + sourcefile + `/pages/store.html'>here</a> to get started!</label>
 				`;
 
-	setTimeout(function(){ openAd() }, 5000);
+	setTimeout(function(){ openAd() }, 6000);
 
 }
 
@@ -102,7 +102,9 @@ function getJsonFromUrl(hashBased) {
   return result;
 }
 
-
+function sendMail() {
+		window.location.href ='./php/mail.php';
+}
 
 
 

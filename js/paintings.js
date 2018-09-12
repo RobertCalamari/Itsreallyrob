@@ -746,28 +746,28 @@ function printHomeSlideshow(ext,wid){
 
   		<div class="mySlides fade">
    	 		<div class="numbertext">1 / 5</div>
-    			<img src="` + ext + `/img/paintings/` + paintings[paintings.length-1].img + `" class="slideshowpaintings" id="` + paintings[paintings.length-1].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
+    			<img src="` + ext + `/img/paintings/smallpaintings/` + paintings[paintings.length-1].img + `" class="slideshowpaintings" id="` + paintings[paintings.length-1].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Newest</div>
   		</div>
   		<div class="mySlides fade">
     		<div class="numbertext">2 / 5</div>
-    			<img src="` + ext + `/img/paintings/` + featpaintings[1].img + `" class="slideshowpaintings" id="` + featpaintings[1].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
+    			<img src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[1].img + `" class="slideshowpaintings" id="` + featpaintings[1].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Featured</div>
   		</div>
 
   		<div class="mySlides fade">
     		<div class="numbertext">3 / 5</div>
-    			<img src="` + ext + `/img/paintings/` + featpaintings[2].img + `" class="slideshowpaintings" id="` + featpaintings[2].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
+    			<img src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[2].img + `" class="slideshowpaintings" id="` + featpaintings[2].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Featured</div>
   		</div>
   		<div class="mySlides fade">
     		<div class="numbertext">4 / 5</div>
-    			<img src="` + ext + `/img/paintings/` + featpaintings[3].img + `" class="slideshowpaintings" id="` + featpaintings[3].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
+    			<img src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[3].img + `" class="slideshowpaintings" id="` + featpaintings[3].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Featured</div>
   		</div>
 		<div class="mySlides fade">
     		<div class="numbertext">5 / 5</div>
-    			<img src="` + ext + `/img/paintings/` + featpaintings[4].img + `" class="slideshowpaintings" id="` + featpaintings[4].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
+    			<img src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[4].img + `" class="slideshowpaintings" id="` + featpaintings[4].name + `" style="width:` + wid + `px; height:` + wid + `px" onclick="goToPainting(this.id)">
     		<div class="text">Featured</div>
   		</div>
 
