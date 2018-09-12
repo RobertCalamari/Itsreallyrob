@@ -49,7 +49,7 @@ const paintings = [
 	  name:'Awaiting Death',
 	  img:'6 AwaitingDeath.jpg',
 	  price:10,
-	  sold:false,
+	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'20x20',
 	  description: 'An Original Calamari'  
@@ -677,7 +677,7 @@ function printAllPaintings(ext){
 		content+=`
 			<div class="homepics" style="display: inline-block;"><a href="` + ext + `/pages/painting/paintingpage.html?name=` + paintings[real].name + `" >
 				<div style='position:relative; display: inline-block;'>				
-					<img src="` + ext + `/img/paintings/` + paintings[real].img + `"  style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
+					<img src="` + ext + `/img/paintings/smallpaintings/` + paintings[real].img + `"  style="padding: 0px 2px 2px 2px;" alt="PIC" height="130" width="130">
 					<div style='color:red; position: absolute; top:-2px; left:0px;'>
 						` + issold + `
 					</div>	
