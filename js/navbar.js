@@ -102,10 +102,6 @@ function getJsonFromUrl(hashBased) {
   return result;
 }
 
-function sendMail() {
-		window.location.href ='./php/mail.php';
-}
-
 
 
 

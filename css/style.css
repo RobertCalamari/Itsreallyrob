@@ -263,6 +263,17 @@ a, a:hover, a:active, a:visited, a:focus {
 	font-weight:bold; 
 }
 
+.emaildata {
+	background: transparent;
+    border: none;
+    border-bottom: 1px dashed #0A1698;
+    width: 200px;
+    outline: none;
+	float:right;
+    padding: 0px 0px 0px 0px;
+    font-style: italic;
+}
+
 /* All pictures are located here/////////////////////////////////////////////////////////*/
 
 .homepics {

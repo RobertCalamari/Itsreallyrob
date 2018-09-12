@@ -23,7 +23,7 @@ function contactData(sourcefile){
 				Email:<br/> rjcalamari@gmail.com
 			</div>
 		</div>		
-		<a href='mailto:rjcalamari@gmail.com'><img src='` + sourcefile + `/img/mail.png' class='contactpics'  alt='Email' height='53' width='53'></a>
+		<a href='` + sourcefile + `/pages/aboutme.html'><img src='` + sourcefile + `/img/mail.png' class='contactpics'  alt='Email' height='53' width='53'></a>
 		<a href='https://instragram.com/itsreallyrobert'><img src='` + sourcefile + `/img/instagram.png' class='contactpics'  alt='Instagram' height='50' width='50'></a>
 		<a href='https://github.com/robertcalamari'><img src='` + sourcefile + `/img/github.svg' class='contactpics'  alt='Github' height='50' width='50'></a>		
 	</div>`;
@@ -501,13 +501,16 @@ function storeData(screen, sourcefile){
 function aboutData(screen, sourcefile){
 	if(screen===0){
 		return `
-				<div class='middlepanel' style='padding:35px 0 35px 0;' >	
+				<div class='middlepanel' style='padding:35px 0 35px 0;text-align:center' >	
 					<div class='myheading2' style='font-size:20px;'> 
 						<img src='../img/mypic.png' class='infopic' alt='PIC' height=150 width=150><br/>
 						<div style='padding:30px 0 0 0'>ROBERT J. CALAMARI JR</div> 				
 					</div><br/>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			
+					</div>
+					<div style='text-align:center; font-size:15px; padding:30px 0 10px 32%'>
+						` + printEmailSender() + `			
 					</div>
 				</div>
 		`;
@@ -521,6 +524,9 @@ function aboutData(screen, sourcefile){
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			
 					</div>
+					<div style='text-align:left; font-size:15px; padding:30px 0 10px 32%'>
+						` + printEmailSender() + `			
+					</div>
 			</div>	
 		`;
 	}else if(screen===2){
@@ -532,6 +538,9 @@ function aboutData(screen, sourcefile){
 					</div><br/>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			
+					</div>
+					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
+						` + printEmailSender() + `			
 					</div>
 			</div>	
 		`;
@@ -756,6 +765,7 @@ function determineAboutSize(ext){
 		document.getElementById('header').innerHTML=headerData(0,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=aboutData(0,ext);
+		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -766,6 +776,7 @@ function determineAboutSize(ext){
 		document.getElementById('header').innerHTML=headerData(1,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=aboutData(1,ext);
+		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -776,6 +787,7 @@ function determineAboutSize(ext){
 		document.getElementById('header').innerHTML=headerData(2,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=aboutData(2,ext);
+		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
