@@ -115,7 +115,7 @@ function homeContentData(screen, sourcefile){
 			<div class='freelancingpanel' style='padding:60px 0 40px 0;'>
 				<div class='middlepanel'>
 					<div style='text-align:left; font-size:20px; padding:0 0 130px 0'>
-						<div style='padding:20px 0 70px 0'>
+						<div style='padding:20px 0 70px 15%'>
 							<div style='width:300px; font-family: Faune-Bold, sans-serif;padding:0 0 10px 0; color:#519ac5;font-size:25px;'>
 								Design
 							</div>						
@@ -123,7 +123,7 @@ function homeContentData(screen, sourcefile){
 								I can design the perfect product that you want. I always keep it clean and straight to the point.   
 							</div>
 						</div>
-						<div style='float:right; padding:0 0 0px 0'>
+						<div style='float:right; padding:0 15% 0px 0'>
 							<div style='width:300px; font-family: Faune-Bold, sans-serif;padding:0 0 10px 0; color:#519ac5;font-size:25px;'>
 								Development
 							</div>						

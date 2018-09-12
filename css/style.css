@@ -501,4 +501,46 @@ src: url(../fonts/Faune-TextBold.otf);
     .sidenav a {font-size: 18px;}
 } 
 
+ /* The ad /////////////////////////////////////////////////////////////*/
+.sidead {
+    height: 50px; /* 100% Full-height */
+    width: 0px; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    right: 0; /* Stay at the top */
+    bottom: 60px;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: hidden; /* Disable horizontal scroll */
+    padding: 20px 0px 20px 0px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.sidead a {
+    text-decoration: none;
+    color: #818181;
+    transition: 0.3s;
+}
+
+.sidead a:hover {
+    color: #f1f1f1;
+}
+
+.sidead .closebtn {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    font-size: 25px;
+	display:inline-block;
+}
+
+.sidead .sidenavlabel {
+	margin-left: 8px;
+	color: white;
+    font-size: 15px;
+	display:inline-block;
+    padding: 8px 8px 8px 8px;
+
+
+}
 

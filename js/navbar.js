@@ -36,6 +36,24 @@ function closeNav() {
 	menuopen=false;
 } 
 
+function loadAd(sourcefile) {
+	document.getElementById("mysidead").innerHTML=
+				`<a href='javascript:void(0)' class='closebtn' onclick='closeAd()'>&times;</a>
+				 <label class='sidenavlabel'>Are you looking to have your website? Then click <a href='` + sourcefile + `/pages/store.html'>here</a> to get started!</label>
+				`;
+
+	setTimeout(function(){ openAd() }, 3000);
+
+}
+
+function openAd() {
+	document.getElementById("mysidead").style.width = "270px";
+} 
+
+function closeAd() {
+	document.getElementById("mysidead").style.width = "0";
+} 
+
 //Go back to the home page
 function goHome(sourcefile) {
 	window.location.href = sourcefile + '/index.html';
