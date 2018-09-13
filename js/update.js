@@ -11,8 +11,8 @@ function footerData(sourcefile){
 
 //This is the code to edit the about me section on the front page
 const aboutmeinfo = "Hello, my name is Robert. I majored in Information Technology and minored in Computer Science at the New Jersey Institute of Technology. I have always enjoyed challenges, so in my spare time I was either playing videogames or coding. While working in IT, I determined that coding was what I wanted to do, but I did not know where to start. I decided to design and create this website to showcase my progress as I advance in my knowledge of coding. I want to become a full stack developer, but currently I am more of a front end one. I do have some knowledge in back end development, and am still currently learning it. I am self taught, with a great thanks to freecodecamp.com and many other websites. I currently know the following: <b>Javascript, HTML5, CSS3, Node.JS, Socket.IO, MongodDB, SQL, and React.</b> I am always learning and expanding my knowledge each day as you can see in my posts. So feel free to read along and learn with me. <br/><br/>" + 
-"I have also had an interest in painting for many years. I paint in my free time, consistently discovering and implementing new techniques. Every painting I have made is available for sale if not already sold, and if interested, I also do custom painting orders. It may seem odd that I am combining coding content with painting content, but I am all about creating things. From coding, painting, and even video editing I love doing it all, not just for me but for everyone. Even if it turns out bad, someone, somewhere, will enjoy it in their own way.<br/><br/>" + 
-"I am currently doing freelancing work for businesses or anyone who wants a website. If you are looking for someone to make you a website, please feel free to email me at <b>rjcalamari@gmail.com</b>. ";	
+"I have also had an interest in painting for many years. I paint in my free time, consistently discovering and implementing new techniques. Every painting I have made is available for sale if not already sold, and if interested, I also do custom painting orders. It may seem odd that I am combining coding content with painting content, but I am all about creating things. From coding, painting, and even video editing I love doing it all, not just for me but for everyone. Even if it turns out bad, someone, somewhere, will enjoy it in their own way.<br/><br/> " + 
+"I am currently doing freelancing work for businesses or anyone who wants a website. If you are looking for someone to make you a website, please feel free to email me at <b>rjcalamari@gmail.com</b> or use the form below. You can also subscribe to our newsletter to get updates on when a blog is posted, a painting added, or other news! ";	
 
 //This is the code to print out the contact ribbon
 function contactData(sourcefile){
@@ -28,17 +28,6 @@ function contactData(sourcefile){
 		<a href='https://github.com/robertcalamari'><img src='` + sourcefile + `/img/github.svg' class='contactpics'  alt='Github' height='50' width='50'></a>		
 	</div>`;
 	
-}
-
-//This is the code that will show or hide the email when the email icon is clicked
-function emailBox(){
-	const thediv = document.getElementById('emailbox');
-	if(thediv.style.display=='none'){
-		thediv.style.display='inline';
-	}
-	else{
-		thediv.style.display='none';
-	}
 }
 
 //This is the code to print out the header ribbon
@@ -128,7 +117,7 @@ function homeContentData(screen, sourcefile){
 								Development
 							</div>						
 							<div style='width:300px; color:#5b5858'>
-								I always keep up to date with current technology to ensure a fast and working product.
+								I consistently keep up to date with current technology to ensure a fast and working product.
 							</div>
 						</div>
 					</div>
@@ -185,7 +174,7 @@ function homeContentData(screen, sourcefile){
 							Development
 						</div>						
 						<div style='width:300px; color:#5b5858'>
-							I always keep up to date with current technology to ensure a fast and working product.
+							I consistently keep up to date with current technology to ensure a fast and working product.
 						</div>
 					</div>
 				</div>
@@ -241,7 +230,7 @@ function homeContentData(screen, sourcefile){
 							Development
 						</div>						
 						<div style='width:300px; color:#5b5858'>
-								I always keep up to date with current technology to ensure a fast and working product.
+								I consistently keep up to date with current technology to ensure a fast and working product.
 						</div>
 					</div>
 				</div>
@@ -509,8 +498,8 @@ function aboutData(screen, sourcefile){
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			
 					</div>
-					<div style='text-align:center; font-size:15px; padding:30px 0 10px 32%'>
-						` + printEmailSender() + `			
+					<div style='text-align:center; font-size:15px; padding:30px 0 10px 0'>
+						` + printEmailSender('400px') + `			
 					</div>
 				</div>
 		`;
@@ -524,8 +513,8 @@ function aboutData(screen, sourcefile){
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			
 					</div>
-					<div style='text-align:left; font-size:15px; padding:30px 0 10px 32%'>
-						` + printEmailSender() + `			
+					<div style='text-align:left; font-size:15px; padding:30px 0 10px 0'>
+						` + printEmailSender('350px') + `			
 					</div>
 			</div>	
 		`;
@@ -540,7 +529,7 @@ function aboutData(screen, sourcefile){
 						` + aboutmeinfo + `			
 					</div>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
-						` + printEmailSender() + `			
+						` + printEmailSender('275px') + `			
 					</div>
 			</div>	
 		`;
@@ -808,6 +797,7 @@ function determineStoreSize(ext){
 		document.getElementById('header').innerHTML=headerData(0,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=storeData(0,ext);
+		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -818,6 +808,7 @@ function determineStoreSize(ext){
 		document.getElementById('header').innerHTML=headerData(1,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=storeData(1,ext);
+		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -828,6 +819,7 @@ function determineStoreSize(ext){
 		document.getElementById('header').innerHTML=headerData(2,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=storeData(2,ext);
+		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -880,6 +872,7 @@ function printPaintingPage(ext,postname){
 		document.getElementById('header').innerHTML=headerData(0,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=individualPaintingPage(0,ext,postname);
+		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -890,6 +883,7 @@ function printPaintingPage(ext,postname){
 		document.getElementById('header').innerHTML=headerData(1,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=individualPaintingPage(1,ext,postname);
+		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -900,6 +894,7 @@ function printPaintingPage(ext,postname){
 		document.getElementById('header').innerHTML=headerData(2,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=individualPaintingPage(2,ext,postname);
+		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer

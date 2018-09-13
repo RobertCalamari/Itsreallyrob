@@ -6,7 +6,7 @@ const paintings = [
 	  price:5,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -15,7 +15,7 @@ const paintings = [
 	  price:5,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -24,7 +24,7 @@ const paintings = [
 	  price:5,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -33,7 +33,7 @@ const paintings = [
 	  price:10,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -42,7 +42,7 @@ const paintings = [
 	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -51,7 +51,7 @@ const paintings = [
 	  price:10,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -60,7 +60,7 @@ const paintings = [
 	  price:15,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -69,7 +69,7 @@ const paintings = [
 	  price:20,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -78,7 +78,7 @@ const paintings = [
 	  price:10,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -87,7 +87,7 @@ const paintings = [
 	  price:15,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -96,7 +96,7 @@ const paintings = [
 	  price:20,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -105,7 +105,7 @@ const paintings = [
 	  price:25,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -114,7 +114,7 @@ const paintings = [
 	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -123,7 +123,7 @@ const paintings = [
 	  price:25,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -132,7 +132,7 @@ const paintings = [
 	  price:15,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -141,7 +141,7 @@ const paintings = [
 	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -150,7 +150,7 @@ const paintings = [
 	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -159,7 +159,7 @@ const paintings = [
 	  price:25,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -168,7 +168,7 @@ const paintings = [
 	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -177,7 +177,7 @@ const paintings = [
 	  price:40,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -186,7 +186,7 @@ const paintings = [
 	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -195,7 +195,7 @@ const paintings = [
 	  price:40,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -204,7 +204,7 @@ const paintings = [
 	  price:50,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -213,7 +213,7 @@ const paintings = [
 	  price:40,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -222,7 +222,7 @@ const paintings = [
 	  price:50,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -231,7 +231,7 @@ const paintings = [
 	  price:50,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -240,7 +240,7 @@ const paintings = [
 	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -249,7 +249,7 @@ const paintings = [
 	  price:50,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -258,7 +258,7 @@ const paintings = [
 	  price:75,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -267,7 +267,7 @@ const paintings = [
 	  price:40,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -276,7 +276,7 @@ const paintings = [
 	  price:40,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -285,7 +285,7 @@ const paintings = [
 	  price:200,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -294,7 +294,7 @@ const paintings = [
 	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -303,7 +303,7 @@ const paintings = [
 	  price:40,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -312,7 +312,7 @@ const paintings = [
 	  price:75,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -321,7 +321,7 @@ const paintings = [
 	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -330,7 +330,7 @@ const paintings = [
 	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -339,7 +339,7 @@ const paintings = [
 	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -348,7 +348,7 @@ const paintings = [
 	  price:'Priceless',
 	  sold:true,
 	  material:'Acrylic on Tile',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -357,7 +357,7 @@ const paintings = [
 	  price:80,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -366,7 +366,7 @@ const paintings = [
 	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -375,7 +375,7 @@ const paintings = [
 	  price:50,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -384,7 +384,7 @@ const paintings = [
 	  price:75,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -393,7 +393,7 @@ const paintings = [
 	  price:75,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -402,7 +402,7 @@ const paintings = [
 	  price:60,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -411,7 +411,7 @@ const paintings = [
 	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -420,7 +420,7 @@ const paintings = [
 	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -429,7 +429,7 @@ const paintings = [
 	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -438,7 +438,7 @@ const paintings = [
 	  price:'Priceless',
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -447,7 +447,7 @@ const paintings = [
 	  price:75,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -456,7 +456,7 @@ const paintings = [
 	  price:200,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -465,7 +465,7 @@ const paintings = [
 	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -474,7 +474,7 @@ const paintings = [
 	  price:70,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -483,7 +483,7 @@ const paintings = [
 	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -492,7 +492,7 @@ const paintings = [
 	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -501,7 +501,7 @@ const paintings = [
 	  price:40,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -510,7 +510,7 @@ const paintings = [
 	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -519,7 +519,7 @@ const paintings = [
 	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -528,7 +528,7 @@ const paintings = [
 	  price:100,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -537,7 +537,7 @@ const paintings = [
 	  price:25,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -546,7 +546,7 @@ const paintings = [
 	  price:40,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -555,7 +555,7 @@ const paintings = [
 	  price:50,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -564,7 +564,7 @@ const paintings = [
 	  price:40,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -573,7 +573,7 @@ const paintings = [
 	  price:100,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -582,7 +582,7 @@ const paintings = [
 	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -591,7 +591,7 @@ const paintings = [
 	  price:1,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -600,7 +600,7 @@ const paintings = [
 	  price:60,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -609,7 +609,7 @@ const paintings = [
 	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -618,7 +618,7 @@ const paintings = [
 	  price:60,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -627,7 +627,7 @@ const paintings = [
 	  price:50,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	},
 	{
@@ -636,7 +636,7 @@ const paintings = [
 	  price:150,
 	  sold:false,
 	  material:'Oil on Canvas',
-	  size:'20x20',
+	  size:'TBD',
 	  description: 'An Original Calamari'  
 	}
 ];
@@ -716,8 +716,8 @@ function printOnePainting(ext,postname){
 						<div class='paintingdescription'>
 							` + paintings[i].description + `
 						</div>
-						<br /> <br />
-						*The site is still being made, so if you would like to purchase this painting please email me at rjcalamari@gmail.com.
+						<br /> If you would like to purchase this painting, please email me at <b>rjcalamari@gmail.com</b> or fill out the form below. Price does not include shipping. Payment is currently through venmo or paypal.<br /><br />
+							` + printPaintingBuySender(paintings[i].price, paintings[i].name, paintings[i].sold) + `
 					</div>
 				</div><br />
 			`;
