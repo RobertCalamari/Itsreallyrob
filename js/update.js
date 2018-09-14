@@ -586,7 +586,7 @@ function determineHomeSize(ext){
 		document.getElementById('infobox').innerHTML=infoBoxData(0,ext);
 		//Content - the second number represnts how many pictures you want displayed
 		document.getElementById('contentdiv').innerHTML=homeContentData(0,ext);
-		showSlides(1);
+		//showSlides(1);
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -599,7 +599,7 @@ function determineHomeSize(ext){
 		document.getElementById('infobox').innerHTML=infoBoxData(1,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=homeContentData(1,ext);
-		showSlides(1);
+		//showSlides(1);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -612,7 +612,7 @@ function determineHomeSize(ext){
 		document.getElementById('infobox').innerHTML=infoBoxData(2,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=homeContentData(2,ext);
-		showSlides(1);
+		//showSlides(1);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer

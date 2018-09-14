@@ -13,7 +13,7 @@ body {
 	text-align: center;
 	height: 100%; 
     width: 100%; 
-    overflow-x: hidden; 
+    /*overflow-x: hidden; */
 }
 
 .footer {
@@ -310,7 +310,6 @@ a, a:hover, a:active, a:visited, a:focus {
 .menubutt:hover {
     cursor: hand;
     cursor: pointer;
-    opacity: .5;
 }
 
 
@@ -489,6 +488,29 @@ src: url(../fonts/Faune-TextBold.otf);
 	from {opacity: .4}
 	to {opacity: 1}
 }
+
+
+
+
+
+
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
 
 
 

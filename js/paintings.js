@@ -763,8 +763,52 @@ function printPaintingTitle(ext,postname){
 	return "";
 }
 
-//This is all of the code for the slide show://////////////////////////////////////
+
+function goToPainting(name) {
+	window.location.href = './pages/painting/paintingpage.html?name=' + name;
+}
+
+function printFeatPaintings(featpaintings,wid, ext){
+	let allimages = "";
+
+	for(let i=0;i<featpaintings.length;i++){
+		allimages+=`
+    			<img src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[i].img + `" class="slideshowpaintings" id="` + featpaintings[i].name + `"  onclick="goToPainting(this.id)">
+		`;
+	}
+
+	return allimages;
+}
+//style="width:` + wid + `px; height:` + wid + `px"
+
 function printHomeSlideshow(ext,wid){
+	//This creates an array for the featured paintings. the second input is how many paintings you want to display
+	const featpaintings=[];
+	findFeaturedPainting(featpaintings,5, ext);
+
+	return `
+		<div class="slider-wrap">
+		  <div class="slider" id="slider">
+			<div class="holder">
+			  <div class="slide-wrapper">
+				<div class="slide"><img class="slide-image" src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[1].img + `" /></div>
+				74
+			  </div>
+			  <div class="slide-wrapper">
+				<div class="slide"><img class="slide-image" src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[2].img + `" /></div>
+				64
+			  </div>
+			  <div class="slide-wrapper">
+				<div class="slide"><img class="slide-image" src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[3].img + `" /></div>
+				82
+			  </div>
+			</div>
+		  </div>
+		</div>
+	`;
+}
+//This is all of the code for the slide show://////////////////////////////////////
+/*function printHomeSlideshow(ext,wid){
 	//This creates an array for the featured paintings. the second input is how many paintings you want to display
 	const featpaintings=[];
 	findFeaturedPainting(featpaintings,5, ext);
@@ -844,10 +888,7 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 } 
-
-function goToPainting(name) {
-	window.location.href = './pages/painting/paintingpage.html?name=' + name;
-}
+*/
 
 
 
