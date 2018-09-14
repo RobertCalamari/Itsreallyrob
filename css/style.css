@@ -566,7 +566,7 @@ src: url(../fonts/Faune-TextBold.otf);
 .sidead .closebtn {
     position: absolute;
     top: 0;
-    right: 0px;
+    right: 10px;
     font-size: 25px;
 	display:inline-block;
 }

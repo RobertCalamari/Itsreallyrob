@@ -687,15 +687,43 @@ function printAllPaintings(ext){
 	return content;
 }
 
+function prevPainting() {
+	return `
+
+	`;
+}
+
 function printOnePainting(ext,postname){
+	buttonprint="";
 	for(let i=0;i<paintings.length;i++){
 		if(postname==paintings[i].name){
 			let avail="Available";
 			if(paintings[i].sold == true){
 				avail="Sold";
 			}
+			if(i==(paintings.length)-1){
+				buttonprint=`
+
+					<input id="paintingnext" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px; float:right' type="button" value="Next" onClick="window.location.href ='` + ext + `/pages/painting/paintingpage.html?name=` + paintings[i-1].name + `'" />				
+				`;
+			}else if(i==0){
+				buttonprint=`
+					<input id="paintingprev" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px; float:left' type='button' value='Prev' onClick="window.location.href ='` + ext + `/pages/painting/paintingpage.html?name=` + paintings[i+1].name + `'" />
+
+				`;
+			}else{
+				buttonprint=`
+					<input id="paintingprev" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px; float:left' type='button' value='Prev' onClick="window.location.href ='` + ext + `/pages/painting/paintingpage.html?name=` + paintings[i+1].name + `'" />
+					<input id="paintingnext" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px; float:right' type="button" value="Next" onClick="window.location.href ='` + ext + `/pages/painting/paintingpage.html?name=` + paintings[i-1].name + `'" />				
+				`;
+			}
+			
+
 			return `
 				<div class='paintingbox'>
+					<div style='width:100%; padding:30px 0 5px 37px'>
+						` + buttonprint + `
+					</div>
 					<div class='paintingtitle'>
 						` + paintings[i].name + `
 					</div>
