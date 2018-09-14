@@ -1,8 +1,5 @@
 # Itsreallyrobert
-This is a website that is about me. It is a portfolio where anyone can view everything that I create, whether it be a website, painting, or a game. It will also include a blog that I will post in progressing my coding experiences each day while I participate in a 100 day coding challange. The challange is where i just code for at least an hour or more a day for 100 days.
 
-Live site: <a href='https://robertcalamari.github.io/itsreallyrob'>robertcalamari.github.io/itsreallyrob</a>
+Live site: <a href='https://robertcalamari.com'>https://robertcalamari.com</a>
 
-This is a dynamic site built only using HTML, CSS, and Javascript. 
-
-This site is still in early alpha, so the appearence will be temporary.
+This site is my personal portfolio. It has my paintings, projects, and my blog. Everything is coded from scratch using HTML, CSS, and Javascript. I am currently hosting it off of github. The point of this site is to showcase what I can do by updating a blog on whenever I code. This is my first official site and project. Through this you will also be able to see my other projects.
