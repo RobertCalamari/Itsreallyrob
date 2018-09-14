@@ -61,7 +61,7 @@ function printPaintingBuySender(price, pname, sold) {
 				<input type="hidden" name="access_token" value="0t1xi61z2ge0a1krz8mqevyq" />
 				<input type="hidden" name="success_url" value="." />
 				<input type="hidden" name="error_url" value="." />
-			   <div></div>
+			   <div>hi</div>
 				<div style='padding: 5px 0 5px 0'>
 					<label >Name</label><input type="text" name="subject" class='emaildata'  placeholder="" required/> <br />
 				</div>	
