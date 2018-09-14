@@ -273,8 +273,29 @@ function checkIfMoreLeft(page){
 function printArticle(ext,postname){
 	for(let i=0;i<posts.length;i++){
 		if(postname==posts[i].title){
+
+			if(i==(posts.length)-1){
+				buttonprint=`
+
+					<input id="postnext" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px; float:right' type="button" value="Next" onClick="window.location.href ='` + ext + `/pages/blog/article.html?post=` + posts[i-1].title + `'" />				
+				`;
+			}else if(i==0){
+				buttonprint=`
+					<input id="postprev" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px; float:left' type='button' value='Prev' onClick="window.location.href ='` + ext + `/pages/blog/article.html?post=` + posts[i+1].title + `'" />
+
+				`;
+			}else{
+				buttonprint=`
+					<input id="postprev" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px; float:left' type='button' value='Prev' onClick="window.location.href ='` + ext + `/pages/blog/article.html?post=` + posts[i+1].title + `'" />
+					<input id="postnext" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px; float:right' type="button" value="Next" onClick="window.location.href ='` + ext + `/pages/blog/article.html?post=` + posts[i-1].title + `'" />				
+				`;
+			}
+
 			return `
 				<div class='blogpost'>
+					<div style='width:100%; padding:30px 0 5px 37px'>
+						` + buttonprint + `
+					</div>					
 					<div class="posttitle">
 						<a href="` + ext + `/pages/blog/article.html?post=` + posts[i].title + `">` + posts[i].title + `</a> 
 					</div>
