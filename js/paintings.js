@@ -787,24 +787,7 @@ function printHomeSlideshow(ext,wid){
 	findFeaturedPainting(featpaintings,5, ext);
 
 	return `
-		<div class="slider-wrap">
-		  <div class="slider" id="slider">
-			<div class="holder">
-			  <div class="slide-wrapper">
-				<div class="slide"><img class="slide-image" src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[1].img + `" /></div>
-				74
-			  </div>
-			  <div class="slide-wrapper">
-				<div class="slide"><img class="slide-image" src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[2].img + `" /></div>
-				64
-			  </div>
-			  <div class="slide-wrapper">
-				<div class="slide"><img class="slide-image" src="` + ext + `/img/paintings/smallpaintings/` + featpaintings[3].img + `" /></div>
-				82
-			  </div>
-			</div>
-		  </div>
-		</div>
+
 	`;
 }
 //This is all of the code for the slide show://////////////////////////////////////
