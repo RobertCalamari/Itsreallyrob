@@ -744,7 +744,7 @@ function printOnePainting(ext,postname){
 						<div class='paintingdescription'>
 							` + paintings[i].description + `
 						</div>
-						<br /> If you would like to purchase this painting, please email me at <b>rjcalamari@gmail.com</b> or fill out the form below. Price does not include shipping. Payment is currently through venmo or paypal.<br /><br />
+						<br /> If you would like to purchase this painting, please email me at <b>rjcalamari@gmail.com</b> or fill out the form below. Price does not include shipping. THE FIRST 10 CUSTOMERS GET 10% OFF.<br /><br />
 							` + printPaintingBuySender(paintings[i].price, paintings[i].name, paintings[i].sold) + `
 					</div>
 				</div><br />
