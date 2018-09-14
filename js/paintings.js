@@ -781,15 +781,7 @@ function printFeatPaintings(featpaintings,wid, ext){
 }
 //style="width:` + wid + `px; height:` + wid + `px"
 
-function printHomeSlideshow(ext,wid){
-	//This creates an array for the featured paintings. the second input is how many paintings you want to display
-	const featpaintings=[];
-	findFeaturedPainting(featpaintings,5, ext);
 
-	return `
-
-	`;
-}
 //This is all of the code for the slide show://////////////////////////////////////
 function printHomeSlideshow(ext,wid){
 	//This creates an array for the featured paintings. the second input is how many paintings you want to display
