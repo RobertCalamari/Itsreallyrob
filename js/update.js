@@ -912,7 +912,7 @@ function determineProjectsSize(ext){
 		//Content
 		document.getElementById('contentdiv').innerHTML=projectData(0,ext);
 		//Contact
-		document.getElementById('contacthome').innerHTML= projectData(ext);
+		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
 		document.getElementById('footer').innerHTML = footerData(ext);
 	}

@@ -141,7 +141,7 @@ const posts = [
 	},
 	{
 	  date:'09/13/2018',
-	  title:'Day 12 - Extra! Extra! Read All About It! Newsletter Installed! ',
+	  title:'Day 13 - Extra! Extra! Read All About It! Newsletter Installed!',
 	  writer:'Robert Calamari',
 	  pinned: '',
 	  summary:"The first thing I did was stylize the email form. There was a few trials of how I wanted it, but I finally came down to it's current look. That took a good amount of time to make. mainly because I could not decide how I wanted it to look. I also then edited some links torwards the about me page that required my email. I removed the telephone option and added a subscribe section torwards the form too. That is all I have done up until now, but for the little time I have left I have...",
