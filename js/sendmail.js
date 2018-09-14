@@ -6,7 +6,7 @@ function printEmailSender(width) {
 				method="post" id="email_form">
 				<input type="hidden" name="access_token" value="0t1xi61z2ge0a1krz8mqevyq" />
 				<input type="hidden" name="success_url" value="." />
-				<input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+				<input type="hidden" name="error_url" value="." />
 			   
 				<div style='padding: 5px 0 5px 0'>
 					<label >Name</label><input type="text" name="subject" class='emaildata'  placeholder="" required/> <br />
