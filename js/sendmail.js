@@ -5,7 +5,7 @@ function printEmailSender(width) {
 			<form action="https://postmail.invotes.com/send"
 				method="post" id="email_form">
 				<input type="hidden" name="access_token" value="0t1xi61z2ge0a1krz8mqevyq" />
-				<input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+				<input type="hidden" name="success_url" value="" />
 				<input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
 			   
 				<div style='padding: 5px 0 5px 0'>
