@@ -791,7 +791,7 @@ function printHomeSlideshow(ext,wid){
 	`;
 }
 //This is all of the code for the slide show://////////////////////////////////////
-/*function printHomeSlideshow(ext,wid){
+function printHomeSlideshow(ext,wid){
 	//This creates an array for the featured paintings. the second input is how many paintings you want to display
 	const featpaintings=[];
 	findFeaturedPainting(featpaintings,5, ext);
@@ -871,7 +871,7 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 } 
-*/
+
 
 
 
