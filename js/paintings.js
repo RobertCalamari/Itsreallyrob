@@ -39,7 +39,7 @@ const paintings = [
 	{
 	  name:'Woman Alone',
 	  img:'5 WomanAlone.jpg',
-	  price:80,
+	  price:20,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -48,7 +48,7 @@ const paintings = [
 	{
 	  name:'Awaiting Death',
 	  img:'6 AwaitingDeath.jpg',
-	  price:10,
+	  price:50,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -66,7 +66,7 @@ const paintings = [
 	{
 	  name:'The Lone Tree Weeps During Sunset',
 	  img:'8 TheLoneTreeWeepsDuringSunset.jpg',
-	  price:20,
+	  price:40,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -84,7 +84,7 @@ const paintings = [
 	{
 	  name:'Floating Island',
 	  img:'10 FloatingIsland.jpg',
-	  price:15,
+	  price:20,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -102,7 +102,7 @@ const paintings = [
 	{
 	  name:'Fall Time By The Lake',
 	  img:'12 FallTimeByTheLake.jpg',
-	  price:25,
+	  price:40,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -111,7 +111,7 @@ const paintings = [
 	{
 	  name:'Cowboy At Dusk Time',
 	  img:'13 CowboyAtDuskTime.jpg',
-	  price:50,
+	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -138,7 +138,7 @@ const paintings = [
 	{
 	  name:'I Hate Painting Trees',
 	  img:'15 IHatePaintingTrees.jpg',
-	  price:60,
+	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -147,7 +147,7 @@ const paintings = [
 	{
 	  name:'Fox',
 	  img:'16 Fox.jpg',
-	  price:60,
+	  price:100,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -381,7 +381,7 @@ const paintings = [
 	{
 	  name:'Walking For Miles',
 	  img:'41 WalkingForMiles.jpg',
-	  price:75,
+	  price:80,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -534,7 +534,7 @@ const paintings = [
 	{
 	  name:'Space Tree',
 	  img:'58 SpaceTree.jpg',
-	  price:25,
+	  price:60,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -552,7 +552,7 @@ const paintings = [
 	{
 	  name:'Borderline Good',
 	  img:'60 BorderlineGood.jpg',
-	  price:50,
+	  price:60,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -561,7 +561,7 @@ const paintings = [
 	{
 	  name:'Conquering The Wall',
 	  img:'61 ConqueringTheWall.jpg',
-	  price:40,
+	  price:30,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -570,7 +570,7 @@ const paintings = [
 	{
 	  name:'The World Above',
 	  img:'62 TheWorldAbove.jpg',
-	  price:100,
+	  price:125,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -579,7 +579,7 @@ const paintings = [
 	{
 	  name:'Harry Potter Emblem',
 	  img:'63 HarryPotterEmblem.jpg',
-	  price:80,
+	  price:150,
 	  sold:true,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -624,7 +624,7 @@ const paintings = [
 	{
 	  name:'Crap Nebula Over Calm Lake',
 	  img:'68 CrapNebulaOverCalmLake.jpg',
-	  price:50,
+	  price:60,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'TBD',
@@ -633,7 +633,7 @@ const paintings = [
 	{
 	  name:'900 Nautical Miles Away',
 	  img:'69 900NauticalMilesAway.jpg',
-	  price:150,
+	  price:200,
 	  sold:false,
 	  material:'Oil on Canvas',
 	  size:'TBD',

@@ -1,6 +1,9 @@
 //This is the code to print out the footer ribbon
 function footerData(sourcefile){
 	return `<div class='information' id='information'>
+		<div class='footernews' style='float:left; width:150px;'>
+			Newsletter <a href='` + sourcefile + `/pages/aboutme.html#messageform'>Sign Up</a>
+		</div>		
 		<div style='float:right'>
 			Robert Calamari 2018
 		</div>
@@ -17,12 +20,7 @@ const aboutmeinfo = "Hello, my name is Robert. I majored in Information Technolo
 //This is the code to print out the contact ribbon
 function contactData(sourcefile){
 	return `
-	<div display='inline-block' >
-		<div style='display:inline; position:relative;'>
-			<div id='emailbox' class='emailbox' style='display:none'>
-				Email:<br/> rjcalamari@gmail.com
-			</div>
-		</div>		
+	<div display='inline-block' >		
 		<a href='` + sourcefile + `/pages/aboutme.html'><img src='` + sourcefile + `/img/mail.png' class='contactpics'  alt='Email' height='53' width='53'></a>
 		<a href='https://instragram.com/itsreallyrobert'><img src='` + sourcefile + `/img/instagram.png' class='contactpics'  alt='Instagram' height='50' width='50'></a>
 		<a href='https://github.com/robertcalamari'><img src='` + sourcefile + `/img/github.svg' class='contactpics'  alt='Github' height='50' width='50'></a>		

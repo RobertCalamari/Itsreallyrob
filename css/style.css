@@ -24,6 +24,17 @@ body {
 	color:white;
 }
 
+.footernews a {
+	text-decoration: none;
+	color:#626262;
+}
+
+.footernews a:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .5;
+}
+
 .header {
 	width: 100%;
 	text-align: center;
@@ -498,10 +509,6 @@ src: url(../fonts/Faune-TextBold.otf);
 
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-
-
-
 
 
 
