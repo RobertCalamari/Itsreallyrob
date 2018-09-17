@@ -282,7 +282,9 @@ function blogContentData(screen, sourcefile, page){
 							` + printBlogPage(sourcefile, page) + `
 						</div>
 					</div>
-				` + checkIfMoreLeft(page) + `
+				<div style='padding: 0px 0px 45px 0px'>
+					` + checkIfMoreLeft(page) + `
+				</div>
 				</div>
 			`;
 	}else if(screen===1){
@@ -295,7 +297,9 @@ function blogContentData(screen, sourcefile, page){
 						` + printBlogPage(sourcefile, page) + `
 					</div>
 				</div>
-				` + checkIfMoreLeft(page) + `
+				<div style='padding: 0px 0px 45px 0px'>
+					` + checkIfMoreLeft(page) + `
+				</div>
 			</div>	
 		`;
 	}else if(screen===2){
@@ -308,7 +312,9 @@ function blogContentData(screen, sourcefile, page){
 						` + printBlogPage(sourcefile, page) + `
 					</div>
 				</div>
-				` + checkIfMoreLeft(page) + `
+				<div style='padding: 0px 0px 45px 0px'>
+					` + checkIfMoreLeft(page) + `
+				</div>
 			</div>	
 		`;
 	}
