@@ -120,20 +120,16 @@
 		document.getElementById('purple').style.border="2px solid black";
 		document.getElementById('white').style.border="2px solid black";
 
-        if (lcolor == "white"){
-			 lsize = 14;
-			obj.style.border="2px solid magenta";
-        }else{
-			obj.style.border="2px solid magenta";
-			if(lsize==9){
-				lsize=9;
-			}else {
-				document.getElementById('sizelabel').innerHTML = "Size (Current: Small)";
-				document.getElementById('sizebox').style.background = "white";
-				lsize=4;
-			}
+
+		obj.style.border="2px solid magenta";
+		if(lsize==9){
+			lsize=9;
+		}else {
+			document.getElementById('sizelabel').innerHTML = "Size (Current: Small)";
+			document.getElementById('sizebox').style.background = "white";
+			lsize=4;
 		}
-    
+
     }
 
 	function changeSize() {
