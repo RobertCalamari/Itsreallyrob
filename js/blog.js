@@ -152,13 +152,24 @@ const posts = [
 	},
 	{
 	  date:'09/14/2018',
-	  title:'Day 14 - ',
+	  title:'Day 14 - Small Update',
 	  writer:'Robert Calamari',
 	  pinned: '',
 	  summary:"I did not have much time today, so I focused more on the little stuff. I decided what I want to prices of the paintings to be and fixed them occordingly. One of the bigger things today however, is that I added buttons on the individual posts and paintings pages, so that you can cycle through each one easily. This was a good suggestion I got so if anyone has any others please feel free to email me at rjcalamari@gmail.com. I also fixed some more bugs that popped up, like the...",
 	  images:'',
 	  tags:'coding100, javascript, html, css',
 	  content: tab + "I did not have much time today, so I focused more on the little stuff. I decided what I want to prices of the paintings to be and fixed them occordingly. One of the bigger things today however, is that I added buttons on the individual posts and paintings pages, so that you can cycle through each one easily. This was a good suggestion I got so if anyone has any others please feel free to email me at rjcalamari@gmail.com. I also fixed some more bugs that popped up, like the back and next buttons were for some reason in the contacts bar at the bottom. Also that the contacts bar on the projects page didn't appear at all and just said undefined. They were easy fixes, but I was not sure what happened. As for this weekend and possible next few days after that, I think I am going to start the bootcamp where I start learning more code. I will be starting from the basics since I am sure I missed some stuff, and I am deciding what I should post since I will not be coding. Either way I will keep you updated every few days." 
+
+	},
+	{
+	  date:'09/15/2018',
+	  title:'Day 15 - Working On Small Projects',
+	  writer:'Robert Calamari',
+	  pinned: '',
+	  summary:"As I await for my next website that I will be making, still not sure which one I will be doing yet, I decided I am going to work on small little projects. The first thing I want to work on is messing around with the canvas within HTML. I haev always wanted to learn more about it, but never really started, so that is why this will be my first small project. I am thinking of making a similar game to 'Jackbox Games' where you can draw on the screen and play with people...",
+	  images:'',
+	  tags:'coding100, javascript, html, css',
+	  content: tab + "As I await for my next website that I will be making, still not sure which one I will be doing yet, I decided I am going to work on small little projects. The first thing I want to work on is messing around with the canvas within HTML. I haev always wanted to learn more about it, but never really started, so that is why this will be my first small project. I am thinking of making a similar game to 'Jackbox Games' where you can draw on the screen and play with people on multiple devices. By doing this I will have to transition over and use Node.JS and Socket.IO, which is not too much of a problem since I have coded with that before. The touch part is trying to figure out how to make this a live site, since I only have ever used it locally. I feel like this should be a relatively easy task, but it will require a good amount a research and long nights on stackoverflow. As of now I am going to be done with my site, unless there is any suggestions that people bring up. I know some parts look wonky, but everything I need is up there and I need to start getting user feedback to see how I should change some of those parts. I will keep updating on this blog about this small projects as well. As for today, I read a lot about canvases and found a good shell program that does exactly what I want. The reason I am using another code snippet is because I am still not too sure how some of the parts of the code work. As of right now the link to the drawing app is <a href='https://www.robertcalamari.com/pages/drawing4ios.html'>here</a> if anyone would like to view and try it." 
 
 	}
 ];
