@@ -285,8 +285,22 @@ a, a:hover, a:active, a:visited, a:focus {
     font-style: italic;
 }
 
-
-
+#sketchpadapp {
+    /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	padding: 25px 0 25px 0;
+	text-align:center;
+}
+#sketchpad {
+    border:2px solid #888;
+    border-radius:4px;
+    position:relative; /* Necessary for correct mouse co-ords in Firefox */
+}
 
 /* All pictures are located here/////////////////////////////////////////////////////////*/
 

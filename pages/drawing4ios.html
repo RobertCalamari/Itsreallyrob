@@ -1,8 +1,156 @@
-<html>
-<head>
-<title>Sketchpad</title>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+
+		 <title>Drawing App | Robert Calamari</title>
+		 <link href="../css/style.css" rel="stylesheet">
+		 <script type="text/javascript" src="../js/navbar.js" ></script>
+		 <script type="text/javascript" src="../js/update.js" ></script>    
+		 <script type="text/javascript" src="../js/paintings.js" ></script>   
+		 <script type="text/javascript" src="../js/blog.js" ></script> 
+		 <script type="text/javascript" src="../js/sendmail.js" ></script> 
+		 
+	</head>
+	<body onload="init()">
+	  
+		<div id="mysidenav" class="sidenav">			
+		</div>		
+
+		<div id="header" class="header">	
+		</div>
+
+
+		<div onclick="closeNav()">
+
+	 		<div id="sketchpadapp">
+
+				<canvas id="sketchpad" height="300px" width="400px"></canvas>
+
+				<div style="">Choose Color</div>
+				<div style="display:inline-block;width:15px;height:15px;background:green;border:2px solid;" id="green" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:blue;border:2px solid;" id="blue" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:red;border:2px solid;" id="red" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:yellow;border:2px solid;" id="yellow" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:#e56200;border:2px solid;" id="orange" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:#bd00ff;border:2px solid;" id="purple" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:black;border:2px solid;" id="black" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
+				<br>
+				<div id="sizelabel" style="padding:20px 0 10px 0;">Size (Current: Small)</div>
+				<div id="sizebox" style="display:inline-block;width:15px;height:15px;background:white;border:1px solid;" id="white" onclick="changeSize()"></div>
+				<br>
+				<input type="submit" value="Clear Sketchpad" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
+
+			</div>
+
+			<div class="contacthome" id="contacthome">
+			</div>
+
+			<div id="footer" class="footer">
+			
+			</div>
+		</div>
+	</body>
+
+</html>
 
 <script type="text/javascript">
+	//This bit of code loads the navigation bar and loads the entire pages content
+	//ext is the reference to where this file is to index.html
+	const ext = "..";
+	loadNav(ext);
+	determineDrawSize(ext);
+
+	const currentWidth  = document.documentElement.clientWidth;
+	window.onresize = resize;
+		//Checks if the width of the screen has changed
+	function resize()
+	{
+		const newWidth  = document.documentElement.clientWidth;
+		if(currentWidth != newWidth){
+			determineDrawSize(ext);
+		}
+	 	
+	}
+
+
+
+    var lcolor = "black",
+        lsize = 4;
+
+
+	function color(obj) {
+        switch (obj.id) {
+            case "green":
+                lcolor = "green";
+                break;
+            case "blue":
+                lcolor = "blue";
+                break;
+            case "red":
+                lcolor = "red";
+                break;
+            case "yellow":
+                lcolor = "yellow";
+                break;
+            case "orange":
+                lcolor = "#e56200";
+                break;
+            case "purple":
+                lcolor = "#bd00ff";
+                break;
+            case "black":
+                lcolor = "black";
+                break;
+            case "white":
+                lcolor = "white";
+                break;
+        }
+
+		document.getElementById('green').style.border="2px solid black";
+		document.getElementById('red').style.border="2px solid black";
+		document.getElementById('black').style.border="2px solid black";
+		document.getElementById('blue').style.border="2px solid black";
+		document.getElementById('yellow').style.border="2px solid black";
+		document.getElementById('orange').style.border="2px solid black";
+		document.getElementById('red').style.border="2px solid black";
+		document.getElementById('purple').style.border="2px solid black";
+		document.getElementById('white').style.border="2px solid black";
+
+        if (lcolor == "white"){
+			 lsize = 14;
+			obj.style.border="2px solid magenta";
+        }else{
+			obj.style.border="2px solid magenta";
+			if(lsize==9){
+				lsize=9;
+			}else {
+				document.getElementById('sizelabel').innerHTML = "Size (Current: Small)";
+				document.getElementById('sizebox').style.background = "white";
+				lsize=4;
+			}
+		}
+    
+    }
+
+	function changeSize() {
+		if(lsize==4){
+			document.getElementById('sizelabel').innerHTML = "Size (Current: Big)";
+			document.getElementById('sizebox').style.background = "black";
+			lsize=9;
+		}else if(lsize==9){
+			document.getElementById('sizelabel').innerHTML = "Size (Current: Small)";
+			document.getElementById('sizebox').style.background = "white";
+			lsize=4;
+		}
+	}
+
+
+
+
     // Variables for referencing the canvas and 2dcanvas context
     var canvas,ctx;
 
@@ -30,7 +178,7 @@
         r=0; g=0; b=0; a=255;
 
         // Select a fill style
-        ctx.strokeStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
+        ctx.strokeStyle = lcolor;
 
         // Set the line "cap" style to round, so lines at different angles can join into each other
         ctx.lineCap = "round";
@@ -65,7 +213,7 @@
     // Keep track of the mouse button being pressed and draw a dot at current location
     function sketchpad_mouseDown() {
         mouseDown=1;
-        drawLine(ctx,mouseX,mouseY,12);
+        drawLine(ctx,mouseX,mouseY,lsize);
     }
 
     // Keep track of the mouse button being released
@@ -84,7 +232,7 @@
 
         // Draw a dot if the mouse button is currently being pressed
         if (mouseDown==1) {
-            drawLine(ctx,mouseX,mouseY,12);
+            drawLine(ctx,mouseX,mouseY,lsize);
         }
     }
 
@@ -108,7 +256,7 @@
         // Update the touch co-ordinates
         getTouchPos();
 
-        drawLine(ctx,touchX,touchY,12);
+        drawLine(ctx,touchX,touchY,lsize);
 
         // Prevents an additional mousedown event being triggered
         event.preventDefault();
@@ -126,7 +274,7 @@
         getTouchPos(e);
 
         // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
-        drawLine(ctx,touchX,touchY,12); 
+        drawLine(ctx,touchX,touchY,lsize); 
 
         // Prevent a scrolling action as a result of this touchmove triggering.
         event.preventDefault();
@@ -173,61 +321,3 @@
         }
     }
 </script>
-
-<style>
-/* Some CSS styling */
-#sketchpadapp {
-    /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.leftside {
-    float:left;
-    width:220px;
-    height:285px;
-    background-color:#def;
-    padding:10px;
-    border-radius:4px;
-}
-.rightside {
-    float:left;
-    margin-left:10px;
-}
-#sketchpad {
-    float:left;
-    height:300px;
-    width:400px;
-    border:2px solid #888;
-    border-radius:4px;
-    position:relative; /* Necessary for correct mouse co-ords in Firefox */
-}
-#clearbutton {
-    font-size: 15px;
-    padding: 10px;
-    -webkit-appearance: none;
-    background: #eee;
-    border: 1px solid #888;
-}
-</style>
-</head>
-
-<body onload="init()">
-    <div id="sketchpadapp">
-        <div class="leftside">
-             Touchscreen and mouse support HTML5 canvas sketchpad.<br/><br/>
-             Draw something by tapping or dragging.<br/><br/>
-             Works on iOS, Android and desktop/laptop touchscreens using Chrome/Firefox/Safari.<br/><br/>
-             <input type="submit" value="Clear Sketchpad" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
-        </div>
-        <div class="rightside">
-            <canvas id="sketchpad" height="300" width="400">
-            </canvas>
-        </div>
-    </div>
-</body>
-</html>
-
