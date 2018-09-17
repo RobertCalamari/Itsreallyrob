@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+
+		 <title>About Me | Robert Calamari</title>
+		 <link href="../css/style.css" rel="stylesheet">
+		 <script type="text/javascript" src="../js/navbar.js" ></script>
+		 <script type="text/javascript" src="../js/update.js" ></script>    
+		 <script type="text/javascript" src="../js/paintings.js" ></script>   
+		 <script type="text/javascript" src="../js/blog.js" ></script> 
+		 <script type="text/javascript" src="../js/sendmail.js" ></script> 
+		 
+	</head>
+	<body onload="init()" style="text-align:center">
+	  
+		<div id="mysidenav" class="sidenav">			
+		</div>		
+
+		<div id="header" class="header">	
+		</div>
+		<div onclick="closeNav()">
+
+	 		<canvas id="can" width="400" height="400" style="border:2px solid;"></canvas>
+		    <div style="">Choose Color</div>
+		    <div style="display:inline-block;width:10px;height:10px;background:green;border:2px solid;" id="green" onclick="color(this)"></div>
+		    <div style="display:inline-block;width:10px;height:10px;background:blue;border:2px solid;" id="blue" onclick="color(this)"></div>
+		    <div style="display:inline-block;width:10px;height:10px;background:red;border:2px solid;" id="red" onclick="color(this)"></div>
+		    <div style="display:inline-block;width:10px;height:10px;background:yellow;border:2px solid;" id="yellow" onclick="color(this)"></div>
+		    <div style="display:inline-block;width:10px;height:10px;background:#e56200;border:2px solid;" id="orange" onclick="color(this)"></div>
+		    <div style="display:inline-block;width:10px;height:10px;background:#bd00ff;border:2px solid;" id="purple" onclick="color(this)"></div>
+		    <div style="display:inline-block;width:10px;height:10px;background:black;border:2px solid;" id="black" onclick="color(this)"></div>
+		    <div style="display:inline-block;width:10px;height:10px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
+			<br>
+		    <div id="sizelabel">Size (Current: Small)</div>
+		    <div id="sizebox" style="display:inline-block;width:15px;height:15px;background:white;border:1px solid;" id="white" onclick="changeSize()"></div>
+			<br>
+		    <input type="button" value="save" id="btn" size="30" onclick="save()" style="">
+		    <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="">
+			<br>
+		    <img id="canvasimg" style="" style="display:none;">
+
+			<div class="contacthome" id="contacthome">
+			</div>
+
+			<div id="footer" class="footer">
+			
+			</div>
+		</div>
+	</body>
+
+<html>
+
+<script type="text/javascript">
+	//This bit of code loads the navigation bar and loads the entire pages content
+	//ext is the reference to where this file is to index.html
+	const ext = "..";
+	loadNav(ext);
+	determineDrawSize(ext);
+
+	const currentWidth  = document.documentElement.clientWidth;
+	window.onresize = resize;
+		//Checks if the width of the screen has changed
+	function resize()
+	{
+		const newWidth  = document.documentElement.clientWidth;
+		if(currentWidth != newWidth){
+			determineDrawSize(ext);
+		}
+	 	
+	}
+
+    var canvas, ctx, flag = false,
+        prevX = 0,
+        currX = 0,
+        prevY = 0,
+        currY = 0,
+        dot_flag = false;
+
+    var x = "black",
+        y = 2;
+    
+    function init() {
+        canvas = document.getElementById('can');
+        ctx = canvas.getContext("2d");
+        w = canvas.width;
+        h = canvas.height;
+    
+        canvas.addEventListener("mousemove", function (e) {
+            findxy('move', e)
+        }, false);
+        canvas.addEventListener("mousedown", function (e) {
+            findxy('down', e)
+        }, false);
+        canvas.addEventListener("mouseup", function (e) {
+            findxy('up', e)
+        }, false);
+        canvas.addEventListener("mouseout", function (e) {
+            findxy('out', e)
+        }, false);
+    }
+    
+    function color(obj) {
+        switch (obj.id) {
+            case "green":
+                x = "green";
+                break;
+            case "blue":
+                x = "blue";
+                break;
+            case "red":
+                x = "red";
+                break;
+            case "yellow":
+                x = "yellow";
+                break;
+            case "orange":
+                x = "#e56200";
+                break;
+            case "purple":
+                x = "#bd00ff";
+                break;
+            case "black":
+                x = "black";
+                break;
+            case "white":
+                x = "white";
+                break;
+        }
+
+		document.getElementById('green').style.border="2px solid black";
+		document.getElementById('red').style.border="2px solid black";
+		document.getElementById('black').style.border="2px solid black";
+		document.getElementById('blue').style.border="2px solid black";
+		document.getElementById('yellow').style.border="2px solid black";
+		document.getElementById('orange').style.border="2px solid black";
+		document.getElementById('red').style.border="2px solid black";
+		document.getElementById('purple').style.border="2px solid black";
+		document.getElementById('white').style.border="2px solid black";
+
+        if (x == "white"){
+			 y = 14;
+			obj.style.border="2px solid magenta";
+        }else{
+			obj.style.border="2px solid magenta";
+			if(y==5){
+				y=5;
+			}else {
+				document.getElementById('sizelabel').innerHTML = "Size (Current: Small)";
+				y=2;
+			}
+		}
+    
+    }
+    
+    function draw() {
+        ctx.beginPath();
+        ctx.moveTo(prevX, prevY);
+        ctx.lineTo(currX, currY);
+        ctx.strokeStyle = x;
+        ctx.lineWidth = y;
+        ctx.stroke();
+        ctx.closePath();
+    }
+
+	function changeSize() {
+		if(y==2){
+			document.getElementById('sizelabel').innerHTML = "Size (Current: Big)";
+			document.getElementById('sizebox').style.background = "black";
+			y=5;
+		}else if(y==5){
+			document.getElementById('sizelabel').innerHTML = "Size (Current: Small)";
+			document.getElementById('sizebox').style.background = "white";
+			y=2;
+		}
+	}
+    
+    function erase() {
+            ctx.clearRect(0, 0, w, h);
+            document.getElementById("canvasimg").style.display = "none";
+    }
+    
+    function save() {
+        document.getElementById("canvasimg").style.border = "2px solid";
+        var dataURL = canvas.toDataURL();
+        document.getElementById("canvasimg").src = dataURL;
+        document.getElementById("canvasimg").style.display = "inline";
+    }
+    
+    function findxy(res, e) {
+        if (res == 'down') {
+            prevX = currX;
+            prevY = currY;
+            currX = e.clientX - canvas.getBoundingClientRect().left;
+            currY = e.clientY - canvas.getBoundingClientRect().top;
+    
+            flag = true;
+            dot_flag = true;
+            if (dot_flag) {
+                ctx.beginPath();
+                ctx.fillStyle = x;
+                ctx.fillRect(currX, currY, 2, 2);
+                ctx.closePath();
+                dot_flag = false;
+            }
+        }
+        if (res == 'up') {
+            flag = false;
+        }
+        if (res == 'move' || res == "out") {
+            if (flag) {
+                prevX = currX;
+                prevY = currY;
+                currX = e.clientX - canvas.getBoundingClientRect().left;
+                currY = e.clientY - canvas.getBoundingClientRect().top;
+                draw();
+            }
+        }
+    }
+    </script>

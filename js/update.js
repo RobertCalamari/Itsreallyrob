@@ -942,3 +942,33 @@ function determineProjectsSize(ext){
 	}
 }
 
+function determineDrawSize(ext){
+	const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
+		
+
+	if(vpWidth >= 1030){
+		//Header
+		document.getElementById('header').innerHTML=headerData(0,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML= contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerData(ext);
+	}
+	else if(vpWidth >=430 && vpWidth <=1029){
+		//Header
+		document.getElementById('header').innerHTML=headerData(1,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerData(ext);
+	}
+	else{
+		//Header
+		document.getElementById('header').innerHTML=headerData(2,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerData(ext);
+	}
+}
+
