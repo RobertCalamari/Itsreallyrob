@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+
+		 <title>Drawing App | Robert Calamari</title>
+		 <link href="../css/style.css" rel="stylesheet">
+		 <script type="text/javascript" src="../js/navbar.js" ></script>
+		 <script type="text/javascript" src="../js/update.js" ></script>    
+		 <script type="text/javascript" src="../js/paintings.js" ></script> <script type="text/javascript" src="../js/drawingapp.js" ></script>
+		 <script type="text/javascript" src="../js/blog.js" ></script> 
+		 <script type="text/javascript" src="../js/sendmail.js" ></script> 
+		 
+	</head>
+	<body onload="init()">
+	  
+		<div id="mysidenav" class="sidenav">			
+		</div>		
+
+		<div id="header" class="header">	
+		</div>
+
+
+		<div onclick="closeNav()">
+
+	 		<div id="sketchpadapp">
+
+				<canvas id="sketchpad" height="400px" width="400px"></canvas>
+
+				<div style="">Choose Color</div>
+				<div style="display:inline-block;width:15px;height:15px;background:green;border:2px solid;" id="green" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:blue;border:2px solid;" id="blue" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:red;border:2px solid;" id="red" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:yellow;border:2px solid;" id="yellow" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:#e56200;border:2px solid;" id="orange" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:#bd00ff;border:2px solid;" id="purple" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:black;border:2px solid;" id="black" onclick="color(this)"></div>
+				<div style="display:inline-block;width:15px;height:15px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
+				<br>
+				<div id="sizelabel" style="padding:20px 0 10px 0;">Size (Current: Small)</div>
+				<div id="sizebox" style="display:inline-block;width:15px;height:15px;background:white;border:1px solid;" id="white" onclick="changeSize()"></div>
+				<br>
+				<input type="submit" value="Clear Sketchpad" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
+
+                <input type="submit" value="Submit To All" id="submitall" onclick="submitAll();">
+
+			</div>
+
+			<div class="contacthome" id="contacthome">
+			</div>
+
+			<div id="footer" class="footer">
+			
+			</div>
+		</div>
+	</body>
+
+</html>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script type="text/javascript">
+    var socket = io();
+	//This bit of code loads the navigation bar and loads the entire pages content
+	//ext is the reference to where this file is to index.html
+	const ext = "..";
+	loadNav(ext);
+	determineDrawSize(ext);
+
+	const currentWidth  = document.documentElement.clientWidth;
+	window.onresize = resize;
+		//Checks if the width of the screen has changed
+	function resize()
+	{
+		const newWidth  = document.documentElement.clientWidth;
+		if(currentWidth != newWidth){
+			determineDrawSize(ext);
+		}
+	 	
+	}
+
+  
+    function submitAll(){
+        //let canvas1=document.getElementById("sketchpad");
+        let canvas1 = getCanvasData();
+        socket.emit('sendtoall',{drawncanvas:canvas1});
+   
+    }
+
+    socket.on('updatepic',function(data){
+        printCanvas(data.drawncanvas);
+    });
+
+</script>
