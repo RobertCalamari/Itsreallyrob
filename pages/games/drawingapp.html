@@ -80,15 +80,9 @@
 	}
 
   
-    function submitAll(){
-        //let canvas1=document.getElementById("sketchpad");
-        let canvas1 = getCanvasData();
-        socket.emit('sendtoall',{drawncanvas:canvas1});
-   
-    }
 
-    socket.on('updatepic',function(data){
-        printCanvas(data.drawncanvas);
+    socket.on('updatecanvas',function(data){
+      printCanvas(data.newimg);
     });
 
 </script>

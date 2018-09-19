@@ -1,6 +1,18 @@
 
     var lcolor = "black",
     lsize = 4;
+    linemoves =[];
+
+    var newestline = function(x1,y1,size1){
+        var self = {
+            x:x1,
+            y:y1,
+            size:size1
+        }
+        
+        return self;
+    }
+    
 
 
 	function color(obj) {
@@ -83,12 +95,21 @@
 
     // Draws a line between the specified position on the supplied canvas name
     // Parameters are: A canvas context, the x position, the y position, the size of the dot
+    
     function drawLine(ctx,x,y,size) {
+        newestline.x = x;
+        newestline.y = y;
+        newestline.size = size;
+        console.log(newestline.x + " " + newestline.y + " " +  newestline.size);
+        
+        
+        linemoves[linemoves.length] = newestline(x,y,size);
+        
 
         // If lastX is not set, set lastX and lastY to the current position 
         if (lastX==-1) {
             lastX=x;
-	    lastY=y;
+	        lastY=y;
         }
 
         // Let's use black by setting RGB values to 0, and 255 alpha (completely opaque)
@@ -105,11 +126,11 @@
         // Draw a filled line
         ctx.beginPath();
 
-	// First, move to the old (previous) position
-	ctx.moveTo(lastX,lastY);
+    	// First, move to the old (previous) position
+    	ctx.moveTo(lastX,lastY);
 
-	// Now draw a line to the current touch/pointer position
-	ctx.lineTo(x,y);
+    	// Now draw a line to the current touch/pointer position
+    	ctx.lineTo(x,y);
 
         // Set the line thickness and draw the line
         ctx.lineWidth = size;
@@ -120,17 +141,20 @@
 	// Update the last position to reference the current position
 	lastX=x;
 	lastY=y;
+ 
     } 
 
     // Clear the canvas context using the canvas width and height
     function clearCanvas(canvas,ctx) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        linemoves = [];
     }
 
     // Keep track of the mouse button being pressed and draw a dot at current location
     function sketchpad_mouseDown() {
         mouseDown=1;
         drawLine(ctx,mouseX,mouseY,lsize);
+        
     }
 
     // Keep track of the mouse button being released
@@ -238,10 +262,22 @@
         }
     }
 
-function printCanvas(newcanv){
-    ctx.putImageData(newcanv, 0, 70);
-}
 
-function getCanvasData(){
-    return ctx.getImageData(00, 00, 400, 400);
-}
+
+    function submitAll(){
+        socket.emit('updatecanvas',{newimg:linemoves});
+    }
+
+
+
+    function printCanvas(data){
+        lastX=-1;
+        lastY=-1;
+        console.log(data.length);
+        for(let i=0;i<data.length;i++){
+            console.log(data[i].x,data[i].y,data[i].size);
+            drawLine(ctx,data[i].x,data[i].y,data[i].size);
+        }
+
+    }
+        

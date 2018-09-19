@@ -35,9 +35,9 @@ io.sockets.on('connection', function(socket){
     socket.id = Math.random();
     SOCKET_LIST[socket.id] = socket;
 
-    socket.on('sendtoall',function(data){
+    socket.on('updatecanvas',function(data){
         for(let i in SOCKET_LIST){
-            SOCKET_LIST[i].emit('updatepic',{drawncanvas:data.drawncanvas});
+            SOCKET_LIST[i].emit('updatecanvas',{newimg:data.newimg});
         }
     });
 
