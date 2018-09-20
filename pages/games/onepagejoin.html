@@ -1,0 +1,331 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>The Captain's Ship</title>
+    <meta http-equiv="Game" content="text/html; charset=utf-8" />
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+
+
+<body>
+    <script type="text/javascript" src="homepage.js" ></script> 
+    <div class="content">
+        <div class="top_block top_side">
+            <div class="content" >
+
+
+                <P class="titlep"><a href="index.html">The Captain's Ship</a></P>
+
+            </div>
+        </div>
+        <div class="background middle">
+        </div>
+        <div class="middle">
+            <div class="contentbody">
+
+                <div id="signDiv">
+                    <br>
+                    To join a game please enter your name and the room name that was used when the room was createad. <br>
+                    Name: <input id="signDiv-username" type="text"></input><br>
+                    Room: <input id="signDiv-room" type="text"></input>
+                    <br>
+                    <button id="signDiv-signIn" onclick="signInButton()">Sign In</button>
+                    <p id="signalsign" class="signalsign"></p>
+                </div>
+                 
+                <div class="chat-input" id="gameDiv" style="display:none;">
+                    
+
+                    <div>
+                        <div class="gamelabeldiv">
+                            <label id="gamelabel" style="font-size: 35px;"></label><br>
+                            <label style="font-size: 20px;">Room: </label><label id="roomlabel" style="font-size: 20px;"></label><br>
+                        </div>
+                        <label></label><label id="playerslabel"></label><br><br>
+                        Next Player: <label class="nextplayermsg" id="nextplayermsg" value="Next Player: "></label>
+                    </div>
+
+                   <!--game-->
+                    <div class="gamesquarettt" id="gamesquarettt" style="display:none;">
+                    <div onclick="butttopleft();" style="cursor: pointer;" class="ttttopleft" id="topleft"></div>
+                    <div onclick="butttopmid();" style="cursor: pointer;" class="ttttopmid" id="topmid"></div>
+                    <div onclick="butttopright();" style="cursor: pointer;" class="ttttopright" id="topright"></div>
+                    <div onclick="buttmidleft();" style="cursor: pointer;" class="tttmidleft" id="midleft"></div>
+                    <div onclick="buttmidmid();" style="cursor: pointer;" class="tttmidmid" id="midmid"></div>
+                    <div onclick="buttmidright();" style="cursor: pointer;" class="tttmidright" id="midright"></div>
+                    <div onclick="buttbotleft();" style="cursor: pointer;" class="tttbotleft" id="botleft"></div>
+                    <div onclick="buttbotmid();" style="cursor: pointer;" class="tttbotmid" id="botmid"></div>
+                    <div onclick="buttbotright();" style="cursor: pointer;" class="tttbotright" id="botright"></div>
+
+                    </div>
+
+                    <!--game-->
+                    <div class="gamesquare" id="gamesquare" style="display:none;">
+
+
+                    </div>
+
+                    <div>
+                        <button id="buttStartGame" onclick="buttStartGame()">Start Game</button><label class="gameerrmsg" id="gameerrmsg"></label>
+                    </div>
+                    <!--chat-->
+                    <div class="chat-text" id="chat-text" style="width:484px;height:90px;overflow-y:scroll">
+                        
+                    </div>
+                    <form id="chat-form">
+                        <input id="chat-input" type="text" style="width:493px"></input>
+                    </form>
+                    
+                </div>
+ 
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script>
+    var socket = io();
+   
+   
+  
+
+    //sign
+    var signDiv = document.getElementById('signDiv');
+    var signDivUsername = document.getElementById('signDiv-username');
+    var signDivSignIn = document.getElementById('signDiv-signIn');
+    var signDivRoom = document.getElementById('signDiv-room');
+    var showPlayersB = document.getElementById('showPlayers');
+    var theRoomLabel = document.getElementById('roomlabel');
+    var thePlayersLabel = document.getElementById('playerslabel');
+    var theGameLabel = document.getElementById('gamelabel');
+    var gameSquaretttBlock = document.getElementById('gamesquarettt');
+    var gameSquareBlock = document.getElementById('gamesquare');
+    var nextPlayerMsg = document.getElementById('nextplayermsg');
+    var gameErrMsg = document.getElementById('gameerrmsg');
+    var topLeftBlock = document.getElementById('topleft');
+    var topMidBlock = document.getElementById('topmid');
+    var topRightBlock = document.getElementById('topright');
+    var midLeftBlock = document.getElementById('midleft');
+    var midMidBlock = document.getElementById('midmid');
+    var midRightBlock = document.getElementById('midright');
+    var botLeftBlock = document.getElementById('botleft');
+    var botMidBlock = document.getElementById('botmid');
+    var botRightBlock = document.getElementById('botright');
+
+
+
+
+
+
+            topLeftBlock.style.cursor = "none"; 
+            topMidBlock.style.cursor = "none"; 
+            topRightBlock.style.cursor = "none"; 
+            midLeftBlock.style.cursor = "none"; 
+            midMidBlock.style.cursor = "none"; 
+            midRightBlock.style.cursor = "none"; 
+            botLeftBlock.style.cursor = "none"; 
+            botMidBlock.style.cursor = "none"; 
+            botRightBlock.style.cursor = "none"; 
+
+
+
+
+
+
+
+
+
+    
+    //Send the request over to the server sending the name and room 
+    function signInButton() {
+        socket.emit('signIn',{username:signDivUsername.value,room:signDivRoom.value});
+
+    }
+
+    function buttStartGame() {
+        socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,bclick:"startttt",nextp:nextPlayerMsg.innerHTML});
+
+    }
+
+    function butttopleft() {
+
+        socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,bclick:"playergo",bclickttt:"topleft",nextp:nextPlayerMsg.innerHTML});
+    }
+    function butttopmid() {
+
+        socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,bclick:"playergo",bclickttt:"topmid",nextp:nextPlayerMsg.innerHTML});
+    }
+    function butttopright() {
+
+        socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,bclick:"playergo",bclickttt:"topright",nextp:nextPlayerMsg.innerHTML});
+    }
+    function buttmidleft() {
+
+        socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,bclick:"playergo",bclickttt:"midleft",nextp:nextPlayerMsg.innerHTML});
+    }
+    function buttmidmid() {
+
+        socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,bclick:"playergo",bclickttt:"midmid",nextp:nextPlayerMsg.innerHTML});
+    }
+    function buttmidright() {
+
+        socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,bclick:"playergo",bclickttt:"midright",nextp:nextPlayerMsg.innerHTML});
+    }
+    function buttbotleft() {
+
+        socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,bclick:"playergo",bclickttt:"botleft",nextp:nextPlayerMsg.innerHTML});
+    }
+    function buttbotmid() {
+
+        socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,bclick:"playergo",bclickttt:"botmid",nextp:nextPlayerMsg.innerHTML});
+    }
+    function buttbotright() {
+
+        socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,bclick:"playergo",bclickttt:"botright",nextp:nextPlayerMsg.innerHTML});
+    }
+
+
+
+    //If we get a request back we get rid of the log in screen and pop up the game screen
+    socket.on('signInResponse',function(data){
+        if(data.success){
+            signDiv.style.display = 'none';
+            gameDiv.style.display = 'inline-block';
+            theRoomLabel.innerHTML = signDivRoom.value;
+            socket.emit('updategameserver',{username:signDivUsername.value,room:signDivRoom.value,gametype:data.gametype,nextp:" "});
+            gameErrMsg.innerHTML = "Please Click To Start";
+            topLeftBlock.style.backgroundImage = "url(blank.png)";
+            topMidBlock.style.backgroundImage = "url(blank.png)";
+            topRightBlock.style.backgroundImage = "url(blank.png)";
+            midLeftBlock.style.backgroundImage = "url(blank.png)";
+            midMidBlock.style.backgroundImage = "url(blank.png)";
+            midRightBlock.style.backgroundImage = "url(blank.png)";
+            botLeftBlock.style.backgroundImage = "url(blank.png)";
+            botMidBlock.style.backgroundImage = "url(blank.png)";
+            botRightBlock.style.backgroundImage = "url(blank.png)";
+
+            topLeftBlock.style.cursor = "none"; 
+            topMidBlock.style.cursor = "none"; 
+            topRightBlock.style.cursor = "none"; 
+            midLeftBlock.style.cursor = "none"; 
+            midMidBlock.style.cursor = "none"; 
+            midRightBlock.style.cursor = "none"; 
+            botLeftBlock.style.cursor = "none"; 
+            botMidBlock.style.cursor = "none"; 
+            botRightBlock.style.cursor = "none"; 
+
+
+
+
+        } 
+        else
+        {
+            document.getElementById("signalsign").innerHTML=data.msg1;
+        }
+    });
+
+    //this is the message that pops up if the room disconnects
+    socket.on('sendBackToIndex',function(data){
+        if(data.send){
+            alert("Disconnected");
+            window.location.href = "index.html";
+        } 
+        
+    });
+
+
+
+    socket.on('updategameclient',function(data){
+        
+        if(data.gametype == "Tic Tac Toe"){
+            gameSquaretttBlock.style.display = 'inline-block';
+            gameSquareBlock.style.display = 'none';
+            gameErrMsg.innerHTML = data.gamemsg;
+            nextPlayerMsg.innerHTML = data.currp;
+            
+            if(data.picupdate=="none"){
+                    
+            }
+            else{
+                //var updateThis = document.getElementById('data.picupdate');
+                var updateThis = document.getElementById("botmid");
+                if(data.currl=="x"){
+                    updateThis.style.backgroundImage = "url(ex.png)";
+                    updateThis.style.pointerEvents = "none";
+                    gameErrMsg.innerHTML = "X went";
+                }
+                else{
+                    updateThis.style.backgroundImage = "url(oh.png)";
+                    updateThis.style.pointerEvents = "none";
+                    gameErrMsg.innerHTML = "O went";
+                }
+
+
+
+                
+            }
+
+
+
+
+
+
+        }
+        else{
+            gameSquareBlock.style.display = 'inline-block';
+            gameSquaretttBlock.style.display = 'none';
+        }
+
+
+     
+    });
+
+ 
+    //updates the players list
+    socket.on('updateplayersclient',function(data){
+        
+        theGameLabel.innerHTML = data.gametype;
+        thePlayersLabel.innerHTML = data.lop;
+    });
+
+
+    //chat info 
+    var chatText = document.getElementById('chat-text');
+    var chatInput = document.getElementById('chat-input');
+    var chatForm = document.getElementById('chat-form');
+
+   
+   
+    socket.on('addToChat',function(data){
+        chatText.innerHTML += '<div>' + data + '</div>';
+        chatText.scrollTop = chatText.scrollHeight;
+    });
+    
+    //debug stuff
+    chatForm.onsubmit = function(e){
+        e.preventDefault();
+        if(chatInput.value[0] === '/')
+            socket.emit('evalServer',chatInput.value.slice(1));
+        else
+            socket.emit('sendMsgToServer',{themsg:chatInput.value,username:signDivUsername.value,room:signDivRoom.value});
+        chatInput.value = '';      
+    }
+    //end chat info
+   
+   
+</script>

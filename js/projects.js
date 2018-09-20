@@ -2,7 +2,7 @@ const projects = [
 	{
 	  title:"Robert Calamari",
 	  url:"https://robertcalamari.com",
-	  info:"HTML, CSS, Javascript",
+	  info:"Javascript, Node.JS, HTML, CSS",
 	  img:"/img/CalamariBlack.png"
 	},
 	{
@@ -12,8 +12,8 @@ const projects = [
 	  img:"/img/beachboxlogoblack.png"
 	},
 	{
-	  title:"Game: Drawing App",
-	  url:"../../games/drawingapp.html",
+	  title:"Games",
+	  url:"../../games/gameshome.html",
 	  info:"Javascript, Node.JS, HTML, CSS",
 	  img:"/img/CalamariBlack.png"
 	}

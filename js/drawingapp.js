@@ -3,11 +3,13 @@
     lsize = 4;
     linemoves =[];
 
-    var newestline = function(x1,y1,size1){
+    var newestline = function(x1,y1,size1,color1){
         var self = {
             x:x1,
             y:y1,
-            size:size1
+            size:size1,
+            color:color1,
+            mup:false
         }
         
         return self;
@@ -96,14 +98,20 @@
     // Draws a line between the specified position on the supplied canvas name
     // Parameters are: A canvas context, the x position, the y position, the size of the dot
     
-    function drawLine(ctx,x,y,size) {
-        newestline.x = x;
-        newestline.y = y;
-        newestline.size = size;
-        console.log(newestline.x + " " + newestline.y + " " +  newestline.size);
-        
-        
-        linemoves[linemoves.length] = newestline(x,y,size);
+    function drawLine(ctx,x,y,size,color,redraw,mup) {
+
+        if(redraw){ 
+        }else{
+            newestline.x = x;
+            newestline.y = y;
+            newestline.size = size;
+            newestline.color = color;
+            newestline.mup = mup;
+            console.log(newestline.x + " " + newestline.y + " " +  newestline.size + " " +  newestline.color + " " +  newestline.mup);
+            
+            linemoves[linemoves.length] = newestline(x,y,size,color,mup);
+
+        }
         
 
         // If lastX is not set, set lastX and lastY to the current position 
@@ -111,12 +119,11 @@
             lastX=x;
 	        lastY=y;
         }
-
         // Let's use black by setting RGB values to 0, and 255 alpha (completely opaque)
         r=0; g=0; b=0; a=255;
 
         // Select a fill style
-        ctx.strokeStyle = lcolor;
+        ctx.strokeStyle = color;
 
         // Set the line "cap" style to round, so lines at different angles can join into each other
         ctx.lineCap = "round";
@@ -153,13 +160,19 @@
     // Keep track of the mouse button being pressed and draw a dot at current location
     function sketchpad_mouseDown() {
         mouseDown=1;
-        drawLine(ctx,mouseX,mouseY,lsize);
+        drawLine(ctx,mouseX,mouseY,lsize,lcolor,false,false);
         
     }
 
     // Keep track of the mouse button being released
     function sketchpad_mouseUp() {
         mouseDown=0;
+        try{
+            linemoves[linemoves.length-1].mup = true;
+        }
+        catch(e){
+            
+        }
 
         // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
         lastX=-1;
@@ -173,7 +186,7 @@
 
         // Draw a dot if the mouse button is currently being pressed
         if (mouseDown==1) {
-            drawLine(ctx,mouseX,mouseY,lsize);
+            drawLine(ctx,mouseX,mouseY,lsize,lcolor,false,false);
         }
     }
 
@@ -197,7 +210,7 @@
         // Update the touch co-ordinates
         getTouchPos();
 
-        drawLine(ctx,touchX,touchY,lsize);
+        drawLine(ctx,touchX,touchY,lsize,lcolor,false,false);
 
         // Prevents an additional mousedown event being triggered
         event.preventDefault();
@@ -207,6 +220,7 @@
         // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
         lastX=-1;
         lastY=-1;
+        linemoves[linemoves.length-1].mup = true;
     }
 
     // Draw something and prevent the default scrolling when touch movement is detected
@@ -215,7 +229,7 @@
         getTouchPos(e);
 
         // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
-        drawLine(ctx,touchX,touchY,lsize); 
+        drawLine(ctx,touchX,touchY,lsize,lcolor,false,false); 
 
         // Prevent a scrolling action as a result of this touchmove triggering.
         event.preventDefault();
@@ -275,9 +289,14 @@
         lastY=-1;
         console.log(data.length);
         for(let i=0;i<data.length;i++){
-            console.log(data[i].x,data[i].y,data[i].size);
-            drawLine(ctx,data[i].x,data[i].y,data[i].size);
+            drawLine(ctx,data[i].x,data[i].y,data[i].size,data[i].color,true);
+            if(data[i].mup){
+                lastX=-1;
+                lastY=-1;                
+            }
+
         }
+
 
     }
         

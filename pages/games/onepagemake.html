@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+
+         <title>Robert Calamari</title>
+         <link href="../../css/style.css" rel="stylesheet">
+         <script type="text/javascript" src="../../js/navbar.js" ></script>
+         <script type="text/javascript" src="../../js/update.js" ></script>    
+         <script type="text/javascript" src="../../js/paintings.js" ></script>   
+         <script type="text/javascript" src="../../js/blog.js" ></script> 
+         <script type="text/javascript" src="../../js/games.js" ></script> 
+         
+    </head>
+    <body>
+      
+        <div id="mysidenav" class="sidenav">            
+        </div>      
+
+        <div id="header" class="header">    
+        </div>
+        <div onclick="closeNav()" style='text-align: center'>
+            <div class="content" id="contentdiv" >
+
+                
+            </div>
+        </div>
+    </body>
+
+<html>
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script type="text/javascript">
+
+    var socket = io();
+   
+  
+    //This bit of code loads the navigation bar and loads the entire pages content
+    //ext is the reference to where this file is to index.html
+    const ext = "../..";
+    loadNav(ext);
+    determineGameSize(ext);
+
+    const currentWidth  = document.documentElement.clientWidth;
+    window.onresize = resize;
+    //Checks if the width of the screen has changed
+    function resize()
+    {
+        const newWidth  = document.documentElement.clientWidth;
+        if(currentWidth != newWidth){
+            determineGameSize(ext);
+        }
+        
+    }
+
+</script>

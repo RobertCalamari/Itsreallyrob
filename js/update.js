@@ -575,6 +575,11 @@ function projectData(screen, sourcefile){
 	}
 }
 
+//This is the code that appears on the game page
+function gameContentData(screen, sourcefile){
+	return printGameData(sourcefile);
+}
+
 
 //When there is a change in the size of the indow or screen it will update the content to fit it
 //0 represents a computer screen, 1 is a tablet, and 2 is a phone
@@ -717,7 +722,7 @@ function determineGameSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(0,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML+="";
+		document.getElementById('contentdiv').innerHTML=gameContentData(0,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -727,7 +732,7 @@ function determineGameSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(1,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML+="";
+		document.getElementById('contentdiv').innerHTML=gameContentData(1,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -737,7 +742,7 @@ function determineGameSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(2,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML+="";
+		document.getElementById('contentdiv').innerHTML=gameContentData(2,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
