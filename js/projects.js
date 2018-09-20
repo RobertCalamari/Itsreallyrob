@@ -12,8 +12,8 @@ const projects = [
 	  img:"/img/beachboxlogoblack.png"
 	},
 	{
-	  title:"Games",
-	  url:"../../games/gameshome.html",
+	  title:"Drawing App",
+	  url:"../../pages/games/drawing4ios.html",
 	  info:"Javascript, Node.JS, HTML, CSS",
 	  img:"/img/CalamariBlack.png"
 	}

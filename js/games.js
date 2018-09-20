@@ -1,6 +1,12 @@
 function goSettingsDrawing(){
-    document.getElementById('gamechoices').style.display = 'none';
     document.getElementById('drawingappsettings').style.display = 'inline-block';
+	document.getElementById('boozeorlosesettings').style.display = 'none';
+	document.body.style.backgroundColor = '#0844df';
+}
+function goSettingsBooze(){
+    document.getElementById('boozeorlosesettings').style.display = 'block';
+	document.getElementById('drawingappsettings').style.display = 'none';
+	document.body.style.backgroundColor = '#3c3d3e';
 }
 
 function buttonJoin(){
@@ -13,18 +19,50 @@ function buttonMake(){
     document.getElementById('gamechoices').style.display = 'inline-block';
 }
 
+function fixscreen(screen,sourcefile){
+	if(screen == 0){
+		document.getElementById('gamewrapper').style.padding = '25px 0px 25px 0px';	
+		document.getElementById('gamewrapper').style.width = '65%';	
+		document.getElementById('gamewrapper').style.margin = 'auto';		
+		document.getElementById('boozerotate').className = 'norotatebooze';
+		document.getElementById('boozerotate').style.width = '100%';
+		document.getElementById('boozerotate').style.height = '100%';
+		document.getElementById('boozeqblock').style.padding = '200px 0 200px 0';
+	}else if(screen===1){
+		document.getElementById('gamewrapper').style.padding = '25px 25px 25px 25px';	
+		document.getElementById('gamewrapper').style.width = '95%';	
+		document.getElementById('gamewrapper').style.margin = 'auto';
+		document.getElementById('gamewrapper').style.height = '550px';
+		document.getElementById('boozeorlosegame').style.padding = '60% 0 0 0';
+		document.getElementById('boozerotate').className = 'rotate90';
+	}else if(screen===2){
+		document.getElementById('gamewrapper').style.padding = '25px 10px 25px 10px';	
+		document.getElementById('gamewrapper').style.width = '95%';	
+		document.getElementById('gamewrapper').style.margin = 'auto';
+		document.getElementById('boozerotate').className = 'rotate90';
+		document.getElementById('boozeorlosegame').style.padding = '60% 0 0 0';
+		document.getElementById('gamewrapper').style.height = '550px';
+	}
+}
 
-
-function printGameData(sourcefile){
-	 return`
-	 	<div style='text-align: center; padding:25px 0 25px 0'>
-			<div id="joinormake">	
-				<button class='button1' onclick='buttonJoin()'>Join Game</button>      </br></br>
+function printGameData(screen, sourcefile){
+	 	
+		return`
+	 	<div id='gamewrapper' style='text-align: center; padding:25px 10px 25px 10px'>
+			<div id="joinormake" >	
+				<div style='text-align: left'>
+					Welcome to the games menu! Here you will find an assortment of games that I have developed. Some are from my own creation, others were a challange to see if I could make something of that level. There are singleplayer and multiplayer games. To get started, click make game and select the game that you would like to play, here is where it will tell you how many people are required per game. Once you select that, the settings menu will appear so you can customize your lobby however you would like.
+				</div>
+				<br /><br />
+				<button class='button1' style='margin:20px 20px 20px 20px;' onclick='buttonJoin()'>Join Game</button>
 				<button class='button1' onclick='buttonMake()'>Make Game</button>
 			</div>
+
 			<div id="gamechoices" style='padding: 0 0 0 0; display:none;'>
-	            <button class='button1' onclick="goSettingsDrawing()">Drawing App</button>
-	        </div>
+	            <button class='buttongameapps' style='background-color:#150099;' onclick="goSettingsDrawing()">Drawing App</button>
+	            <button class='buttongameapps' style='background-color:#000;' onclick="goSettingsBooze()">Booze or Lose</button>	        
+			</div>
+
 	        <div id="joingame" style="display:none;">
                 Room: <input id="roomnamejoin" type="text" value="Room123"></input><br>
                 Name: <input id="namenamejoin" type="text"></input><br>
@@ -32,15 +70,54 @@ function printGameData(sourcefile){
                 <button class='button2' onclick="joinRoomDrawing()">Join Room</button>
                 <p id="signalsign" class="signalsign"></p>
 			</div>
-	        <div id="drawingappsettings" style="display:none;">
+
+
+
+
+
+			<div id="boozeorlosesettings" style="padding: 25px 0 25px 0;display:none;">
+
+                
+                Player 1: <input id="boozep1" class='boozeinputs' type="text"></input><br>
+                Player 2: <input id="boozep2" class='boozeinputs' type="text"></input><br>
+                Player 3: <input id="boozep3" class='boozeinputs' type="text"></input><br>
+                Player 4: <input id="boozep4" class='boozeinputs' type="text"></input><br>
+                Player 5: <input id="boozep5" class='boozeinputs' type="text"></input><br>
+                Player 6: <input id="boozep6" class='boozeinputs' type="text"></input><br>
+                Player 7: <input id="boozep7" class='boozeinputs' type="text"></input><br>
+                Player 8: <input id="boozep8" class='boozeinputs' type="text"></input><br>
+                Player 9: <input id="boozep9" class='boozeinputs' type="text"></input><br>
+				Number of Rounds: <input id="boozerounds" class='boozeinputs' style='width:25px;' type="text" placeholder="1-40"></input><br>
+                <br>
+                <button class='button2' onclick="startBoozeGame()">Start Game</button>
+				<p id="boozeerror" style='color:#fc5732' class="signalsign"></p>
+			</div>
+
+			<div id="boozeorlosegame" style="padding: 0 0 0 0;display:none;">
+				<div id='boozerotate' class='rotate90' style='height:100%;text-align:center;width:400px'>
+					
+				<div id='boozeqblock' style='padding:0 0 0 0;'>
+					Hello this is a big test to see how the whole thing works see if it rotates and doesnt rotate. wh knows! Hello this is a big test to see how the whole thing works see if it rotates and doesnt rotate. wh knows!
+				</div	
+				</div>
+			</div>
+
+
+
+
+
+
+
+	        <div id="drawingappsettings" style="padding: 35px 0 0 0;display:none;">
                 To Create a Room, please create a room name below and sign in on a different tab or browser using the Join Game button on the main menu. 
                 <br>
-                Room: <input id="roomname" type="text" value="Room123"></input><br>
+                Room: <input id="roomname" type="text"></input><br>
                 Name: <input id="namename" type="text"></input><br>
                 <br>
                 <button class='button2' onclick="makeRoomDrawing()">Make Room</button>
                 <p id="signalsign" class="signalsign"></p>
 			</div>
+
 	        <div id="drawingAppGame" style="display:none;" >
 				<label id="gamelabel" style="font-size: 35px;">Drawing App</label><br>
                 <label id="playerslabel"></label>
@@ -76,6 +153,8 @@ function printGameData(sourcefile){
 	`;
 }
 
+
+
 function makeRoomDrawing(){
 	socket.emit('makeroom',{room:document.getElementById('roomname').value,username:document.getElementById('namename').value,gametype:"Drawing App"});
 }
@@ -89,6 +168,7 @@ function joinRoomDrawing(){
 function socketRoomMakeResponse(data){
         if(data.success){
             document.getElementById('drawingappsettings').style.display = 'none';
+			document.getElementById('gamechoices').style.display = 'none';
             document.getElementById('drawingAppGame').style.display = 'inline-block';
             socket.emit('updategameserver',{room:document.getElementById('roomname').value,name:document.getElementById('namename').value,gametype:document.getElementById('gamelabel').value}); 
         } else{

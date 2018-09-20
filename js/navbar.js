@@ -9,7 +9,7 @@ function loadNav(sourcefile) {
 				<a href='` + sourcefile + `/index.html'>Home</a>
 				<a href='` + sourcefile + `/pages/blog/page1.html'>Blog</a>
 				<a href='` + sourcefile + `/pages/painting/painting.html'>Paintings</a> 
-				<a href='` + sourcefile + `/pages/projects/projects.html'>Projects</a>
+				<a href='` + sourcefile + `/pages/games/gameshome.html'>Games</a>
 				<a href='` + sourcefile + `/pages/aboutme.html'>About Me</a>
 				<a href='` + sourcefile + `/pages/store.html'>Store</a>`;
 

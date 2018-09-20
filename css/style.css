@@ -285,6 +285,36 @@ a, a:hover, a:active, a:visited, a:focus {
     font-style: italic;
 }
 
+.boozeinputs {
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 100px;
+	text-align:right;
+    outline: none;
+    padding: 0px 5px 0px 5px;
+	margin: 0 0 0px 0;
+	color:#2cd1d1;
+}
+
+.rotate90 {
+	/* Safari */
+	-webkit-transform: rotate(-90deg);
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+	/* IE */
+	-ms-transform: rotate(-90deg);
+	/* Opera */
+	-o-transform: rotate(-90deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.norotatebooze {
+	width:100%;
+}
+
+
 #sketchpadapp {
     /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
     -webkit-touch-callout: none;
@@ -352,6 +382,27 @@ a, a:hover, a:active, a:visited, a:focus {
 }
 
 .button1:hover {
+    background-color: #5f5f5f; 
+    cursor: hand;
+    cursor: pointer;
+    opacity: .9;
+}
+
+.buttongameapps {
+    background-color: #000000; 
+    border: none;
+    color: white;
+    padding: 15px 20px 15px 20px;
+	height: 120px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Faune-Regular, sans-serif;
+}
+
+.buttongameapps:hover {
     background-color: #5f5f5f; 
     cursor: hand;
     cursor: pointer;

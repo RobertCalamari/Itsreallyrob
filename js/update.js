@@ -37,7 +37,7 @@ function headerData(screen, sourcefile){
 			<a class='header' href='` + sourcefile + `/pages/painting/painting.html'>Paintings</a>
 			<img src='` + sourcefile + `/img/CalamariWhite2.png' class='menubutt' alt='IRR' height='80' width='80' onclick='goHome("` + sourcefile + `")'>
 			<img src='` + sourcefile + `/img/Logo.png' class='menubutt' alt='IRR' height='80' width='240' onclick='goHome("` + sourcefile + `")'> 
-			<a class='header' href='` + sourcefile + `/pages/projects/projects.html'>Projects</a>
+			<a class='header' href='` + sourcefile + `/pages/games/gameshome.html'>Games</a>
 			<a class='header' href='` + sourcefile + `/pages/aboutme.html'>About</a>
 			<a class='header' href='` + sourcefile + `/pages/store.html'>Store</a>
 		</div>`;
@@ -502,9 +502,17 @@ function aboutData(screen, sourcefile){
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			
 					</div>
-					<div style='text-align:center; font-size:15px; padding:30px 0 10px 0'>
+					<div style='text-align:center; padding:50px 0 0 0px '>
+						<div class='myheading1'>Projects</br>
+						</div>
+					</div>
+					<div style='text-align:center; padding:0px 0 0 0px '>
+						` + printAllProjects(sourcefile) + `
+					</div>
+					<div style='text-align:center; font-size:15px; padding:80px 0 40px 0'>
 						` + printEmailSender('400px') + `			
 					</div>
+
 				</div>
 		`;
 	}else if(screen===1){
@@ -517,8 +525,14 @@ function aboutData(screen, sourcefile){
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			
 					</div>
+					<div style='padding: 50px 12px 80px 12px'>	
+						<div class='myheading1'>Projects</br></br>					
+						<div style='padding:0px 0 0 0 '>
+								` + printAllProjects(sourcefile) + `
+						</div>
+					</div>
 					<div style='text-align:left; font-size:15px; padding:30px 0 10px 0'>
-						` + printEmailSender('350px') + `			
+						` + printEmailSender('350px') + `	
 					</div>
 			</div>	
 		`;
@@ -531,6 +545,12 @@ function aboutData(screen, sourcefile){
 					</div><br/>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + aboutmeinfo + `			
+					</div>
+					<div style='padding: 50px 12px 80px 12px'>	
+						<div class='myheading1'>Projects</br></br>					
+						<div style='padding:0px 0 0 0 '>
+								` + printAllProjects(sourcefile) + `
+						</div>
 					</div>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
 						` + printEmailSender('275px') + `			
@@ -575,12 +595,6 @@ function projectData(screen, sourcefile){
 	}
 }
 
-//This is the code that appears on the game page
-function gameContentData(screen, sourcefile){
-	return printGameData(sourcefile);
-}
-
-
 //When there is a change in the size of the indow or screen it will update the content to fit it
 //0 represents a computer screen, 1 is a tablet, and 2 is a phone
 //the first number will always represent the screen it is on
@@ -595,7 +609,6 @@ function determineHomeSize(ext){
 		document.getElementById('infobox').innerHTML=infoBoxData(0,ext);
 		//Content - the second number represnts how many pictures you want displayed
 		document.getElementById('contentdiv').innerHTML=homeContentData(0,ext);
-		showSlides(1);
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -608,7 +621,6 @@ function determineHomeSize(ext){
 		document.getElementById('infobox').innerHTML=infoBoxData(1,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=homeContentData(1,ext);
-		showSlides(1);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -621,12 +633,12 @@ function determineHomeSize(ext){
 		document.getElementById('infobox').innerHTML=infoBoxData(2,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=homeContentData(2,ext);
-		showSlides(1);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
 		document.getElementById('footer').innerHTML = footerData(ext);
 	}
+	showSlides(1);
 }
 
 //When there is a change in the size of the indow or screen it will update the content to fit it
@@ -722,7 +734,8 @@ function determineGameSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(0,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML=gameContentData(0,ext);
+		document.getElementById('contentdiv').innerHTML=printGameData(0,ext);
+		fixscreen(0,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -732,7 +745,8 @@ function determineGameSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(1,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML=gameContentData(1,ext);
+		document.getElementById('contentdiv').innerHTML=printGameData(1,ext);
+		fixscreen(1,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -742,7 +756,8 @@ function determineGameSize(ext){
 		//Header
 		document.getElementById('header').innerHTML=headerData(2,ext);
 		//Content
-		document.getElementById('contentdiv').innerHTML=gameContentData(2,ext);
+		document.getElementById('contentdiv').innerHTML=printGameData(2,ext);
+		fixscreen(2,ext);
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -763,7 +778,6 @@ function determineAboutSize(ext){
 		document.getElementById('header').innerHTML=headerData(0,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=aboutData(0,ext);
-		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -774,7 +788,6 @@ function determineAboutSize(ext){
 		document.getElementById('header').innerHTML=headerData(1,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=aboutData(1,ext);
-		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -785,12 +798,12 @@ function determineAboutSize(ext){
 		document.getElementById('header').innerHTML=headerData(2,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=aboutData(2,ext);
-		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
 		document.getElementById('footer').innerHTML = footerData(ext);
 	}
+	disableButton();
 }
 
 //When there is a change in the size of the indow or screen it will update the content to fit it
@@ -806,7 +819,6 @@ function determineStoreSize(ext){
 		document.getElementById('header').innerHTML=headerData(0,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=storeData(0,ext);
-		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML= contactData(ext);
 		//Footer
@@ -817,7 +829,6 @@ function determineStoreSize(ext){
 		document.getElementById('header').innerHTML=headerData(1,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=storeData(1,ext);
-		disableButton();
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
@@ -828,12 +839,13 @@ function determineStoreSize(ext){
 		document.getElementById('header').innerHTML=headerData(2,ext);
 		//Content
 		document.getElementById('contentdiv').innerHTML=storeData(2,ext);
-		disableButton();
+		
 		//Contact
 		document.getElementById('contacthome').innerHTML = contactData(ext);
 		//Footer
 		document.getElementById('footer').innerHTML = footerData(ext);
 	}
+	disableButton();
 }
 
 function printArticlePage(ext,postname){
