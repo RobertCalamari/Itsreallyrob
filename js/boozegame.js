@@ -1,9 +1,11 @@
 var boozelop = [];
 var boozeloqs = [];
 var boozenorounds = 1;
+var roundcounter = 0;
 var currentquestion;
+var screen = 0;
 
-function startBoozeGame(){
+function startBoozeGame(myscreen){
 	if(document.getElementById('boozerounds').value =="hi" | document.getElementById('boozerounds').value<1 | document.getElementById('boozerounds').value>40){
 		document.getElementById('boozeerror').innerHTML = "Please enter a rounds value of 1-40!"; 
 	}else{
@@ -16,24 +18,83 @@ function startBoozeGame(){
 		document.getElementById('boozeorlosesettings').style.display = 'none';
 		document.getElementById('gamechoices').style.display = 'none';
 		document.getElementById('contentdiv').addEventListener('mousedown', nextBoozeQuestion, false);
-		document.getElementById('contentdiv').addEventListener('touchstart', nextBoozeQuestion, false);
+		//document.getElementById('contentdiv').addEventListener('touchstart', nextBoozeQuestion, false);
 		
 		boozenorounds = document.getElementById('boozerounds').value
-		
+		screen = myscreen;
+		roundcounter = 0;
+		if(screen==2){
+			document.getElementById('header').style.display = 'none';
+			document.getElementById('contacthome').style.display = 'none';
+			document.getElementById('footer').style.display = 'none';
+		}
 	}
 }
 
-
 function nextBoozeQuestion(){
-	rand = Math.floor(Math.random() * 97) +1; 
-	randp1 = Math.floor(Math.random() * boozelop.length) +1; 
-	randp2 = Math.floor(Math.random() * boozelop.length) +1; 
-	currentquestion=listOfBoozeQuestions(ranp1, randp2);
-//I AM RIGHT HERRE
 
-	document.getElementById('boozeorlosegame').innerHTML = ;
-	document.body.style.backgroundColor = '#f4g64g';
+	if(roundcounter < boozenorounds){
+		var bcolors=["#b81e38", "#a309a6", "#2067fa", "#05d3b0", "#0eb133", "#cce109", "#cf6a14"]; 
+		var randcolor = Math.floor(Math.random() * bcolors.length); 
+		var randp1 = Math.floor(Math.random() * boozelop.length);
+		var rand = "q" + (Math.floor(Math.random() * 97) +1); 
+		var randp1 = Math.floor(Math.random() * boozelop.length); 
+		var randp2 = Math.floor(Math.random() * boozelop.length); 
+		while(randp1 == randp2){
+			randp2 = Math.floor(Math.random() * boozelop.length);
+		}
+	
+		currentquestion=listOfBoozeQuestions(boozelop[randp1], boozelop[randp2]);
 
+		document.getElementById('boozeqblock').innerHTML = currentquestion[rand];
+		document.body.style.backgroundColor = bcolors[randcolor];
+
+		
+	}
+	else if(roundcounter==boozenorounds){
+		document.getElementById('boozeqblock').innerHTML = "Out of rounds! Click to play again!";
+		document.body.style.backgroundColor = '#3c3d3e';
+	}else{
+		document.getElementById('boozeorlosegame').style.display = 'none';
+		document.getElementById('boozeorlosesettings').style.display = 'block';
+		document.getElementById('gamechoices').style.display = 'inline-block';
+		document.getElementById('contentdiv').addEventListener('mousedown', nextBoozeQuestion, false);
+		document.getElementById('boozeqblock').innerHTML = "Welcome to Booze or Lose! The drinking game where you have no control! Just follow along with what the screen says to do and click for the next prompt. Refresh or go through all the prompts to start a new game. Have fun and be safe!";
+		if(screen==2){
+			document.getElementById('header').style.display = 'inline-block';
+			document.getElementById('contacthome').style.display = 'inline-block';
+			document.getElementById('footer').style.display = 'inline-block';
+		}				
+	}
+	roundcounter++;
+}
+
+function fixscreen(screen,sourcefile){
+	if(screen == 0){
+		document.getElementById('gamewrapper').style.padding = '25px 0px 25px 0px';	
+		document.getElementById('gamewrapper').style.width = '65%';	
+		document.getElementById('gamewrapper').style.margin = 'auto';		
+		document.getElementById('boozerotate').className = 'norotatebooze';
+		document.getElementById('boozerotate').style.width = '100%';
+		document.getElementById('boozerotate').style.height = '100%';
+		document.getElementById('boozeqblock').style.padding = '200px 0 200px 0';
+	}else if(screen===1){
+		document.getElementById('gamewrapper').style.padding = '25px 0px 25px 0px';	
+		document.getElementById('gamewrapper').style.width = '65%';	
+		document.getElementById('gamewrapper').style.margin = 'auto';		
+		document.getElementById('boozerotate').className = 'norotatebooze';
+		document.getElementById('boozerotate').style.width = '100%';
+		document.getElementById('boozerotate').style.height = '100%';
+		document.getElementById('boozeqblock').style.padding = '200px 0 200px 0';
+
+	}else if(screen===2){
+		document.getElementById('gamewrapper').style.padding = '25px 10px 25px 10px';	
+		document.getElementById('gamewrapper').style.width = '95%';	
+		document.getElementById('gamewrapper').style.margin = 'auto';
+		document.getElementById('boozerotate').className = 'rotate90';
+		document.getElementById('boozeorlosegame').style.padding = '85% 0 0 0';
+		document.getElementById('gamewrapper').style.height = '617px';
+	}
 }
 
 var listOfBoozeQuestions = function(name1,name2){
@@ -82,7 +143,7 @@ var listOfBoozeQuestions = function(name1,name2){
 			q39: "Not including " + name1 + ", go around the room and guess what their favorite food is. Drink 3 sips if you are wrong.",
 			q40: "Not including " + name1 + ", go around the room and guess what their favorite thing about themselves is. Drink 3 sips if you are wrong.",
 			q41: "Not including " + name1 + ", go around the room and guess what their favorite thing about the person to their left is. Drink 3 sips if you are wrong.",
-			q42: "Life long partners! " + name1 + " and " + name1 + "will now drink together for the rest of the game!",
+			q42: "Life long partners! " + name1 + " and " + name2 + " will now drink together for the rest of the game!",
 			q43: "Partners in crime! " + name1 + ", pick someone to come up with a handshake. Whenever either either of you do it, you both drink!",
 			q44: name1 + "! <br>Describe your worst nightmare! If you do not want to drink 5 sips." ,
 			q45: "On the count of three, raise your hand if you ever watched the entire show of The Office more than once. If you have not, drink 3 sips.",
@@ -141,7 +202,7 @@ var listOfBoozeQuestions = function(name1,name2){
 			q93: name1 + "!<br>If you are in public, the group decides what you say to someone random. If you refuse finish your drink!",
 			q94: name1 + "!<br>If you are in public, you are excused from playing and have 4 minutes to hit on as many people of the opposite gender as possible. For as many numbers that text you, is how many people you get to make finish their drinks!" ,
 			q95: "If you smoked today, drink 3 sips.",
-			q96: "Tell us your favorite pickup line. If you cant drink 3 sips.",
+			q96: "Tell us your favorite pickup line. Drink 3 sips if you do not want to.",
 			q97: "Higher or Lower! When you are ready click!"
         }
         

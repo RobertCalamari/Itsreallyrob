@@ -19,31 +19,6 @@ function buttonMake(){
     document.getElementById('gamechoices').style.display = 'inline-block';
 }
 
-function fixscreen(screen,sourcefile){
-	if(screen == 0){
-		document.getElementById('gamewrapper').style.padding = '25px 0px 25px 0px';	
-		document.getElementById('gamewrapper').style.width = '65%';	
-		document.getElementById('gamewrapper').style.margin = 'auto';		
-		document.getElementById('boozerotate').className = 'norotatebooze';
-		document.getElementById('boozerotate').style.width = '100%';
-		document.getElementById('boozerotate').style.height = '100%';
-		document.getElementById('boozeqblock').style.padding = '200px 0 200px 0';
-	}else if(screen===1){
-		document.getElementById('gamewrapper').style.padding = '25px 25px 25px 25px';	
-		document.getElementById('gamewrapper').style.width = '95%';	
-		document.getElementById('gamewrapper').style.margin = 'auto';
-		document.getElementById('gamewrapper').style.height = '550px';
-		document.getElementById('boozeorlosegame').style.padding = '60% 0 0 0';
-		document.getElementById('boozerotate').className = 'rotate90';
-	}else if(screen===2){
-		document.getElementById('gamewrapper').style.padding = '25px 10px 25px 10px';	
-		document.getElementById('gamewrapper').style.width = '95%';	
-		document.getElementById('gamewrapper').style.margin = 'auto';
-		document.getElementById('boozerotate').className = 'rotate90';
-		document.getElementById('boozeorlosegame').style.padding = '60% 0 0 0';
-		document.getElementById('gamewrapper').style.height = '550px';
-	}
-}
 
 function printGameData(screen, sourcefile){
 	 	
@@ -89,7 +64,7 @@ function printGameData(screen, sourcefile){
                 Player 9: <input id="boozep9" class='boozeinputs' type="text"></input><br>
 				Number of Rounds: <input id="boozerounds" class='boozeinputs' style='width:25px;' type="text" placeholder="1-40"></input><br>
                 <br>
-                <button class='button2' onclick="startBoozeGame()">Start Game</button>
+                <button class='button2' onclick="startBoozeGame(` + screen + `)">Start Game</button>
 				<p id="boozeerror" style='color:#fc5732' class="signalsign"></p>
 			</div>
 
@@ -97,8 +72,8 @@ function printGameData(screen, sourcefile){
 				<div id='boozerotate' class='rotate90' style='height:100%;text-align:center;width:400px'>
 					
 				<div id='boozeqblock' style='padding:0 0 0 0;'>
-					Hello this is a big test to see how the whole thing works see if it rotates and doesnt rotate. wh knows! Hello this is a big test to see how the whole thing works see if it rotates and doesnt rotate. wh knows!
-				</div	
+					Welcome to Booze or Lose! The drinking game where you have no control! Just follow along with what the screen says to do and click for the next prompt. Refresh or go through all the prompts to start a new game. Have fun and be safe!
+				</div>	
 				</div>
 			</div>
 
