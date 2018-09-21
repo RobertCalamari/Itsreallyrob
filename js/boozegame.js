@@ -4,6 +4,8 @@ var boozenorounds = 1;
 var roundcounter = 0;
 var currentquestion;
 var screen = 0;
+var randq;
+var listofas= ["q12","q71","q72","q73","q74","q78"];
 
 function startBoozeGame(myscreen){
 	if(document.getElementById('boozerounds').value =="hi" | document.getElementById('boozerounds').value<1 | document.getElementById('boozerounds').value>40){
@@ -31,6 +33,31 @@ function startBoozeGame(myscreen){
 			document.getElementById('contacthome').style.display = 'none';
 			document.getElementById('footer').style.display = 'none';
 		}
+
+
+		currentquestion=listOfBoozeQuestions("test", "test");
+		var isinarray = false;
+		while(boozeloqs.length < boozenorounds){
+			isinarray = false;
+			randq = "q" + (Math.floor(Math.random() * 97) +1); 
+			
+
+			for(let i = 0; i<boozeloqs.length;i++){
+				if(boozeloqs[i] == randq){
+					isinarray = true;
+				}
+			}
+			if(isinarray == false){
+				boozeloqs.push(randq);
+				if(listofas.includes(randq)){
+					randq+="a";
+					boozeloqs.push(randq);
+					boozenorounds++;
+				} 
+			}
+		}	
+
+
 	}
 }
 
@@ -39,24 +66,44 @@ function nextBoozeQuestion(){
 	if(roundcounter < boozenorounds){
 		var bcolors=["#b81e38", "#a309a6", "#2067fa", "#05d3b0", "#0eb133", "#cce109", "#cf6a14"]; 
 		var randcolor = Math.floor(Math.random() * bcolors.length); 
+
 		var randp1 = Math.floor(Math.random() * boozelop.length);
-		var rand = "q" + (Math.floor(Math.random() * 97) +1); 
-		var randp1 = Math.floor(Math.random() * boozelop.length); 
 		var randp2 = Math.floor(Math.random() * boozelop.length); 
+
 		while(randp1 == randp2){
 			randp2 = Math.floor(Math.random() * boozelop.length);
 		}
-	
+
 		currentquestion=listOfBoozeQuestions(boozelop[randp1], boozelop[randp2]);
+		
+		var extraprompt = 0;
+		var boozelogcutoff = boozeloqs[roundcounter];
+		if((boozeloqs[roundcounter][boozeloqs[roundcounter].length-1])=="a")
+		{
+			boozelogcutoff = boozeloqs[roundcounter].substring(0, boozeloqs[roundcounter].length - 1);
+		}
+	
+		if(listofas.includes(boozelogcutoff)){
+			extraprompt = Math.floor(Math.random() * currentquestion[boozeloqs[roundcounter]].length);
+			if((boozeloqs[roundcounter][boozeloqs[roundcounter].length-1])=="a")
+			{
+				document.getElementById('boozeqblock').innerHTML = currentquestion[boozeloqs[roundcounter]][extraprompt];
+			}else{
+				document.getElementById('boozeqblock').innerHTML = currentquestion[boozeloqs[roundcounter]];
+			}
 
-		document.getElementById('boozeqblock').innerHTML = currentquestion[rand];
+		}else{
+			document.getElementById('boozeqblock').innerHTML = currentquestion[boozeloqs[roundcounter]];			
+		}
+
+		
 		document.body.style.backgroundColor = bcolors[randcolor];
-
 		
 	}
 	else if(roundcounter==boozenorounds){
 		document.getElementById('boozeqblock').innerHTML = "Out of rounds! Click to play again!";
 		document.body.style.backgroundColor = '#3c3d3e';
+		boozeloqs = [];
 	}else{
 		document.getElementById('boozeorlosegame').style.display = 'none';
 		document.getElementById('boozeorlosesettings').style.display = 'block';
@@ -102,6 +149,8 @@ function fixscreen(screen,sourcefile){
 
 var listOfBoozeQuestions = function(name1,name2){
 
+		//List of prompts that include an additional screen:
+		////q12,971,q72,q73,q74,q78
         var self = {
 			numofq:97,
             q1: "Take a piece of clothing off, anything on your feet or head to not count, or drink 3 sips.",
@@ -128,18 +177,18 @@ var listOfBoozeQuestions = function(name1,name2){
 			q21: "On the count of three, everyone must point at someone to finish their drink. No discussing before hand! Whoever has the most votes must drink.",
 			q22: "On the count of three, raise your hand if you ever had surgery. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
 			q23: "On the count of three, raise your hand if you ever smoked. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q24: "On the count of three, raise your hand if you ever threw up due to alcohol. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q25: "On the count of three, raise your hand if you ever been out of the country. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q26: "On the count of three, raise your hand if you ever hooked up with more than one person in a night. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q27: "On the count of three, raise your hand if you ever did a hard drug. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q28: "On the count of three, raise your hand if you ever sent nudes. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q29: "On the count of three, raise your hand if you ever been grounded. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q30: "On the count of three, raise your hand if you ever had sex in public. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q31: "On the count of three, raise your hand if you ever liked someone more than a friend in this room. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q32: "On the count of three, raise your hand if you ever flirted with someone to get what you want. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q33: "On the count of three, raise your hand if you ever got in trouble with the police. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q34: "On the count of three, raise your hand if you ever had unprotected sex. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
-			q35: "On the count of three, raise your hand if you ever had a one night stand. If the majority did, whoever did not drinks 3 sips. If the majority did not, then the whoever did drinks 3 sips. <br> Majority is more than half. If there's a tie, everyone drinks 3 sips.",
+			q24: "On the count of three, raise your hand if you ever threw up due to alcohol. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q25: "On the count of three, raise your hand if you ever been out of the country. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q26: "On the count of three, raise your hand if you ever hooked up with more than one person in a night. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q27: "On the count of three, raise your hand if you ever did a hard drug. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q28: "On the count of three, raise your hand if you ever sent nudes. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q29: "On the count of three, raise your hand if you ever been grounded. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q30: "On the count of three, raise your hand if you ever had sex in public. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q31: "On the count of three, raise your hand if you ever liked someone more than a friend in this room. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q32: "On the count of three, raise your hand if you ever flirted with someone to get what you want. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q33: "On the count of three, raise your hand if you ever got in trouble with the police. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q34: "On the count of three, raise your hand if you ever had unprotected sex. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
+			q35: "On the count of three, raise your hand if you ever had a one night stand. If more than half of the people raised their hands, then whoever did not raise their hand drinks 3 sips. Otherwise whoever raised their hand drinks 3 sips. If there's a tie, everyone drinks 3 sips.",
 			q36: name1 + "! <br>How was the first time you had sex? Drink 3 sips if you do not want to tell.",
 			q37: "If you did not shower within the past 3 days, drink 3 sips.",
 			q38: "Not including " + name1 + ", go around the room and guess what their favorite color is. Drink 3 sips if you are wrong.",
@@ -206,7 +255,34 @@ var listOfBoozeQuestions = function(name1,name2){
 			q94: name1 + "!<br>If you are in public, you are excused from playing and have 4 minutes to hit on as many people of the opposite gender as possible. For as many numbers that text you, is how many people you get to make finish their drinks!" ,
 			q95: "If you smoked today, drink 3 sips.",
 			q96: "Tell us your favorite pickup line. Drink 3 sips if you do not want to.",
-			q97: "Higher or Lower! When you are ready click!"
+			q97: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+			q98: "Higher or Lower! When you are ready click!",
+
+
         }
         
         return self;
