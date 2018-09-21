@@ -8,6 +8,8 @@ var screen = 0;
 function startBoozeGame(myscreen){
 	if(document.getElementById('boozerounds').value =="hi" | document.getElementById('boozerounds').value<1 | document.getElementById('boozerounds').value>40){
 		document.getElementById('boozeerror').innerHTML = "Please enter a rounds value of 1-40!"; 
+	}else if(document.getElementById('boozep1').value =="" | document.getElementById('boozep2').value==""){
+		document.getElementById('boozeerror').innerHTML = "You need at least two people to play!"; 		
 	}else{
 		for(let i=0;i<9;i++){
 			if(document.getElementById('boozep'+(i+1)).value != ""){
