@@ -11,6 +11,7 @@ function startBoozeGame(myscreen){
 	}else if(document.getElementById('boozep1').value =="" | document.getElementById('boozep2').value==""){
 		document.getElementById('boozeerror').innerHTML = "You need at least two people to play!"; 		
 	}else{
+				document.getElementById('boozeerror').innerHTML = ""; 		
 		for(let i=0;i<9;i++){
 			if(document.getElementById('boozep'+(i+1)).value != ""){
 				boozelop.push(document.getElementById('boozep'+(i+1)).value);

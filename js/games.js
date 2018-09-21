@@ -9,6 +9,10 @@ function goSettingsBooze(){
 	document.body.style.backgroundColor = '#3c3d3e';
 }
 
+function goToPaint(sourcefile){
+	window.location.href = sourcefile + '/pages/games/paintapp.html';
+}
+
 function buttonJoin(){
     document.getElementById('joinormake').style.display = 'none';
     document.getElementById('joingame').style.display = 'inline-block';
@@ -34,7 +38,8 @@ function printGameData(screen, sourcefile){
 			</div>
 
 			<div id="gamechoices" style='padding: 0 0 0 0; display:none;'>
-	            <button class='buttongameapps' style='background-color:#150099;' onclick="goSettingsDrawing()">Drawing App</button>
+	            <button class='buttongameapps' style='background-color:#169ff7;' onclick="goToPaint('` + sourcefile + `')">Simple Paint App</button>
+	            <button class='buttongameapps' style='background-color:#150099;' onclick="goSettingsDrawing()">Drawing Games</button>
 	            <button class='buttongameapps' style='background-color:#000;' onclick="goSettingsBooze()">Booze or Lose</button>	        
 			</div>
 

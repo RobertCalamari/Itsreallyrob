@@ -989,3 +989,50 @@ function determineDrawSize(ext){
 	}
 }
 
+function determinePaintSize(ext){
+	const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
+		
+	var c = document.getElementById('sketchpad');
+	var ctx = c.getContext("2d");
+	if(vpWidth >= 1030){
+		//Header
+		document.getElementById('header').innerHTML=headerData(0,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML= contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerData(ext);
+		
+		var imgData=ctx.getImageData(0,0,c.width,c.height);
+		document.getElementById('sketchpad').width="500";
+		document.getElementById('sketchpad').height="500";
+		ctx.putImageData(imgData,0,0);
+	}
+	else if(vpWidth >=430 && vpWidth <=1029){
+		//Header
+		document.getElementById('header').innerHTML=headerData(1,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerData(ext);
+
+		var imgData=ctx.getImageData(0,0,c.width,c.height);
+		document.getElementById('sketchpad').width="400";
+		document.getElementById('sketchpad').height="400";
+		ctx.putImageData(imgData,0,0);
+	}
+	else{
+		//Header
+		document.getElementById('header').innerHTML=headerData(2,ext);
+		//Contact
+		document.getElementById('contacthome').innerHTML = contactData(ext);
+		//Footer
+		document.getElementById('footer').innerHTML = footerData(ext);
+
+		var imgData=ctx.getImageData(0,0,c.width,c.height);
+		document.getElementById('sketchpad').width="350";
+		document.getElementById('sketchpad').height="400";
+		ctx.putImageData(imgData,0,0);
+
+	}
+}
+
