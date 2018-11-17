@@ -35,8 +35,9 @@ function headerData(screen, sourcefile){
 			<a class='header' href='` + sourcefile + `/index.html'>Home</a>
 			<a class='header' href='` + sourcefile + `/pages/blog/page1.html'>Blog</a>
 			<a class='header' href='` + sourcefile + `/pages/painting/painting.html'>Paintings</a>
-			<img src='` + sourcefile + `/img/CalamariWhite2.png' class='menubutt' alt='IRR' height='80' width='80' onclick='goHome("` + sourcefile + `")'>
-			<img src='` + sourcefile + `/img/Logo.png' class='menubutt' alt='IRR' height='80' width='240' onclick='goHome("` + sourcefile + `")'> 
+			<!--<img src='` + sourcefile + `/img/CalamariWhite2.png' class='menubutt' alt='IRR' height='80' width='80' onclick='goHome("` + sourcefile + `")'>
+			<img src='` + sourcefile + `/img/Logo.png' class='menubutt' alt='IRR' height='80' width='240' onclick='goHome("` + sourcefile + `")'> -->
+			<img src='` + sourcefile + `/img/Logo2.png' class='menubutt' alt='IRR' height='70' width='275' onclick='goHome("` + sourcefile + `")'>
 			<a class='header' href='` + sourcefile + `/pages/games/gameshome.html'>Games</a>
 			<a class='header' href='` + sourcefile + `/pages/aboutme.html'>About</a>
 			<a class='header' href='` + sourcefile + `/pages/store.html'>Store</a>
@@ -394,7 +395,7 @@ function individualPaintingPage(screen,ext,postname){
 function paintingContentData(screen, sourcefile){
 	if(screen===0){
 		return `
-				<div class='middlepanel' >	
+				<div class='middlepanel' style='padding: 5px 20px 5px 20px' >	
 					<div style='text-align:left; padding:10px 0 0 0px '>
 						<div class='myheading1'>Paintings</br>
 						</div>
@@ -430,61 +431,61 @@ function storeData(screen, sourcefile){
 	if(screen===0){
 		return `
 			<div id='storecontent'>
-				<div id='storewebsites' class='storesection' style='background-color:#7cb6e8;'>
+				<div id='storepaintings' class='storesection' style='background-color:#7cb6e8;'>
+					<div class='storebutton' style='width:70%;  padding: 0 0 0 15%;'>
+						` + storePaintings(sourcefile) + `
+					</div>
+				</div>
+				<div id='storewebsites' class='storesection'>
 					<div class='storebutton' style='width:70%; padding: 0 0 0 15%'>
 						` + storeWebsites(sourcefile) + `
 					</div>
 				</div>
-				<div id='storeshirts' class='storesection' >
+				<!--<div id='storeshirts' class='storesection' >
 					<div class='storebutton' style='width:70%;  padding: 0 0 0 15%'>
 						` + storeShirts(sourcefile) + `
 					</div>
-				</div>
-				<div id='storepaintings' class='storesection' style='background-color:#7cb6e8;'>
-					<div class='storebutton' style='width:70%;  padding: 0 0 0 15%'>
-						` + storePaintings(sourcefile) + `
-					</div>
-				</div>
+				</div>-->
 			</div>
 		`;
 	}else if(screen===1){
 		return `
 			<div id='storecontent'>
-				<div id='storewebsites' class='storesection' style='background-color:#7cb6e8;'>
-					<div class='storebutton' style='width:90%; padding: 0 0 0 5%'>
-						` + storeWebsites(sourcefile) + `
-					</div>
-				</div>
-				<div id='storeshirts' class='storesection' >
-					<div class='storebutton' style='width:90%;  padding: 0 0 0 5%'>
-						` + storeShirts(sourcefile) + `
-					</div>
-				</div>
 				<div id='storepaintings' class='storesection' style='background-color:#7cb6e8;'>
 					<div class='storebutton' style='width:90%;  padding: 0 0 0 5%'>
 						` + storePaintings(sourcefile) + `
 					</div>
 				</div>
+				<div id='storewebsites' class='storesection'>
+					<div class='storebutton' style='width:90%; padding: 0 0 0 5%'>
+						` + storeWebsites(sourcefile) + `
+					</div>
+				</div>
+				<!--<div id='storeshirts' class='storesection' >
+					<div class='storebutton' style='width:90%;  padding: 0 0 0 5%'>
+						` + storeShirts(sourcefile) + `
+					</div>
+				</div>-->
 			</div>
 		`;
 	}else if(screen===2){
 		return `
 			<div id='storecontent'>
-				<div id='storewebsites' class='storesection' style='background-color:#7cb6e8;'>
-					<div class='storebutton' style='width:90%; padding: 0 0 0 5%'>
-						` + storeWebsites(sourcefile) + `
-					</div>
-				</div>
-				<div id='storeshirts' class='storesection' >
-					<div class='storebutton' style='width:90%;  padding: 0 0 0 5%'>
-						` + storeShirts(sourcefile) + `
-					</div>
-				</div>
 				<div id='storepaintings' class='storesection' style='background-color:#7cb6e8;'>
 					<div class='storebutton' style='width:90%;  padding: 0 0 0 5%'>
 						` + storePaintings(sourcefile) + `
 					</div>
 				</div>
+				<div id='storewebsites' class='storesection'>
+					<div class='storebutton' style='width:90%; padding: 0 0 0 5%'>
+						` + storeWebsites(sourcefile) + `
+					</div>
+				</div>
+				<!--<div id='storeshirts' class='storesection' >
+					<div class='storebutton' style='width:90%;  padding: 0 0 0 5%'>
+						` + storeShirts(sourcefile) + `
+					</div>
+				</div>-->
 			</div>
 		`;
 	}
@@ -528,7 +529,7 @@ function aboutData(screen, sourcefile){
 					<div style='padding: 50px 12px 80px 12px'>	
 						<div class='myheading1'>Projects</br></br>					
 						<div style='padding:0px 0 0 0 '>
-								` + printAllProjects(sourcefile) + `
+							` + printAllProjects(sourcefile) + `
 						</div>
 					</div>
 					<div style='text-align:left; font-size:15px; padding:30px 0 10px 0'>
@@ -549,7 +550,7 @@ function aboutData(screen, sourcefile){
 					<div style='padding: 50px 12px 80px 12px'>	
 						<div class='myheading1'>Projects</br></br>					
 						<div style='padding:0px 0 0 0 '>
-								` + printAllProjects(sourcefile) + `
+							` + printAllProjects(sourcefile) + `
 						</div>
 					</div>
 					<div style='text-align:left; font-size:15px; padding:0 0 10px 0'>
@@ -560,7 +561,7 @@ function aboutData(screen, sourcefile){
 	}
 }
 
-//This is the code that appears on the painting page
+//This is the code that appears on the project page
 function projectData(screen, sourcefile){
 	if(screen===0){
 		return `
@@ -579,7 +580,7 @@ function projectData(screen, sourcefile){
 			<div style='padding: 5px 12px 5px 12px'>	
 				<div class='myheading1'>Projects</br></br>					
 				<div style='padding:10px 0 0 0 '>
-						` + printAllProjects(sourcefile) + `
+					` + printAllProjects(sourcefile) + `
 				</div>
 			</div>	
 		`;
@@ -588,14 +589,14 @@ function projectData(screen, sourcefile){
 			<div style='padding: 5px 12px 5px 12px'>	
 				<div class='myheading1'>Projects</br></br>					
 				<div style='padding:10px 0 0 0 '>
-						` + printAllProjects(sourcefile) + `
+					` + printAllProjects(sourcefile) + `
 				</div>
 			</div>	
 		`;
 	}
 }
 
-//When there is a change in the size of the indow or screen it will update the content to fit it
+//When there is a change in the size of the window or screen it will update the content to fit it
 //0 represents a computer screen, 1 is a tablet, and 2 is a phone
 //the first number will always represent the screen it is on
 //ext is the location the file is in relative to index
@@ -641,7 +642,7 @@ function determineHomeSize(ext){
 	showSlides(1);
 }
 
-//When there is a change in the size of the indow or screen it will update the content to fit it
+//When there is a change in the size of the window or screen it will update the content to fit it
 //0 represents a computer screen, 1 is a tablet, and 2 is a phone
 //0,1,2 are the first page, while 3,4,5 are the other pages
 //the first number will always represent the screen it is on
@@ -682,7 +683,7 @@ function determineBlogSize(ext,page){
 	}
 }
 
-//When there is a change in the size of the indow or screen it will update the content to fit it
+//When there is a change in the size of the window or screen it will update the content to fit it
 //0 represents a computer screen, 1 is a tablet, and 2 is a phone
 //the first number will always represent the screen it is on
 //ext is the location the file is in relative to index
@@ -722,7 +723,7 @@ function determinePaintingSize(ext){
 	}
 }
 
-//When there is a change in the size of the indow or screen it will update the content to fit it
+//When there is a change in the size of the window or screen it will update the content to fit it
 //0 represents a computer screen, 1 is a tablet, and 2 is a phone
 //the first number will always represent the screen it is on
 //ext is the location the file is in relative to index
@@ -765,7 +766,7 @@ function determineGameSize(ext){
 	}
 }
 
-//When there is a change in the size of the indow or screen it will update the content to fit it
+//When there is a change in the size of the window or screen it will update the content to fit it
 //0 represents a computer screen, 1 is a tablet, and 2 is a phone
 //the first number will always represent the screen it is on
 //ext is the location the file is in relative to index
@@ -806,7 +807,7 @@ function determineAboutSize(ext){
 	disableButton();
 }
 
-//When there is a change in the size of the indow or screen it will update the content to fit it
+//When there is a change in the size of the window or screen it will update the content to fit it
 //0 represents a computer screen, 1 is a tablet, and 2 is a phone
 //the first number will always represent the screen it is on
 //ext is the location the file is in relative to index
@@ -1035,4 +1036,3 @@ function determinePaintSize(ext){
 
 	}
 }
-

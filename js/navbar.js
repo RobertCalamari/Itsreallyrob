@@ -39,7 +39,7 @@ function closeNav() {
 function loadAd(sourcefile) {
 	document.getElementById("mysidead").innerHTML=
 				`<a href='javascript:void(0)' class='closebtn' onclick='closeAd()'>&times;</a>
-				 <label class='sidenavlabel'>Are you looking to own a website? Want to get notified when something is posted? Then click <a href='` + sourcefile + `/pages/aboutme.html#messageform'>here</a> to get started!</label>
+				 <label class='sidenavlabel'>Are you looking to own a website? Want to get notified when something is posted? Then click <a href='` + sourcefile + `/pages/aboutme.html#messageform'>here</a>!</label>
 				`;
 
 	setTimeout(function(){ openAd() }, 6000);

@@ -23,7 +23,7 @@
 		<div onclick="closeNav()">
 
 			<div class="content" id="contentdiv" >
-								This page is under construction! But look at all this content!
+				This page is under construction! Coming Soon!!
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 			</div>
@@ -40,21 +40,23 @@
 <html>
 
 <script type="text/javascript">
+	//This bit of code loads the navigation bar and loads the entire pages content
+	//ext is the reference to where this file is to index.html
 	const ext = "../..";
 	loadNav(ext);
-	determineBlogSize(ext);
+	determineDrinkingGameSize(ext);
 
-	const currentWidth  = document.documentElement.clientWidth;
-	window.onresize = resize;
-	
-	function resize()
-	{
-		const newWidth  = document.documentElement.clientWidth;
-		if(currentWidth != newWidth){
-			determineBlogSize(ext);
-		}
+	// const currentWidth  = document.documentElement.clientWidth;
+	// window.onresize = resize;
+	//Checks if the width of the screen has changed
+	// function resize()
+	// {
+	// 	const newWidth  = document.documentElement.clientWidth;
+	// 	if(currentWidth != newWidth){
+	// 		determineGameSize(ext);
+	// 	}
 	 	
-	}
+	// }
 
 
 </script>

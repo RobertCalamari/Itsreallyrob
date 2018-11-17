@@ -5,7 +5,7 @@ function storeWebsites() {
 			</div>
 		</div>	
 		<br/>
-		<div style='text-align:left'>
+		<div style='text-align:center'>
 			Do you need a website for your business? Maybe either to got noticed more or to boost sales? Or maybe you want a personal website that could be about anything!  <br /><br />
 			
 			If you said yes to any of those questions, hire me to get a great website to put you ahead of the competitors. Working closely with you along the way, I will make sure that you will get exactly what you are looking for.<br /><br />
@@ -40,8 +40,8 @@ function storePaintings(sourcefile) {
 				<div class='myheading1' style='font-size:30px;'>Paintings</br>
 				</div>
 			</div>	
-			<div style='padding:50px 0 50px 0; width:75%; text-align:left; margin:auto;'>
-				All paintings are available for sail, if not sold already. Prices do not include shipping. If you would like me to paint something specific that I do not have, please feel free to contact me <a href='../pages/aboutme.html#messageform'>here</a> about your request.
+			<div style='padding:50px 0 50px 0; width:75%; text-align:center; margin:auto;'>
+				If available, every painting is for sale! Browse through a great selection of every painting made since I started. Price does not include shipping. Frames are available upon request, but require an additional charge. If you would like me to paint something specific that I do not have, please feel free to contact me <a href='../pages/aboutme.html#messageform'>here</a> about your request.<br>Click below to view all the paintings!
 			</div>
 			<div style='text-align:center; padding:70px 0 0px 0px '>
 				<input type='button' class='button1' value='View All' onclick='goPainting("` + sourcefile + `")'>

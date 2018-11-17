@@ -10,12 +10,6 @@ const projects = [
 	  url:"https://beachboxnow.com",
 	  info:"Wordpress",
 	  img:"/img/beachboxlogoblack.png"
-	},
-	{
-	  title:"Drawing App",
-	  url:"../../pages/games/drawing4ios.html",
-	  info:"Javascript, Node.JS, HTML, CSS",
-	  img:"/img/CalamariBlack.png"
 	}
 ];
 

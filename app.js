@@ -2,11 +2,13 @@
 var express = require('express');
 var app = express();
 var serv = require('http').Server(app);
- 
+
 app.get('/',function(req, res) {
     //Start this file
     res.sendFile(__dirname + '/client/index.html');
 });
+
+
 //This allows use of other folders
 app.use('/client',express.static(__dirname + '/client'));
 app.use(express.static(__dirname + '/client/css'));
@@ -22,9 +24,21 @@ app.use(express.static(__dirname + '/client'));
 // if (port == null || port == "") {
 //   port = 8000;
 // }
+
+
 serv.listen(process.env.PORT || 8000);
 
 console.log("Server started.");
+
+
+function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
+
 
 var SOCKET_LIST = {};
 var plist = {};
@@ -39,14 +53,8 @@ var Room = function(id,nameid,type,maxp){
     maxplayers:maxp,
     currplayers:0,
     spectate:"",
-    player1:"",
-    player2:"",
-    player3:"",
-    player4:"",
-    player5:"",
-    player6:"",
-    player7:"",
-    player8:""
+    players:[],
+    sentall:false
     }
     
     return self;
@@ -54,14 +62,17 @@ var Room = function(id,nameid,type,maxp){
 
 
 //This is a player object. it has the id, name and what room the player is in
-var Player = function(id,nameid,playernm){
+var Player = function(id,nameid,playernm,roomid){
    var self = {
     id:id,
     name:nameid,
+    room:roomid,
     playern:playernm,
     loggedin:true,
-    otherinfo:"nothing"
-    
+    score:0,
+    pointsreceived:false,
+    counterscore:0,
+    other:"nothing"
     }
     //console.log("[ENTITY] - Player Entity Created: " +  nameid);
     return self;
@@ -72,11 +83,12 @@ Room.onCreate = function(socket,nameid, gametype){
     console.log("[CREATION] - ROOM CREATED: " +  nameid);
 
     //Assign how many players are allowed per gametype
-    if(gametype == "Tic Tac Toe"){
-        maxp = 2;
-    }
-    else{
-        maxp = 6;
+    if(gametype=="Party Pack"){
+        maxp = 8;
+    }else if(gametype=="Drawing App"){
+        maxp = 8;
+    }else{
+        maxp = 8;
     }
 
     var room = Room(socket,nameid,gametype,maxp);
@@ -86,21 +98,19 @@ Room.onCreate = function(socket,nameid, gametype){
 
 //When a room disconnects it is deleted from the list of rooms(rlist)
 Room.onDisconnect = function(socket){
-    console.log("[DELETION] - Room from list deleted: " + rlist[socket].name);
     delete rlist[socket];
 }
 
 //When a player is connected it is assigned a player object and added to the player list(plist)
-Player.onConnect = function(socket,nameid,playernm){
+Player.onConnect = function(socket,nameid,playernm,roomid){
     console.log("[CREATION] - PLAYER CREATED: " +  nameid);
-    var player = Player(socket,nameid,playernm);
+    var player = Player(socket,nameid,playernm,roomid);
     plist[socket] = player;
     
 }
 
 //When a player is disconnected they are removed from the player list(plist)
 Player.onDisconnect = function(socket){
-        console.log("[DELETION] - Player from list deleted: " + plist[socket].name);
         delete plist[socket];
 }
 
@@ -148,15 +158,17 @@ var addRoom = function(data,cb){
 var doesUsernameExist = function(data,cb){
     setTimeout(function(){
         var torf = false;
-        for(var i in rlist){
-            if(data.room == rlist[i].name){
-                if(data.username == rlist[i].player1 || data.username == rlist[i].player2 || data.username == rlist[i].player3 || data.username == rlist[i].player4 || data.username == rlist[i].player5 || data.username == rlist[i].player6 || data.username == rlist[i].player7 || data.username == rlist[i].player8){
-                    torf=true;
-                    console.log("[ROOM CHECK] - User already in room: " +  data.username);
-                }
-                else{
-                    console.log("[ROOM CHECK] - User not in room: " +  data.username);
-                    torf=false;
+        for(var j in rlist){
+            if(data.room == rlist[j].name){
+                for(var r in rlist[j].players){
+                    if(data.username == rlist[j].players[r].name){
+                        torf=true;
+                        //console.log("[ROOM CHECK] - User already in room: " +  data.username);
+                        break;
+                    }else{
+                        //console.log("[ROOM CHECK] - User not in room: " +  data.username);
+                        torf=false;
+                    }
                 }
             }
         }
@@ -167,17 +179,22 @@ var doesUsernameExist = function(data,cb){
 //This sends the new list of players 
 var updatePlayerClient = function(data) {
 
-
     //Sends list to all players
     for(var i in plist){
         for(var j in rlist){
             if(data.room == rlist[j].name){
-                if(rlist[j].player1 == plist[i].name || rlist[j].player2 == plist[i].name || rlist[j].player3 == plist[i].name || rlist[j].player4 == plist[i].name || rlist[j].player5 == plist[i].name || rlist[j].player6 == plist[i].name || rlist[j].player7 == plist[i].name || rlist[j].player8 == plist[i].name){
-                    
-                        var listofplayers = "Player 1: " + rlist[j].player1 + "<br>" + "Player 2: " + rlist[j].player2 + "<br>" + "Player 3: " + rlist[j].player3 + "<br>" + "Player 4: " + rlist[j].player4 + "<br>" + "Player 5: " + rlist[j].player5 + "<br>" + "Player 6: " + rlist[j].player6 + "<br>" + "Player 7: " + rlist[j].player7 + "<br>" + "Player 8: " + rlist[j].player8;
-
-                    SOCKET_LIST[i].emit('updateplayersclient',{lop:listofplayers,gametype:rlist[j].gametype,player1:rlist[j].player1,player2:rlist[j].player2,player3:rlist[j].player3,player4:rlist[j].player4,player5:rlist[j].player5,player6:rlist[j].player6,player7:rlist[j].player7,player8:rlist[j].player8,  });
-                }   
+                for(var r in rlist[j].players){
+                    if(rlist[j].players[r].name == plist[i].name && rlist[j].name == plist[i].room)
+                    {
+                        var listofplayers = "";
+                        for(var q=0;q<rlist[j].players.length;q++){
+                            listofplayers = listofplayers + "Player " + (q+1) +": " + rlist[j].players[q].name + "<br>";
+                        }
+                        
+                        SOCKET_LIST[i].emit('updateplayersclient',{lop:listofplayers,room:data.room,gametype:rlist[j].gametype,allplayers:rlist[j].players});
+                        
+                    }
+                }
             }
         }
     }
@@ -213,33 +230,32 @@ io.sockets.on('connection', function(socket){
 
         //Check if the room exists
         if(isValidRoom(data)){
-            
-            //Check if userna,e already exists
+            //Check if username already exists
             doesUsernameExist(data,function(res){
                 if(res){
-
                     //Username exists so lets see if they are a new person trying to log in or was disconnected
-                    for(var i in rlist){
-                        if(data.room == rlist[i].name){
-                            for(var j in plist){
+                    for(var j in rlist){
+                        if(data.room == rlist[j].name){
+                            for(var i in plist){
 
-                                //Check if player list is in the room already. This makes it so other players can have the same name in other rooms
-                                if(plist[j].name == data.username && (rlist[i].player1 == plist[j].name || rlist[i].player2 == plist[j].name || rlist[i].player3 == plist[j].name || rlist[i].player4 == plist[j].name || rlist[i].player5 == plist[j].name || rlist[i].player6 == plist[j].name || rlist[i].player7 == plist[j].name || rlist[i].player8 == plist[j].name))
-                                {
+                                if(data.username == plist[i].name && plist[i].room == data.room){
+
                                     //If player was already created but disconnected then assign the new socket
-                                    if(plist[j].loggedin == false && plist[j].name == data.username){
-                                        console.log("[RECONNECT] - User reconnected: " + plist[j].name);
+                                    if(plist[i].loggedin == false){
+                                        //console.log("[RECONNECT] - User reconnected: " + plist[i].name);
                                         delete SOCKET_LIST[socket.id];
-                                        SOCKET_LIST[plist[j].id] = socket;
-                                        socket.id = plist[j].id;
+                                        SOCKET_LIST[plist[i].id] = socket;
+                                        socket.id = plist[i].id;
                                         updatePlayerClient(data);
-                                        plist[j].loggedin = true;
-                                        socket.emit('signInResponse',{success:true,msg1:"Player Created!"});
+                                        plist[i].loggedin = true;
+                                        socket.emit('signInResponse',{success:true,gametype:rlist[j].gametype,room:data.room,msg1:"Player Created!"});
+                                        break;
                                     }
                                     else{
 
                                         //If player already in game then deny them access
                                         socket.emit('signInResponse',{success:false,msg1:"Please choose another name!"});   
+                                        break;
                                     }
                                 }
                             }
@@ -250,66 +266,25 @@ io.sockets.on('connection', function(socket){
 
                     //If username doesn't exist then create a player
                     addUser(data,function(){
-                        for(var i in rlist){
-                            if(data.room == rlist[i].name){
-                                console.log("[CONNECTION] - PLAYER CONNECTED : " +  data.username);
+                        for(var j in rlist){
+                            if(data.room == rlist[j].name){
+                                for(var r in rlist[j].players){
+                                    if(rlist[j].currplayers < rlist[j].maxplayers){
+                                        Player.onConnect(socket.id,data.username,2,data.room);
+                                        rlist[j].players[rlist[j].players.length]=plist[socket.id];
+                                        rlist[j].currplayers++;
 
-                                //Create a player assigning them to a player spot and also update player data on client
-                                if(rlist[i].player1 == "" && rlist[i].currplayers < rlist[i].maxplayers){
-                                    Player.onConnect(socket.id,data.username,"player1");
-                                    console.log("--- " + data.username + " is assigned to PLAYER 1");
-                                    rlist[i].player1=data.username;
-                                    rlist[i].currplayers++;
-                                }
-                                else if(rlist[i].player2 == "" && rlist[i].currplayers < rlist[i].maxplayers){
-                                    Player.onConnect(socket.id,data.username,"player2");
-                                   console.log("--- " + data.username + " is assigned to PLAYER 2");
-                                    rlist[i].player2=data.username;
-                                    rlist[i].currplayers++;
-                                }
-                                else if(rlist[i].player3 == "" && rlist[i].currplayers < rlist[i].maxplayers){
-                                    Player.onConnect(socket.id,data.username,"player3");
-                                    console.log("--- " + data.username + " is assigned to PLAYER 3");
-                                    rlist[i].player3=data.username;
-                                    rlist[i].currplayers++;
-                                }
-                                else if(rlist[i].player4 == "" && rlist[i].currplayers < rlist[i].maxplayers){
-                                    Player.onConnect(socket.id,data.username,"player4");
-                                    console.log("--- " + data.username + " is assigned to PLAYER 4");
-                                    rlist[i].player4=data.username;
-                                    rlist[i].currplayers++;
-                                }
-                                else if(rlist[i].player5 == "" && rlist[i].currplayers < rlist[i].maxplayers){
-                                    Player.onConnect(socket.id,data.username,"player5");
-                                    console.log("--- " + data.username + " is assigned to PLAYER 5");
-                                    rlist[i].player5=data.username;
-                                    rlist[i].currplayers++;
-                                }
-                                else if(rlist[i].player6 == "" && rlist[i].currplayers < rlist[i].maxplayers){
-                                    Player.onConnect(socket.id,data.username,"player6");
-                                    console.log("--- " + data.username + " is assigned to PLAYER 6");
-                                    rlist[i].player6=data.username;
-                                    rlist[i].currplayers++;
-                                }
-                                else if(rlist[i].player7 == "" && rlist[i].currplayers < rlist[i].maxplayers){
-                                    Player.onConnect(socket.id,data.username,"player7");
-                                    console.log("--- " + data.username + " is assigned to PLAYER 7");
-                                    rlist[i].player7=data.username;
-                                    rlist[i].currplayers++;
-                                }
-                                else if(rlist[i].player8 == "" && rlist[i].currplayers < rlist[i].maxplayers){
-                                    Player.onConnect(socket.id,data.username,"player8");
-                                    console.log("--- " + data.username + " is assigned to PLAYER 8");
-                                    rlist[i].player8=data.username;
-                                    rlist[i].currplayers++;
-                                    
-                                }
-                                else{
-                                    socket.emit('signInResponse',{success:false,msg1:"Room is full!"});
-                                }
-                                socket.emit('signInResponse',{success:true,msg1:"Player Created!"});
-                                socket.emit('updategameclient',{gametype:data.gametype}); 
-                                updatePlayerClient(data);
+                                        console.log("[CONNECTION] - PLAYER CREATED : " +  data.username);
+                                        socket.emit('signInResponse',{success:true,gametype:rlist[j].gametype,room:data.room,np:plist[socket.id],msg1:"Player Created!"});
+                                        updatePlayerClient(data);
+                                        break;
+                                    }
+                                    else{
+                                        socket.emit('signInResponse',{success:false,msg1:"Room is full!"});
+                                        break;
+                                    }
+                                     
+                                }                            
                             }
                         }
                     });        
@@ -317,7 +292,7 @@ io.sockets.on('connection', function(socket){
             });
         } 
         else {
-            console.log("[ERROR] - Room does not exist");
+            //console.log("[ERROR] - Room does not exist");
             socket.emit('signInResponse',{success:false,msg1:"Room does not exist!"});         
         }
     });
@@ -330,21 +305,19 @@ io.sockets.on('connection', function(socket){
                     addRoom(data,function(){
                         console.log("[CONNECTION] - NEW ROOM CONNECTED! : " +  data.room + " | " + data.gametype);
                         Room.onCreate(socket.id,data.room,data.gametype);
-                        updatePlayerClient(data);
                         
                         socket.emit('roomMakeResponse',{success:true,admin:true,room:data.room,gametype:data.gametype});
-                        socket.emit('updategameclient',{gametype:data.gametype});    
                     });
                     addUser(data,function(){
-                        for(var i in rlist){
-                            if(data.room == rlist[i].name){ 
-                                    Player.onConnect(socket.id,data.username,"player1");
-                                    console.log("--- " + data.username + " is assigned to PLAYER 1");
-                                    rlist[i].player1=data.username;
-                                    rlist[i].currplayers++;
+                        for(var j in rlist){
+                            if(data.room == rlist[j].name){ 
+                                    Player.onConnect(socket.id,data.username,"1",data.room);
+                                    console.log("[CONNECTION] - PLAYER CREATED : " +  data.username);
+                                    rlist[j].players[0]=plist[socket.id];
+                                    rlist[j].currplayers++;
                                     updatePlayerClient(data);
-                                    socket.emit('signInResponse',{success:true,msg1:"Player Created!"});
-                                    socket.emit('updategameclient',{gametype:data.gametype}); 
+                                    socket.emit('signInResponse',{success:true,gametype:data.gametype,room:data.room,np:plist[socket.id],msg1:"Player Created!"});
+                                    // socket.emit('updategameclient',{gametype:data.gametype}); 
                                
                             }
                         }
@@ -356,38 +329,46 @@ io.sockets.on('connection', function(socket){
     //This is when a socket is disconnected from the server
     socket.on('disconnect',function(){
         
-        // //This searches if the disconnect was a player
-        // for(var i in plist){
-        //     if(plist[i].id == socket.id){
+        //This searches if the disconnect was a player
+        for(var i in plist){
+            if(plist[i].id == socket.id){
 
-        //         //If it was a player then it allows the player to exit the browser but be able to log back into the game
-        //         console.log("[LOGGED OUT] - User logged out! : " +  plist[i].name);
-        //         plist[socket.id].loggedin = false;
-        //     }
-        // }
+                var theroom = plist[i].room;
 
-        // //This searches if the disconnect was a room
-        // for(var j in rlist){
-        //     if(rlist[j].id == socket.id){
+                //If it was a player then it allows the player to exit the browser but be able to log back into the game
+                console.log("[LOGGED OUT] - User logged out! : " +  plist[i].name);
+                plist[socket.id].loggedin = false;
 
-        //         //If it was a room the room gets deleted from the ROOMS list and the SOCKET_LIST
-        //         delete ROOMS[rlist[j].name];
-        //         delete SOCKET_LIST[socket.id];
-        //          for(var i in plist){
-        //             //This deleted each player that was in the room
-        //             if(rlist[j].player1 == plist[i].name || rlist[j].player2 == plist[i].name || rlist[j].player3 == plist[i].name || rlist[j].player4 == plist[i].name || rlist[j].player5 == plist[i].name || rlist[j].player6 == plist[i].name || rlist[j].player7 == plist[i].name || rlist[j].player8 == plist[i].name){
-        //                 //Send the user back to the index page and delete the player from USERS and SOCKET_LIST
-        //                 SOCKET_LIST[i].emit('sendBackToIndex',{send:true});
-        //                 delete USERS[plist[i].name];
-        //                 delete SOCKET_LIST[plist[i].id];
-        //                 //This finalizes the player deletion
-        //                 Player.onDisconnect(plist[i].id);
-        //             }
-        //          }
-        //         //This finalizes the room deletion
-        //          Room.onDisconnect(socket.id);
-        //     }
-        // }   
+                var deleteroom = true;
+
+                for(var j in rlist){
+                    if(plist[i].room == rlist[j].name){
+                        for(var r in rlist[j].players){
+                            if(rlist[j].players[r].loggedin == true){
+                                deleteroom = false;
+                                console.log("[----------------------------------------------------------------------------------] - User still logged in! : " +  rlist[j].players[r].name);
+                            }
+                        }
+                    }
+                }
+
+                if(deleteroom == true){
+                    for(var j in rlist){
+                        if(theroom == rlist[j].name){
+                            for(var r in rlist[j].players){
+                                delete USERS[rlist[j].players[r].name];
+                                delete SOCKET_LIST[rlist[j].players[r].id];
+                                Player.onDisconnect(rlist[j].players[r].id);
+                            }
+                        }
+                    }
+                    delete ROOMS[theroom];
+                    Room.onDisconnect(socket.id);
+                }
+
+
+            }
+        }
     });
 
 //////Sending Everything to Clients///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -399,9 +380,11 @@ io.sockets.on('connection', function(socket){
         for(var i in plist){
             for(var j in rlist){
                 if(data.room == rlist[j].name){
-                    if(rlist[j].player1 == plist[i].name || rlist[j].player2 == plist[i].name || rlist[j].player3 == plist[i].name || rlist[j].player4 == plist[i].name || rlist[j].player5 == plist[i].name || rlist[j].player6 == plist[i].name || rlist[j].player7 == plist[i].name || rlist[j].player8 == plist[i].name){
-                        var playerName = plist[socket.id].name;
-                        SOCKET_LIST[i].emit('addToChat',playerName + ': ' + data.themsg);
+                    for(var r in rlist[j].players){
+                        if(rlist[j].players[r].name == plist[i].name){
+                            var playerName = plist[socket.id].name;
+                            SOCKET_LIST[i].emit('addToChat',playerName + ': ' + data.themsg);
+                        }
                     }
                 }
             }
@@ -421,25 +404,191 @@ io.sockets.on('connection', function(socket){
         for(var i in plist){
             for(var j in rlist){
                 if(data.room == rlist[j].name){
-                    if(rlist[j].player1 == plist[i].name || rlist[j].player2 == plist[i].name || rlist[j].player3 == plist[i].name || rlist[j].player4 == plist[i].name || rlist[j].player5 == plist[i].name || rlist[j].player6 == plist[i].name || rlist[j].player7 == plist[i].name || rlist[j].player8 == plist[i].name){
+                    for(var r in rlist[j].players){
+                        if(rlist[j].players[r].name == plist[i].name){
                         var playerName = plist[socket.id].name;
                         SOCKET_LIST[i].emit('updategameclient',{gametype:rlist[j].gametype});
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+
+    socket.on('startgamepartypack',function(data){
+        plist[socket.id].counterscore = 0;
+        plist[socket.id].pointsreceived = false;  
+
+        for(var i in plist){
+            for(var j in rlist){
+                if(data.room == rlist[j].name){
+                    for(var r in rlist[j].players){
+                        if(rlist[j].players[r].name == plist[i].name && rlist[j].name == plist[i].room)
+                        {
+                           SOCKET_LIST[i].emit('partypackupdate',{room:data.room});
+                            
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+     socket.on('resetcounterscore',function(data){
+        plist[socket.id].counterscore = 0;                 
+    });
+
+    socket.on('addtocounterscore',function(data){
+        plist[socket.id].counterscore = data.finalscore;            
+    });
+
+    socket.on('getrandomnum',function(data){
+        var randdiff = Math.floor(Math.random() * data.num); 
+        for(var i in plist){
+            for(var j in rlist){
+                if(data.room == rlist[j].name){
+                    for(var r in rlist[j].players){
+                        if(rlist[j].players[r].name == plist[i].name && rlist[j].name == plist[i].room)
+                        {
+                           SOCKET_LIST[i].emit('giverandomnum',{room:data.room,rnum:randdiff});
+                            
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    socket.on('endPartyPackMath',function(data){
+
+        var mathlow = [];
+        var sortinglist = [];
+        var finallist = [];           
+        listitem = 0;
+
+
+        for(var j in rlist){
+            if(data.room == rlist[j].name){
+                if(rlist[j].players[rlist[j].players.length-1].id == socket.id){
+                    for(var z in rlist[j].players){
+                        sortinglist[z] = rlist[j].players[z];
+                    }
+
+
+                    while(finallist.length < rlist[j].players.length){
+                        var topscore = 0;
+                        for(var z in sortinglist){
+                            if(sortinglist[z].counterscore >= topscore){
+                                topscore = sortinglist[z].counterscore;
+                                listitem = z; 
+                            }
+                        }
+                        finallist[finallist.length] = sortinglist[listitem];   
+                        sortinglist.splice(listitem, 1); 
+                        
+                    }
+
+                    for(var z in rlist[j].players){
+                        if(rlist[j].players[z].name == finallist[0].name   &&  rlist[j].players[z].pointsreceived == false){  
+                            rlist[j].players[z].score += 100;
+                            rlist[j].players[z].pointsreceived = true;
+                            mathlow[0] = rlist[j].players[z];
+                        }
+                        for(var y in finallist.players){
+                            if(y==0){
+
+                            }else{
+                                if(finallist[0].counterscore == finallist[y].counterscore){
+                                    if(rlist[j].players[z].name == finallist[y].name  &&  rlist[j].players[z].pointsreceived == false){
+                                        rlist[j].players[z].score += 100;
+                                        rlist[j].players[z].pointsreceived = true;
+                                        mathlow[mathlow.length] = rlist[j].players[z];
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
 
-        // //Updates on the rooms list
-        // for(var j in rlist){
-        //     if(data.room == rlist[j].name){
-        //          SOCKET_LIST[rlist[j].id].emit('updategameclient',{gametype:rlist[j].gametype});
-        //     }
-        // }
+
+        for(var i in plist){
+            for(var j in rlist){
+                if(data.room == rlist[j].name){
+                    for(var r in rlist[j].players){
+                        if(rlist[j].players[r].name == plist[i].name && rlist[j].name == plist[i].room)
+                        {
+                            if(rlist[j].players[rlist[j].players.length-1].id == socket.id){
+
+                                SOCKET_LIST[i].emit('endPartyPackMathAll',{room:data.room,winners:mathlow,mathallplayers:finallist});
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+
     });
 
+    socket.on('showCurrentScores',function(data){
+        var sortinglist = [];
+        var finallist = [];           
+        listitem = 0;
 
 
-   
+        for(var j in rlist){
+            if(data.room == rlist[j].name){
+                if(rlist[j].players[rlist[j].players.length-1].id == socket.id){
+                    for(var z in rlist[j].players){
+                        sortinglist[z] = rlist[j].players[z];
+                    }
+
+
+                    while(finallist.length < rlist[j].players.length){
+                        var topscore = 0;
+                        for(var z in sortinglist){
+                            if(sortinglist[z].score >= topscore){
+                                topscore = sortinglist[z].score;
+                                listitem = z; 
+                            }
+                        }
+                        finallist[finallist.length] = sortinglist[listitem];    
+                        sortinglist.splice(listitem, 1); 
+                        
+                    }
+                }
+            }
+        }
+
+
+        for(var i in plist){
+            for(var j in rlist){
+                if(data.room == rlist[j].name){
+                    for(var r in rlist[j].players){
+                        if(rlist[j].players[r].name == plist[i].name && rlist[j].name == plist[i].room)
+                        {
+                            if(rlist[j].players[rlist[j].players.length-1].id == socket.id){
+
+                                SOCKET_LIST[i].emit('updateCurrentScore',{room:data.room,orderedlistofplayers:finallist});
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    
+
+
+
+
+
+
     //Show players list
     socket.on('showplayerslist',function(data){
         console.log("***********************************8******");
@@ -452,14 +601,7 @@ io.sockets.on('connection', function(socket){
             console.log("PLAYER: " +  i + " : " + USERS[i]);
         }
     });
-
-
-
-
-
-
-
-
-
-
 });
+
+
+
