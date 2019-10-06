@@ -1,5 +1,6 @@
 function printEmailSender(width) {
-	return `	
+	return `
+		<div style="text-align:center;font-size: 11px;">All emails will be sent to rjcalamari@gmail.com</div>	
 		<div id='messageform' style='text-align:left;background-color:#a8aeb299; border: 3px solid #b6afaf; border-radius: 5px; width:` + width + `;padding: 15px 15px 15px 40px; margin:auto;'>
 					
 			<form action="https://postmail.invotes.com/send"
@@ -18,7 +19,7 @@ function printEmailSender(width) {
 					<label>Message</label><textarea name="text" class='emaildata' placeholder="" required></textarea> <br />
 				</div>	
 				<div style='padding: 5px 0 0px 0'>
-					<label  class='notify'>Subscribe<input type="checkbox" name="extra_phone_number" value="I want notifications" checked/><span class="checkmark"></span></label> <br />
+					<label  class='notify'>Subscribe<input type="checkbox" name="extra_phone_number" value="I want notifications" checked/><span class="checkmark"></span></label> <label style="font-size: 10px;">By subscribing you will recieving updates on all posts, paintings, and other news.</label><br />
 				</div>	
 				<br/>
 				<div style='text-align:center;padding: 0 0 0 45px;'>

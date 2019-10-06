@@ -1,0 +1,30 @@
+
+.blogposttitle{
+    text-align: center;
+    font-family: "Gravity-Regular";
+}
+
+.blogposttitle a{
+    text-decoration:none;
+    color: inherit;
+}
+
+.blogposttitle a:hover{
+    opacity: .5;
+}
+
+.blogpostdate {
+    color:#5b5858;
+    font-size:11px;
+}
+
+.blogcontent {
+	text-align:left;
+}
+
+.postcontent {
+	color:#5b5858;
+	font-size:15px;
+	padding:10px 0 30px 0;
+    text-align: justify;
+}

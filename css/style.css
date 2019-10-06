@@ -4,7 +4,17 @@ body {
 	margin-right: 0px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	font-family: Faune-Regular, sans-serif;
+	font-family: "Gravity-Book";
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 .content {
@@ -14,6 +24,7 @@ body {
 	height: 100%; 
     width: 100%; 
     overflow-x:hidden;
+    overflow-y:hidden;
 }
 
 .footer {
@@ -40,6 +51,7 @@ body {
 	text-align: center;
 	background-color: black; 
 	color:white;
+    font-family: Faune-Regular, sans-serif;
 }
 
 .header a {
@@ -55,208 +67,33 @@ body {
     opacity: .5;
 }
 
-.infobox {
-	width: 100%;
-	height:auto;
-	text-align: center;
-	color:white;
-	position:relative;	
-}
-
-.infoboxcontentwords {
-	width:100%;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-	font-size:70px;
-    transform: translate(-50%, -50%);
-}
-
-.infoboxcontentwords2 {
-	width:100%;
-    position: absolute;
-    top: 47%;
-    left: 50%;
-	font-size:20px;
-    transform: translate(-50%, -50%);
-}
-
-.infoboxcontentbutton {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #000000; 
-    border: none;
-    color: white;
-    padding: 20px 20px;
-    width: 200px;
-    text-align: center;
+.header input {
+    padding: 0px 15px 0px 0px;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-	border-radius: 5px;
-	box-shadow: 0px 7px 15px #000;
-	font-family: Faune-Regular, sans-serif;
+    font-size: 15px;
+    color: #ffffff;
 }
 
-.infoboxcontentbutton:hover {
-    background-color: #95c3de; 
+.header input:hover {
     cursor: hand;
     cursor: pointer;
-}
-
-.information {
-	padding: 30px 10px 0 10px;
-	height: 30px;
+    opacity: .5;
 }
 
 .middlepanel {
-	height: 100%; 
-	width:55%;
-	overflow-wrap: normal;
-	margin:auto;
-}
-
-.blogcontent {
-	text-align:left;
-}
-
-.posttitle {
-	font-size:18px;
-	padding:30px 0 5px 0;
-}
-
-.posttitle a{
-	text-decoration:none;
-	color: inherit;
-}
-
-.posttitle a:hover{
-	opacity: .5;
-}
-
-.slideshowtitle {
-	color:black;
-}
-
-.slideshowtitle a{
-	text-decoration:none;
-	color: inherit;
-}
-
-.slideshowtitle:hover{
-	opacity: .5;
-}
-
-.slideshowpaintings:hover {
-	cursor: hand;
-    cursor: pointer;
-}
-
-.postdate {
-	color:#5b5858;
-	font-size:11px;
-	padding:0 0 25px 0;
-}
-
-.paintingbox {
-	text-align: center;
-}
-
-.paintingimage {
-	padding:0 0 15px 0;
-}
-
-.paintingdescription {
-	width:100%;
-	height:100px;
-	border: 1px solid black; 
-	text-align:left;
-}
-
-.paintingtitle {
-	padding: 20px 0 15px 0;
-	font-weight:bold;
-	font-size:21px;
-}
-
-.paintinginfo {
-	width:90%;
-	text-align:left;
-	margin:auto;
-}
-
-.paintingprice {
-	display: inline-block;
-}
-
-.paintingsize {
-	text-align: right;
-	display: inline-block;
-	float: right;
-}
-
-.biggerpic {
-
-}
-
-.biggerpic:hover{
-	opacity: .8;
-	cursor: hand;
-    cursor: pointer;
-}
-
-.postcontent {
-	color:#5b5858;
-	font-size:15px;
-	padding:10px 0 30px 0;
-}
-
-.smallcontent {
-	height: 100%; 
-    background-color: #467832; 
-}
-
-.lefthomecontainer {
-	padding:10px 0 0 0
+	overflow-wrap: normal; 
+    margin:auto;
+    max-width: 1100px;
+    margin:auto; 
+    padding:0 20px 20px 20px;
 }
 
 .contacthome {
 	width: 100%;
+    height: 200px;
 	text-align: center;
 	padding: 25px 0 25px 0;
-	background-color: #95c3de; 
-}
-
-.emailbox {
-	padding: 25px 15px 25px 15px;
-    position: absolute; 
-    z-index: 1; 
-	bottom:70px;
-	left: 45px;
-    background-color: black; 
-	color:white;
-}
-
-.storecontent {
-	width:30%;
-	height:250px;
-	/*background-color:#737373;*/
-	border: 3px solid #726f6fcc;
-	
-	text-align:center; 
-	padding:15px 0 0px 0px ;
-}	
-
-.storesection {
-	padding:75px 0 75px 0;
-	width:100%;
-	text-align:center; 
-}
-
-.storebutton {
-	padding:0px 0 0px 0;
+	background-color: #3d3d3d;; 
 }
 
 a, a:hover, a:active, a:visited, a:focus {
@@ -267,17 +104,41 @@ a, a:hover, a:active, a:visited, a:focus {
 	font-weight:bold;
 	color:#3d3c3c;
 	font-size:21px;
+    font-family: "Gravity-Regular";
 }
 
 .myheading2 {
 	text-align:center;
 	font-weight:bold; 
 }
+.myheading2 a{
+    text-decoration:none;
+    color: inherit;
+}
 
-.myheadingox {
-    font-weight:bold;
-    color:#fff;
-    font-size:30px;
+.myheading3 {
+    text-align:center;
+    font-weight:bold; 
+    color: black;
+    border: 0px solid black;
+    background-color: #c3c3c3;
+    padding: 3px 8px;
+    margin: 2px;
+}
+
+.changetoblue{
+   background-color: #a7acc5 !important;
+}
+
+.myheading3 a{
+    text-decoration:none;
+    color: inherit;
+}
+
+.myheading3 a:hover{
+    cursor: hand;
+    cursor: pointer;
+    opacity: .5;
 }
 
 .emaildata {
@@ -289,18 +150,6 @@ a, a:hover, a:active, a:visited, a:focus {
 	float:right;
     padding: 0px 0px 0px 0px;
     font-style: italic;
-}
-
-.boozeinputs {
-	background: transparent;
-    border: none;
-    border-bottom: 1px solid #000;
-    width: 100px;
-	text-align:right;
-    outline: none;
-    padding: 0px 5px 0px 5px;
-	margin: 0 0 0px 0;
-	color:#2cd1d1;
 }
 
 .rotate90 {
@@ -316,38 +165,39 @@ a, a:hover, a:active, a:visited, a:focus {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
-.norotatebooze {
-	width:100%;
-}
-
-
-#sketchpadapp {
-    /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-	padding: 25px 0 25px 0;
-	text-align:center;
-}
-#sketchpad {
-    border:2px solid #888;
-    border-radius:4px;
-    position:relative; /* Necessary for correct mouse co-ords in Firefox */
-}
-
-/* All pictures are located here/////////////////////////////////////////////////////////*/
-
 .homepics {
-	transition: transform .2s;
+    transition: transform .2s;
 }
 
 .homepics:hover {
     cursor: hand;
     cursor: pointer;
     transform: scale(1.08);
+}
+
+.imgHolder{
+  display: inline-block;
+  background: #b3c5d5;
+  height:275px; 
+  width:275px;
+}
+.imagecenter{
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    height: 275px;
+    width: 275px;
+    display: flex;
+    position: absolute;
+}
+.item-fade{
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    max-width: 275px; 
+    max-height: 275px;
 }
 
 .contactpics {
@@ -361,11 +211,8 @@ a, a:hover, a:active, a:visited, a:focus {
     transform: scale(1.3);
 }
 
-/* All buttons are located here/////////////////////////////////////////////////////////*/
-
-
 .menubutt {
-	vertical-align: middle;
+	
 }
 
 .menubutt:hover {
@@ -393,30 +240,6 @@ a, a:hover, a:active, a:visited, a:focus {
     cursor: pointer;
     opacity: .9;
 }
-
-.buttongameapps {
-    background-color: #000000; 
-    border: none;
-    color: white;
-    padding: 15px 20px 15px 20px;
-	height: 120px;
-    width: 120px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    font-family: Faune-Regular, sans-serif;
-    margin: 0 2px 0 3px;
-}
-
-.buttongameapps:hover {
-    background-color: #5f5f5f; 
-    cursor: hand;
-    cursor: pointer;
-    opacity: .9;
-}
-
-
 
 .button2 {
     background-color: #000000; 
@@ -461,149 +284,50 @@ a, a:hover, a:active, a:visited, a:focus {
     opacity: .9;
 }
 
- /* Fonts /////////////////////////////////////////////////////////////*/
-
-@font-face {
-font-family: Faune-Regular;
-src: url(../fonts/Faune-TextRegular.otf);
+.secretbutton{
+    width: 300px;
+    height: 200px;
+    margin: 7px;
+    background-color: #3d6f2d;
 }
 
-@font-face {
-font-family: Faune-Bold;
-src: url(../fonts/Faune-TextBold.otf);
+.notclickable {
+    pointer-events:none;
+    background-color: #4b1717;
 }
 
- /* The slide show css /////////////////////////////////////////////////////////////*/
-
-/* Slideshow container */
-.slideshow-container {
- 	max-width: 500px;
-  	position: relative;
-  	margin: auto;
+.button4 {
+    background-color: #3d6f2d;
+    border: none;
+    color: white;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 3px;
+    font-family: Faune-Regular, sans-serif;
 }
 
-/* Hide the images by default */
-.mySlides {
-    display: none;
+.button4:hover {
+    background-color: #7c7c7c; 
+    cursor: pointer;
+    opacity: .9;
 }
-
-/* Next & previous buttons */
-.prev, .next {
-	cursor: pointer;
-	position: absolute;
-	top: 50%;
-	width: auto;
-	margin-top: -22px;
-	padding: 16px;
-	color: white;
-	font-weight: bold;
-	font-size: 18px;
-	transition: 0.6s ease;
-	border-radius: 0 3px 3px 0;
-}
-
-/* Position the "next button" to the right */
-.next {
-	right: 15px;
-	border-radius: 3px 0 0 3px;
-}
-
-.prev {
-	left: 15px;
-	border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  	background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-	color: #f2f2f2;
-	font-size: 15px;
-	padding: 8px 12px;
-	position: absolute;
-	bottom: 8px;
-	width: 100%;
-	text-align: center;
-	}
-
-/* Number text (1/3 etc) */
-.numbertext {
-	color: #f2f2f2;
-	font-size: 12px;
-	padding: 8px 25px;
-	position: absolute;
-	top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-	cursor: pointer;
-	height: 15px;
-	width: 15px;
-	margin: 0 2px;
-	background-color: #bbb;
-	border-radius: 50%;
-	display: inline-block;
-	transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-	background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-	-webkit-animation-name: fade;
-	-webkit-animation-duration: 1.5s;
-	animation-name: fade;
-	animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-	from {opacity: .4}
-	to {opacity: 1}
-}
-
-@keyframes fade {
-	from {opacity: .4}
-	to {opacity: 1}
-}
-
-
-
-
-
-
-
-
-
-/*/////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-
-
-/*/////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-
-
-
-
-
 
 
  /* The side navigation menu /////////////////////////////////////////////////////////////*/
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
+    height: 0px;
+    width: 100%; /* 0 width - change this with JavaScript */
+    /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    top: 70px; /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black*/
+    background-color: #000; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+    overflow-y: hidden;
+    padding-top: 0px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -618,6 +342,22 @@ src: url(../fonts/Faune-TextBold.otf);
 
 .sidenav a:hover {
     color: #f1f1f1;
+}
+
+.sidenav input{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    opacity: .5;
+}
+
+.sidenav input:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: 1;
 }
 
 .sidenav .closebtn {
@@ -638,6 +378,8 @@ src: url(../fonts/Faune-TextBold.otf);
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 } 
+
+
 
  /* The ad /////////////////////////////////////////////////////////////*/
 .sidead {
@@ -747,3 +489,227 @@ src: url(../fonts/Faune-TextBold.otf);
     transform: rotate(45deg);
 }
 
+
+ /* Fonts /////////////////////////////////////////////////////////////*/
+
+@font-face {
+font-family: Faune-Regular;
+src: url(../fonts/Faune-TextRegular.otf);
+}
+
+@font-face {
+font-family: Faune-Bold;
+src: url(../fonts/Faune-TextBold.otf);
+}
+
+@font-face {
+font-family: Proxima-Nova-Bold;
+src: url(../fonts/Proxima-Nova-Bold.otf);
+}
+
+@font-face {
+font-family: Adobe-Garamond-Pro-Italic;
+src: url(../fonts/Adobe-Garamond-Pro-Italic.otf);
+}
+
+@font-face {
+font-family: Crimson-Italic;
+src: url(../fonts/Crimson-Italic.otf);
+}
+@font-face {
+font-family: Gravity-Bold;
+src: url(../fonts/Gravity-Bold.otf);
+}
+@font-face {
+font-family: Gravity-Regular;
+src: url(../fonts/Gravity-Regular.otf);
+}
+@font-face {
+font-family: Gravity-Book;
+src: url(../fonts/Gravity-Book.otf);
+}
+@font-face {
+font-family: FA5-Pro-Solid;
+src: url(../fonts/Font-Awesome-5-Pro-Solid-900.otf);
+}
+@font-face {
+font-family: FA5-Pro-Regular;
+src: url(../fonts/Font-Awesome-5-Pro-Regular-400.otf);
+}
+@font-face {
+font-family: FA5-Pro-Light;
+src: url(../fonts/Font-Awesome-5-Pro-Light-300.otf);
+}
+@font-face {
+font-family: FA5-Brands-Regular;
+src: url(../fonts/Font-Awesome-5-Brands-Regular-400.otf);
+}
+@font-face {
+font-family: Zombie-Holocost;
+src: url(../fonts/Zombie_Holocaust.ttf);
+}
+@font-face {
+font-family: Condensed-French;
+src: url(../fonts/FhaCondensedFrenchNc-O2n3.ttf);
+}
+
+.FA-downarrow {
+    font-family: "FA5-Pro-Solid";
+
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+    
+    .swapheadercomputer{
+        visibility: hidden;
+    }
+
+    .hdrbtn{
+        left:0px !important;
+    }
+
+    .swapheaderphone{
+        visibility: visible !important;
+    }
+
+    .slideshowpaintings{
+        width:350px !important; 
+        height:350px !important;
+    }
+
+    .next {
+        right:76px !important;
+    }
+
+    .prev {
+        left: 75px !important;
+    }
+
+    .prev, .next {
+        width: 15px !important;
+    }
+    .next2 {
+        margin-top: 172px !important;
+    }
+
+    .prev2 {
+        margin-top: 172px !important;
+    }
+
+    .numbertext {
+        left: 63px;
+    }
+
+
+}
+
+
+
+.whitetograyfading {
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: fading;
+    animation-duration: 2s;
+    animation-name: fading;
+}
+@-webkit-keyframes fading {
+    from {
+        color: white;
+    }
+    to {
+        color: #7d7d7d;
+    }
+}
+@keyframes fading {
+    from {
+        color: white;
+    }
+    to {
+        color: #7d7d7d;
+    }
+}
+
+.crossworddiv{
+    position: absolute;
+    font-size: 15px;
+    letter-spacing: .89em;
+    line-height: 20.2px;
+}
+
+.picmeminput{
+    width: 30px;
+    text-align: center;
+    background: #cecaca6e;
+    border: none;
+        border-bottom-color: currentcolor;
+        border-bottom-style: none;
+        border-bottom-width: medium;
+    border-bottom: 1px solid #ffffff54;
+    outline: none;
+    padding: 0px 5px 0px 5px;
+    margin: 0 0 0px 0;
+    color: white;
+}
+
+.whitetoblackfading {
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: fading2;
+    animation-duration: 2s;
+    animation-name: fading2;
+}
+
+.picmemoryimage {
+    border-style: solid;
+    max-width: 200px;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@-webkit-keyframes fading2 {
+    from {
+        color: white;
+    }
+    to {
+        color: black;
+    }
+}
+@keyframes fading {
+    from {
+        color: white;
+    }
+    to {
+        color: black;
+    }
+}
+
+
+
+
+.listbox{
+  background-color: white;
+  margin:auto;
+  width: 75%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #efefef;
+  padding: 30px;
+  box-shadow: 
+    0 1px 1px rgba(0,0,0,0.15),
+    0 10px 0 -5px #eee,
+    0 10px 1px -4px rgba(0,0,0,0.15),
+    0 20px 0 -10px #eee,
+    0 20px 1px -9px rgba(0,0,0,0.15);
+}
+
+.listheader{
+    cursor: pointer;
+}
+
+.listex{
+    color: red;
+    display: inline;
+    padding-left: 19px;
+}

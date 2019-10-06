@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+
+		 <title>Test | Robert Calamari</title>
+		 <link href="../css/style.css" rel="stylesheet">
+		 <link href="../css/store.css" rel="stylesheet">
+		 <script type="text/javascript" src="../js/navbar.js" ></script>
+		 <script type="text/javascript" src="../js/update.js" ></script>    
+		 <script type="text/javascript" src="../js/paintings.js" ></script>   
+		 <script type="text/javascript" src="../js/blog.js" ></script> 
+		 <script type="text/javascript" src="../js/store.js" ></script> 
+		 <script type="text/javascript" src="../js/sendmail.js" ></script> 
+		 <script type="text/javascript" src="../js/authentication.js" ></script> 
+
+		 <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130797682-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-130797682-1');
+		</script>
+		<!-- Google Analytics -->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-130797682-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+		<!-- End Google Analytics -->
+		 
+	</head>
+	<body>
+	  
+		<div id="header" class="header">	
+		</div>
+		<div id="mysidenav" class="sidenav">			
+		</div>	
+		<div>
+			<div id="infobox" class="infobox">
+			</div>	
+
+			<div class="content" id="contentdiv" >
+					<br><br><br>
+					Hello THis is the content!
+
+					<input id="buttonclick" style='width:70px;padding:0px 0 5px 0; font-size:13px;' type="button" value="Click" onClick="numberbigger();" />				
+
+
+					<div>Number of clicks: </div><div id="numbertochange">No Clicks</div>
+					<br><br>
+
+
+						To Sign in:<br>
+					<form>
+						 User name: <input id="usernametest" type="text" name="username" required><br>
+						 User password: <input id="passwordtest" type="password" name="psw" required>
+						 <input id="signinbutton" style='width:70px;padding:0px 0 5px 0; font-size:13px;' type="button" value="Sign In" onClick="authenticate();" />
+					</form> 
+						<div id="answer"></div>
+
+				<div id="signedinform" style="display:none">	
+					<div id="signedincontent"> 
+						Hello!!!!!
+					</div>
+				</div>
+
+
+
+			</div>
+
+		</div>
+	</body>
+
+<html>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+	var socket = io();
+	socket.emit('pageloadtest',{});
+
+
+function numberbigger() {
+	
+	socket.emit('addtoclick',{button:"1"});
+
+}
+
+function authenticate() {
+	user=document.getElementById('usernametest').value;
+	pass=document.getElementById('passwordtest').value;
+	socket.emit('authenticate',{username:user, password:pass});
+
+}
+
+socket.on('updatelick',function(data){
+    	document.getElementById('numbertochange').innerHTML = data.number;
+    });
+
+socket.on('authenticate',function(data){
+		console.log(data.answer);
+		if(data.answer == "dne"){
+    		document.getElementById('answer').innerHTML = "That username does not exist.";
+
+		}else if(data.answer == "ue"){
+    		document.getElementById('signedinform').style.display = "block";
+    		document.getElementById('signedincontent').innerHTML = "Hello " + data.username;
+
+		}else if(data.answer == "pnc"){
+    		document.getElementById('answer').innerHTML = "That password is incorrect.";
+
+		}
+    });
+
+
+</script>

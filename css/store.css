@@ -1,0 +1,113 @@
+.storecontent {
+	width:30%;
+	height:250px;
+	/*background-color:#737373;*/
+	border: 3px solid #726f6fcc;
+	
+	text-align:center; 
+	padding:15px 0 0px 0px ;
+}	
+
+.storesection {
+	padding:75px 0 75px 0;
+	width:100%;
+	text-align:center; 
+}
+
+.storebutton {
+	padding:0px 0 0px 0;
+}
+
+.bottom-left-shop{
+    position: absolute;
+    bottom: -40px;
+    left: 7px;
+    color:black;
+    width: 225px;
+    text-align: left;
+    font-family: Crimson-Italic;
+}
+.bottom-right-shop{
+    position: absolute;
+    bottom: -18px;
+    right: 7px;
+    color:black;
+    font-family: Crimson-Italic;
+}
+.top-left-shop{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color:white;
+    width: 275px;
+    height: 275px;
+    text-align: left;
+    opacity: 0;
+    font-family: Crimson-Italic;
+    transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+    background: #0000004d;
+} 
+
+.top-left-shop:hover{
+    opacity: 1;
+}
+
+.storepics {
+    display: inline-block;
+    padding: 24px 24px 24px 24px;
+}
+
+
+/*///The dropdown menu css//////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Dropdown Button */
+.dropbtn {
+    background-color: #000;
+    color: white;
+    padding: 6px 19px 6px 19px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #57575780;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.ddcont {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.ddcont:hover {
+    background-color: #ddd;
+    cursor: hand;
+    cursor: pointer;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+

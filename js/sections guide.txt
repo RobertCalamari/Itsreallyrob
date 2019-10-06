@@ -1,0 +1,11 @@
+sections guide
+
+main lobby:
+0
+
+party pack sections:
+1-start // partyPackMathGame
+2
+3
+4
+5

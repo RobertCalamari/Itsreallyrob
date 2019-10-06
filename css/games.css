@@ -1,0 +1,87 @@
+
+/*///////////////////Booze or Lose///////////////////*/
+.boozeinputs {
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 104px;
+	text-align:right;
+    outline: none;
+    padding: 0px 5px 0px 5px;
+	margin: 0 0 0px 0;
+	color:white;
+}
+
+.norotatebooze {
+	width:100%;
+}
+
+.bigboldname {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+/*///////////////////Sketchpad///////////////////*/
+#sketchpadapp {
+    /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	padding: 25px 0 25px 0;
+	text-align:center;
+}
+#sketchpad {
+    border:2px solid #888;
+    border-radius:4px;
+    position:relative; /* Necessary for correct mouse co-ords in Firefox */
+}
+
+
+.deadlygamefontheader {
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.showbullets{
+    display:list-item;
+}
+
+
+
+.buttongameapps {
+    background-color: #000000; 
+    border: none;
+    color: white;
+    padding: 15px 20px 15px 20px;
+	height: 120px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    font-family: "Gravity-Book";
+    margin: 0 2px 6px 3px;
+}
+
+.buttongameapps:hover {
+    background-color: #5f5f5f; 
+    cursor: hand;
+    cursor: pointer;
+    opacity: .9;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .buttongameapps {
+        height: 65px;
+        width: 252px;
+    }
+   
+}

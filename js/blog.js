@@ -1,7 +1,7 @@
 const tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp";
 const posts = [
 	{
-	  date:'PINNED - 08/25/2018',
+	  date:'08/25/2018',
 	  title:'Day 1 - The Beginning and What Is This?',
 	  writer:'Robert Calamari',
 	  pinned: '',
@@ -56,7 +56,7 @@ const posts = [
 	  tags:'coding100, javascript, html, css',
 	  content: tab + 'It was finally time to stop messing around with the homepage and move on to the rest of the site. But believe me, I am going to get back and make it look nice as soon as I have some content on the other pages. I did some tweaking to the site, like giving the links that I had a button for a better appearance. I also added in some additional test paintings for when I get down to making that. I also rewrote some code that I saw was not needed or just really repetitive. <br /><br/>' + tab + 
 					'To start off with the blog content, I finally added all the data objects to the blog array so that I could have something to test with. I never made a blog before so I was not sure how to go about doing this. After some thinking I decided to make a few blog page htmls. This way people can go back to the page if they wanted to. After that, I started to make some functions that would print out a certain number of posts per page, but as of right now I have it set to 4. This was a bit challenging, but I almost have it finished due to not having enough time today to finish it. I will leave it for tomorrow and start working on the painting section once I am finished.' + 
-					'<div style="height:auto;width:100%; text-align:center;" ><img src="../../img/screenshots/frontpage1.png" id="../../img/screenshots/frontpage1.png" class="homepics" alt="Screenshot" width=200px onclick="picBig(this.id)"></div>'
+					'<div style="height:auto;width:100%; text-align:center;" ><img src="../../img/screenshots/frontpage1.png" id="../../img/screenshots/frontpage1.png" class="homepics" alt="" width=200px onclick="picBig(this.id)"></div>'
 	},				
 	{
 	  date:'08/31/2018',
@@ -89,7 +89,7 @@ const posts = [
 	  images:'',
 	  tags:'coding100, javascript, html, css',
 	  content: tab + "There won't be much coding for today as I don't have time. However I am going to import all the paintings that I currently have. This took a while since I believe I have over 60 paintings currently. I only got to add them with their price, name, sold, image, and material. I still need to add the size for each of them and fix the images so they are not distorted. I also added the word 'sold' on the gallery view of all the paintings images if it is sold. I will be adding more features the next time as well. The last thing I did was added the individual page for each of the paintings. This still needs a lot of work but it is fine currently since I don't believe anyone will be really buying anytime soon. Here is a picture of how the front page looks currently: <br /><br/>" + tab + 
-					'<div style="height:auto;width:100%; text-align:center;" ><img src="../../img/screenshots/frontpage2.jpg" id="../../img/screenshots/frontpage2.jpg" class="homepics" alt="Screenshot" width=200px onclick="picBig(this.id)"></div>'
+					'<div style="height:auto;width:100%; text-align:center;" ><img src="../../img/screenshots/frontpage2.jpg" id="../../img/screenshots/frontpage2.jpg" class="homepics" alt="" width=200px onclick="picBig(this.id)"></div>'
 
 
 	},
@@ -202,11 +202,11 @@ function repeatPrint(ext, start, num){
 		if(i==(num-1)){
 			content+=
 			`<div class='blogpost'>
-				<div class="posttitle">
+				<div class="blogposttitle">
 					<a href="` + ext + `/pages/blog/article.html?post=` + posts[ntp].title + `">` + posts[ntp].title + `</a> 
 				</div>
-				<div class="postdate">
-					` + posts[ntp].pinned + posts[ntp].date + ` - ` + posts[ntp].writer + `
+				<div class="blogpostdate">
+					` + posts[ntp].date + ` - ` + posts[ntp].writer + posts[ntp].pinned + `
 				</div><div class="postcontent">
 					` + posts[ntp].content + `
 				</div>
@@ -215,11 +215,11 @@ function repeatPrint(ext, start, num){
 		else{
 			content+=
 			`<div style="border-bottom: 1px solid #b8b8b8;">
-				<div class="posttitle">
+				<div class="blogposttitle">
 					<a href="` + ext + `/pages/blog/article.html?post=` + posts[ntp].title + `">` + posts[ntp].title + `</a> 
 				</div>
-				<div class="postdate">
-					` + posts[ntp].pinned + posts[ntp].date + ` - ` + posts[ntp].writer + `
+				<div class="blogpostdate">
+					` + posts[ntp].date + ` - ` + posts[ntp].writer + posts[ntp].pinned + `
 				</div>
 				<div class="postcontent">
 				` + posts[ntp].content + `
@@ -242,11 +242,11 @@ function printSomeBlog(ext,num){
 		if(i==(num-1)){
 			content+=
 			`<div class='blogpost'>
-				<div class="posttitle">
+				<div class="blogposttitle">
 					<a href="` + ext + `/pages/blog/article.html?post=` + posts[ntp].title + `">` + posts[ntp].title + `</a> 
 				</div>
-				<div class="postdate">
-					` + posts[ntp].pinned + posts[ntp].date + ` - ` + posts[ntp].writer + `
+				<div class="blogpostdate">
+					` + posts[ntp].date + ` - ` + posts[ntp].writer + posts[ntp].pinned + `
 				</div><div class="postcontent">
 					` + posts[ntp].summary + `
 				</div>
@@ -255,11 +255,11 @@ function printSomeBlog(ext,num){
 		else{
 			content+=
 			`<div style="border-bottom: 1px solid #b8b8b8;">
-				<div class="posttitle">
+				<div class="blogposttitle">
 					<a href="` + ext + `/pages/blog/article.html?post=` + posts[ntp].title + `">` + posts[ntp].title + `</a> 
 				</div>
-				<div class="postdate">
-					` + posts[ntp].pinned + posts[ntp].date + ` - ` + posts[ntp].writer + `
+				<div class="blogpostdate">
+					` + posts[ntp].date + ` - ` + posts[ntp].writer + posts[ntp].pinned + `
 				</div>
 				<div class="postcontent">
 				` + posts[ntp].summary + `
@@ -329,20 +329,20 @@ function printArticle(ext,postname){
 				`;
 			}else{
 				buttonprint=`
-					<input id="postprev" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px; float:left' type='button' value='Prev' onClick="window.location.href ='` + ext + `/pages/blog/article.html?post=` + posts[i+1].title + `'" />
+					<input id="postprev" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px;' type='button' value='Prev' onClick="window.location.href ='` + ext + `/pages/blog/article.html?post=` + posts[i+1].title + `'" />
 					<input id="postnext" class='button3' style='width:70px;padding:0px 0 5px 0; font-size:13px; float:right' type="button" value="Next" onClick="window.location.href ='` + ext + `/pages/blog/article.html?post=` + posts[i-1].title + `'" />				
 				`;
 			}
 
 			return `
 				<div class='blogpost'>
-					<div style='width:100%; padding:30px 0 5px 37px'>
+					<div style='width:100%; padding:10px 0 5px 37px; margin-bottom: 13px;'>
 						` + buttonprint + `
 					</div>					
-					<div class="posttitle">
+					<div class="blogposttitle">
 						<a href="` + ext + `/pages/blog/article.html?post=` + posts[i].title + `">` + posts[i].title + `</a> 
 					</div>
-					<div class="postdate">
+					<div class="blogpostdate">
 						` + posts[i].pinned + posts[i].date + ` - ` + posts[i].writer + `
 					</div>
 					<div class="postcontent">

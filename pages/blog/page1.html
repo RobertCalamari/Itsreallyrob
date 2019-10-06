@@ -5,8 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
 
-		 <title>Articles | Robert Calamari</title>
+		 <title>Blog | Robert Calamari</title>
 		 <link href="../../css/style.css" rel="stylesheet">
+		 <link href="../../css/blog.css" rel="stylesheet">
 		 <script type="text/javascript" src="../../js/navbar.js" ></script>
 		 <script type="text/javascript" src="../../js/update.js" ></script>    
 		 <script type="text/javascript" src="../../js/paintings.js" ></script>   
@@ -15,11 +16,10 @@
 	</head>
 	<body>
 	  
-		<div id="mysidenav" class="sidenav">			
-		</div>		
-
 		<div id="header" class="header">	
 		</div>
+		<div id="mysidenav" class="sidenav">			
+		</div>	
 		<div onclick="closeNav()">
 
 			<div class="content" id="contentdiv" >
@@ -44,17 +44,17 @@
 	//The second input is referring to if this page is page 1 or any other page: 1-page1 
 	determineBlogSize(ext,1);
 
-	const currentWidth  = document.documentElement.clientWidth;
-	window.onresize = resize;
-	//Checks if the width of the screen has changed
-	function resize()
-	{
-		const newWidth  = document.documentElement.clientWidth;
-		if(currentWidth != newWidth){
-			determineBlogSize(ext,1);
-		}
+	// const currentWidth  = document.documentElement.clientWidth;
+	// window.onresize = resize;
+	// //Checks if the width of the screen has changed
+	// function resize()
+	// {
+	// 	const newWidth  = document.documentElement.clientWidth;
+	// 	if(currentWidth != newWidth){
+	// 		determineBlogSize(ext,1);
+	// 	}
 	 	
-	}
+	// }
 
 
 </script>

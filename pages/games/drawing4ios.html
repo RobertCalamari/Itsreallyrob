@@ -6,7 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
 
 		 <title>Drawing App | Robert Calamari</title>
-		 <link href="../css/style.css" rel="stylesheet">
+		 <link href="../../css/style.css" rel="stylesheet">
+         <link href="../../css/games.css" rel="stylesheet">
 		 <script type="text/javascript" src="../js/navbar.js" ></script>
 		 <script type="text/javascript" src="../js/update.js" ></script>    
 		 <script type="text/javascript" src="../js/paintings.js" ></script>   
@@ -16,11 +17,10 @@
 	</head>
 	<body onload="init()">
 	  
-		<div id="mysidenav" class="sidenav">			
-		</div>		
-
-		<div id="header" class="header">	
-		</div>
+		<div id="header" class="header">  
+        </div>
+        <div id="mysidenav" class="sidenav">            
+        </div>  
 
 
 		<div onclick="closeNav()">
@@ -64,17 +64,17 @@
 	loadNav(ext);
 	determineDrawSize(ext);
 
-	const currentWidth  = document.documentElement.clientWidth;
-	window.onresize = resize;
-		//Checks if the width of the screen has changed
-	function resize()
-	{
-		const newWidth  = document.documentElement.clientWidth;
-		if(currentWidth != newWidth){
-			determineDrawSize(ext);
-		}
+	// const currentWidth  = document.documentElement.clientWidth;
+	// window.onresize = resize;
+	// 	//Checks if the width of the screen has changed
+	// function resize()
+	// {
+	// 	const newWidth  = document.documentElement.clientWidth;
+	// 	if(currentWidth != newWidth){
+	// 		determineDrawSize(ext);
+	// 	}
 	 	
-	}
+	// }
 
 
 

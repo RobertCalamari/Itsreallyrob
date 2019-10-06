@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,27 +8,58 @@
 		<meta name="keywords" content="web development, web site, coding, html, javascript, css, fast, efficient, custom, buy, make, a, website, host, painting, paint, beautiful, artwork, canvas, art, cool, amazing, robert, calamari, ">
 	 	 <title>Robert Calamari</title>
 		 <link href="./css/style.css" rel="stylesheet">
+		 <link href="./css/homepage.css" rel="stylesheet">
+		 <link href="./css/painting.css" rel="stylesheet">
+		 <link href="./css/blog.css" rel="stylesheet">
 		 <script type="text/javascript" src="./js/navbar.js" ></script>
 		 <script type="text/javascript" src="./js/update.js" ></script>    
 		 <script type="text/javascript" src="./js/paintings.js" ></script>   
+		 <script type="text/javascript" src="../js/projects.js" ></script> 
 		 <script type="text/javascript" src="./js/blog.js" ></script> 
+		 <script type="text/javascript" src="../js/sendmail.js" ></script> 
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130797682-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  
+
+		  gtag('config', 'UA-130797682-1');
+		</script>
+		<!-- Google Analytics s-->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-130797682-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+		<!-- End Google Analytics -->
+
 		 
 	</head>
 	<body>
 	  
-		<div id="mysidenav" class="sidenav">			
-		</div>	
+		
 
 		<div id="mysidead" class="sidead">			
 		</div>		
 
 		<div id="header" class="header">	
 		</div>
+		<div id="mysidenav" class="sidenav">			
+		</div>	
 		<div onclick="closeNav()">
 			<div id="infobox" class="infobox">
 			</div>		
 	
 			<div class="content" id="contentdiv" >
+				<div style="padding: 100px 0px 100px 0px">Your content is loading...
+				</div>
 			</div>
 
 			<div class="contacthome" id="contacthome">
@@ -41,22 +72,29 @@
 	</body>
 
 <html>
-
+<script src="/socket.io/socket.io.js"></script>
 <script type="text/javascript">
 	loadNav(".");
-	loadAd(".");
-	determineHomeSize(".");
-
-	const currentWidth  = document.documentElement.clientWidth;
-	window.onresize = resize;
+	var socket = io();
+	//loadAd(".");
+	retrievePaintings();
+	// const currentWidth  = document.documentElement.clientWidth;
+	// window.onresize = resize;
 	
-	function resize()
-	{
-		const newWidth  = document.documentElement.clientWidth;
-		if(currentWidth != newWidth){
-			determineHomeSize(".");
-		}
-	 	
-	}
+	// function resize(){
+	// 	const newWidth  = document.documentElement.clientWidth;
+	// 	if(newWidth >= 1010 && newWidth <= 1040){
+			
+	// 		determineHomeSize(".");
+			
+	// 	}		
+			
+		 	
+	// }
+	socket.on('getPaintings',function(data){
+    	//console.log(data.allpaintings);
+    	retrievedPaintings(data.allpaintings);
+		determineHomeSize(".");
+    });
 
 </script>
