@@ -3,7 +3,9 @@ function closeAllSettings(){
 	document.getElementById('boozeorlosesettings').style.display = 'none';
 	document.getElementById('deadlylegsappsettings').style.display = 'none';
 	document.getElementById('starvingartistappsettings').style.display = 'none';
+	document.getElementById('mafiasettings').style.display = 'none';
 	document.getElementById('partypacksettings').style.display = 'none';
+	document.getElementById('2048settings').style.display = 'none';
 	document.getElementById('settingsall').style.display = 'none';
     document.getElementById('contentdiv').removeEventListener('mousedown', nextBoozeQuestion, false);
     document.getElementById("signalsignjoin").innerHTML="";
@@ -27,6 +29,17 @@ function goSettingsBooze(){
 	closeAllSettings();
     document.getElementById('boozeorlosesettings').style.display = 'block';
 	document.getElementById('contentdiv').style.backgroundColor = '#7d7d7d';
+}
+function goSettings2048(){
+	closeAllSettings();
+    document.getElementById('2048settings').style.display = 'block';
+	document.getElementById('contentdiv').style.backgroundColor = '#dfa419';
+}
+function goSettingsMafia(){
+	closeAllSettings();
+	document.getElementById('settingsall').style.display = 'block';
+    document.getElementById('mafiasettings').style.display = 'block';
+	document.getElementById('contentdiv').style.backgroundColor = '#ff5252';
 }
 function goSettingsDeadlyLegs(){
 	closeAllSettings();
@@ -56,10 +69,7 @@ function buttonMake(){
     document.getElementById('contentdiv').style.backgroundColor = 'white';
 }
 
-
-function printGameData(vpWidth, sourcefile){
-		
-
+function printGameData(vpWidth, sourcefile, postname){
 	 	
 		document.getElementById('contentdiv').innerHTML=`
 	 	<div id='gamewrapper' style='text-align: center; padding:10px 10px 25px 10px; width 50%;'>
@@ -78,6 +88,8 @@ function printGameData(vpWidth, sourcefile){
 	            <button class='buttongameapps' style='background-color:#150099;' onclick="goSettingsDrawing()">Drawing With Friends</button>
 	            <!--<button class='buttongameapps' style='background-color:#c65915;' onclick="goSettingsPartyPack()">Robert's Party Pack</button>--->
 	            <button class='buttongameapps' style='background-color:#000;' onclick="goSettingsBooze()">Booze or Lose</button>
+	            <button class='buttongameapps' style='background-color:#c30606;' onclick="goSettingsMafia()">Mafia</button>
+	            <!--<button class='buttongameapps' style='background-color:#a17202;' onclick="goSettings2048()">2048</button>--->
 	            <button class='buttongameapps' style='background-color:#158000;' onclick="goSettingsDeadlyLegs()">Eight Deadly Legs</button>
 	             <!--<button class='buttongameapps' style='background-color:#158000;height:' onclick="goSettingsStarvingGuesser()">The Starving Guesser</button>--->	        
 			</div>
@@ -218,6 +230,42 @@ function printGameData(vpWidth, sourcefile){
                 
 			</div>
 
+			<!-- -----------------------------------------------------------------------2048 settings------------------------------------------------------------------------------------ --->
+
+	        <div id="2048settings" style="padding: 0 0 0 0;display:none;" max-width: 673px; margin: auto;>
+	        	Can you keep merging the numbers to create a 2048 block? 
+	        	<br><br>
+                <button class='button2' onclick="start2048Game()">Start</button>
+                <br><br>
+                
+			</div>
+
+			<div id="2048game" style="display:none;">
+				
+			</div>
+
+			<!-- -----------------------------------------------------------------------Mafia settings------------------------------------------------------------------------------------ --->
+
+			<div id="mafiasettings" style="padding: 0 0 0 0;display:none;" max-width: 673px; margin: auto;>
+                <button class='button2' onclick="makeRoomMafia()">Make Room</button> <button class='button2' onclick="joinRoom()">Join Room</button>
+
+                <div id="mafiaextra" style:"margin: auto;width: 170px;">
+                	<br>
+                	Do you think you can survive the night a as townsmember before the mafia kills you?
+	        		<br><br>
+                </div>
+
+
+
+			</div>
+
+			<div id="mafiaGame" style="display:none;">
+				<button id="mafiabutton" class='button2' style="display:none; margin:auto;" onclick="startMafiaGame()">Start Game</button>
+                <label id="mafiagamelabel" style="display:none;font-size:20px;" ></label>
+                <label id="mafiaRole" style="display:none;" ></label>
+                <label id="mafiaWelcome" style="display:none;" ></label>
+			</div>
+
 			<!-- -----------------------------------------------------------------------starving artist settings------------------------------------------------------------------------------------ --->
 
 	        <div id="starvingartistappsettings" style="padding: 0 0 0 0;display:none;" max-width: 673px; margin: auto;>
@@ -331,6 +379,21 @@ function printGameData(vpWidth, sourcefile){
 
 
 	`;
+
+	if(postname.game == "" || postname.game == undefined || postname.game == "undefined"){
+
+	}else{
+		if(postname.game == "DeadlyLegs"){
+			goSettingsDeadlyLegs();
+		}else if(postname.game == "Booze"){
+			goSettingsBooze();
+		}else if(postname.game == "Drawing"){
+			goSettingsDrawing();
+		}
+	}
+
+
+
 }
 
 
@@ -376,6 +439,11 @@ function makeRoomPartyPack(){
 	socket.emit('makeroom',{room:document.getElementById('roomname').value,username:document.getElementById('namename').value,gametype:"Party Pack"});
 }
 
+function makeRoomMafia(){
+	socket.emit('makeroom',{room:document.getElementById('roomname').value,username:document.getElementById('namename').value,gametype:"Mafia"});
+}
+
+
 function joinRoom(){
 	socket.emit('signIn',{room:document.getElementById('roomname').value,username:document.getElementById('namename').value});
 }
@@ -406,6 +474,14 @@ function loadLevel(data){
 
     }else if(data.gametype=="Drawing App"){
         document.getElementById('sketchpadapp').style.display = 'block';
+
+    }else if(data.gametype=="Mafia"){
+		theroom = data.room;
+		document.getElementById('mafiaGame').style.display = 'block';
+    	document.getElementById('contentdiv').style.backgroundColor = '#9ca8bc';
+		if(data.np.playern == 1){
+        	document.getElementById('mafiabutton').style.display = 'block';
+		}
 
     }
 }
@@ -457,3 +533,40 @@ function socketSignInResponseAgain(data){
 	
 
 }
+
+
+// const games = [
+// 	{
+// 	  title:"Drawing With Friends",
+// 	  url:"https://www.robertcalamari.com/pages/games/gameshome.html?game=Drawing",
+// 	  info:"A fun drawing app where you can send doodles with friends!",
+// 	  img:"/img/CalamariBlack.png"
+// 	},
+// 	{
+// 	  title:"Booze or Lose",
+// 	  url:"https://www.robertcalamari.com/pages/games/gameshome.html?game=Booze",
+// 	  info:"A group drinking game where you answer the prompts and follow the instructions! Play it at home or on the go!",
+// 	  img:"/img/CalamariBlack.png"
+// 	},
+// 	{
+// 	  title:"Eight Deadly Legs",
+// 	  url:"https://www.robertcalamari.com/pages/games/gameshome.html?game=DeadlyLegs",
+// 	  info:"Need to setup a drinking olympics on the fly? Look no further! Just start this game and everything will be set up for you!",
+// 	  img:"/img/CalamariBlack.png"
+// 	}
+// ];
+
+// function printAllGames(sourcefile){
+// 	let content = "";
+// 	for(let i=0;i<games.length;i++){
+// 		content+=`
+// 			<div style="padding-top: 14px; ">
+// 				<div class="posttitle" style="font-weight: bolder;font-size:20px;">
+// 					<a href="` + games[i].url + `">` + games[i].title + `</a> 
+// 				</div>
+// 				` + games[i].info + `
+// 			</div>`;		
+// 	}
+
+// 	return content;
+// }

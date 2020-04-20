@@ -85,3 +85,49 @@
     }
    
 }
+
+.g2048GameContainer {
+    background-color: #170ab8;
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.g2048GridContainer{
+    
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+}
+
+.g2048Row{
+    width: 500px;
+
+    height: 125px;
+}
+
+.g2048Square{
+    width: 110px;
+    height: 110px;
+    background-color: #4f7bff;
+    float: left;
+    margin: 7.5px;
+    border-radius: 4px;
+}
+
+.g2048SquareNumber{
+    font-size: 33px;
+    color:white;
+    font-weight: bolder;
+    margin-top: 32px;
+    text-align: center;
+    cursor: default;
+      -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}

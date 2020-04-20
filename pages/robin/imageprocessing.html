@@ -6,9 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
 
 		 <title>Robin | Robert Calamari</title>
+		 <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico">
 		 <link href="../../css/style.css" rel="stylesheet">
 		 <link href="../../css/store.css" rel="stylesheet">
-		 <script type="text/javascript" src="../../js/navbar.js" ></script>
 		 <script type="text/javascript" src="../../js/update.js" ></script>    
 		 <script type="text/javascript" src="../../js/paintings.js" ></script>   
 		 <script type="text/javascript" src="../../js/blog.js" ></script> 
@@ -17,16 +17,16 @@
 		 <script type="text/javascript" src="../../js/robin.js" ></script> 
 
 		 <!-- Global site tag (gtag.js) - Google Analytics -->
-		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130797682-1"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130797682-1"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
 		  gtag('js', new Date());
 
 		  gtag('config', 'UA-130797682-1');
-		</script> -->
+		</script>
 		<!-- Google Analytics -->
-		<!-- <script>
+		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -34,8 +34,25 @@
 
 		ga('create', 'UA-130797682-1', 'auto');
 		ga('send', 'pageview');
-		</script> -->
+		</script>
 		<!-- End Google Analytics -->
+		<!-- Facebook Pixel Code -->
+		<script>
+		  !function(f,b,e,v,n,t,s)
+		  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		  n.queue=[];t=b.createElement(e);t.async=!0;
+		  t.src=v;s=b.getElementsByTagName(e)[0];
+		  s.parentNode.insertBefore(t,s)}(window, document,'script',
+		  'https://connect.facebook.net/en_US/fbevents.js');
+		  fbq('init', '575900769884385');
+		  fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		  src="https://www.facebook.com/tr?id=575900769884385&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Facebook Pixel Code -->
 		 
 	</head>
 	<body style="background-color: black">
@@ -78,7 +95,7 @@
 	const ext = "../..";
 	var url = window.location.pathname;
 	var postname = getJsonFromUrl(url);
-	determineRobinSize(ext);
+	updateMainPageContent(ext);
 
 	var whichpic = 0;
 

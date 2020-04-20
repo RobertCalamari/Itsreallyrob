@@ -2,6 +2,43 @@
 //0 is available, 1 is sold, 2 is not available
 let paintings = [];
 
+//This is the code that appears on the painting page
+function paintingContentData(sourcefile){
+	
+	document.getElementById('contentdiv').innerHTML= `
+			<div class='middlepanel' style='padding: 5px 20px 5px 20px' >	
+				<div style="font-size: 12px; padding-top: 8px; padding-bottom: 9px;">
+					All of the below paintings are available for purchase - please see the Shop page for additional information.  I am additionally available to create custom pieces upon request.
+				</div>
+				<div>
+					<div id="robertpainting" class='myheading2' style="display: inline-block;padding-right: 25px; text-decoration: underline;"><a href='#' class='slideshowtitle' onclick="setPaintingContent('` + sourcefile + `', 'Robert Calamari');">Robert Calamari</a>
+					</div>
+					<div style="display: inline-block;font-family: 'Gravity-Regular';">
+						|
+					</div>
+					<div id="jeremypainting" class='myheading2' style="display: inline-block;padding-left: 25px;"><a href='#' class='slideshowtitle' onclick="setPaintingContent('` + sourcefile + `', 'Jeremy Louie');">Jeremy Louie</a>
+					</div>
+				</div>
+				<div id="allpaintingcontent">
+					` + printAllPaintings(sourcefile, 'Robert Calamari') + `
+				</div>
+			</div>
+	`;
+	
+}
+
+//This is the code that appears on the article page
+function individualPaintingPage(ext,postname){
+	
+	document.getElementById('contentdiv').innerHTML= `
+		<div class='middlepanel' >	
+			<div style='max-width:500px;text-align: center; margin:auto'>
+				` + printOnePainting(ext, postname) + `
+			</div>
+		</div>
+	`;
+}
+
 function retrievePaintings(){
 	socket.emit('getPaintings',{});
 }
@@ -323,5 +360,63 @@ function showSlides(n) {
 
 
 
+function startPictureFading(vpWidth, ext, allpaintings, cx){
+	var randpainting = Math.floor(Math.random() * allpaintings.length);
+	console.log("This num and painting: " + randpainting + " | " + allpaintings[randpainting])
+	vpHeight = document.getElementById('infobox').clientHeight - 20;
+	vpWidth = document.getElementById('infobox').clientWidth - 20;
+	var randomX = Math.floor(Math.random() * 31);
+	var randomY = Math.floor(Math.random() * 31);
+	// var chosenX = Math.floor(Math.random() * 2);
+	var cy = Math.floor(Math.random() * 2);	
+	if(cx == 0){
+		randomX = 50+randomX;
+		cx = 1;
+	}else{
+		randomX = 50-randomX;
+		cx = 0;
+	}
+
+	if(cy == 0){
+		var newadd = Math.floor(Math.random() * 10);
+		randomY = 44 + newadd;
+		cy = 1;
+	}else{
+		randomY = 44-randomY;
+		cy = 0;
+	}
+
+	var newPicture = document.createElement('div');
+	newPicture.id = "np-" + allpaintings[randpainting].name;
+	newPicture.classList.add("fadingImage");
+	newPicture.style.left = randomX + "%";
+	newPicture.style.top = randomY + "%";
+	newPicture.innerHTML = `
+		<div style="max-width: 300px; position:relative;">
+			<div style="position:absolute; background-color: black; opacity: 0.4; z-index: 10;width: 100%; height:100%;"></div>
+			<img src="` + allpaintings[randpainting].imgur + `.jpg" class="infopic" alt="" style="max-width: 300px; position:absolute; z-index: 8;">
+		</div>
+	`;
+	document.getElementById('infobox').appendChild(newPicture);
+	setTimeout(function() {
+		
+		newPicture.style.opacity = 1;
+		setTimeout(function() {
+			newPicture.style.opacity = 0;
+
+			setTimeout(function() {
+				//newPicture.remove();
+			}, 1000);
+
+		}, 10000);
+		var randomTime = Math.floor(Math.random() * 3);
+		randomTime = randomTime*1000;
+		setTimeout(function() {
+			startPictureFading(vpWidth, ext, allpaintings, cx);
+		}, randomTime);
+
+	}, 1000);
+	
+}
 
 

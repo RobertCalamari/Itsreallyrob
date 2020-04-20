@@ -2,11 +2,13 @@
 	text-align: center;
 	color:white;
 	position:relative;	
-    background-image: url("/img/underwater.jpg");
-    height: 93vh;
+    /*background-image: url("/img/underwater.jpg");*/
+    height: 125vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    /*background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgb(0, 136, 198)),color-stop(1, rgba(255,0,0,0)));*/
+    margin-top: -84px;
 }
 
 .center {
@@ -14,6 +16,10 @@
     top: 44%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+}
+
+.textbox{
+    z-index: 200;
 }
 
 .maintextbox{
@@ -35,14 +41,15 @@
 .learnmorebox {
     text-align: center;
     position: absolute;
-    left: calc(50% - 52px);
-    top: calc(100% - 95px);
+    left: calc(50% - 45px);
+    top: calc(100% - 156px);
+    color: rgb(0, 136, 198);
+    z-index: 200;
 }
 
 .learnmoretext {
     text-decoration: none;
     font-size: 14px;
-    color: white;
 }
 
 .learnmorebox:hover {
@@ -53,7 +60,6 @@
 .learnmorearrow {
     text-decoration: none;
     font-size: 48px;
-    color: white;
     margin-top: 0;
 }
 

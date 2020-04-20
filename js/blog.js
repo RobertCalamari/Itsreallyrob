@@ -195,6 +195,39 @@ const posts = [
 	}
 ];
 
+//This is the code that appears on the blog page
+function blogContentData(sourcefile, page){
+	
+			return `
+				<div class='middlepanel' style=''>	
+					<div style='text-align:left; padding:10px 0 0 0px '>
+						<div class='myheading1'>Current Articles</br></br>
+						</div>
+						<div id='blogcontent'>
+							` + printBlogPage(sourcefile, page) + `
+						</div>
+					</div>
+				<div style='padding: 0px 0px 45px 0px'>
+					` + checkIfMoreLeft(page) + `
+				</div>
+				</div>
+			`;
+}
+
+//This is the code that appears on the article page
+function blogArticlePage(ext,postname){
+	
+			return `
+				<div class='middlepanel' style=''>	
+					<div style='text-align:left; padding:10px 0 0 0px '>
+						<div id='blogcontent'>
+							` + printArticle(ext,postname) + `
+						</div>
+					</div>
+				</div>
+			`;
+}
+
 function repeatPrint(ext, start, num){
 	let content = "";
 	for(let i=0;i<num;i++){

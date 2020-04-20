@@ -2,11 +2,38 @@ function logout(){
 	location.href='../../logout';
 }
 
+function robinMenu(){
+	location.href='../../pages/robin/robin.html';
+}
+
 function authenticate() {
 	user=document.getElementById('usernametest').value;
 	pass=document.getElementById('passwordtest').value;
 	socket.emit('authenticate',{username:user, password:pass});
 
+}
+
+
+
+
+
+function createAccount() {
+	user=document.getElementById('usernametest').value;
+	pass=document.getElementById('passwordtest').value;
+	confpass=document.getElementById('confpasswordtest').value;
+	email=document.getElementById('emailtest').value;
+	first=document.getElementById('firstnametest').value;
+	last=document.getElementById('lastnametest').value;
+
+	if(user == "" || pass == "" || first == "" || last == "" || email == "" || confpass == ""){
+		document.getElementById('answer').innerHTML = "Please fill out every field";
+	}else{
+		if(confpass == pass){
+			socket.emit('createAccount',{username:user, password:pass, firstname:first, lastname:last, useremail:email});
+		}else{
+			document.getElementById('answer').innerHTML = "The passwords do not match!"
+		}
+	}
 }
 
 function authenticateanswer(data) {
@@ -19,7 +46,67 @@ function authenticateanswer(data) {
 
 	}else if(data.answer == "pnc"){
 		document.getElementById('answer').innerHTML = "That password is incorrect.";
+	}else if(data.answer == "caUE"){
+		document.getElementById('answer').innerHTML = "That username is already taken.";
+	}else if(data.answer == "caDONE"){
+		setCookie("username", data.username, 1);
+		setCookie("nid", data.nid, 1);  
+		checkIfLoggedIn();
 	}
+
+}
+
+function showLoginPage(){
+	document.getElementById('loginPageButton').style.textDecoration = "underline";
+	document.getElementById('createPageButton').style.textDecoration = "none";
+	document.getElementById('inputFieldsSignIn').innerHTML = `
+		 Username: <input id="usernametest" type="text" name="username" required><br>
+		 Password: <input id="passwordtest" type="password" name="psw" required><br>
+		 <input class="button2" id="signinbutton" style='width:70px;padding:0px 0 5px 0; font-size:13px;' type="button" value="Sign In" onclick="authenticate();" />
+	`;
+
+	document.getElementById('inputFieldsSignIn').style.padding = "0px 84px 0px 0px";
+	
+	signInDivEvents();
+
+}
+
+function showCreatePage(){
+	document.getElementById('loginPageButton').style.textDecoration = "none";
+	document.getElementById('createPageButton').style.textDecoration = "underline";
+	document.getElementById('inputFieldsSignIn').innerHTML = `
+		 Username: <input id="usernametest" type="text" name="username" required><br>
+		 Password: <input id="passwordtest" type="password" name="psw" required><br>
+		 Confirm Password: <input id="confpasswordtest" type="password" name="psw" required><br>
+		 Email: <input id="emailtest" type="text" name="psw" required><br>
+		 First Name: <input id="firstnametest" type="text" name="username" required><br>
+		 Last Name: <input id="lastnametest" type="text" name="username" required><br>
+
+		 <input class="button2" id="createaccountbutton" style='width:109px;padding:0px 0 5px 0; font-size:13px;' type="button" value="Create Account" onclick="createAccount();" />
+	`;
+
+	document.getElementById('inputFieldsSignIn').style.padding = "0px 60px 0px 0px";
+
+	document.getElementById('usernametest').addEventListener("keyup", function(event) {
+	    if (event.key === "Enter") {
+	        createAccount();
+	    }
+	});
+	document.getElementById('passwordtest').addEventListener("keyup", function(event) {
+	    if (event.key === "Enter") {
+	        createAccount();
+	    }
+	});
+	document.getElementById('firstnametest').addEventListener("keyup", function(event) {
+	    if (event.key === "Enter") {
+	        createAccount();
+	    }
+	});
+	document.getElementById('lastnametest').addEventListener("keyup", function(event) {
+	    if (event.key === "Enter") {
+	        createAccount();
+	    }
+	});
 
 }
 
@@ -27,41 +114,57 @@ function checkIfLoggedIn(){
 	var name = getCookie("username");
 	var thid = getCookie("nid");
 	if(name ==""){
-		document.getElementById('contentdiv').innerHTML = `
-				<div id="signindiv">
-					To Sign in:<br>
-					<form>
-						 Username: <input id="usernametest" type="text" name="username" required><br>
-						 Password: <input id="passwordtest" type="password" name="psw" required><br>
-						 <input id="signinbutton" style='width:70px;padding:0px 0 5px 0; font-size:13px;' type="button" value="Sign In" onclick="authenticate();" />
-					</form> 
-					<div id="answer"></div>
-				</div>`;
-
-				const signInEvent1 = document.getElementById('usernametest');
-				const signInEvent2 = document.getElementById('passwordtest');
-				signInEvent1.addEventListener("keyup", function(event) {
-				    if (event.key === "Enter") {
-				        authenticate();
-				    }
-				});
-				signInEvent2.addEventListener("keyup", function(event) {
-				    if (event.key === "Enter") {
-				        authenticate();
-				    }
-				});
+		document.getElementById('contentdiv').innerHTML = printSignInDiv();
+		signInDivEvents();
+				
 	}else{
 		
 		socket.emit('ciLoggedIn',{username:name, tid:thid});
 	}
 }
 
+function printSignInDiv(){
+	return `
+				<div id="signindiv" style="max-width: 831px; margin: auto;">
+					<div style="font-size:30px;">ROBIN</div><br>
+					<div style="width:90%; margin: auto; text-align: justify;">Login or create an account to gain access to multiple different apps, including: a personal budget system to track your spending, a list app to keep track of things and to randomly pick an element on any list you want, and more! </div>
+					<br>
+					<div>
+						<div id="loginPageButton" style="cursor: pointer; display:inline-block;text-decoration: underline;" onclick="showLoginPage();">Login</div> | <div id="createPageButton" style="display:inline-block; cursor: pointer;" onclick="showCreatePage();">Create Account</div>
+					</div>
+					<br><br>
+					<form>
+						<div id="inputFieldsSignIn" class="inputFieldsSignIn">
+							 Username: <input id="usernametest" type="text" name="username" required><br>
+							 Password: <input id="passwordtest" type="password" name="psw" required><br>
+							 <input id="signinbutton" style='width:70px;padding:0px 0 5px 0; font-size:13px;' type="button" value="Sign In" onclick="authenticate();" />
+						</div>
+							
+					</form> 
+					<div id="answer"></div>
+				</div>`;
+}
+
+function signInDivEvents(){
+	document.getElementById('usernametest').addEventListener("keyup", function(event) {
+	    if (event.key === "Enter") {
+	        authenticate();
+	    }
+	});
+	document.getElementById('passwordtest').addEventListener("keyup", function(event) {
+	    if (event.key === "Enter") {
+	        authenticate();
+	    }
+	});
+}
+
 function insTopRobin(data){
 	return `
 					<div id="topRobin">
 						User: `  + data.userData.firstname + ` `  + data.userData.lastname + `
-						<div style='padding:0px 0 0px 40px; display: inline-block;'>
-							<input class="button2" style='width:70px;padding:2px 0 4px 0px; font-size:13px;' type='button' value='Log Out' onclick='logout()' />
+						<div style='padding:0px 0 0px 9px; display: inline-block;'>
+							<input class="button2" style='width:70px;padding:2px 0 4px 0px; font-size:13px; display: inline-block;' type='button' value='Menu' onclick='robinMenu()' />
+							<input class="button2" style='width:70px;padding:2px 0 4px 0px; font-size:13px; display: inline-block;' type='button' value='Log Out' onclick='logout()' />
 						</div>
 					</div>
 
@@ -76,16 +179,8 @@ function sendToPage(ext, where){
 function robinHomeScreenLoad(data,ext,postname) {
 	
 	if(data.answer == "dne"){
-		document.getElementById('contentdiv').innerHTML = `
-				<div id="signindiv">
-					To Sign in:<br>
-					<form>
-						 Username: <input id="usernametest" type="text" name="username" required><br>
-						 Password: <input id="passwordtest" type="password" name="psw" required><br>
-						 <input id="signinbutton" style='width:70px;padding:0px 0 5px 0; font-size:13px;' type="button" value="Sign In" onclick="authenticate();" />
-					</form> 
-					<div id="answer"></div>
-				</div>`;
+		document.getElementById('contentdiv').innerHTML = printSignInDiv();
+		signInDivEvents();
 		document.getElementById('answer').innerHTML = "Please Log In";
 
 	}else if(data.answer == "ue"){
@@ -95,28 +190,34 @@ function robinHomeScreenLoad(data,ext,postname) {
 		}else if(postname.app == "addpic"){
 			addPicHomePage(data,ext,postname);
 		}else if(postname.app == "randomizer"){
-			randomizerHomePage(data,ext,postname);
+			randomizerHomePage(data,ext,postname, data.userData.randomizer, false);
 		}else{
 			document.getElementById('contentdiv').innerHTML = `
 				<div>
 					` + insTopRobin(data) + `
-					<div style="padding: 15px;">
-						<input class='button2' id='budgethomebutton' style='padding:45px; font-size:13px;' type='button' value='Budget System' />
-						<input class='button2' id='addpicturehomebutton' style='padding:45px; font-size:13px;' type='button' value='Add Picture' />
-						<input class='button2' id='randomizerhomebutton' style='padding:45px; font-size:13px;' type='button' value='Randomizer' />
-					</div>
+					` + data.boxes + `
 				</div>	
 
 			`;
-			document.getElementById('budgethomebutton').onclick = function () {
-		        location.href=ext + '/pages/robin/robin.html?app=budget&datets=' + getDate();
+					    
+		    
+		    if(document.getElementById('randomizerhomebutton')){
+		    	document.getElementById('randomizerhomebutton').onclick = function () {
+			        location.href=ext + '/pages/robin/robin.html?app=randomizer';
+			    }
 		    }
-		    document.getElementById('addpicturehomebutton').onclick = function () {
-		        location.href=ext + '/pages/robin/robin.html?app=addpic';
+		    if(document.getElementById('budgethomebutton')){
+		    	document.getElementById('budgethomebutton').onclick = function () {
+			        location.href=ext + '/pages/robin/robin.html?app=budget&datets=' + getDate();
+			    }
 		    }
-		    document.getElementById('randomizerhomebutton').onclick = function () {
-		        location.href=ext + '/pages/robin/robin.html?app=randomizer';
+		    if(document.getElementById('addpicturehomebutton')){
+		    	document.getElementById('addpicturehomebutton').onclick = function () {
+			        location.href=ext + '/pages/robin/robin.html?app=addpic';
+			    }
 		    }
+		    
+		    
 		}		
 	}
 }
@@ -544,7 +645,7 @@ function printAllSpendingWeekly(ext, data, datets){
 					 </tr>`;
 	var todaysdate = getDate();
 	var splitdate = todaysdate.split('-');
-	var years = ["2017", "2018", "2019"];
+	var years = ["2017", "2018", "2019", "2020"];
 	var months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 	var days= ["1", "8", "15", "24"];
 	var colorcounter = 0;
@@ -1092,22 +1193,166 @@ function addPicHomePage(data, ext, postname) {
 
 }
 
-function printAllRandomLists(data){
+function printAllRandomLists(list, draggbleliststate){
 	var printedList = "<div>";
-	for(var h in data.userData.randomizer){
-		printedList += `<div class="listbox">`;
-		for(var i in data.userData.randomizer[h]){
+	var counter = 0;
+	for(var h in list){
+		printedList += `<div class="listbox" draggable='` + draggbleliststate + `' id='listbox-` + counter + `'>`;
+		counter++
+		for(var i in list[h]){
+			
 			if(i == 0){
-				printedList += `<input type="checkbox" id='cb-` + h + `'/><div class="listheader" id="header-` + h + `" onclick="clickOpenCloseRandomList('` + h + `')"><b><u>` + data.userData.randomizer[h][i] + ` List</u></b></div><br/>`;
+				printedList += `<input class="listcheckbox" type="checkbox" id='cb-` + h + `'/><div class="listheader" id="header-` + h + `" onclick="clickOpenCloseRandomList('` + h + `')"><b><u>` + list[h][i] + ` List (` + (list[h].length-1) + `)</u></b></div><br/>`;
 				printedList += `<div id="list-` + h + `" style="display:none;"> `;
 			}else{
-				printedList += "<div class='listitem'> - " + data.userData.randomizer[h][i] + `<div class='listex' id="ind-` + h + `-` + i + `" style="color:red;cursor: pointer;" onclick="deleteRandomListItem('` + h + `','` + i + `')">(X)</div></div><br/>`;
+				printedList += `<div class='listitem' id='listitem-` + h + `-` + i + `'><div id='listname-` + h + `-` + i + `' class='listitemname'>` + list[h][i] + `</div><div class='listex' id='ind-` + h + `-` + i + `' onclick='deleteRandomListItem("` + h + `","` + i + `")'>(X)</div><div class='listupdn lup' id='mvup-` + h + `-` + i + `' onclick='mvupRandomListItem("` + h + `","` + i + `")'>&#8593;</div><div class='listupdn ldn' id='mvdn-` + h + `-` + i + `' onclick='mvdnRandomListItem("` + h + `","` + i + `")'>&#8595;</div></div>`;
 			}
 		}
-		printedList += `<input id="itemToThisRandomList-` + h + `" style="max-width: 240px;" type="text" name="username" ><input id="addToThisRandomList" class="button2" style="width:40px;padding:0px 0 5px 0; font-size:13px;" type="button" value="Add" onclick="addToRandomList('` + h + `')"/></div></div><br/>`;
+		printedList += `<br><input id="itemToThisRandomList-` + h + `" style="max-width: 240px;" type="text" name="username" >
+		<input id="addToThisRandomList" class="button2" style="width:40px;padding:0px 0 5px 0; font-size:13px;" type="button" value="Add" onclick="addToRandomList('` + h + `')"/>
+		<br><br>
+		<input id="addToThisRandomList" class="button2" style="width:110px;padding:0px 0 5px 0; font-size:13px; background-color: #7e1313;" type="button" value="Delete This List" onclick="deleteThisList('` + h + `')"/> </div></div><br/>`;
 	}
+	
 	printedList += "<br/></div>";
 	return printedList;
+}
+
+function mvupRandomListItem(listname, itemname){
+	var name = getCookie("username");
+	var thid = getCookie("nid");
+
+	socket.emit('mvupRandomItem',{username:name, tid:thid, listnum:listname, itemnum:itemname});
+}
+
+function mvDraggedRandomList(firstlistname, secondlistname){
+	var name = getCookie("username");
+	var thid = getCookie("nid");
+
+	socket.emit('mvDraggedRandomList',{username:name, tid:thid, firstnum:firstlistname, secondnum:secondlistname});
+}
+
+function mvdnRandomListItem(listname, itemname){
+	var name = getCookie("username");
+	var thid = getCookie("nid");
+
+	socket.emit('mvdnRandomItem',{username:name, tid:thid, listnum:listname, itemnum:itemname});
+}
+
+function enableMoveLists(list){
+
+	if(document.getElementById('moveListButton').value == "Disable Draggable Lists"){
+		var cols = document.querySelectorAll('.listbox');
+		[].forEach.call(cols, function(col) {
+		  col.setAttribute('draggable', false);
+		});
+
+		document.getElementById('moveListButton').value = "Enable Draggable Lists";
+	}else{
+		var cols = document.querySelectorAll('.listbox');
+		[].forEach.call(cols, function(col) {
+		  col.setAttribute('draggable', true);
+		});
+
+		document.getElementById('moveListButton').value = "Disable Draggable Lists";
+	}
+
+	
+}
+
+function addEventListenerToItems(list){
+
+	document.getElementById('randomizeListItem').onclick = function () {
+        randomizeListItem(list);
+    }
+	document.getElementById('addNewListButton').onclick = function () {
+        addNewList(list);
+    }
+    document.getElementById('moveListButton').onclick = function () {
+        enableMoveLists(list);
+    }
+
+    var cols = document.querySelectorAll('.listbox');
+		[].forEach.call(cols, function(col) {
+		  col.addEventListener('dragstart', handleDragStart, false);
+		  col.addEventListener('dragenter', handleDragEnter, false)
+		  col.addEventListener('dragover', handleDragOver, false);
+		  col.addEventListener('dragleave', handleDragLeave, false);
+		  col.addEventListener('drop', handleDrop, false);
+		  col.addEventListener('dragend', handleDragEnd, false);
+		});
+    
+
+    document.getElementById("addNewList").addEventListener("keyup", function(event) {
+	    if (event.key === "Enter") {
+		        addNewList(newestlist);
+		    }
+	});  
+
+	for(let h in list){
+		document.getElementById('itemToThisRandomList-' + h).addEventListener("keyup", function(event) {
+		    if (event.key === "Enter") {
+		        addToRandomList(h);
+		    }
+		});
+
+		for(let i in list[h]){
+			if(i==0){
+
+			}else{
+				//console.log(i + " | " + h);
+				document.getElementById('listname-' + h + "-" + i).onclick = function () {
+					if(document.getElementById("listItemInput-" + h + "-" + i)){
+
+					}else{
+						changeToInput(list, h, i);
+					}
+			        
+			    }
+			}
+			
+		}
+
+
+	}
+}
+
+function addEvent(elem, event, fn){
+	if(elem.addEventListener){
+	  elem.addEventListener(event, fn, false);
+	}else{
+	  elem.attachEvent("on" + event,
+	  function(){ return(fn.call(elem, window.event)); });
+	}
+}
+
+function changeToInput(list, h, i){
+	document.getElementById('listname-' + h + "-" + i).innerHTML = `<input id="listItemInput-` + h + "-" + i + `" class="listitemname" type="text" name="username" value="` + list[h][i] + `" style="border: 0;">`;
+	//document.getElementById("listItemInput-" + h + "-" + i).click();
+	
+	document.getElementById("listItemInput-" + h + "-" + i).focus(); //sets focus to element
+	var val = this.document.getElementById("listItemInput-" + h + "-" + i).value; //store the value of the element
+	this.document.getElementById("listItemInput-" + h + "-" + i).value = ''; //clear the value of the element
+	this.document.getElementById("listItemInput-" + h + "-" + i).value = val; //set that value back. 
+
+	document.getElementById("listItemInput-" + h + "-" + i).addEventListener("keyup", function(event) {
+	    if (event.key === "Enter") {
+	        updateRandomListItem(h, i, document.getElementById("listItemInput-" + h + "-" + i).value);
+	    }
+	});
+
+	document.getElementById("listItemInput-" + h + "-" + i).addEventListener("focusout", function(event) {
+		    updateRandomListItem(h, i, document.getElementById("listItemInput-" + h + "-" + i).value);
+		});  
+
+}
+
+function updateRandomListItem(listname, itemname, value){
+	var name = getCookie("username");
+	var thid = getCookie("nid");
+	
+	socket.emit('updateRandomItem',{username:name, item:value, tid:thid, listnum:listname, itemnum:itemname});
+		
 }
 
 function deleteRandomListItem(listname, itemname){
@@ -1115,7 +1360,30 @@ function deleteRandomListItem(listname, itemname){
 	var thid = getCookie("nid");
 	var todelete=document.getElementById('ind-' + listname + "-" + itemname).value;
 
-	socket.emit('deleteRandomItem',{username:name, item:todelete, tid:thid, listnum:listname, itemnum:itemname});
+	
+	if (confirm('Are you sure you want to delete this list item: ' + todelete)) {
+		document.getElementById('listitem-' + listname + "-" + itemname).style.height = "0px";
+		document.getElementById('listitem-' + listname + "-" + itemname).style.padding = "0px";
+		document.getElementById('listitem-' + listname + "-" + itemname).style.border = "0";
+    	setTimeout(function() {
+			socket.emit('deleteRandomItem',{username:name, item:todelete, tid:thid, listnum:listname, itemnum:itemname});
+		}, 600);
+	} else {
+	    // Do nothing!
+	}
+	
+	
+}
+
+function deleteThisList(listname){
+	var name = getCookie("username");
+	var thid = getCookie("nid");
+	if (confirm('Are you sure you want to delete this list: ' + listname)) {
+		socket.emit('deleteThisList',{username:name, tid:thid, listnum:listname});
+	} else {
+	    // Do nothing!
+	}
+	
 	
 }
 
@@ -1123,6 +1391,7 @@ function addToRandomList(listname){
 	var name = getCookie("username");
 	var thid = getCookie("nid");
 	var toadd=document.getElementById('itemToThisRandomList-' + listname).value;
+
 
 	socket.emit('addNewRandomItem',{username:name, newitem:toadd, tid:thid, listnum:listname});
 	
@@ -1136,41 +1405,73 @@ function clickOpenCloseRandomList(listname){
 	}		
 }
 
+function addNewList(list){
+	var name = getCookie("username");
+	var thid = getCookie("nid");
+	let thelistname = document.getElementById('addNewList').value;
 
-function randomizerHomePage(data, ext, postname) {
+	socket.emit('addNewList',{listname:thelistname, username:name, tid:thid });
+}
+
+function randomizerHomePage(data, ext, postname, newestlist, draggbleliststate) {
+	if(draggbleliststate == true){
+		var dlstate = "Disable Draggable Lists";
+	}else{
+		var dlstate = "Enable Draggable Lists";
+	}
+
 	document.getElementById('contentdiv').innerHTML = `
 		<div class="middlepanel" style="padding: 0 20px 20px 0px;">
 			` + insTopRobin(data) + `
 			<div style="max-width: 400px; margin: auto;">
-				Please check each list you want to add in the randomization. 
 				<br>
-				<input id="randomizeListItem" class="button2" style='width:75px;padding:0px 0 5px 0; font-size:13px;' type="button" value="Randomize" />
+				Please check each list you want to add in the randomization. 
+				<br><br>
+				<input id="randomizeListItem" class="button2" style='width:81px;padding: 2px 0 5px 0; font-size:13px;' type="button" value="Randomize" />
 				<br>
 				<div id="theAnswerOfTheLists"></div>
 				<br><br>
-				` + printAllRandomLists(data) + `
+				<input id="addNewList" style="max-width: 240px;" type="text" name="username" >
+				<input id="addNewListButton" class="button2" style='width:110px;padding: 3px 0 4px 0; font-size:13px;' type="button" value="Add New List" />
+				<br><br>
+				<input id="moveListButton" class="button2" style='width:200px;padding: 3px 0 4px 0; font-size:13px;' type="button" value="` + dlstate + `" />
+				<br><br>
+				<div id="thelistdiv">
+					` + printAllRandomLists(newestlist, draggbleliststate) + `
+				</div>
 			</div>
 		</div>	
 
 	`;
-	document.getElementById('randomizeListItem').onclick = function () {
-		        randomizeListItem(data);
-		    }
+
+
+	addEventListenerToItems(newestlist);
+	
 
 }
 
-function randomizeListItem(data){
+function randomizeListItem(list){
 	var thelistitems = [];
 	var totalnumber = 0;
-	for(var h in data.userData.randomizer){
+	for(var h in list){
 		if(document.getElementById('cb-' + h).checked == true){
-			for(var i in data.userData.randomizer[h]){
-				thelistitems[thelistitems.length] = data.userData.randomizer[h][i];
+			for(var i in list[h]){
+				if(i == 0){
+
+				}else{
+					thelistitems[thelistitems.length] = list[h][i];
+				}
 			}
 		}
 	}
-	var randomnum = Math.floor(Math.random() * thelistitems.length-1);
-	document.getElementById('theAnswerOfTheLists').innerHTML = thelistitems[randomnum];
+	if(thelistitems.length == 0){
+		document.getElementById('theAnswerOfTheLists').innerHTML = "Please Select Any Lists";
+	}else{
+		var randomnum = Math.floor(Math.random() * thelistitems.length);
+		//console.log(thelistitems + " | " + randomnum);
+		document.getElementById('theAnswerOfTheLists').innerHTML = thelistitems[randomnum];
+	}
+	
 
 }
 

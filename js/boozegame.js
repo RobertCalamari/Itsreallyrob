@@ -35,8 +35,8 @@ function startBoozeGame(vpWidth){
 			}, 2000);	
 		}, 3000);
 	}else{
-				document.getElementById('boozeerror').innerHTML = "-"; 	
-				document.getElementById('boozeerror').style.color = '#7d7d7d'; 		
+		document.getElementById('boozeerror').innerHTML = "-"; 	
+		document.getElementById('boozeerror').style.color = '#7d7d7d'; 		
 		for(let i=0;i<12;i++){
 			if(document.getElementById('boozep'+(i+1)).value != ""){
 				boozelop.push(document.getElementById('boozep'+(i+1)).value);
@@ -117,7 +117,7 @@ function startBoozeGame(vpWidth){
 									//allquestions.splice(onwhatround, 0, currentquestion[randq + "a"][extraprompt]);
 									onwhatround++;
 								}
-								if(listofrests.includes(ranq)){
+								if(listofrests.includes(randq)){
 									extraprompt = Math.floor(Math.random() * currentquestion[randq + "r"].length);
 									randr = Math.floor(Math.random() * 10) + 5; 
 									if(onwhatround+randr > boozenorounds){
@@ -162,7 +162,7 @@ function startBoozeGame(vpWidth){
 								//allquestions.splice(onwhatround, 0, currentquestion[randq + "a"][extraprompt]);
 								onwhatround++;
 							}
-							if(listofrests.includes(ranq)){
+							if(listofrests.includes(randq)){
 								extraprompt = Math.floor(Math.random() * currentquestion[randq + "r"].length);
 								randr = Math.floor(Math.random() * 10) + 5; 
 								if(onwhatround+randr > boozenorounds){

@@ -6,9 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
 
 		 <title>Drawing App | Robert Calamari</title>
+         <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico">
 		 <link href="../../css/style.css" rel="stylesheet">
          <link href="../../css/games.css" rel="stylesheet">
-		 <script type="text/javascript" src="../../js/navbar.js" ></script>
 		 <script type="text/javascript" src="../../js/update.js" ></script>    
 		 <script type="text/javascript" src="../../js/paintings.js" ></script>   
 		 <script type="text/javascript" src="../../js/blog.js" ></script> 
@@ -62,6 +62,7 @@
 	//ext is the reference to where this file is to index.html
 	const ext = "../..";
 	loadNav(ext);
+    updateMainPageContent(ext);
 	determinePaintSize(ext);
 
 	// const currentWidth  = document.documentElement.clientWidth;
@@ -316,4 +317,33 @@
             canvas.addEventListener('touchmove', sketchpad_touchMove, false);
         }
     }
+
+    
+
+function determinePaintSize(ext){
+    const vpWidth  = document.documentElement.clientWidth; //Get the width of the screen
+        
+    var c = document.getElementById('sketchpad');
+    var ctx = c.getContext("2d");
+    if(vpWidth >= 1030){
+        var imgData=ctx.getImageData(0,0,c.width,c.height);
+        document.getElementById('sketchpad').width="500";
+        document.getElementById('sketchpad').height="500";
+        ctx.putImageData(imgData,0,0);
+    }
+    else if(vpWidth >=430 && vpWidth <=1029){
+        var imgData=ctx.getImageData(0,0,c.width,c.height);
+        document.getElementById('sketchpad').width="400";
+        document.getElementById('sketchpad').height="400";
+        ctx.putImageData(imgData,0,0);
+    }
+    else{
+        var imgData=ctx.getImageData(0,0,c.width,c.height);
+        document.getElementById('sketchpad').width="350";
+        document.getElementById('sketchpad').height="400";
+        ctx.putImageData(imgData,0,0);
+
+    }
+}
+
 </script>

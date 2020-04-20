@@ -6,9 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
 
 		 <title>Store | Robert Calamari</title>
+		 <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
 		 <link href="../css/style.css" rel="stylesheet">
 		 <link href="../css/store.css" rel="stylesheet">
-		 <script type="text/javascript" src="../js/navbar.js" ></script>
 		 <script type="text/javascript" src="../js/update.js" ></script>    
 		 <script type="text/javascript" src="../js/paintings.js" ></script>   
 		 <script type="text/javascript" src="../js/blog.js" ></script> 
@@ -35,6 +35,23 @@
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
+		<!-- Facebook Pixel Code -->
+		<script>
+		  !function(f,b,e,v,n,t,s)
+		  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		  n.queue=[];t=b.createElement(e);t.async=!0;
+		  t.src=v;s=b.getElementsByTagName(e)[0];
+		  s.parentNode.insertBefore(t,s)}(window, document,'script',
+		  'https://connect.facebook.net/en_US/fbevents.js');
+		  fbq('init', '575900769884385');
+		  fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		  src="https://www.facebook.com/tr?id=575900769884385&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Facebook Pixel Code -->
 		 
 	</head>
 	<body>
@@ -79,22 +96,13 @@
     }
 
 	retrievePaintings();
-	//setTimeout(function() {}, 700);
-	// const currentWidth  = document.documentElement.clientWidth;
-	// window.onresize = resize;
-	// //Checks if the width of the screen has changed
-	// function resize()
-	// {
-	// 	const newWidth  = document.documentElement.clientWidth;
-	// 	if(currentWidth != newWidth){
-	// 		determineStoreSize(ext);
-	// 	}
-	 	
-	// }	
+	
+
 	socket.on('getPaintings',function(data){
     	//console.log(data.allpaintings);
     	retrievedPaintings(data.allpaintings);
-		determineStoreSize(ext, postname);
+		updateMainPageContent(ext);
+		storeData(ext,postname);
     });
 
 

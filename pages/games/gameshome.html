@@ -5,10 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=0.86, minimum-scale=0.86">
 
-		 <title>Robert Calamari</title>
+		 <title>Games | Robert Calamari</title>
+		 <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico">
 		 <link href="../../css/style.css" rel="stylesheet">
 		 <link href="../../css/games.css" rel="stylesheet">
-		 <script type="text/javascript" src="../../js/navbar.js" ></script>
 		 <script type="text/javascript" src="../../js/update.js" ></script>    
 		 <script type="text/javascript" src="../../js/paintings.js" ></script>   
 		 <script type="text/javascript" src="../../js/drawingapp.js" ></script>
@@ -18,6 +18,8 @@
 		 <script type="text/javascript" src="../../js/partypackgame.js" ></script> 
 		 <script type="text/javascript" src="../../js/lanpartypackgame.js" ></script> 
 		 <script type="text/javascript" src="../../js/deadlylegsgame.js" ></script> 
+		 <script type="text/javascript" src="../../js/game2048.js" ></script> 
+		 <script type="text/javascript" src="../../js/mafia.js" ></script> 
 
 		 <!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130797682-1"></script>
@@ -39,10 +41,27 @@
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
+        <!-- Facebook Pixel Code -->
+        <script>
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '575900769884385');
+          fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+          src="https://www.facebook.com/tr?id=575900769884385&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Facebook Pixel Code -->
 
 		 
 	</head>
-	<body onload="init()" style="background-color: black">
+	<body onload="init()" id="body" style="background-color: black">
 	  
 		<div id="header" class="header">	
 		</div>
@@ -72,9 +91,14 @@
 	//This bit of code loads the navigation bar and loads the entire pages content
 	//ext is the reference to where this file is to index.html
 	const ext = "../..";
+	const vpWidth  = document.documentElement.clientWidth;
 	loadNav(ext);
+	var url = window.location.pathname;
+	var postname = getJsonFromUrl(url);
 	//var postdata = getJsonFromUrl(url);
-	determineGameSize(ext);
+	updateMainPageContent(ext);
+	printGameData(vpWidth,ext, postname);
+	fixscreen(vpWidth,ext);
 
 	// const currentWidth  = document.documentElement.clientWidth;
 	// //window.onresize = resize;
@@ -110,6 +134,10 @@
 
     socket.on('partypackupdate',function(data){
     	socketPartyPackUpdate(data);
+    });
+
+    socket.on('mafiaupdate',function(data){
+    	socketMafiaUpdate(data);
     });
 
     socket.on('giverandomnum',function(data){

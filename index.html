@@ -7,16 +7,18 @@
 		<meta name="description" content="Providing fast and efficient custom websites, beautiful artwork, and more!">
 		<meta name="keywords" content="web development, web site, coding, html, javascript, css, fast, efficient, custom, buy, make, a, website, host, painting, paint, beautiful, artwork, canvas, art, cool, amazing, robert, calamari, ">
 	 	 <title>Robert Calamari</title>
+	 	 <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
 		 <link href="./css/style.css" rel="stylesheet">
 		 <link href="./css/homepage.css" rel="stylesheet">
 		 <link href="./css/painting.css" rel="stylesheet">
 		 <link href="./css/blog.css" rel="stylesheet">
-		 <script type="text/javascript" src="./js/navbar.js" ></script>
 		 <script type="text/javascript" src="./js/update.js" ></script>    
 		 <script type="text/javascript" src="./js/paintings.js" ></script>   
 		 <script type="text/javascript" src="../js/projects.js" ></script> 
 		 <script type="text/javascript" src="./js/blog.js" ></script> 
+		 <script type="text/javascript" src="./js/games.js" ></script> 
 		 <script type="text/javascript" src="../js/sendmail.js" ></script> 
+
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130797682-1"></script>
@@ -39,6 +41,23 @@
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
+		<!-- Facebook Pixel Code -->
+		<script>
+		  !function(f,b,e,v,n,t,s)
+		  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		  n.queue=[];t=b.createElement(e);t.async=!0;
+		  t.src=v;s=b.getElementsByTagName(e)[0];
+		  s.parentNode.insertBefore(t,s)}(window, document,'script',
+		  'https://connect.facebook.net/en_US/fbevents.js');
+		  fbq('init', '575900769884385');
+		  fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		  src="https://www.facebook.com/tr?id=575900769884385&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Facebook Pixel Code -->
 
 		 
 	</head>
@@ -53,7 +72,7 @@
 		</div>
 		<div id="mysidenav" class="sidenav">			
 		</div>	
-		<div onclick="closeNav()">
+		<div onclick="closeNav()" style="padding-top: 84px;">
 			<div id="infobox" class="infobox">
 			</div>		
 	
@@ -74,27 +93,23 @@
 <html>
 <script src="/socket.io/socket.io.js"></script>
 <script type="text/javascript">
-	loadNav(".");
+	const ext = ".";
+	loadNav(ext);
 	var socket = io();
 	//loadAd(".");
-	retrievePaintings();
-	// const currentWidth  = document.documentElement.clientWidth;
-	// window.onresize = resize;
+
+	//retrievePaintings();
+
+	updateMainPageContent(ext);
+	infoBoxData(ext);
+	homeContentData(ext);
+	document.getElementById("image-holder").style.left = 0;
+
 	
-	// function resize(){
-	// 	const newWidth  = document.documentElement.clientWidth;
-	// 	if(newWidth >= 1010 && newWidth <= 1040){
-			
-	// 		determineHomeSize(".");
-			
-	// 	}		
-			
-		 	
-	// }
-	socket.on('getPaintings',function(data){
-    	//console.log(data.allpaintings);
-    	retrievedPaintings(data.allpaintings);
-		determineHomeSize(".");
-    });
+	// socket.on('getPaintings',function(data){
+ //    	//console.log(data.allpaintings);
+ //    	retrievedPaintings(data.allpaintings);
+	// 	determineHomeSize(ext, data.allpaintings);
+ //    });
 
 </script>
